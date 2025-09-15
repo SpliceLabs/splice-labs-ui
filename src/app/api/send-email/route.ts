@@ -19,9 +19,18 @@ function escapeHtml(unsafe: string): string {
 }
 
 export async function POST(request: NextRequest) {
+  console.log('📧 Contact form API called');
+  console.log('Environment check:', {
+    hasSmtpUser: !!process.env.SMTP_USER,
+    hasSmtpPassword: !!process.env.SMTP_PASSWORD,
+    hasSmtpFrom: !!process.env.SMTP_FROM,
+    smtpHost: process.env.SMTP_HOST
+  });
+
   try {
     const body: ContactFormData = await request.json();
     const { name, email, phone, message } = body;
+    console.log('📝 Form data received:', { name, email, phone: !!phone, message: !!message });
 
     if (!name || !email || !message) {
       return NextResponse.json(
