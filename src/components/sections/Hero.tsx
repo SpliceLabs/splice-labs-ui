@@ -3,6 +3,7 @@
 import { useState, useEffect, Suspense } from 'react';
 import dynamic from 'next/dynamic';
 import Section from '../ui/Section';
+import PageWrapper from '../layout/PageWrapper';
 
 const HeroBackground = dynamic(() => import('./HeroBackground'), {
   ssr: false,
@@ -43,7 +44,7 @@ export default function Hero({ sceneName = 'magneticDipole' }: HeroProps) {
   return (
     <Section background={background}>
       {/* Hero content */}
-      <div className="relative z-10 mx-auto max-w-6xl px-6 pt-24 pb-32 text-center">
+      <PageWrapper className="relative z-10 mx-auto max-w-6xl px-6 text-center">
         <div
           className={`relative transition-all duration-1000 ${
             mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
@@ -102,7 +103,7 @@ export default function Hero({ sceneName = 'magneticDipole' }: HeroProps) {
             }}
           />
         </div>
-      </div>
+      </PageWrapper>
 
       {/* Gradient overlay at bottom */}
       <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-white to-transparent" />
