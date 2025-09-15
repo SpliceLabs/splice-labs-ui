@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter, IBM_Plex_Sans, Instrument_Sans } from "next/font/google";
 import "./globals.css";
+import AppNavbar from "@/components/layout/AppNavbar";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -33,6 +34,7 @@ export default function RootLayout({
       <body
         className={`${inter.variable} ${ibmPlexSans.variable} ${instrumentSans.variable} font-sans antialiased`}
       >
+        <AppNavbar />
         {children}
       </body>
     </html>

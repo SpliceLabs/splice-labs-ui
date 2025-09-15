@@ -10,7 +10,7 @@ export default function SceneShowcase() {
   return (
     <div className="relative min-h-screen">
       {/* 3D Scene */}
-      <Scene sceneName={currentScene as any} />
+      <Scene sceneName={currentScene as 'particleField' | 'waveGrid' | 'geometric' | 'dysonSphere' | 'toroidalField' | 'magneticDipole'} />
       
       {/* Scene Selector UI */}
       <div className="absolute top-8 left-8 z-20">
