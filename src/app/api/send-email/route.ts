@@ -8,6 +8,16 @@ interface ContactFormData {
   message: string;
 }
 
+// HTML escape function for security
+function escapeHtml(unsafe: string): string {
+  return unsafe
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#039;");
+}
+
 export async function POST(request: NextRequest) {
   try {
     const body: ContactFormData = await request.json();
@@ -23,11 +33,11 @@ export async function POST(request: NextRequest) {
     // Email to your team
     const emailHtml = `
       <h2>New Contact Form Submission</h2>
-      <p><strong>Name:</strong> ${name}</p>
-      <p><strong>Email:</strong> ${email}</p>
-      <p><strong>Phone:</strong> ${phone || 'Not provided'}</p>
+      <p><strong>Name:</strong> ${escapeHtml(name)}</p>
+      <p><strong>Email:</strong> ${escapeHtml(email)}</p>
+      <p><strong>Phone:</strong> ${escapeHtml(phone || 'Not provided')}</p>
       <p><strong>Message:</strong></p>
-      <p>${message}</p>
+      <p>${escapeHtml(message)}</p>
       <hr>
       <p><small>This message was sent from the Splice Labs contact form.</small></p>
     `;
@@ -47,7 +57,7 @@ export async function POST(request: NextRequest) {
 
     const success = await emailService.sendEmail({
       to: ['hello@splicelabs.xyz'],
-      subject: `New Contact Form Submission from ${name}`,
+      subject: `New Contact Form Submission from ${escapeHtml(name)}`,
       text: emailText,
       html: emailHtml,
     });
