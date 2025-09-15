@@ -55,6 +55,7 @@ function ToroidalFieldLines() {
               count={points.length}
               array={new Float32Array(points.flatMap(p => [p.x, p.y, p.z]))}
               itemSize={3}
+              args={[new Float32Array(points.flatMap(p => [p.x, p.y, p.z])), 3]}
             />
           </bufferGeometry>
           <lineBasicMaterial 
@@ -147,6 +148,7 @@ function FieldParticles() {
           count={particles.length / 3}
           array={particles}
           itemSize={3}
+          args={[particles, 3]}
         />
       </bufferGeometry>
       <pointsMaterial

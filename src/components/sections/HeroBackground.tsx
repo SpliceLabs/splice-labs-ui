@@ -4,7 +4,7 @@ import { Scene } from '../three/core/Scene';
 
 interface HeroBackgroundProps {
   sceneName?: 'particleField' | 'waveGrid' | 'geometric' | 'dysonSphere' | 'toroidalField' | 'magneticDipole';
-  customConfig?: any;
+  customConfig?: Record<string, unknown>;
   debug?: boolean;
 }
 
