@@ -29,8 +29,8 @@ export default function Navbar({
             src="/splicelabs-logo.png" 
             alt="Splice Labs" 
             width={200}
-            height={20}
-            className="h-5 w-auto"
+            height={50}
+            className="h-6 w-auto"
           />
         </Link>
 
