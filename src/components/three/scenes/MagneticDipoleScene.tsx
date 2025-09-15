@@ -234,7 +234,8 @@ export const MagneticDipoleScene = ({ children }: SceneProps) => {
 export const magneticDipoleConfig: SceneConfig = {
   background: 'linear-gradient(180deg, #f8f9fa 0%, #e9ecef 100%)',
   camera: {
-    position: [10, 5, 10],
+    position: [-5.13, 0.82, -5.74],
+    rotation: [-171.9 * Math.PI / 180, -41.5 * Math.PI / 180, -174.6 * Math.PI / 180],
     fov: 45
   },
   lights: {
@@ -249,7 +250,7 @@ export const magneticDipoleConfig: SceneConfig = {
     ]
   },
   controls: {
-    enableZoom: true,
+    enableZoom: false,
     enablePan: false,
     autoRotate: true,
     autoRotateSpeed: 0.2,

@@ -55,9 +55,9 @@ export function SceneRenderer({ config, children, debug = false }: SceneRenderer
 
         {/* Controls */}
         <OrbitControls
-          enableZoom={controls.enableZoom ?? true}
-          enablePan={controls.enablePan ?? true}
-          enableRotate={controls.enableRotate ?? true}
+          enableZoom={controls.enableZoom ?? false}
+          enablePan={controls.enablePan ?? false}
+          enableRotate={controls.enableRotate ?? false}
           autoRotate={controls.autoRotate ?? false}
           autoRotateSpeed={controls.autoRotateSpeed ?? 1}
           maxPolarAngle={controls.maxPolarAngle}
