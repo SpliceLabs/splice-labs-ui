@@ -3,8 +3,6 @@
 import { useState, useEffect, Suspense } from 'react';
 import dynamic from 'next/dynamic';
 import Section from '../ui/Section';
-import Navbar from '../ui/Navbar';
-import Button from '../ui/Button';
 
 const HeroBackground = dynamic(() => import('./HeroBackground'), {
   ssr: false,
@@ -44,8 +42,6 @@ export default function Hero({ sceneName = 'magneticDipole' }: HeroProps) {
 
   return (
     <Section background={background}>
-      <Navbar />
-
       {/* Hero content */}
       <div className="relative z-10 mx-auto max-w-6xl px-6 pt-24 pb-32 text-center">
         <div
@@ -105,13 +101,6 @@ export default function Hero({ sceneName = 'magneticDipole' }: HeroProps) {
               filter: "blur(10px)",
             }}
           />
-          <div className="relative flex justify-center">
-            <Button
-              text="Start Building"
-              size="lg"
-              className="relative z-10 mx-auto"
-            />
-          </div>
         </div>
       </div>
 

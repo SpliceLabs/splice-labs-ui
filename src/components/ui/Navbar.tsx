@@ -17,13 +17,8 @@ interface NavbarProps {
 }
 
 export default function Navbar({
-  links = [
-    { label: 'Docs', href: '#' },
-    { label: 'Hackathons', href: '#' },
-    { label: 'Blog', href: '#' },
-    { label: 'Whitepaper', href: '#' }
-  ],
-  ctaText = 'Start Building',
+  links = [],
+  ctaText,
   onCtaClick
 }: NavbarProps) {
   return (
@@ -35,7 +30,7 @@ export default function Navbar({
             alt="Splice Labs" 
             width={200}
             height={20}
-            className="h-4 w-auto"
+            className="h-5 w-auto"
           />
         </Link>
 
@@ -49,32 +44,14 @@ export default function Navbar({
               {link.label}
             </a>
           ))}
-          <button className="flex items-center gap-1 text-sm text-gray-600 hover:text-gray-900 transition-colors">
-            Explore
-            <svg
-              width="8"
-              height="5"
-              viewBox="0 0 8 5"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M1 1L4 4L7 1"
-                stroke="currentColor"
-                strokeWidth="1.5"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-            </svg>
-          </button>
         </div>
 
-        <Button
+        { ctaText && (<Button
           text={ctaText}
           size="sm"
           onClick={onCtaClick}
           className='z-2'
-        />
+        />) }
       </GlassContainer>
     </nav>
   );
