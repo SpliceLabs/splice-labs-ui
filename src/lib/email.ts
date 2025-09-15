@@ -26,7 +26,7 @@ export class EmailService {
   async sendEmail(options: EmailOptions): Promise<boolean> {
     try {
       const mailOptions = {
-        from: options.from || process.env.SMTP_FROM || process.env.SMTP_USER,
+        from: options.from || process.env.SMTP_FROM,
         to: Array.isArray(options.to) ? options.to.join(', ') : options.to,
         subject: options.subject,
         text: options.text,
@@ -36,7 +36,7 @@ export class EmailService {
       await this.transporter.sendMail(mailOptions);
       return true;
     } catch (error) {
-      console.error('Email sending failed:', error);
+      console.error('❌ Email sending failed:', error);
       return false;
     }
   }

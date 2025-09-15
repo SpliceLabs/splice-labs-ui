@@ -46,7 +46,7 @@ export async function POST(request: NextRequest) {
     `;
 
     const success = await emailService.sendEmail({
-      to: 'hello@splicelabs.com', // Replace with your actual email
+      to: ['hello@splicelabs.xyz'],
       subject: `New Contact Form Submission from ${name}`,
       text: emailText,
       html: emailHtml,
