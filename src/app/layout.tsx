@@ -20,8 +20,8 @@ const instrumentSans = Instrument_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "SpliceLabs - Trust verified instantly",
-  description: "Providing the universal layer for instant and secure verification across all your digital interactions",
+  title: "SpliceLabs",
+  description: "Bridging AI & Blockchain",
 };
 
 export default function RootLayout({
