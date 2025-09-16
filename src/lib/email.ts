@@ -35,8 +35,7 @@ export class EmailService {
 
       await this.transporter.sendMail(mailOptions);
       return true;
-    } catch (error) {
-      console.error('❌ Email sending failed:', error);
+    } catch {
       return false;
     }
   }
@@ -45,8 +44,7 @@ export class EmailService {
     try {
       await this.transporter.verify();
       return true;
-    } catch (error) {
-      console.error('Email service connection failed:', error);
+    } catch {
       return false;
     }
   }

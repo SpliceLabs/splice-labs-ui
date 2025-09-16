@@ -124,7 +124,7 @@ export default function ContactForm({ className }: ContactFormProps) {
   };
 
   return (
-    <GlassContainer className={cn("rounded-2xl p-8 shadow-xl border border-purple-100/50 bg-gradient-to-br from-white/90 to-purple-50/50", className)}>
+    <GlassContainer className={cn("rounded-2xl p-8 shadow-xl border border-pink-200/50 bg-gradient-to-br from-white/95 to-pink-50/30", className)}>
       <div className="mb-8">
         <h2 className="text-3xl font-bold bg-black bg-clip-text text-transparent mb-3">Get in Touch</h2>
         <p className="text-gray-600">Tell us about your project and we&apos;ll get back to you within 24 hours.</p>
@@ -143,8 +143,11 @@ export default function ContactForm({ className }: ContactFormProps) {
                 "w-full px-4 py-3 rounded-lg border bg-white/90 backdrop-blur-sm focus:outline-none focus:ring-2 focus:border-transparent transition-all placeholder:text-gray-400 text-gray-900",
                 errors.name 
                   ? "border-red-300 focus:ring-red-500" 
-                  : "border-purple-200 focus:ring-purple-500 hover:border-purple-300"
+                  : "border-pink-200 hover:border-pink-300 focus:border-transparent focus:ring-2"
               )}
+              style={{
+                '--tw-ring-color': errors.name ? '#ef4444' : '#ff4267'
+              } as React.CSSProperties}
             />
             {errors.name && <p className="mt-1 text-sm text-red-600">{errors.name}</p>}
           </div>
@@ -160,8 +163,11 @@ export default function ContactForm({ className }: ContactFormProps) {
                 "w-full px-4 py-3 rounded-lg border bg-white/90 backdrop-blur-sm focus:outline-none focus:ring-2 focus:border-transparent transition-all placeholder:text-gray-400 text-gray-900",
                 errors.email 
                   ? "border-red-300 focus:ring-red-500" 
-                  : "border-purple-200 focus:ring-purple-500 hover:border-purple-300"
+                  : "border-pink-200 hover:border-pink-300 focus:border-transparent focus:ring-2"
               )}
+              style={{
+                '--tw-ring-color': errors.email ? '#ef4444' : '#ff4267'
+              } as React.CSSProperties}
             />
             {errors.email && <p className="mt-1 text-sm text-red-600">{errors.email}</p>}
           </div>
@@ -178,8 +184,11 @@ export default function ContactForm({ className }: ContactFormProps) {
               "w-full px-4 py-3 rounded-lg border bg-white/90 backdrop-blur-sm focus:outline-none focus:ring-2 focus:border-transparent transition-all placeholder:text-gray-400 text-gray-900",
               errors.phone 
                 ? "border-red-300 focus:ring-red-500" 
-                : "border-purple-200 focus:ring-purple-500 hover:border-purple-300"
+                : "border-pink-200 hover:border-pink-300 focus:border-transparent focus:ring-2"
             )}
+            style={{
+              '--tw-ring-color': errors.phone ? '#ef4444' : '#ff4267'
+            } as React.CSSProperties}
           />
           {errors.phone && <p className="mt-1 text-sm text-red-600">{errors.phone}</p>}
         </div>
@@ -196,8 +205,11 @@ export default function ContactForm({ className }: ContactFormProps) {
               "w-full px-4 py-3 rounded-lg border bg-white/90 backdrop-blur-sm focus:outline-none focus:ring-2 focus:border-transparent transition-all resize-none placeholder:text-gray-400 text-gray-900",
               errors.message 
                 ? "border-red-300 focus:ring-red-500" 
-                : "border-purple-200 focus:ring-purple-500 hover:border-purple-300"
+                : "border-pink-200 hover:border-pink-300 focus:border-transparent focus:ring-2"
             )}
+            style={{
+              '--tw-ring-color': errors.message ? '#ef4444' : '#ff4267'
+            } as React.CSSProperties}
           />
           {errors.message && <p className="mt-1 text-sm text-red-600">{errors.message}</p>}
         </div>
