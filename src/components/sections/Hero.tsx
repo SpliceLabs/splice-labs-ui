@@ -44,7 +44,7 @@ export default function Hero({ sceneName = 'magneticDipole' }: HeroProps) {
   return (
     <Section background={background}>
       {/* Hero content */}
-      <PageWrapper className="relative z-10 mx-auto max-w-6xl px-6 text-center">
+      <PageWrapper className="relative z-10 mx-auto max-w-6xl px-4 sm:px-6 text-center">
         <div
           className={`relative transition-all duration-1000 ${
             mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
@@ -59,7 +59,7 @@ export default function Hero({ sceneName = 'magneticDipole' }: HeroProps) {
               filter: "blur(8px)",
             }}
           />
-          <h1 className="relative text-5xl md:text-6xl lg:text-7xl font-bold text-gray-900 leading-tight tracking-tight">
+          <h1 className="relative text-2xl sm:text-4xl md:text-6xl lg:text-7xl font-bold text-gray-900 leading-tight tracking-tight">
             Intelligence you can trust
             <br />
             on-chain, and off
@@ -67,7 +67,7 @@ export default function Hero({ sceneName = 'magneticDipole' }: HeroProps) {
         </div>
 
         <div
-          className={`relative mt-8 transition-all duration-1000 delay-200 ${
+          className={`relative mt-10 sm:mt-8 transition-all duration-1000 delay-200 ${
             mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
           }`}
         >
@@ -80,7 +80,7 @@ export default function Hero({ sceneName = 'magneticDipole' }: HeroProps) {
               filter: "blur(6px)",
             }}
           />
-          <p className="relative text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+          <p className="relative text-base sm:text-lg md:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
             Delivering the universal layer where AI meets blockchain—enabling
             secure, verifiable, and decentralized intelligence across all your
             digital interactions, making complex AI-driven decisions transparent
@@ -89,7 +89,7 @@ export default function Hero({ sceneName = 'magneticDipole' }: HeroProps) {
         </div>
 
         <div
-          className={`relative mt-12 transition-all duration-1000 delay-400 ${
+          className={`relative mt-8 sm:mt-12 transition-all duration-1000 delay-400 ${
             mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
           }`}
         >
