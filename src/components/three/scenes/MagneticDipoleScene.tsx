@@ -13,9 +13,6 @@ const STOPS = [
   { p: 1.0,       hex: 0x52C5FF },
 ];
 
-const yToT = (y: number, ymin: number, ymax: number) =>
-  Math.max(0, Math.min(1, (y - ymin) / (ymax - ymin || 1)));
-
 const COLOR_PHASE = 0.4; /* try 0..1 */
 const COLOR_REPEAT = 1;
 
@@ -54,33 +51,78 @@ const hexToLinearRGB = (hex: number) => {
   };
 };
 
-// Precompute linear colors for stops
-const STOPS_LIN = STOPS.map(s => ({ p: s.p, ...hexToLinearRGB(s.hex) }));
+// ---------- OKLab helpers ----------
+const cbrt = (x: number) => Math.cbrt(x);
 
-// Lerp helper
-const lerp = (a: number, b: number, t: number) => a + (b - a) * t;
+// linear RGB -> OKLab
+function linRgbToOklab(r: number, g: number, b: number) {
+  const l = 0.4122214708*r + 0.5363325363*g + 0.0514459929*b;
+  const m = 0.2119034982*r + 0.6806995451*g + 0.1073969566*b;
+  const s = 0.0883024619*r + 0.2817188376*g + 0.6299787005*b;
 
-// Replacement pastel() that matches the SVG gradient
+  const l_ = cbrt(l), m_ = cbrt(m), s_ = cbrt(s);
+
+  return {
+    L: 0.2104542553*l_ + 0.7936177850*m_ - 0.0040720468*s_,
+    a: 1.9779984951*l_ - 2.4285922050*m_ + 0.4505937099*s_,
+    b: 0.0259040371*l_ + 0.7827717662*m_ - 0.8086757660*s_,
+  };
+}
+
+// OKLab -> linear RGB
+function oklabToLinRgb(L: number, a: number, b: number) {
+  const l_ = L + 0.3963377774*a + 0.2158037573*b;
+  const m_ = L - 0.1055613458*a - 0.0638541728*b;
+  const s_ = L - 0.0894841775*a - 1.2914855480*b;
+
+  const l = l_ * l_ * l_;
+  const m = m_ * m_ * m_;
+  const s = s_ * s_ * s_;
+
+  return {
+    r:  4.0767416621*l - 3.3077115913*m + 0.2309699292*s,
+    g: -1.2684380046*l + 2.6097574011*m - 0.3413193965*s,
+    b: -0.0041960863*l - 0.7034186147*m + 1.7076147010*s,
+  };
+}
+
+// precompute OKLab stops from your hex in *linear* space
+const STOPS_OKLAB = STOPS.map(s => {
+  const { r, g, b } = hexToLinearRGB(s.hex);
+  return { p: s.p, ...linRgbToOklab(r, g, b) };
+});
+
+// clamp helper
+const clamp01 = (x: number) => Math.max(0, Math.min(1, x));
+
+function hash3(p: THREE.Vector3) {
+  const x = Math.sin(p.x * 12.9898 + p.y * 78.233 + p.z * 37.719) * 43758.5453;
+  return x - Math.floor(x);
+}
+
+// how much to dither t by; start tiny
+const T_DITHER = 1 / 1024; // ≈0.001; try 1/2048 or 1/512
+
+// ---------- replacement pastel(): OKLab lerp ----------
 export function pastel(t: number): THREE.Color {
-  // clamp t
-  t = Math.max(0, Math.min(1, t));
+  t = clamp01(t);
 
-  // find surrounding stops
-  let a = STOPS_LIN[0], b = STOPS_LIN[STOPS_LIN.length - 1];
-  for (let i = 0; i < STOPS_LIN.length - 1; i++) {
-    const s0 = STOPS_LIN[i], s1 = STOPS_LIN[i + 1];
+  // find bracketing stops
+  let a = STOPS_OKLAB[0], b = STOPS_OKLAB[STOPS_OKLAB.length - 1];
+  for (let i = 0; i < STOPS_OKLAB.length - 1; i++) {
+    const s0 = STOPS_OKLAB[i], s1 = STOPS_OKLAB[i + 1];
     if (t >= s0.p && t <= s1.p) { a = s0; b = s1; break; }
   }
-
-  // local t between the two stops
   const u = (t - a.p) / (b.p - a.p || 1);
 
-  // interpolate in linear space, then feed to THREE.Color (expects linear)
-  const r = lerp(a.r, b.r, u);
-  const g = lerp(a.g, b.g, u);
-  const bC = lerp(a.b, b.b, u);
+  // linear interpolate in OKLab
+  const L = a.L + (b.L - a.L) * u;
+  const A = a.a + (b.a - a.a) * u;
+  const B = a.b + (b.b - a.b) * u;
 
-  return new THREE.Color(r, g, bC);
+  // back to *linear* RGB for three.js
+  const { r, g, b: rb } = oklabToLinRgb(L, A, B);
+  return new THREE.Color(clamp01(r), clamp01(g), clamp01(rb));
 }
 
 type DipoleParams = {
@@ -210,7 +252,9 @@ export function ChargedParticles({
       mesh.setMatrixAt(i, tmp.matrix);
 
       // Y → t → color, then setColorAt
-      const t = tFromY(p.y, ymin, ymax, { phase: COLOR_PHASE, repeat: COLOR_REPEAT });
+      const tBase = tFromY(p.y, ymin, ymax, { phase: COLOR_PHASE, repeat: COLOR_REPEAT });
+      const t = clamp01(tBase + (hash3(p) - 0.5) * 2 * T_DITHER);
+
       c.copy(pastel(t));                // pastel returns linear RGB
       mesh.setColorAt(i, c);            // <-- canonical API
     }
@@ -220,13 +264,9 @@ export function ChargedParticles({
   });
 
   return (
-    <instancedMesh ref={meshRef} args={[undefined as any, undefined as any, count]}>
+    <instancedMesh ref={meshRef} args={[undefined, undefined, count]}>
       <sphereGeometry args={[size, 8, 8]} />
-      {/* start with Basic to remove lighting from the equation */}
-      <meshBasicMaterial color="white" toneMapped={false} />
-      {/* After you see the gradient, switch to:
-          <meshStandardMaterial color="white" />
-       */}
+      <meshStandardMaterial color="white" />
     </instancedMesh>
   );
 }
@@ -271,7 +311,7 @@ export function DipoleFieldLines({
     // 2) color pass: Y → t using the global ymin/ymax
     for (const seg of tmp) {
       seg.cols = seg.pts.map((p) =>
-        pastel(tFromY(p.y, ymin, ymax, { phase: COLOR_PHASE, repeat: COLOR_REPEAT }))
+        pastel(clamp01(tFromY(p.y, ymin, ymax, { phase: COLOR_PHASE, repeat: COLOR_REPEAT }) + (hash3(p) - 0.5) * 2 * T_DITHER))
       );
     }
 
