@@ -62,7 +62,7 @@ export default function Hero({ sceneName = 'magneticDipole' }: HeroProps) {
           <h1 className="relative text-2xl sm:text-4xl md:text-6xl lg:text-7xl font-bold text-gray-900 leading-tight tracking-tight">
             Intelligence you can trust
             <br />
-            on-chain, and off
+            on-chain, and off.
           </h1>
         </div>
 
