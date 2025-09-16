@@ -23,7 +23,6 @@ export function Scene({
   const selectedScene = scenes[sceneName];
   
   if (!selectedScene) {
-    console.warn(`Scene "${sceneName}" not found. Using default scene.`);
     const defaultScene = scenes.particleField;
     const mergedConfig = { ...defaultScene.defaultConfig, ...config };
     

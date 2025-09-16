@@ -28,11 +28,6 @@ export function CameraDebugger() {
 
   // Log on significant changes
   useEffect(() => {
-    console.log('Camera Position:', {
-      x: position.x.toFixed(2),
-      y: position.y.toFixed(2),
-      z: position.z.toFixed(2),
-    });
   }, [position]);
 
   return (
