@@ -16,6 +16,29 @@ const STOPS = [
 const yToT = (y: number, ymin: number, ymax: number) =>
   Math.max(0, Math.min(1, (y - ymin) / (ymax - ymin || 1)));
 
+const COLOR_PHASE = 0.4; /* try 0..1 */
+const COLOR_REPEAT = 1;
+
+const fract = (x: number) => x - Math.floor(x);
+
+type GradOpts = {
+  phase?: number;   // 0..1 shift (rotate up/down)
+  repeat?: number;  // how many cycles over the full Y span
+  invert?: boolean; // flip direction
+};
+
+function tFromY(
+  y: number,
+  ymin: number,
+  ymax: number,
+  { phase = 0, repeat = 1, invert = false }: GradOpts = {}
+) {
+  let t = (y - ymin) / (ymax - ymin || 1);   // normalize Y → [0,1]
+  if (invert) t = 1 - t;                      // optional flip
+  t = fract(t * repeat + phase);              // rotate & repeat
+  return t;
+}
+
 // ---- sRGB <-> linear helpers (per IEC 61966-2-1) ----
 const srgbToLinear = (c: number) =>
   c <= 0.04045 ? c / 12.92 : Math.pow((c + 0.055) / 1.055, 2.4);
@@ -187,7 +210,7 @@ export function ChargedParticles({
       mesh.setMatrixAt(i, tmp.matrix);
 
       // Y → t → color, then setColorAt
-      const t = Math.max(0, Math.min(1, (p.y - ymin) / (ymax - ymin || 1)));
+      const t = tFromY(p.y, ymin, ymax, { phase: COLOR_PHASE, repeat: COLOR_REPEAT });
       c.copy(pastel(t));                // pastel returns linear RGB
       mesh.setColorAt(i, c);            // <-- canonical API
     }
@@ -247,7 +270,9 @@ export function DipoleFieldLines({
 
     // 2) color pass: Y → t using the global ymin/ymax
     for (const seg of tmp) {
-      seg.cols = seg.pts.map((p) => pastel(yToT(p.y, ymin, ymax)));
+      seg.cols = seg.pts.map((p) =>
+        pastel(tFromY(p.y, ymin, ymax, { phase: COLOR_PHASE, repeat: COLOR_REPEAT }))
+      );
     }
 
     return tmp;
