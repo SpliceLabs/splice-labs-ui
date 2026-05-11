@@ -1,0 +1,49 @@
+{
+  "compilerOptions": {
+    "allowImportingTsExtensions": true,
+    "isolatedModules": true,
+    "jsx": "react-jsx",
+    "lib": [
+      "ES2020",
+      "DOM",
+      "DOM.Iterable"
+    ],
+    "module": "ESNext",
+    "moduleDetection": "force",
+    "moduleResolution": "bundler",
+    "noEmit": true,
+    "noFallthroughCasesInSwitch": false,
+    "noImplicitAny": false,
+    "noUnusedLocals": false,
+    "noUnusedParameters": false,
+    "paths": {
+      "@/*": ["./src/*"],
+      "@acme/contracts": ["./src/packages/contracts"],
+      "@acme/contracts/*": ["./src/packages/contracts/*"],
+      "@acme/api-client": ["./src/packages/api-client"],
+      "@acme/api-client/*": ["./src/packages/api-client/*"],
+      "@acme/core": ["./src/packages/core"],
+      "@acme/core/*": ["./src/packages/core/*"],
+      "@acme/ui": ["./src/packages/ui-universal"],
+      "@acme/ui/*": ["./src/packages/ui-universal/*"],
+      "@acme/features": ["./src/packages/features"],
+      "@acme/features/*": ["./src/packages/features/*"],
+      "@acme/platform": ["./src/packages/platform"],
+      "@acme/platform/*": ["./src/packages/platform/*"],
+      "@acme/config": ["./src/packages/config"],
+      "@acme/config/*": ["./src/packages/config/*"],
+      "@acme/observability": ["./src/packages/observability"],
+      "@acme/observability/*": ["./src/packages/observability/*"]
+    },
+    "skipLibCheck": true,
+    "strict": false,
+    "target": "ES2020",
+    "types": [
+      "vitest/globals"
+    ],
+    "useDefineForClassFields": true
+  },
+  "include": [
+    "src"
+  ]
+}

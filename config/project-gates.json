@@ -1,0 +1,15 @@
+{
+  "_description": "Runtime gates for the Splice Labs repository. Each gate is a boolean flag that controls what work is allowed. Gates are flipped by updating this file via PR after the relevant approval or configuration is complete.",
+  "_howToFlipGates": "To flip a gate: 1) Complete the required work. 2) Update the gate value in this file. 3) Commit with message 'gate: <gate.path> = true — <reason>'. 4) Merge via standard PR process.",
+
+  "brand": {
+    "logoApproved": false,
+    "brandGuideApproved": false,
+    "brandPortalPublished": false
+  },
+
+  "quality": {
+    "contractsInstalled": true,
+    "lighthouseCIConfigured": false
+  }
+}

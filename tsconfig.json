@@ -1,0 +1,26 @@
+{
+  "compilerOptions": {
+    "allowJs": true,
+    "noImplicitAny": false,
+    "noUnusedLocals": false,
+    "noUnusedParameters": false,
+    "paths": {
+      "@/*": ["./src/*"],
+      "@acme/contracts": ["./src/packages/contracts"],
+      "@acme/api-client": ["./src/packages/api-client"],
+      "@acme/core": ["./src/packages/core"],
+      "@acme/ui": ["./src/packages/ui-universal"],
+      "@acme/features": ["./src/packages/features"],
+      "@acme/platform": ["./src/packages/platform"],
+      "@acme/config": ["./src/packages/config"],
+      "@acme/observability": ["./src/packages/observability"]
+    },
+    "skipLibCheck": true,
+    "strictNullChecks": false
+  },
+  "files": [],
+  "references": [
+    { "path": "./tsconfig.app.json" },
+    { "path": "./tsconfig.node.json" }
+  ]
+}

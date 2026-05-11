@@ -1,0 +1,141 @@
+{
+  "project": "Splice Labs — Pitch Deck Content Pack",
+  "version": "1.0.0",
+  "generated": "2026-02-23",
+  "dimensions": {
+    "aspect_ratio": "16:9",
+    "width_inches": 13.333,
+    "height_inches": 7.5,
+    "width_px": 1920,
+    "height_px": 1080
+  },
+  "decks": [
+    {
+      "id": "deck_a",
+      "title": "Investor One-Pager",
+      "slide_count": 1,
+      "path": "/SpliceLabs/Brand/PitchDecks/Deck_A_Investor_OnePager/",
+      "slides": [
+        { "number": 1, "title": "Splice Labs Overview" }
+      ]
+    },
+    {
+      "id": "deck_b",
+      "title": "Investor Deck (YC Seed Model)",
+      "slide_count": 10,
+      "path": "/SpliceLabs/Brand/PitchDecks/Deck_B_Investor_YC_8-12/",
+      "slides": [
+        { "number": 1, "title": "Title" },
+        { "number": 2, "title": "Problem" },
+        { "number": 3, "title": "Solution" },
+        { "number": 4, "title": "Product / How It Works" },
+        { "number": 5, "title": "Traction / Validation" },
+        { "number": 6, "title": "Why We're Special / Insight" },
+        { "number": 7, "title": "Business Model" },
+        { "number": 8, "title": "Market / Growth" },
+        { "number": 9, "title": "Team" },
+        { "number": 10, "title": "The Ask" }
+      ]
+    },
+    {
+      "id": "deck_c",
+      "title": "Vision Deck (Partners)",
+      "slide_count": 8,
+      "path": "/SpliceLabs/Brand/PitchDecks/Deck_C_Vision_Partners/",
+      "slides": [
+        { "number": 1, "title": "Title" },
+        { "number": 2, "title": "Why DeFi Needs a New Layer" },
+        { "number": 3, "title": "What Splice Labs Builds" },
+        { "number": 4, "title": "The HELIOS Thesis" },
+        { "number": 5, "title": "Portfolio as Proof" },
+        { "number": 6, "title": "Partnership Model" },
+        { "number": 7, "title": "The Ecosystem Vision" },
+        { "number": 8, "title": "Next Steps" }
+      ]
+    },
+    {
+      "id": "deck_d",
+      "title": "Sales Deck (Clients)",
+      "slide_count": 8,
+      "path": "/SpliceLabs/Brand/PitchDecks/Deck_D_Sales_Clients/",
+      "slides": [
+        { "number": 1, "title": "Title" },
+        { "number": 2, "title": "What We Do" },
+        { "number": 3, "title": "Who We Serve" },
+        { "number": 4, "title": "How We Deliver" },
+        { "number": 5, "title": "HELIOS: Your Agent Layer" },
+        { "number": 6, "title": "Proof: What We've Built" },
+        { "number": 7, "title": "Engagement Model" },
+        { "number": 8, "title": "Next Steps" }
+      ]
+    }
+  ],
+  "appendices": [
+    {
+      "id": "helios",
+      "title": "HELIOS IP Overview",
+      "slide_count": 8,
+      "path": "/SpliceLabs/Brand/PitchDecks/Appendices/HELIOS/"
+    },
+    {
+      "id": "crown_futures",
+      "title": "Crown Futures Case Study",
+      "slide_count": 5,
+      "path": "/SpliceLabs/Brand/PitchDecks/Appendices/CaseStudies/CrownFutures/"
+    },
+    {
+      "id": "agave",
+      "title": "Agave Case Study",
+      "slide_count": 5,
+      "path": "/SpliceLabs/Brand/PitchDecks/Appendices/CaseStudies/Agave/"
+    },
+    {
+      "id": "silent_markets",
+      "title": "Silent Markets Case Study",
+      "slide_count": 5,
+      "path": "/SpliceLabs/Brand/PitchDecks/Appendices/CaseStudies/SilentMarkets/"
+    },
+    {
+      "id": "poolhouse",
+      "title": "Poolhouse Case Study",
+      "slide_count": 5,
+      "path": "/SpliceLabs/Brand/PitchDecks/Appendices/CaseStudies/Poolhouse/"
+    }
+  ],
+  "typography": {
+    "display_font": "Space Grotesk",
+    "body_font": "Space Grotesk",
+    "mono_font": "Space Mono",
+    "weights": [400, 500, 600, 700],
+    "tracking_tokens": {
+      "splice-tight": "-0.04em",
+      "splice-wide": "0.18em",
+      "splice-ultra": "0.28em"
+    }
+  },
+  "color_tokens": {
+    "dark_mode": {
+      "background": "210 14% 7%",
+      "foreground": "210 10% 90%",
+      "accent": "174 100% 42%",
+      "surface_border": "210 10% 16%",
+      "muted_foreground": "210 10% 48%"
+    },
+    "light_mode": {
+      "background": "210 20% 96%",
+      "foreground": "210 14% 12%",
+      "accent": "174 100% 30%",
+      "surface_border": "210 10% 82%",
+      "muted_foreground": "210 10% 40%"
+    }
+  },
+  "asset_inventory": [
+    { "filename": "splice-labs-logo.svg", "used_in": "All decks — title slides, watermarks" },
+    { "filename": "helios-logo.svg", "used_in": "Deck B slide 3, Deck C slide 4, Deck D slide 5, HELIOS appendix" },
+    { "filename": "crown-futures-logo.png", "used_in": "Portfolio slides, Crown Futures case study" },
+    { "filename": "agave-logo.png", "used_in": "Portfolio slides, Agave case study" },
+    { "filename": "silent-markets-logo.png", "used_in": "Portfolio slides, Silent Markets case study" },
+    { "filename": "poolhouse-logo.png", "used_in": "Portfolio slides, Poolhouse case study" },
+    { "filename": "founder-headshots/", "used_in": "Deck B slide 9" }
+  ]
+}
