@@ -52,8 +52,11 @@ export function CoverTile({
       {texture !== "none" && (
         <span
           aria-hidden
-          style={textureStyle[texture]}
-          className="pointer-events-none absolute inset-0 text-blog-chip-ink opacity-[0.08]"
+          style={{
+            ...textureStyle[texture],
+            opacity: "var(--tile-texture-opacity, 0.08)",
+          }}
+          className="pointer-events-none absolute inset-0 text-blog-chip-ink transition-opacity duration-200"
         />
       )}
       <div className="relative flex flex-col items-center">{children}</div>
