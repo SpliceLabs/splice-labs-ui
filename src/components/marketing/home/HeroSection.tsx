@@ -1,4 +1,6 @@
 import { SwarmSlot } from "./swarm/SwarmSlot";
+import { ModuleLabel } from "../ui/ModuleLabel";
+import { TerminalButton } from "../ui/TerminalButton";
 
 // Hero copy. The swarm canvas is mounted at VersionE root (single fixed
 // canvas spanning all sections); HeroSection no longer wraps in SwarmHero.
@@ -19,10 +21,12 @@ export function HeroSection() {
         {/* Junction node */}
         <div className="flex items-center gap-4 mb-10">
           <div className="w-3 h-3 border border-accent bg-accent/10 -ml-[calc(2rem+6px)] md:-ml-[calc(3rem+6px)]" />
-          <span className="font-mono text-[9px] text-accent tracking-splice-ultra uppercase">
-            splice_labs::init
-          </span>
-          <span className="flex-1 h-px bg-gradient-to-r from-accent/20 to-transparent" />
+          <ModuleLabel
+            prefix="splice_labs"
+            name="init"
+            dot={false}
+            className="flex-1"
+          />
         </div>
 
         <h1 className="font-display text-4xl md:text-6xl lg:text-[4.5rem] font-bold tracking-splice-tight text-foreground leading-[1.02] mb-2 max-w-[900px]">
@@ -45,18 +49,12 @@ export function HeroSection() {
         </div>
 
         <div className="flex flex-col sm:flex-row gap-3">
-          <a
-            href="#contact"
-            className="inline-flex items-center justify-center font-mono text-xs tracking-splice-wide uppercase bg-accent text-accent-foreground px-6 py-3 hover:bg-accent/90 transition-colors"
-          >
+          <TerminalButton href="#contact" data-event="cta_request_demo">
             Request a private demo
-          </a>
-          <a
-            href="#"
-            className="inline-flex items-center justify-center font-mono text-xs tracking-splice-wide uppercase border border-surface-border text-muted-foreground px-6 py-3 hover:text-foreground hover:border-foreground/20 transition-colors"
-          >
+          </TerminalButton>
+          <TerminalButton variant="ghost" href="#" data-event="cta_get_updates">
             Get updates
-          </a>
+          </TerminalButton>
         </div>
 
         {/* System boundary line */}

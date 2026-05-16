@@ -1,4 +1,6 @@
 import { useState, useRef, useEffect } from "react";
+import { TerminalCaret } from "./ui/TerminalCaret";
+import { TerminalButton } from "./ui/TerminalButton";
 
 interface DropdownItem {
   label: string;
@@ -73,7 +75,7 @@ export function SiteNav() {
           <span className="text-foreground/30">›</span>
           <span>splice</span>
           <span className="text-accent font-bold">_</span>
-          <span className="inline-block w-2 h-4 bg-accent ml-0.5 animate-blink-cursor" />
+          <TerminalCaret className="ml-0.5" />
         </a>
 
         {/* Desktop nav */}
@@ -121,12 +123,13 @@ export function SiteNav() {
               </a>
             )
           )}
-          <a
+          <TerminalButton
             href="#contact"
-            className="font-mono text-[11px] tracking-widest uppercase bg-accent text-accent-foreground px-4 py-2 hover:bg-accent/90 transition-colors"
+            size="sm"
+            data-event="cta_request_demo"
           >
             Request a private demo
-          </a>
+          </TerminalButton>
         </div>
 
         {/* Mobile hamburger */}
@@ -182,13 +185,15 @@ export function SiteNav() {
               </a>
             )
           )}
-          <a
+          <TerminalButton
             href="#contact"
+            size="sm"
             onClick={() => setMobileOpen(false)}
-            className="block font-mono text-xs tracking-widest uppercase bg-accent text-accent-foreground px-4 py-2 text-center mt-4"
+            data-event="cta_request_demo_mobile"
+            className="mt-4 w-full"
           >
             Request a private demo
-          </a>
+          </TerminalButton>
         </div>
       )}
     </nav>
