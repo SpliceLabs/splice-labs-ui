@@ -66,7 +66,7 @@ export function ArticleActions({
       </button>
 
       <ListenButton
-        text={articleRef.current?.innerText ?? ""}
+        text={() => articleRef.current?.innerText ?? ""}
         endpoint={ttsEndpoint}
       />
 

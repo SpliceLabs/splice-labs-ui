@@ -1,5 +1,5 @@
 import type { MDXComponents } from "mdx/types";
-import { blogMdxComponents } from "@/components/blog/MDXComponents";
+import { blogMdxComponents } from "@/components/blog";
 
 /**
  * Next.js (@next/mdx) calls this to resolve components for every .mdx file.
