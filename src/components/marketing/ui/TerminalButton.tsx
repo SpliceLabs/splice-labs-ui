@@ -85,12 +85,15 @@ export function TerminalButton({
 
   return (
     <a
-      href={href}
+      // When disabled, drop href + remove from tab order so the anchor is
+      // not keyboard-activatable (pointer-events-none only blocks the mouse).
+      href={disabled ? undefined : href}
       onClick={onClick}
       target={target}
       rel={rel}
       aria-label={ariaLabel}
       aria-disabled={disabled || undefined}
+      tabIndex={disabled ? -1 : undefined}
       data-event={dataEvent}
       className={classes}
     >
