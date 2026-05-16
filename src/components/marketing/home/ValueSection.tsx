@@ -1,4 +1,5 @@
 import { SwarmSlot } from "./swarm/SwarmSlot";
+import { cn } from "@/lib/utils";
 
 const VALUES = [
   { title: "Real Systems, Fast", body: "We ship working prototypes. Not slide decks." },
@@ -37,14 +38,21 @@ export function ValueSection() {
             {VALUES.map((v, i) => (
               <div
                 key={i}
-                className={`border-l-2 border-accent/20 pl-6 py-2 ${
-                  i % 2 === 1 ? "md:mt-8" : ""
-                }`}
+                className={cn(
+                  "group relative border-l-2 border-accent/20 pl-6 py-2 transition-colors duration-200 hover:border-accent",
+                  i % 2 === 1 && "md:mt-8",
+                )}
               >
+                <span
+                  aria-hidden
+                  className="absolute right-0 top-2 font-mono text-[9px] tracking-splice-wide text-muted-foreground/40 transition-colors duration-200 group-hover:text-accent"
+                >
+                  {String(i + 1).padStart(2, "0")}
+                </span>
                 <h3 className="font-display text-base font-semibold text-foreground mb-2">
                   {v.title}
                 </h3>
-                <p className="text-sm text-foreground/70 leading-relaxed">
+                <p className="text-sm text-foreground/60 leading-relaxed transition-colors duration-200 group-hover:text-foreground/85">
                   {v.body}
                 </p>
               </div>

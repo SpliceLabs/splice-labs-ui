@@ -11,6 +11,7 @@ import { SwarmCanvas } from "./swarm/SwarmCanvas";
 import { SectionRegimeController } from "./swarm/SectionRegimeController";
 import { SwarmDevPanel } from "./swarm/SwarmDevPanel";
 import { SwarmRefsProvider, useSwarmRefs } from "./swarm/swarmRefs";
+import { ScrollProgress } from "../ui/ScrollProgress";
 
 export function HomePage() {
   // Single source of refs for the swarm system. Canvas + controller share
@@ -22,6 +23,7 @@ export function HomePage() {
 
   return (
     <SwarmRefsProvider value={swarmRefs}>
+      <ScrollProgress />
       <SwarmCanvas refs={swarmRefs} />
       <SectionRegimeController refs={swarmRefs}>
         {/* Sections render above canvas (z-10). Wrapper is pointer-events-none
