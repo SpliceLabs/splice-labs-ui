@@ -1,1 +1,1 @@
-export { default } from "@/pages/PitchDeck";
+export { default } from "@/screens/PitchDeck";

@@ -1,1 +1,1 @@
-export { default } from "@/pages/LogoComparison";
+export { default } from "@/screens/LogoComparison";

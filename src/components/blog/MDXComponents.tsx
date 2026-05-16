@@ -15,7 +15,7 @@ import { QuickTakeaways } from "./QuickTakeaways";
  * <MDXProvider components={blogMdxComponents}> or directly to a post:
  * `<Post components={blogMdxComponents} />`.
  *
- * Heading id slugs are supplied by rehype-slug (see vite.config.ts), so
+ * Heading id slugs are supplied by rehype-slug (see next.config.mjs), so
  * the TableOfContents component can scan h2/h3 and build deep links.
  *
  * The blog components are also exposed by name — MDX authors can write

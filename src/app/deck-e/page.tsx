@@ -1,1 +1,1 @@
-export { default } from "@/pages/DeckE";
+export { default } from "@/screens/DeckE";

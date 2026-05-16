@@ -1,1 +1,1 @@
-export { default } from "@/pages/Helios";
+export { default } from "@/screens/Helios";

@@ -1,1 +1,1 @@
-export { default } from "@/pages/Dataroom";
+export { default } from "@/screens/Dataroom";

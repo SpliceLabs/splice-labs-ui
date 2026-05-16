@@ -1,1 +1,1 @@
-export { default } from "@/pages/BrandGuide";
+export { default } from "@/screens/BrandGuide";
