@@ -1,26 +1,49 @@
 {
   "compilerOptions": {
+    "target": "ES2020",
+    "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
+    "skipLibCheck": true,
+    "strict": false,
     "noImplicitAny": false,
+    "strictNullChecks": false,
     "noUnusedLocals": false,
     "noUnusedParameters": false,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "bundler",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "incremental": true,
+    "plugins": [{ "name": "next" }],
+    "types": ["vitest/globals"],
     "paths": {
       "@/*": ["./src/*"],
       "@acme/contracts": ["./src/packages/contracts"],
+      "@acme/contracts/*": ["./src/packages/contracts/*"],
       "@acme/api-client": ["./src/packages/api-client"],
+      "@acme/api-client/*": ["./src/packages/api-client/*"],
       "@acme/core": ["./src/packages/core"],
+      "@acme/core/*": ["./src/packages/core/*"],
       "@acme/ui": ["./src/packages/ui-universal"],
+      "@acme/ui/*": ["./src/packages/ui-universal/*"],
       "@acme/features": ["./src/packages/features"],
+      "@acme/features/*": ["./src/packages/features/*"],
       "@acme/platform": ["./src/packages/platform"],
+      "@acme/platform/*": ["./src/packages/platform/*"],
       "@acme/config": ["./src/packages/config"],
-      "@acme/observability": ["./src/packages/observability"]
-    },
-    "skipLibCheck": true,
-    "strictNullChecks": false
+      "@acme/config/*": ["./src/packages/config/*"],
+      "@acme/observability": ["./src/packages/observability"],
+      "@acme/observability/*": ["./src/packages/observability/*"]
+    }
   },
-  "files": [],
-  "references": [
-    { "path": "./tsconfig.app.json" },
-    { "path": "./tsconfig.node.json" }
-  ]
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts"
+  ],
+  "exclude": ["node_modules"]
 }
