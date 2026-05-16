@@ -6,12 +6,9 @@ import {
   ArticleActions,
   ArticleHeader,
   AuthorRow,
-  Callout,
   CTABand,
-  FigureBlock,
   HairlineDivider,
   NewsletterCard,
-  QuickTakeaways,
   ReadingProgress,
   ReadMoreBand,
   TableOfContents,
@@ -19,6 +16,7 @@ import {
   type PostFrontmatter,
 } from "@/components/blog";
 import { posts } from "./blog/data";
+import PostBody from "@/posts/deterministic-runtimes.mdx";
 
 const frontmatter: PostFrontmatter = {
   title: "Deterministic Runtimes for Cross-Chain Agent Execution",
@@ -78,99 +76,7 @@ export default function BlogArticleDemo() {
           <TableOfContents scopeId="article-prose" />
 
           <main ref={articleRef} id="article-prose" className="flex flex-col">
-            <QuickTakeaways
-              items={[
-                "Deterministic replay is the precondition for auditable agent trading.",
-                "Policy compiles into contract code — not model prompts.",
-                "A cross-chain ledger lets one attestation cover many chains.",
-              ]}
-              className="mb-10"
-            />
-
-            <h2
-              id="the-runtime-gap"
-              className="font-display text-2xl font-semibold tracking-[-0.02em]"
-            >
-              The runtime gap
-            </h2>
-            <p className="mt-3 font-display text-[18px] leading-[1.75]">
-              Most agent stacks treat execution as an afterthought. The model
-              decides, an SDK fires a transaction, and the trail ends there. For
-              a trading desk that is not good enough — you cannot audit what you
-              cannot reconstruct.
-            </p>
-
-            <Callout tone="note" className="my-6">
-              A runtime is deterministic when the same inputs always produce the
-              same execution trace. Without that property, replay is fiction.
-            </Callout>
-
-            <h2
-              id="policy-as-code"
-              className="mt-10 font-display text-2xl font-semibold tracking-[-0.02em]"
-            >
-              Policy as code
-            </h2>
-            <p className="mt-3 font-display text-[18px] leading-[1.75]">
-              Compiled policies live in contracts, not prompts. An approval gate
-              is a typed, signed object — the agent proposes, the gate decides,
-              and both halves are recorded.
-            </p>
-
-            <h3
-              id="approval-gates"
-              className="mt-6 font-display text-xl font-semibold tracking-[-0.02em]"
-            >
-              Approval gates
-            </h3>
-            <p className="mt-3 font-display text-[18px] leading-[1.75]">
-              Each gate names the human or contract that owns it. Timeouts are
-              explicit. Nothing executes on a maybe.
-            </p>
-
-            <FigureBlock
-              number={1}
-              caption="The deterministic execution lifecycle — intent, gate, replay."
-            >
-              <pre className="overflow-x-auto font-mono text-[13px] leading-relaxed text-blog-text-graphite">
-                {`const policy = await helios.compile({
-  agent: 'opentrade.v2',
-  gates: ['human.approval', 'replay.attest'],
-});`}
-              </pre>
-            </FigureBlock>
-
-            <h2
-              id="replay-attestation"
-              className="mt-10 font-display text-2xl font-semibold tracking-[-0.02em]"
-            >
-              Replay attestation
-            </h2>
-            <p className="mt-3 font-display text-[18px] leading-[1.75]">
-              Every decision an agent makes is reconstructable from its trace.
-              Auditors verify the attestation; they do not trust the operator.
-            </p>
-
-            <Callout tone="quote" className="my-6">
-              Trust nothing. Audit everything.
-            </Callout>
-
-            <h2
-              id="cross-chain-ledger"
-              className="mt-10 font-display text-2xl font-semibold tracking-[-0.02em]"
-            >
-              Cross-chain ledger
-            </h2>
-            <p className="mt-3 font-display text-[18px] leading-[1.75]">
-              Stacks-anchored, EVM-fluent. One attestation ledger spans every
-              chain the agent touches, so a single proof covers a multi-chain
-              run.
-            </p>
-
-            <Callout tone="warn" className="my-6">
-              Chain heterogeneity is a feature, not a tax — but only if the
-              ledger is unified.
-            </Callout>
+            <PostBody />
           </main>
 
           <div className="flex flex-col gap-8">
