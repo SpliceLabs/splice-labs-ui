@@ -1,8 +1,14 @@
 import { Slide, Placeholder } from "./SlideComponents";
-import crownFuturesLogo from "@/assets/logos/crown-futures.png";
-import silentMarketsLogo from "@/assets/logos/silent-markets.png";
-import ordoVenturiLogo from "@/assets/logos/ordo-venturi.png";
-import kenomicLogo from "@/assets/logos/kenomic.png";
+// Next resolves image imports to StaticImageData — take .src for <img>.
+import crownFuturesLogoImg from "@/assets/logos/crown-futures.png";
+import silentMarketsLogoImg from "@/assets/logos/silent-markets.png";
+import ordoVenturiLogoImg from "@/assets/logos/ordo-venturi.png";
+import kenomicLogoImg from "@/assets/logos/kenomic.png";
+
+const crownFuturesLogo = crownFuturesLogoImg.src;
+const silentMarketsLogo = silentMarketsLogoImg.src;
+const ordoVenturiLogo = ordoVenturiLogoImg.src;
+const kenomicLogo = kenomicLogoImg.src;
 
 interface SlideProps {
   slideNumber: number;

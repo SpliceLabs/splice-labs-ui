@@ -1,3 +1,5 @@
+"use client";
+
 /**
  * Unified Deck Experience — /decks
  * Deck switcher bar + per-deck content

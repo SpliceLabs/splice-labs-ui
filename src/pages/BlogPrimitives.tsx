@@ -1,3 +1,5 @@
+"use client";
+
 import { Brain, Cpu, ShieldCheck, Workflow } from "lucide-react";
 import {
   CoverTile,

@@ -1,3 +1,5 @@
+"use client";
+
 import { useState } from "react";
 import { SiteNav } from "@/components/marketing/SiteNav";
 import { SiteFooter } from "@/components/marketing/SiteFooter";

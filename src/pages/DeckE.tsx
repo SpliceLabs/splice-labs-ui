@@ -1,3 +1,5 @@
+"use client";
+
 /**
  * Deck E — Agentic Trading Research
  * Standalone route: /deck-e

@@ -1,3 +1,5 @@
+"use client";
+
 import { VariantSection } from "@/components/VariantSection";
 
 // Junction variants
