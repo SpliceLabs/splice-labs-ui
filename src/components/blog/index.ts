@@ -36,3 +36,43 @@ export { Callout, type CalloutProps } from "./Callout";
 export { TLDRRail, type TLDRRailProps, type TLDRSource } from "./TLDRRail";
 export { ReadMoreBand, type ReadMoreBandProps } from "./ReadMoreBand";
 export { CTABand, type CTABandProps } from "./CTABand";
+
+// Reader experience (Pass 5)
+export {
+  ArticleActions,
+  type ArticleActionsProps,
+} from "./ArticleActions";
+export {
+  ListenButton,
+  type ListenButtonProps,
+  type ListenStatus,
+} from "./ListenButton";
+export { ShareMenu, type ShareMenuProps } from "./ShareMenu";
+export { ReadingProgress, type ReadingProgressProps } from "./ReadingProgress";
+export {
+  TableOfContents,
+  type TableOfContentsProps,
+  type TocItem,
+} from "./TableOfContents";
+export { AuthorRow, type AuthorRowProps, type Author } from "./AuthorRow";
+export { NewsletterCard, type NewsletterCardProps } from "./NewsletterCard";
+export { EbookCard, type EbookCardProps } from "./EbookCard";
+export { SearchInput, type SearchInputProps } from "./SearchInput";
+export { Pagination, type PaginationProps } from "./Pagination";
+export { ViewToggle, type ViewToggleProps, type BlogView } from "./ViewToggle";
+export { ListPostRow, type ListPostRowProps } from "./ListPostRow";
+export {
+  CategoryHeroNav,
+  type CategoryHeroNavProps,
+  type CategoryEntry,
+} from "./CategoryHeroNav";
+
+// Markdown utilities
+export {
+  nodeToMarkdown,
+  buildFrontmatter,
+  postToMarkdown,
+  downloadMarkdown,
+  copyToClipboard,
+  slugify,
+} from "./utils/markdown";

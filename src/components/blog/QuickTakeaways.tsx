@@ -30,7 +30,10 @@ export function QuickTakeaways({
       <ol className="flex flex-col gap-3">
         {items.map((item, i) => (
           <li key={i} className="flex gap-3">
-            <span className="font-mono text-[12px] leading-relaxed tracking-[0.06em] text-blog-text-muted">
+            <span
+              data-md-skip
+              className="font-mono text-[12px] leading-relaxed tracking-[0.06em] text-blog-text-muted"
+            >
               {String(i + 1).padStart(2, "0")}
             </span>
             <span className="font-display text-[15px] leading-relaxed">

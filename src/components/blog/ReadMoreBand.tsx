@@ -26,8 +26,8 @@ export function ReadMoreBand({
         </ModuleLabel>
         <HairlineDivider surface="graphite" />
         <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
-          {posts.slice(0, 3).map((post) => (
-            <PostCard key={post.href} surface="graphite" {...post} />
+          {posts.slice(0, 3).map((post, i) => (
+            <PostCard key={`${post.href}-${i}`} surface="graphite" {...post} />
           ))}
         </div>
       </div>
