@@ -3,6 +3,7 @@ import { TerminalCaret } from "./ui/TerminalCaret";
 const FOOTER_LINKS = [
   { label: "Why Splice Labs", href: "#value" },
   { label: "Prototypes", href: "#projects" },
+  { label: "Blog", href: "/blog/index-demo" },
   { label: "HELIOS Platform", href: "/helios" },
   { label: "Security", href: "#security" },
   { label: "Founders", href: "#founders" },

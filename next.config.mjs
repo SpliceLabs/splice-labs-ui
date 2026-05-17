@@ -8,6 +8,10 @@ const nextConfig = {
   // .mdx files can be route segments and are compiled as pages.
   pageExtensions: ["ts", "tsx", "mdx"],
   reactStrictMode: true,
+  // next/image: serve AVIF first, WebP fallback (perf contract §3.1).
+  images: {
+    formats: ["image/avif", "image/webp"],
+  },
 };
 
 const withMDX = createMDX({
