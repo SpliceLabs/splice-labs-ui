@@ -73,6 +73,16 @@ export function SiteNav() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
 
+  // Escape closes any open dropdown — keyboard parity with the hover affordance.
+  useEffect(() => {
+    if (!openDropdown) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setOpenDropdown(null);
+    };
+    document.addEventListener("keydown", onKey);
+    return () => document.removeEventListener("keydown", onKey);
+  }, [openDropdown]);
+
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/90 backdrop-blur-sm border-b border-surface-border">
       <div className="max-w-[1200px] mx-auto px-6 md:px-8 h-14 flex items-center justify-between">
@@ -95,6 +105,15 @@ export function SiteNav() {
                 onMouseLeave={() => setOpenDropdown(null)}
               >
                 <button
+                  type="button"
+                  onClick={() =>
+                    setOpenDropdown(
+                      openDropdown === item.label ? null : item.label,
+                    )
+                  }
+                  aria-expanded={openDropdown === item.label}
+                  aria-haspopup="menu"
+                  aria-controls={`nav-menu-${item.label}`}
                   className="font-mono text-[11px] text-muted-foreground tracking-widest uppercase hover:text-foreground transition-colors flex items-center gap-1 focus-visible:outline focus-visible:outline-1 focus-visible:outline-accent focus-visible:outline-offset-2"
                 >
                   {item.label}
@@ -104,11 +123,16 @@ export function SiteNav() {
                 </button>
                 {openDropdown === item.label && (
                   <div className="absolute top-full left-1/2 -translate-x-1/2 pt-2 z-50">
-                    <div className="min-w-[180px] bg-popover border border-border backdrop-blur-md py-1">
+                    <div
+                      id={`nav-menu-${item.label}`}
+                      role="menu"
+                      className="min-w-[180px] bg-popover border border-border backdrop-blur-md py-1"
+                    >
                       {item.children!.map((child) => (
                         <a
                           key={child.label}
                           href={child.href}
+                          role="menuitem"
                           onClick={() => setOpenDropdown(null)}
                           className="block px-4 py-2 font-mono text-[11px] text-muted-foreground tracking-widest uppercase hover:text-foreground hover:bg-surface-raised transition-colors focus-visible:outline focus-visible:outline-1 focus-visible:outline-accent focus-visible:outline-offset-2"
                         >
