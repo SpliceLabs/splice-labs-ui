@@ -1,11 +1,16 @@
 {
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:whitelabelco.com)",
+      "Bash(unzip:*)",
+      "Bash(git add:*)",
+      "Bash(git commit -m \"$\\(cat <<''EOF''\nTICKET-001 & 002: Hero section category reframe and CTA restructure\n\n- Update headline from \"Protocol and Systems Design\" to \"AI-Native Venture Studio\"\n- Update tagline to \"Governed Autonomous Capital\"\n- Change subhead to explain formation model clearly\n- Replace CTAs: \"Build with Splice\" and \"Read the Thesis\"\n- Update footer tagline to \"Evidence before scale · Governed by design · Founder-first economics\"\n\nCo-Authored-By: Claude Opus 4.5 <noreply@anthropic.com>\nEOF\n\\)\")",
+      "Bash(git commit -m \"$\\(cat <<''EOF''\nTICKET-003 & 004: Remove banned phrases and align values with memo\n\n- Remove \"Enterprise-Grade\" \\(banned phrase per memo\\)\n- Restructure VALUES to match memo''s six differentiation points:\n  - Vertical Focus, Founder-First Economics, Venture Production OS\n  - Governed AI Infrastructure, Portfolio Commons, Evidence Before Scale\n\nCo-Authored-By: Claude Opus 4.5 <noreply@anthropic.com>\nEOF\n\\)\")",
+      "Bash(git commit:*)"
+    ]
+  },
   "enableAllProjectMcpServers": true,
   "enabledMcpjsonServers": [
     "figma-dev-mode-mcp-server"
-  ],
-  "permissions": {
-    "allow": [
-      "WebFetch(domain:whitelabelco.com)"
-    ]
-  }
+  ]
 }

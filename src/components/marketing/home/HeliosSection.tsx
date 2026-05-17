@@ -16,11 +16,11 @@ export function HeliosSection() {
         </svg>
       </div>
 
-      <div className="max-w-[1700px] mx-auto px-6 md:px-8 py-20 md:py-28 relative">
+      <div className="max-w-[1700px] mx-auto px-6 md:px-8 py-12 md:py-16 relative">
         <div className="md:w-1/2 md:mr-auto flex justify-center md:justify-start mask-fade-from-left">
          <div className="w-full max-w-[600px]">
-          <div className="flex items-center gap-4 mb-10">
-            <div className="w-3 h-3 border border-accent bg-accent/10 -ml-[calc(2rem+6px)] md:-ml-[calc(3rem+6px)]" />
+          <div className="flex items-center gap-4 mb-6">
+            <div className="w-3 h-3 border border-accent bg-accent/10 md:-ml-[calc(3rem+6px)]" />
             <span className="font-mono text-[9px] text-accent tracking-splice-ultra uppercase">
               module::platform
             </span>

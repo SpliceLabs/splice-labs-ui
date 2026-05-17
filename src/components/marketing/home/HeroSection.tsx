@@ -10,18 +10,18 @@ export function HeroSection() {
   return (
     <section
       id="hero"
-      className="pt-32 pb-20 md:pt-44 md:pb-28 px-6 md:px-8 max-w-[1700px] mx-auto relative min-h-screen"
+      className="pt-32 pb-16 md:pt-40 md:pb-20 px-6 md:px-8 max-w-[1700px] mx-auto relative"
     >
       {/* Hero swarm slot: centered, full-width — swarm fills viewport. */}
       <SwarmSlot id="hero" className="absolute inset-0" />
       {/* Vertical splice line — left gutter */}
       <div className="absolute left-6 md:left-8 top-0 bottom-0 w-px bg-surface-border" />
-      <div className="absolute left-6 md:left-8 top-32 md:top-44 w-px h-16 bg-accent/40" />
+      <div className="absolute left-6 md:left-8 top-32 md:top-40 w-px h-16 bg-accent/40" />
 
       <div className="pl-8 md:pl-12">
         {/* Junction node */}
-        <div className="flex items-center gap-4 mb-10 motion-safe:animate-fade-up">
-          <div className="w-3 h-3 border border-accent bg-accent/10 -ml-[calc(2rem+6px)] md:-ml-[calc(3rem+6px)]" />
+        <div className="flex items-center gap-4 mb-6 motion-safe:animate-fade-up">
+          <div className="w-3 h-3 border border-accent bg-accent/10 md:-ml-[calc(3rem+6px)]" />
           <ModuleLabel
             prefix="splice_labs"
             name="init"
@@ -51,7 +51,7 @@ export function HeroSection() {
         </h1>
 
         <div
-          className="flex items-start gap-6 md:gap-10 mb-10 motion-safe:animate-fade-up"
+          className="flex items-start gap-6 md:gap-10 mb-6 motion-safe:animate-fade-up"
           style={{ animationDelay: "240ms" }}
         >
           <div className="w-px h-20 bg-accent/30 shrink-0 mt-1" />
