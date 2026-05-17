@@ -32,3 +32,4 @@ splicelabs-documents-2026-05-16.zip
 splicelabs-documents-*/
 .vercel
 .env*.local
+dist/
