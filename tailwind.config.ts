@@ -15,9 +15,9 @@ export default {
     },
     extend: {
       fontFamily: {
-        display: ["Space Grotesk", "system-ui", "sans-serif"],
-        body: ["Space Grotesk", "system-ui", "sans-serif"],
-        mono: ["Space Mono", "Courier New", "monospace"],
+        display: ["var(--font-space-grotesk)", "system-ui", "sans-serif"],
+        body: ["var(--font-space-grotesk)", "system-ui", "sans-serif"],
+        mono: ["var(--font-space-mono)", "Courier New", "monospace"],
       },
       colors: {
         border: "hsl(var(--border))",

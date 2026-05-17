@@ -1,9 +1,5 @@
-@import "@fontsource/space-grotesk/400.css";
-@import "@fontsource/space-grotesk/500.css";
-@import "@fontsource/space-grotesk/600.css";
-@import "@fontsource/space-grotesk/700.css";
-@import "@fontsource/space-mono/400.css";
-@import "@fontsource/space-mono/700.css";
+/* Fonts are loaded via next/font/google in src/app/layout.tsx —
+   self-hosted, preloaded, no render-blocking @import. */
 
 @tailwind base;
 @tailwind components;
@@ -56,9 +52,9 @@
     --radius: 0.125rem;
 
     /* Typography scale */
-    --font-display: "Space Grotesk", system-ui, sans-serif;
-    --font-body: "Space Grotesk", system-ui, sans-serif;
-    --font-mono: "Space Mono", "Courier New", monospace;
+    --font-display: var(--font-space-grotesk), system-ui, sans-serif;
+    --font-body: var(--font-space-grotesk), system-ui, sans-serif;
+    --font-mono: var(--font-space-mono), "Courier New", monospace;
 
     /* Grid and spacing */
     --grid-unit: 4px;
