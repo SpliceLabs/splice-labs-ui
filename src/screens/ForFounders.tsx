@@ -1,6 +1,5 @@
 "use client";
 
-import { MarketingLayout } from "@/components/marketing/MarketingLayout";
 import { TerminalButton } from "@/components/marketing/ui/TerminalButton";
 
 const WHO_SHOULD_APPLY = [
@@ -53,9 +52,7 @@ const FAQ = [
 
 export default function ForFoundersScreen() {
   return (
-    <MarketingLayout>
-
-      <section className="pt-32 pb-20 md:pt-44 md:pb-28 px-6 md:px-8 max-w-[900px] mx-auto">
+    <section className="pt-32 pb-20 md:pt-44 md:pb-28 px-6 md:px-8 max-w-[900px] mx-auto">
         {/* Hero */}
         <div className="mb-16">
           <span className="font-mono text-[9px] text-accent tracking-splice-ultra uppercase block mb-4">
@@ -143,8 +140,6 @@ export default function ForFoundersScreen() {
             Join Founder Bench
           </TerminalButton>
         </div>
-      </section>
-
-    </MarketingLayout>
+    </section>
   );
 }
