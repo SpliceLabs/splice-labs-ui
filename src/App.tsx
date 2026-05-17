@@ -10,6 +10,9 @@ import Helios from "./pages/Helios";
 import Dataroom from "./pages/Dataroom";
 import BrandGuide from "./pages/BrandGuide";
 import DeckE from "./pages/DeckE";
+import BlogPrimitives from "./pages/BlogPrimitives";
+import BlogIndexDemo from "./pages/BlogIndexDemo";
+import BlogArticleDemo from "./pages/BlogArticleDemo";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -28,6 +31,9 @@ const App = () => (
           <Route path="/dataroom" element={<Dataroom />} />
           <Route path="/brand" element={<BrandGuide />} />
           <Route path="/deck-e" element={<DeckE />} />
+          <Route path="/blog/primitives" element={<BlogPrimitives />} />
+          <Route path="/blog/index-demo" element={<BlogIndexDemo />} />
+          <Route path="/blog/article-demo" element={<BlogArticleDemo />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
