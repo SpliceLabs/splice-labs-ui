@@ -5,7 +5,7 @@ import { TerminalButton } from "@/components/marketing/ui/TerminalButton";
 const WHO_SHOULD_APPLY = [
   "Technical or domain expertise in agentic finance, stablecoin infrastructure, or governed autonomous systems",
   "An idea at the concept or early validation stage—we help shape, not rescue",
-  "Willingness to work within HELIOS validation frameworks and evidence-first methodology",
+  "Willingness to work within our validation frameworks and evidence-first methodology",
   "Long-term vision aligned with governed autonomous capital thesis",
 ];
 

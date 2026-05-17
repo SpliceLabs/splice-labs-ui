@@ -1,6 +1,7 @@
 "use client";
 
 import { TerminalButton } from "@/components/marketing/ui/TerminalButton";
+import { GlossaryTerm } from "@/components/marketing/ui/GlossaryTerm";
 
 const FIRST_WEDGES = [
   {
@@ -33,7 +34,7 @@ export default function ThesisScreen() {
             Our Thesis
           </span>
           <h1 className="font-display text-3xl md:text-5xl font-bold tracking-splice-tight text-foreground leading-[1.1] mb-6">
-            Governed Autonomous Capital
+            <GlossaryTerm term="governed autonomous capital">Governed Autonomous Capital</GlossaryTerm>
           </h1>
           <p className="text-lg text-foreground/70 leading-relaxed max-w-[700px]">
             We believe the next wave of financial infrastructure will be built by AI agents operating within
@@ -62,16 +63,16 @@ export default function ThesisScreen() {
         {/* Agentic Finance */}
         <div className="mb-16">
           <h2 className="font-display text-xl md:text-2xl font-semibold tracking-splice-tight text-foreground mb-4">
-            Agentic Finance
+            <GlossaryTerm term="agentic finance">Agentic Finance</GlossaryTerm>
           </h2>
           <div className="border-l-2 border-accent/20 pl-6 space-y-4">
             <p className="text-sm text-foreground/70 leading-relaxed">
-              Agentic finance is the application of AI agents to financial operations—not to replace human judgment,
+              <GlossaryTerm term="agentic finance">Agentic finance</GlossaryTerm> is the application of AI agents to financial operations—not to replace human judgment,
               but to extend human capability. Agents execute within policy constraints. Humans approve at critical gates.
               Every action generates an audit trail.
             </p>
             <p className="text-sm text-foreground/70 leading-relaxed">
-              This is the foundation for what we call <strong className="text-foreground">governed autonomous capital</strong>:
+              This is the foundation for what we call <GlossaryTerm term="governed autonomous capital"><strong className="text-foreground">governed autonomous capital</strong></GlossaryTerm>:
               capital that can move and work autonomously, but only within explicit, human-defined governance bounds.
             </p>
           </div>

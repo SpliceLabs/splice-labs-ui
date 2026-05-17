@@ -88,12 +88,12 @@ export function SiteNav() {
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/90 backdrop-blur-sm border-b border-surface-border">
       <div className="max-w-[1200px] mx-auto px-6 md:px-8 h-14 flex items-center justify-between">
         {/* Logo */}
-        <a href="#" className="flex items-center gap-1 font-mono text-sm text-foreground">
+        <Link href="/" className="flex items-center gap-1 font-mono text-sm text-foreground">
           <span className="text-foreground/30">›</span>
           <span>splice</span>
           <span className="text-accent font-bold">_</span>
           <TerminalCaret className="ml-0.5" />
-        </a>
+        </Link>
 
         {/* Desktop nav */}
         <div className="hidden md:flex items-center gap-6">

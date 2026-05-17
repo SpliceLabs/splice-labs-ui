@@ -1,6 +1,7 @@
 import { SwarmSlot } from "./swarm/SwarmSlot";
 import { ModuleLabel } from "../ui/ModuleLabel";
 import { TerminalButton } from "../ui/TerminalButton";
+import { GlossaryTerm } from "../ui/GlossaryTerm";
 
 // Hero copy. The swarm canvas is mounted at VersionE root (single fixed
 // canvas spanning all sections); HeroSection no longer wraps in SwarmHero.
@@ -59,7 +60,7 @@ export function HeroSection() {
               Where AI Meets Programmable Capital.
             </p>
             <p className="text-sm text-foreground/50 leading-relaxed max-w-[560px]">
-              We form, fund, and build agentic finance companies—providing research, architecture, and GTM infrastructure through our venture production OS.
+              We form, fund, and build <GlossaryTerm term="agentic finance">agentic finance</GlossaryTerm> companies—providing research, architecture, and GTM infrastructure through our venture production OS.
             </p>
           </div>
         </div>

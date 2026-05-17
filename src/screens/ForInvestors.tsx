@@ -1,6 +1,7 @@
 "use client";
 
 import { TerminalButton } from "@/components/marketing/ui/TerminalButton";
+import { GlossaryTerm } from "@/components/marketing/ui/GlossaryTerm";
 
 const OPCO_RATIONALE = [
   "Formation equity in each incubation provides direct exposure to individual company performance",
@@ -33,7 +34,7 @@ export default function ForInvestorsScreen() {
             Invest in Governed Autonomous Capital
           </h1>
           <p className="text-lg text-foreground/70 leading-relaxed max-w-[700px]">
-            Splice Labs is building the infrastructure layer for agentic finance. We're raising at the OpCo level first—
+            Splice Labs is building the infrastructure layer for <GlossaryTerm term="agentic finance">agentic finance</GlossaryTerm>. We're raising at the <GlossaryTerm term="opco">OpCo</GlossaryTerm> level first—
             fund structure follows after systems are hardened and portfolio demonstrates repeatability.
           </p>
         </div>
