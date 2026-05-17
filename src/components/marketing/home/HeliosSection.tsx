@@ -30,10 +30,10 @@ export function HeliosSection() {
           <div className="grid grid-cols-1 gap-10">
             <div>
               <h2 className="font-display text-2xl md:text-3xl font-semibold tracking-splice-tight text-foreground mb-5">
-                HELIOS: Our AgenticOS
+                HELIOS: Venture Production OS
               </h2>
               <p className="text-sm text-foreground/50 leading-relaxed max-w-[580px] mb-8">
-                HELIOS is the control plane Splice Labs runs on. It orchestrates agents, applies policies, and routes work through human approval gates.
+                HELIOS is our formation harness—research, validation, evals, policy, approval gates, provenance, GTM, and fundraising machinery. Every incubation runs on the same governed infrastructure.
               </p>
               <div className="flex flex-col sm:flex-row gap-3">
                 <a href="/helios" className="inline-flex items-center font-mono text-[11px] tracking-splice-wide uppercase text-accent hover:text-accent transition-colors">
@@ -48,10 +48,11 @@ export function HeliosSection() {
             {/* Systems diagram */}
             <div className="space-y-3">
               {[
-                { layer: "Approval Gates", active: true },
+                { layer: "Research & Validation", active: true },
+                { layer: "Eval Registry", active: false },
                 { layer: "Policy Engine", active: false },
-                { layer: "Agent Orchestrator", active: false },
-                { layer: "Cross-Chain Runtime", active: false },
+                { layer: "Approval Gates", active: false },
+                { layer: "GTM & Fundraising", active: false },
               ].map((l, i) => (
                 <div key={i} className="border border-surface-border p-3 flex items-center gap-3 hover:border-accent/20 transition-colors">
                   <span className={`w-1.5 h-1.5 ${l.active ? "bg-accent" : "bg-surface-border"}`} />
@@ -63,7 +64,7 @@ export function HeliosSection() {
               <div className="flex items-center gap-2 pt-1">
                 <span className="w-px h-4 bg-accent/30" />
                 <span className="font-mono text-[8px] text-muted-foreground/60 tracking-splice-ultra uppercase">
-                  Stack depth: 4 layers
+                  Formation Harness: 5 layers
                 </span>
               </div>
             </div>
