@@ -66,12 +66,12 @@ export function ContactSection() {
     <section id="contact" className="border-t border-surface-border relative">
       {/* Swarm slot: right half on md+; full width on mobile. */}
       <SwarmSlot id="contact" className="absolute inset-0 md:left-1/3" />
-      <div className="absolute left-6 md:left-8 top-0 bottom-0 w-px bg-surface-border" />
+      <div className="absolute left-10 md:left-16 top-0 bottom-0 w-px bg-surface-border" />
       {/* Terminal splice line at bottom */}
-      <div className="absolute left-6 md:left-8 bottom-0 w-px h-8 bg-accent/40" />
-      <div className="absolute left-[calc(1.5rem-3px)] md:left-[calc(2rem-3px)] bottom-0 w-2 h-2 border border-accent bg-accent/10" />
+      <div className="absolute left-10 md:left-16 bottom-0 w-px h-8 bg-accent/40" />
+      <div className="absolute left-[calc(2.5rem-3px)] md:left-[calc(4rem-3px)] bottom-0 w-2 h-2 border border-accent bg-accent/10" />
 
-      <div className="max-w-[1700px] mx-auto px-6 md:px-8 py-12 md:py-16">
+      <div className="max-w-[1700px] mx-auto px-10 md:px-16 py-12 md:py-16">
         <div className="md:w-1/2 md:mr-auto flex justify-center md:justify-start mask-fade-from-left">
          <div className="w-full max-w-[600px]">
           <div className="flex items-center gap-4 mb-6">

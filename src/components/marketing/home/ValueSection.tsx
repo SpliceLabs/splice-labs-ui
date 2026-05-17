@@ -16,9 +16,9 @@ export function ValueSection() {
       {/* Swarm slot: left half on md+; full width on mobile. */}
       <SwarmSlot id="value" className="absolute inset-0 md:right-1/3" />
       {/* Mirrored splice line — right gutter */}
-      <div className="absolute right-6 md:right-8 top-0 bottom-0 w-px bg-surface-border" />
+      <div className="absolute right-10 md:right-16 top-0 bottom-0 w-px bg-surface-border" />
 
-      <div className="max-w-[1700px] mx-auto px-6 md:px-8 py-12 md:py-16">
+      <div className="max-w-[1700px] mx-auto px-10 md:px-16 py-12 md:py-16">
         <div className="md:w-1/2 md:ml-auto flex justify-center md:justify-end mask-fade-from-right">
          <div className="w-full max-w-[600px]">
           {/* Section junction — node on right spine */}

@@ -10,13 +10,13 @@ export function HeroSection() {
   return (
     <section
       id="hero"
-      className="pt-32 pb-16 md:pt-40 md:pb-20 px-6 md:px-8 max-w-[1700px] mx-auto relative"
+      className="pt-32 pb-16 md:pt-40 md:pb-20 px-10 md:px-16 max-w-[1700px] mx-auto relative"
     >
       {/* Hero swarm slot: centered, full-width — swarm fills viewport. */}
       <SwarmSlot id="hero" className="absolute inset-0" />
       {/* Vertical splice line — left gutter */}
-      <div className="absolute left-6 md:left-8 top-0 bottom-0 w-px bg-surface-border" />
-      <div className="absolute left-6 md:left-8 top-32 md:top-40 w-px h-16 bg-accent/40" />
+      <div className="absolute left-10 md:left-16 top-0 bottom-0 w-px bg-surface-border" />
+      <div className="absolute left-10 md:left-16 top-32 md:top-40 w-px h-16 bg-accent/40" />
 
       <div className="pl-8 md:pl-12">
         {/* Junction node */}
