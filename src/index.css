@@ -168,7 +168,10 @@
      composes with any Tailwind `transform` offset on the card. The lift
      is reduced-motion gated. */
   .card-lift {
-    @apply transition-[translate,border-color] duration-200 ease-out;
+    /* pointer-events-auto: the marketing home wraps section content in
+       pointer-events-none so the cursor drives the swarm — cards must
+       opt back in or their :hover never fires. */
+    @apply pointer-events-auto transition-[translate,border-color] duration-200 ease-out;
   }
   .card-lift:hover {
     @apply border-accent/40;

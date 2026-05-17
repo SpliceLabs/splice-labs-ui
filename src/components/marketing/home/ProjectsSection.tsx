@@ -43,7 +43,7 @@ export function ProjectsSection() {
               <div
                 key={p.name}
                 className={cn(
-                  "group/card grid grid-cols-1 lg:grid-cols-[1fr_1fr] gap-4 border border-surface-border bg-surface transition-colors duration-200 hover:border-accent/40",
+                  "group/card grid grid-cols-1 lg:grid-cols-[1fr_1fr] gap-4 border border-surface-border bg-surface card-lift",
                   i % 2 === 1 && "lg:ml-8",
                 )}
               >

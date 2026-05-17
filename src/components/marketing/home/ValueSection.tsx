@@ -33,7 +33,7 @@ export function ValueSection() {
               <div
                 key={i}
                 className={cn(
-                  "group relative border-l-2 border-accent/20 pl-6 py-2 transition-colors duration-200 hover:border-accent",
+                  "group relative border-l-2 border-accent/20 pl-6 py-2 card-lift",
                   i % 2 === 1 && "md:mt-8",
                 )}
               >
