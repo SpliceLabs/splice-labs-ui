@@ -33,14 +33,14 @@ export function HeroSection() {
           className="font-display text-4xl md:text-6xl lg:text-[4.5rem] font-bold tracking-splice-tight text-foreground leading-[1.02] mb-2 max-w-[900px] motion-safe:animate-fade-up"
           style={{ animationDelay: "80ms" }}
         >
-          Protocol and<br />Systems Design.
+          An AI-Native<br />Venture Studio.
         </h1>
         <h1
           className="font-display text-4xl md:text-6xl lg:text-[4.5rem] font-bold tracking-splice-tight text-accent leading-[1.02] mb-8 max-w-[900px] motion-safe:animate-fade-up"
           style={{ animationDelay: "160ms" }}
         >
           <span className="relative inline-block">
-            Prototype the Future.
+            Governed Autonomous Capital.
             <span
               aria-hidden
               style={{ animationDelay: "640ms" }}
@@ -56,10 +56,10 @@ export function HeroSection() {
           <div className="w-px h-20 bg-accent/30 shrink-0 mt-1" />
           <div>
             <p className="text-accent font-display text-xl md:text-2xl font-semibold tracking-splice-tight mb-3">
-              Agent-Native by Design.
+              Where AI Meets Programmable Capital.
             </p>
             <p className="text-sm text-foreground/50 leading-relaxed max-w-[560px]">
-              Splice Labs is a protocol and systems design foundry operating at the intersection of AI and decentralized finance.
+              We form, fund, and build agentic finance companies—providing research, architecture, and GTM infrastructure through our venture production OS.
             </p>
           </div>
         </div>
@@ -68,11 +68,11 @@ export function HeroSection() {
           className="flex flex-col sm:flex-row gap-3 motion-safe:animate-fade-up"
           style={{ animationDelay: "320ms" }}
         >
-          <TerminalButton href="#contact" data-event="cta_request_demo">
-            Request a private demo
+          <TerminalButton href="#contact" data-event="cta_build_with_splice">
+            Build with Splice
           </TerminalButton>
-          <TerminalButton variant="ghost" href="#" data-event="cta_get_updates">
-            Get updates
+          <TerminalButton variant="ghost" href="/thesis" data-event="cta_read_thesis">
+            Read the Thesis
           </TerminalButton>
         </div>
 
@@ -83,7 +83,7 @@ export function HeroSection() {
         >
           <span className="w-8 h-px bg-accent/30" />
           <span className="font-mono text-[8px] text-muted-foreground/60 tracking-splice-ultra uppercase">
-            Prototypes first · Cross-chain by default · Security built in
+            Evidence before scale · Governed by design · Founder-first economics
           </span>
           <span className="flex-1 h-px bg-surface-border" />
         </div>
