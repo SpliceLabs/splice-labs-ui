@@ -1,11 +1,11 @@
 import { SwarmSlot } from "./swarm/SwarmSlot";
 
 const COMMITMENTS = [
-  { label: "Agent-Paired", body: "Human + agent collaboration is the default." },
-  { label: "AI + DeFi", body: "We build where intelligence meets programmable capital." },
-  { label: "Security as Constraint", body: "Threat modeling early. Audit trails always." },
-  { label: "Prototype-Led", body: "Artifacts create alignment. Talking comes later." },
-  { label: "Partner-First", body: "We strengthen larger teams. We don't compete for spotlight." },
+  { label: "Founder Ownership", body: "Majority equity stays with founders. No forced platform tax." },
+  { label: "Clean Cap Tables", body: "Simple structures. No hidden complexity or lock-in." },
+  { label: "Built With, Not Around", body: "Founders retain agency. We provide infrastructure, not mandates." },
+  { label: "Governed by Design", body: "Policy gates, approval workflows, and audit trails from day one." },
+  { label: "Kill Fast, Build Right", body: "Rapid validation. We'd rather kill a bad idea than nurse a zombie." },
 ];
 
 export function CommitmentsSection() {
