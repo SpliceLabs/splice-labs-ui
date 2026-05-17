@@ -7,6 +7,7 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { Check, Link2, Share2 } from "lucide-react";
 import { useState } from "react";
+import { actionButtonClass } from "./styles";
 
 export interface ShareMenuProps {
   url: string;
@@ -39,14 +40,7 @@ export function ShareMenu({ url, title = "", className }: ShareMenuProps) {
 
   return (
     <DropdownMenu>
-      <DropdownMenuTrigger
-        className={cn(
-          "inline-flex items-center gap-2 border border-current/20 px-3 py-2",
-          "font-mono text-[12px] uppercase tracking-[0.06em] transition-colors hover:border-current/40",
-          "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blog-ring-teal",
-          className,
-        )}
-      >
+      <DropdownMenuTrigger className={cn(actionButtonClass, className)}>
         <Share2 size={14} />
         Share
       </DropdownMenuTrigger>

@@ -4,6 +4,7 @@ import { useState, type RefObject } from "react";
 import { ListenButton } from "./ListenButton";
 import { ShareMenu } from "./ShareMenu";
 import type { PostFrontmatter } from "./types";
+import { actionButtonClass } from "./styles";
 import {
   copyToClipboard,
   downloadMarkdown,
@@ -22,12 +23,6 @@ export interface ArticleActionsProps {
   className?: string;
 }
 
-const actionClass = cn(
-  "inline-flex items-center gap-2 border border-current/20 px-3 py-2",
-  "font-mono text-[12px] uppercase tracking-[0.06em]",
-  "transition-colors hover:border-current/40",
-  "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blog-ring-teal",
-);
 
 /** The article action bar — copy / download / listen / share / ask AI. */
 export function ArticleActions({
@@ -55,12 +50,12 @@ export function ArticleActions({
 
   return (
     <div className={cn("flex flex-wrap items-center gap-2", className)}>
-      <button type="button" onClick={onCopy} className={actionClass}>
+      <button type="button" onClick={onCopy} className={actionButtonClass}>
         {copied ? <Check size={14} /> : <ClipboardCopy size={14} />}
         {copied ? "Copied" : "Copy as Markdown"}
       </button>
 
-      <button type="button" onClick={onDownload} className={actionClass}>
+      <button type="button" onClick={onDownload} className={actionButtonClass}>
         <Download size={14} />
         Download .md
       </button>
@@ -73,7 +68,7 @@ export function ArticleActions({
       <ShareMenu url={frontmatter.url ?? ""} title={frontmatter.title} />
 
       {onAskAI && (
-        <button type="button" onClick={onAskAI} className={actionClass}>
+        <button type="button" onClick={onAskAI} className={actionButtonClass}>
           <Sparkles size={14} />
           Ask AI
         </button>

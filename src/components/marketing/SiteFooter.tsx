@@ -54,7 +54,7 @@ export function SiteFooter() {
 
         <div className="mt-12 pt-6 border-t border-surface-border">
           <p className="font-mono text-[10px] text-muted-foreground/50 tracking-splice-wide">
-            © 2026 Splice Labs. All rights reserved.
+            © {new Date().getFullYear()} Splice Labs. All rights reserved.
           </p>
         </div>
       </div>

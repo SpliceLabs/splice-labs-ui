@@ -2,12 +2,14 @@ import type { PostFrontmatter } from "../types";
 
 /** "Hello, World!" → "hello-world" */
 export function slugify(input: string): string {
-  return input
+  const slug = input
     .toLowerCase()
     .trim()
     .replace(/[^\w\s-]/g, "")
     .replace(/[\s_-]+/g, "-")
     .replace(/^-+|-+$/g, "");
+  // Return fallback if input produces empty slug
+  return slug || "untitled";
 }
 
 /** Serializes post metadata into a YAML frontmatter block. */
@@ -141,6 +143,12 @@ export function downloadMarkdown(filename: string, contents: string): void {
   URL.revokeObjectURL(url);
 }
 
-export async function copyToClipboard(text: string): Promise<void> {
-  await navigator.clipboard.writeText(text);
+export async function copyToClipboard(text: string): Promise<boolean> {
+  try {
+    await navigator.clipboard.writeText(text);
+    return true;
+  } catch (err) {
+    console.error("Clipboard write failed:", err);
+    return false;
+  }
 }

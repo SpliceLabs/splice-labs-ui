@@ -29,3 +29,6 @@ next-env.d.ts
 *.sw?
 docs/design-system/
 splicelabs-documents-2026-05-16.zip
+splicelabs-documents-*/
+.vercel
+.env*.local
