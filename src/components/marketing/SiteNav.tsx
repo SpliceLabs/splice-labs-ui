@@ -1,6 +1,12 @@
 import { useState, useRef, useEffect } from "react";
+import Link from "next/link";
 import { TerminalCaret } from "./ui/TerminalCaret";
 import { TerminalButton } from "./ui/TerminalButton";
+
+/** Check if href is an internal route (not a hash anchor) */
+function isInternalRoute(href: string | undefined): boolean {
+  return !!href && href.startsWith("/") && !href.startsWith("/#");
+}
 
 interface DropdownItem {
   label: string;
@@ -113,6 +119,14 @@ export function SiteNav() {
                   </div>
                 )}
               </div>
+            ) : isInternalRoute(item.href) ? (
+              <Link
+                key={item.label}
+                href={item.href!}
+                className="font-mono text-[11px] text-muted-foreground tracking-widest uppercase hover:text-foreground transition-colors focus-visible:outline focus-visible:outline-1 focus-visible:outline-accent focus-visible:outline-offset-2"
+              >
+                {item.label}
+              </Link>
             ) : (
               <a
                 key={item.label}
@@ -174,6 +188,15 @@ export function SiteNav() {
                   </div>
                 )}
               </div>
+            ) : isInternalRoute(item.href) ? (
+              <Link
+                key={item.label}
+                href={item.href!}
+                onClick={() => setMobileOpen(false)}
+                className="block font-mono text-xs text-muted-foreground tracking-widest uppercase hover:text-foreground py-2"
+              >
+                {item.label}
+              </Link>
             ) : (
               <a
                 key={item.label}

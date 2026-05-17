@@ -2,6 +2,7 @@ import { cn } from "@/lib/utils";
 import { apiPostBlob } from "@acme/api-client";
 import { Pause, Play } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
+import { actionButtonClass } from "./styles";
 
 export type ListenStatus = "idle" | "loading" | "playing" | "paused";
 
@@ -37,6 +38,8 @@ export function ListenButton({
     onStatus?.(s);
   };
 
+  const objectUrlRef = useRef<string | null>(null);
+
   // Pause on tab blur so audio never plays unattended.
   useEffect(() => {
     const onHidden = () => {
@@ -50,6 +53,11 @@ export function ListenButton({
       document.removeEventListener("visibilitychange", onHidden);
       window.speechSynthesis?.cancel();
       audioRef.current?.pause();
+      // Revoke any Object URL to prevent memory leak
+      if (objectUrlRef.current) {
+        URL.revokeObjectURL(objectUrlRef.current);
+        objectUrlRef.current = null;
+      }
     };
   }, []);
 
@@ -61,14 +69,31 @@ export function ListenButton({
       set("loading");
       try {
         const blob = await apiPostBlob(endpoint, { text: content });
-        const audio = new Audio(URL.createObjectURL(blob));
+        if (objectUrlRef.current) {
+          URL.revokeObjectURL(objectUrlRef.current);
+        }
+        const url = URL.createObjectURL(blob);
+        objectUrlRef.current = url;
+        const audio = new Audio(url);
         audioRef.current = audio;
         audio.onended = () => set("idle");
         await audio.play();
         set("playing");
-      } catch {
+      } catch (err) {
+        console.error("TTS fetch error:", err);
         set("idle");
       }
+      return;
+    }
+
+    // Check speechSynthesis availability
+    if (typeof window === "undefined" || !window.speechSynthesis) {
+      console.warn("Speech synthesis not available");
+      return;
+    }
+
+    // Empty text causes onend to never fire, leaving status stuck
+    if (!content.trim()) {
       return;
     }
 
@@ -107,13 +132,7 @@ export function ListenButton({
       type="button"
       onClick={toggle}
       aria-label={playing ? "Pause article audio" : "Listen to article"}
-      className={cn(
-        "inline-flex items-center gap-2 border border-current/20 px-3 py-2",
-        "font-mono text-[12px] uppercase tracking-[0.06em]",
-        "transition-colors hover:border-current/40",
-        "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blog-ring-teal",
-        className,
-      )}
+      className={cn(actionButtonClass, className)}
     >
       {playing ? <Pause size={14} /> : <Play size={14} />}
       {status === "loading" ? "Loading" : playing ? "Pause" : "Listen"}
