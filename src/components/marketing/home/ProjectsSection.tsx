@@ -2,23 +2,36 @@ import { SwarmSlot } from "./swarm/SwarmSlot";
 import { cn } from "@/lib/utils";
 import { TagChip } from "../ui/TagChip";
 
-const PROJECTS = [
+type ProjectStatus = "concept" | "validation" | "prototype" | "private-beta" | "design-partner";
+
+const PROJECTS: { name: string; description: string; tags: string[]; status: ProjectStatus }[] = [
   {
     name: "Silent Markets",
     description: "Agent-paired trading journal for web3. Cross-chain from day one.",
     tags: ["Trading", "Agents", "Cross-Chain"],
+    status: "prototype",
   },
   {
     name: "Anon Capital",
     description: "DAO infrastructure for structured earnings remittance.",
     tags: ["DAO", "Infrastructure"],
+    status: "validation",
   },
   {
     name: "Crown Futures",
-    description: "Enterprise-scale web3 trading infrastructure with institutional controls.",
-    tags: ["Enterprise", "Institutional"],
+    description: "Institutional web3 trading infrastructure with governed agent workflows.",
+    tags: ["Institutional", "Governance"],
+    status: "design-partner",
   },
 ];
+
+const STATUS_LABELS: Record<ProjectStatus, string> = {
+  concept: "Concept",
+  validation: "Validation",
+  prototype: "Prototype",
+  "private-beta": "Private Beta",
+  "design-partner": "Design Partner",
+};
 
 export function ProjectsSection() {
   return (
@@ -53,15 +66,20 @@ export function ProjectsSection() {
                 )}
               >
                 <div className="p-6 md:p-8">
-                  <h3 className="font-display text-lg font-semibold text-foreground mb-2">
-                    <span className="relative inline-block">
-                      {p.name}
-                      <span
-                        aria-hidden
-                        className="absolute -bottom-0.5 left-0 h-px w-full origin-left scale-x-0 bg-accent motion-safe:transition-transform motion-safe:duration-200 motion-safe:ease-out group-hover/card:scale-x-100"
-                      />
+                  <div className="flex items-center gap-3 mb-2">
+                    <h3 className="font-display text-lg font-semibold text-foreground">
+                      <span className="relative inline-block">
+                        {p.name}
+                        <span
+                          aria-hidden
+                          className="absolute -bottom-0.5 left-0 h-px w-full origin-left scale-x-0 bg-accent motion-safe:transition-transform motion-safe:duration-200 motion-safe:ease-out group-hover/card:scale-x-100"
+                        />
+                      </span>
+                    </h3>
+                    <span className="font-mono text-[9px] text-accent tracking-splice-ultra uppercase px-2 py-0.5 border border-accent/30 bg-accent/5">
+                      {STATUS_LABELS[p.status]}
                     </span>
-                  </h3>
+                  </div>
                   <p className="text-sm text-foreground/70 leading-relaxed">
                     {p.description}
                   </p>
