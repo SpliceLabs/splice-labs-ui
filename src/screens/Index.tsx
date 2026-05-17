@@ -1,19 +1,13 @@
 "use client";
 
-import { SiteNav } from "@/components/marketing/SiteNav";
-import { SiteFooter } from "@/components/marketing/SiteFooter";
+import { MarketingLayout } from "@/components/marketing/MarketingLayout";
 import { HomePage } from "@/components/marketing/home/HomePage";
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-background">
-      <SiteNav />
-
-      {/* Add spacing for fixed header + version bar */}
-      
+    <MarketingLayout>
       <HomePage />
-      <SiteFooter />
-    </div>
+    </MarketingLayout>
   );
 };
 

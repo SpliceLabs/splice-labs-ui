@@ -1,7 +1,6 @@
 "use client";
 
-import { SiteNav } from "@/components/marketing/SiteNav";
-import { SiteFooter } from "@/components/marketing/SiteFooter";
+import { MarketingLayout } from "@/components/marketing/MarketingLayout";
 import { TerminalButton } from "@/components/marketing/ui/TerminalButton";
 
 const WHO_SHOULD_PARTNER = [
@@ -40,8 +39,7 @@ const CONFIDENTIALITY = [
 
 export default function ForPartnersScreen() {
   return (
-    <main className="min-h-screen bg-background text-foreground">
-      <SiteNav />
+    <MarketingLayout>
 
       <section className="pt-32 pb-20 md:pt-44 md:pb-28 px-6 md:px-8 max-w-[900px] mx-auto">
         {/* Hero */}
@@ -120,7 +118,6 @@ export default function ForPartnersScreen() {
         </div>
       </section>
 
-      <SiteFooter />
-    </main>
+    </MarketingLayout>
   );
 }
