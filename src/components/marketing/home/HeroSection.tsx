@@ -29,23 +29,25 @@ export function HeroSection() {
           />
         </div>
 
-        <h1
-          className="font-display text-4xl md:text-6xl lg:text-[4.5rem] font-bold tracking-splice-tight text-foreground leading-[1.02] mb-2 max-w-[900px] motion-safe:animate-fade-up"
-          style={{ animationDelay: "80ms" }}
-        >
-          Protocol and<br />Systems Design.
-        </h1>
-        <h1
-          className="font-display text-4xl md:text-6xl lg:text-[4.5rem] font-bold tracking-splice-tight text-accent leading-[1.02] mb-8 max-w-[900px] motion-safe:animate-fade-up"
-          style={{ animationDelay: "160ms" }}
-        >
-          <span className="relative inline-block">
-            Prototype the Future.
-            <span
-              aria-hidden
-              style={{ animationDelay: "640ms" }}
-              className="absolute -bottom-1 left-0 h-0.5 w-full origin-left bg-accent motion-safe:scale-x-0 motion-safe:animate-draw"
-            />
+        <h1 className="font-display text-4xl md:text-6xl lg:text-[4.5rem] font-bold tracking-splice-tight leading-[1.02] mb-8 max-w-[900px]">
+          <span
+            className="block text-foreground mb-2 motion-safe:animate-fade-up"
+            style={{ animationDelay: "80ms" }}
+          >
+            Protocol and<br />Systems Design.
+          </span>
+          <span
+            className="block text-accent motion-safe:animate-fade-up"
+            style={{ animationDelay: "160ms" }}
+          >
+            <span className="relative inline-block">
+              Prototype the Future.
+              <span
+                aria-hidden
+                style={{ animationDelay: "640ms" }}
+                className="absolute -bottom-1 left-0 h-0.5 w-full origin-left bg-accent motion-safe:scale-x-0 motion-safe:animate-draw"
+              />
+            </span>
           </span>
         </h1>
 
@@ -82,7 +84,7 @@ export function HeroSection() {
           style={{ animationDelay: "400ms" }}
         >
           <span className="w-8 h-px bg-accent/30" />
-          <span className="font-mono text-[8px] text-muted-foreground/60 tracking-splice-ultra uppercase">
+          <span className="font-mono text-micro text-muted-foreground/60 tracking-splice-ultra uppercase">
             Prototypes first · Cross-chain by default · Security built in
           </span>
           <span className="flex-1 h-px bg-surface-border" />

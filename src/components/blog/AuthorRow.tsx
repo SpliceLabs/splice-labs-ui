@@ -47,7 +47,7 @@ export function AuthorRow({
         </span>
       ))}
       {(date || readingTime) && (
-        <span className="font-mono text-[12px] uppercase tracking-[0.06em] text-blog-text-muted">
+        <span className="font-mono text-xs uppercase tracking-splice-label text-blog-text-muted">
           {[date, readingTime].filter(Boolean).join("  ·  ")}
         </span>
       )}

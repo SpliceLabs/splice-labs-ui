@@ -21,7 +21,7 @@ export { useInViewOnce } from "./hooks/useInViewOnce";
 export { LabelChip, type LabelChipProps } from "./LabelChip";
 export { IconPlate, type IconPlateProps } from "./IconPlate";
 export { CoverTile, type CoverTileProps } from "./CoverTile";
-export { ModuleLabel, type ModuleLabelProps } from "./ModuleLabel";
+export { BlogEyebrow, type BlogEyebrowProps } from "./BlogEyebrow";
 export { HairlineDivider, type HairlineDividerProps } from "./HairlineDivider";
 export { TagPill, type TagPillProps } from "./TagPill";
 export { Crumb, type CrumbProps } from "./Crumb";

@@ -1,6 +1,6 @@
 import { cn } from "@/lib/utils";
 import { HairlineDivider } from "./HairlineDivider";
-import { ModuleLabel } from "./ModuleLabel";
+import { BlogEyebrow } from "./BlogEyebrow";
 import { PostCard } from "./PostCard";
 import type { PostCardData } from "./types";
 
@@ -21,9 +21,9 @@ export function ReadMoreBand({
       className={cn("bg-blog-graphite text-blog-text-paper", className)}
     >
       <div className="mx-auto flex max-w-[1200px] flex-col gap-8 px-8 py-16">
-        <ModuleLabel dot caret>
+        <BlogEyebrow dot caret>
           {title}
-        </ModuleLabel>
+        </BlogEyebrow>
         <HairlineDivider surface="graphite" />
         <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
           {posts.slice(0, 3).map((post, i) => (

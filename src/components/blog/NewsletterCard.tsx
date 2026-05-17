@@ -1,7 +1,7 @@
 import { cn } from "@/lib/utils";
 import { useState } from "react";
 import { LabelChip } from "./LabelChip";
-import { ModuleLabel } from "./ModuleLabel";
+import { BlogEyebrow } from "./BlogEyebrow";
 import type { Surface } from "./types";
 
 export interface NewsletterCardProps {
@@ -47,8 +47,8 @@ export function NewsletterCard({
         className,
       )}
     >
-      <ModuleLabel dot>Subscribe</ModuleLabel>
-      <h3 className="font-display text-xl font-semibold tracking-[-0.02em]">
+      <BlogEyebrow dot>Subscribe</BlogEyebrow>
+      <h3 className="font-display text-xl font-semibold tracking-splice-snug">
         {title}
       </h3>
       <p className="font-display text-sm leading-relaxed text-blog-text-muted">
@@ -70,19 +70,19 @@ export function NewsletterCard({
               placeholder="founder@yourdomain.com"
               disabled={status === "submitting"}
               aria-invalid={status === "error"}
-              className="w-full border border-current/20 bg-transparent px-3 py-2 font-mono text-[13px] outline-none placeholder:text-blog-text-muted focus-visible:ring-2 focus-visible:ring-blog-ring-teal disabled:opacity-50"
+              className="w-full border border-current/20 bg-transparent px-3 py-2 font-mono text-code outline-none placeholder:text-blog-text-muted focus-visible:ring-2 focus-visible:ring-blog-ring-teal disabled:opacity-50"
             />
             <button
               type="submit"
               disabled={status === "submitting"}
-              className="shrink-0 bg-blog-chip-ink px-4 py-2 font-mono text-[12px] uppercase tracking-[0.06em] text-blog-chip-text transition-opacity hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blog-ring-teal disabled:cursor-not-allowed disabled:opacity-50"
+              className="shrink-0 bg-blog-chip-ink px-4 py-2 font-mono text-xs uppercase tracking-splice-label text-blog-chip-text transition-opacity hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blog-ring-teal disabled:cursor-not-allowed disabled:opacity-50"
             >
               {status === "submitting" ? "Requesting…" : "Request access"}
             </button>
           </div>
           <p
             aria-live="polite"
-            className="min-h-[1rem] font-mono text-[11px] tracking-[0.04em]"
+            className="min-h-[1rem] font-mono text-meta tracking-splice-label"
           >
             {status === "error" && "Something went wrong — please try again."}
           </p>

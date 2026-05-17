@@ -69,11 +69,21 @@ export default function RootLayout({ children }: { children: ReactNode }) {
       className={`${spaceGrotesk.variable} ${spaceMono.variable}`}
     >
       <body>
+        <a
+          href="#main-content"
+          className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:bg-accent focus:px-4 focus:py-2 focus:font-mono focus:text-meta focus:uppercase focus:tracking-splice-wide focus:text-accent-foreground"
+        >
+          Skip to content
+        </a>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
-        <Providers>{children}</Providers>
+        <Providers>
+          <div id="main-content" tabIndex={-1}>
+            {children}
+          </div>
+        </Providers>
       </body>
     </html>
   );

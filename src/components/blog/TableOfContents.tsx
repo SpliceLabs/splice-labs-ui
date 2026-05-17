@@ -1,6 +1,6 @@
 import { cn } from "@/lib/utils";
 import { useEffect, useState } from "react";
-import { ModuleLabel } from "./ModuleLabel";
+import { BlogEyebrow } from "./BlogEyebrow";
 
 export interface TocItem {
   id: string;
@@ -58,14 +58,14 @@ export function TableOfContents({
       aria-label="Table of contents"
       className={cn("sticky top-24 flex flex-col gap-3", className)}
     >
-      <ModuleLabel>{title}</ModuleLabel>
+      <BlogEyebrow>{title}</BlogEyebrow>
       <ul className="flex flex-col gap-1.5">
         {items.map((item) => (
           <li key={item.id}>
             <a
               href={`#${item.id}`}
               className={cn(
-                "block font-mono text-[12px] leading-snug tracking-[0.04em] transition-opacity",
+                "block font-mono text-xs leading-snug tracking-splice-label transition-opacity",
                 item.level === 3 && "pl-4",
                 activeId === item.id
                   ? "text-current opacity-100"

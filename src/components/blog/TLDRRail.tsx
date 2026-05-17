@@ -1,5 +1,5 @@
 import { cn } from "@/lib/utils";
-import { ModuleLabel } from "./ModuleLabel";
+import { BlogEyebrow } from "./BlogEyebrow";
 import type { Surface } from "./types";
 
 export interface TLDRSource {
@@ -31,12 +31,12 @@ export function TLDRRail({
         className,
       )}
     >
-      <ModuleLabel dot>TL;DR</ModuleLabel>
+      <BlogEyebrow dot>TL;DR</BlogEyebrow>
       <p className="font-display text-sm leading-relaxed">{summary}</p>
 
       {sources && sources.length > 0 && (
         <div className="flex flex-col gap-2">
-          <ModuleLabel>Sources</ModuleLabel>
+          <BlogEyebrow>Sources</BlogEyebrow>
           <ul className="flex flex-col gap-1.5">
             {sources.map((s) => (
               <li key={s.href}>

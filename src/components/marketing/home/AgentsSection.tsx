@@ -1,4 +1,5 @@
 import { SwarmSlot } from "./swarm/SwarmSlot";
+import { SectionHeading } from "../ui/SectionHeading";
 import { ModuleLabel } from "../ui/ModuleLabel";
 
 const AGENTS = [
@@ -22,9 +23,9 @@ export function AgentsSection() {
          <div className="w-full max-w-[600px]">
           <ModuleLabel variant="eyebrow" spine="right" name="agents" className="mb-10" />
 
-          <h2 className="font-display text-2xl md:text-3xl font-semibold tracking-splice-tight text-foreground mb-4">
+          <SectionHeading className="mb-4">
             Agents With Boundaries
-          </h2>
+          </SectionHeading>
           <p className="text-sm text-foreground/70 leading-relaxed max-w-[540px] mb-10">
             Every agent operates with scoped permissions and logged actions.
           </p>
@@ -40,11 +41,11 @@ export function AgentsSection() {
               >
                 <div className="flex items-center gap-2 mb-2">
                   <span className="w-1.5 h-1.5 bg-accent/50" />
-                  <span className="font-mono text-[10px] text-foreground/70 tracking-splice-wide uppercase">
+                  <span className="font-mono text-label text-foreground/70 tracking-splice-wide uppercase">
                     {a.type}
                   </span>
                 </div>
-                <span className="font-mono text-[9px] text-muted-foreground/60 tracking-splice-wide">
+                <span className="font-mono text-eyebrow text-muted-foreground/60 tracking-splice-wide">
                   {a.scope}
                 </span>
               </div>

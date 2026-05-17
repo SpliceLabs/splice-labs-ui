@@ -33,7 +33,7 @@ export function TitleSlide({ slideNumber, totalSlides }: SlideProps) {
         </div>
         <div className="flex items-center gap-3 mt-auto">
           <span className="w-8 h-px bg-accent/30" />
-          <span className="font-mono text-[11px] text-muted-foreground/40 tracking-splice-wide">
+          <span className="font-mono text-meta text-muted-foreground/40 tracking-splice-wide">
             [INSERT date] · Seed Round · Confidential
           </span>
         </div>
@@ -142,7 +142,7 @@ export function ProductSlide({ slideNumber, totalSlides }: SlideProps) {
       <div className="flex flex-wrap gap-4">
         {steps.map((s, i) => (
           <div key={i} className="flex items-start gap-3 flex-1 min-w-[200px] border border-surface-border p-4">
-            <span className="font-mono text-[10px] text-accent/60 tracking-splice-wide mt-0.5">
+            <span className="font-mono text-label text-accent/60 tracking-splice-wide mt-0.5">
               {String(i + 1).padStart(2, "0")}
             </span>
             <div>
@@ -167,13 +167,13 @@ export function HowItWorksSlide({ slideNumber, totalSlides }: SlideProps) {
         <table className="w-full text-sm">
           <thead>
             <tr className="border-b border-surface-border">
-              <th className="text-left font-mono text-[10px] text-accent/60 tracking-splice-wide uppercase py-3 pr-6">
+              <th className="text-left font-mono text-label text-accent/60 tracking-splice-wide uppercase py-3 pr-6">
                 Project
               </th>
-              <th className="text-left font-mono text-[10px] text-accent/60 tracking-splice-wide uppercase py-3 pr-6">
+              <th className="text-left font-mono text-label text-accent/60 tracking-splice-wide uppercase py-3 pr-6">
                 Status
               </th>
-              <th className="text-left font-mono text-[10px] text-accent/60 tracking-splice-wide uppercase py-3">
+              <th className="text-left font-mono text-label text-accent/60 tracking-splice-wide uppercase py-3">
                 Signal
               </th>
             </tr>
@@ -257,7 +257,7 @@ export function TractionSlide({ slideNumber, totalSlides }: SlideProps) {
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
         {streams.map((s, i) => (
           <div key={i} className="border border-surface-border p-6">
-            <span className="font-mono text-[9px] text-accent/50 tracking-splice-ultra uppercase block mb-3">
+            <span className="font-mono text-eyebrow text-accent/50 tracking-splice-ultra uppercase block mb-3">
               {s.horizon}
             </span>
             <h3 className="font-display text-sm font-semibold text-foreground mb-2">{s.title}</h3>
@@ -291,7 +291,7 @@ export function TeamSlide({ slideNumber, totalSlides }: SlideProps) {
               className="absolute border border-accent/20 flex items-end justify-center pb-3"
               style={{ width: c.size, height: c.size }}
             >
-              <span className="font-mono text-[9px] text-accent/40 tracking-splice-wide">{c.label}</span>
+              <span className="font-mono text-eyebrow text-accent/40 tracking-splice-wide">{c.label}</span>
             </div>
           ))}
         </div>
@@ -305,7 +305,7 @@ export function TeamSlide({ slideNumber, totalSlides }: SlideProps) {
             { label: "SOM", desc: "Serviceable market in [INSERT timeframe]." },
           ].map((m) => (
             <div key={m.label} className="border border-surface-border p-4">
-              <span className="font-mono text-[10px] text-accent/60 tracking-splice-wide uppercase block mb-2">
+              <span className="font-mono text-label text-accent/60 tracking-splice-wide uppercase block mb-2">
                 {m.label}
               </span>
               <p className="text-xs text-muted-foreground/70 mb-2">{m.desc}</p>
@@ -335,7 +335,7 @@ export function TeamFoundersSlide({ slideNumber, totalSlides }: SlideProps) {
               <div className="w-4 h-4 bg-accent/10" />
             </div>
             <h3 className="font-display text-sm font-semibold text-foreground mb-1">[INSERT Founder {i} Name]</h3>
-            <span className="font-mono text-[10px] text-accent/50 tracking-splice-wide block mb-4">[INSERT title]</span>
+            <span className="font-mono text-label text-accent/50 tracking-splice-wide block mb-4">[INSERT title]</span>
             <p className="text-xs text-muted-foreground/70 leading-relaxed">
               [INSERT 1-line credential: what they built before, domain expertise]
             </p>
@@ -365,7 +365,7 @@ export function AskSlide({ slideNumber, totalSlides }: SlideProps) {
             { label: "Key milestones", value: "[INSERT 3 milestones]" },
           ].map((item) => (
             <div key={item.label} className="border-l-2 border-accent/20 pl-6 py-2">
-              <span className="font-mono text-[10px] text-accent/60 tracking-splice-wide uppercase block mb-2">
+              <span className="font-mono text-label text-accent/60 tracking-splice-wide uppercase block mb-2">
                 {item.label}
               </span>
               <p className="text-sm text-foreground/80">{item.value}</p>
@@ -374,17 +374,17 @@ export function AskSlide({ slideNumber, totalSlides }: SlideProps) {
         </div>
         <div className="flex gap-3 mt-4">
           <div className="h-10 px-6 bg-accent/20 border border-accent/30 flex items-center">
-            <span className="font-mono text-[11px] text-accent tracking-splice-wide uppercase">[INSERT email]</span>
+            <span className="font-mono text-meta text-accent tracking-splice-wide uppercase">[INSERT email]</span>
           </div>
           <div className="h-10 px-6 border border-surface-border flex items-center">
-            <span className="font-mono text-[11px] text-muted-foreground/50 tracking-splice-wide uppercase">
+            <span className="font-mono text-meta text-muted-foreground/50 tracking-splice-wide uppercase">
               [INSERT scheduling link]
             </span>
           </div>
         </div>
         <div className="flex items-center gap-3 mt-auto">
           <span className="w-8 h-px bg-accent/30" />
-          <span className="font-mono text-[11px] text-muted-foreground/30">Confidential · Splice Labs</span>
+          <span className="font-mono text-meta text-muted-foreground/30">Confidential · Splice Labs</span>
           <span className="flex-1 h-px bg-surface-border" />
         </div>
       </div>

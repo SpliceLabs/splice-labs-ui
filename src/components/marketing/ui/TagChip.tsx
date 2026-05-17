@@ -15,7 +15,7 @@ export function TagChip({ children, className }: TagChipProps) {
     <span
       className={cn(
         "inline-flex items-center border border-accent/20 px-2.5 py-1",
-        "font-mono text-[9px] uppercase tracking-splice-wide text-accent",
+        "font-mono text-eyebrow uppercase tracking-splice-wide text-accent",
         "transition-colors duration-150 group-hover/card:border-accent/40",
         className,
       )}

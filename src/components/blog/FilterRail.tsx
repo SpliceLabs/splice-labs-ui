@@ -1,5 +1,5 @@
 import { cn } from "@/lib/utils";
-import { ModuleLabel } from "./ModuleLabel";
+import { BlogEyebrow } from "./BlogEyebrow";
 import { TagPill } from "./TagPill";
 
 export interface FilterGroup {
@@ -26,7 +26,7 @@ export function FilterRail({
     <aside className={cn("flex flex-col gap-8", className)}>
       {groups.map((group) => (
         <div key={group.label} className="flex flex-col gap-3">
-          <ModuleLabel dot>{group.label}</ModuleLabel>
+          <BlogEyebrow dot>{group.label}</BlogEyebrow>
           <div className="flex flex-col items-start gap-1">
             {group.options.map((option) => (
               <TagPill

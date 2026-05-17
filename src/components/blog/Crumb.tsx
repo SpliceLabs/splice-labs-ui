@@ -14,7 +14,7 @@ export function Crumb({ segments, className }: CrumbProps) {
     <nav
       aria-label="Breadcrumb"
       className={cn(
-        "flex flex-wrap items-center gap-2 font-mono text-[12px] uppercase leading-none tracking-[0.06em]",
+        "flex flex-wrap items-center gap-2 font-mono text-xs uppercase leading-none tracking-splice-label",
         className,
       )}
     >

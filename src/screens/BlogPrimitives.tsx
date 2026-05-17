@@ -7,7 +7,7 @@ import {
   HairlineDivider,
   IconPlate,
   LabelChip,
-  ModuleLabel,
+  BlogEyebrow,
   TagPill,
 } from "@/components/blog";
 import type { Surface } from "@/components/blog";
@@ -20,7 +20,7 @@ import { useState } from "react";
 function Row({ label, children }: { label: string; children: React.ReactNode }) {
   return (
     <div className="flex flex-col gap-3">
-      <ModuleLabel dot>{label}</ModuleLabel>
+      <BlogEyebrow dot>{label}</BlogEyebrow>
       <div className="flex flex-wrap items-center gap-4">{children}</div>
     </div>
   );
@@ -40,10 +40,10 @@ function Showcase({ surface }: { surface: Surface }) {
     >
       <div className="mx-auto flex max-w-[1100px] flex-col gap-12 px-8 py-20">
         <div className="flex flex-col gap-2">
-          <ModuleLabel caret>
+          <BlogEyebrow caret>
             {surface === "graphite" ? "SURFACE :: GRAPHITE" : "SURFACE :: PAPER"}
-          </ModuleLabel>
-          <h2 className="font-display text-3xl font-semibold tracking-[-0.03em]">
+          </BlogEyebrow>
+          <h2 className="font-display text-3xl font-semibold tracking-splice-snug">
             Blog Primitives
           </h2>
         </div>
@@ -66,11 +66,11 @@ function Showcase({ surface }: { surface: Surface }) {
         </Row>
 
         <Row label="MODULE LABEL">
-          <ModuleLabel>READ MORE</ModuleLabel>
-          <ModuleLabel dot>02 / FILTER RAIL</ModuleLabel>
-          <ModuleLabel dot caret>
+          <BlogEyebrow>READ MORE</BlogEyebrow>
+          <BlogEyebrow dot>02 / FILTER RAIL</BlogEyebrow>
+          <BlogEyebrow dot caret>
             GET TLDR FROM:
-          </ModuleLabel>
+          </BlogEyebrow>
         </Row>
 
         <Row label="TAG PILL">
@@ -96,7 +96,7 @@ function Showcase({ surface }: { surface: Surface }) {
         </Row>
 
         <div className="flex flex-col gap-3">
-          <ModuleLabel dot>COVER TILE</ModuleLabel>
+          <BlogEyebrow dot>COVER TILE</BlogEyebrow>
           <div className="grid grid-cols-2 gap-6 md:grid-cols-4">
             <CoverTile tone="teal" texture="halftone">
               <IconPlate icon={<Workflow size={18} />} overlap />

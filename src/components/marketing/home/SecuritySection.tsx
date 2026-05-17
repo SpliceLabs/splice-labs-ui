@@ -1,4 +1,5 @@
 import { SwarmSlot } from "./swarm/SwarmSlot";
+import { SectionHeading } from "../ui/SectionHeading";
 import { ModuleLabel } from "../ui/ModuleLabel";
 
 export function SecuritySection() {
@@ -13,9 +14,9 @@ export function SecuritySection() {
          <div className="w-full max-w-[600px]">
           <ModuleLabel variant="eyebrow" spine="left" name="security" className="mb-10" />
 
-          <h2 className="font-display text-2xl md:text-3xl font-semibold tracking-splice-tight text-foreground mb-10">
+          <SectionHeading className="mb-10">
             Security by Design
-          </h2>
+          </SectionHeading>
 
           {/* Three pillars with connecting lines */}
           <div className="grid grid-cols-1 gap-0">
@@ -28,7 +29,7 @@ export function SecuritySection() {
                 <div className="flex-1 p-6 md:p-8 border border-surface-border -mt-px first:mt-0 transition-colors hover:border-accent/40">
                   <div className="flex items-center gap-2 mb-3">
                     <span className="w-6 h-px bg-accent/40" />
-                    <span className="font-mono text-[11px] text-accent tracking-splice-wide uppercase">
+                    <span className="font-mono text-meta text-accent tracking-splice-wide uppercase">
                       {item.label}
                     </span>
                   </div>
@@ -42,7 +43,7 @@ export function SecuritySection() {
 
           <div className="flex items-center gap-3 mt-8">
             <span className="w-12 h-px bg-accent/15" />
-            <span className="font-mono text-[9px] text-muted-foreground/60 tracking-splice-wide">
+            <span className="font-mono text-eyebrow text-muted-foreground/60 tracking-splice-wide">
               No mystery deployments.
             </span>
           </div>

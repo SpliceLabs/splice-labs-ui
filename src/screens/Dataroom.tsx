@@ -92,7 +92,7 @@ const PRIORITIES = [
 
 function StatusBadge({ status }: { status: string }) {
   return (
-    <span className={`inline-flex items-center font-mono text-[9px] tracking-splice-wide uppercase px-2 py-0.5 ${STATUS_COLORS[status] || "bg-muted text-muted-foreground"}`}>
+    <span className={`inline-flex items-center font-mono text-eyebrow tracking-splice-wide uppercase px-2 py-0.5 ${STATUS_COLORS[status] || "bg-muted text-muted-foreground"}`}>
       {status}
     </span>
   );
@@ -111,7 +111,7 @@ export default function Dataroom() {
         <div className="pl-8 md:pl-12">
           <div className="flex items-center gap-4 mb-10">
             <div className="w-3 h-3 border border-accent bg-accent/10 -ml-[calc(2rem+6px)] md:-ml-[calc(3rem+6px)]" />
-            <span className="font-mono text-[9px] text-accent/60 tracking-splice-ultra uppercase">
+            <span className="font-mono text-eyebrow text-accent/60 tracking-splice-ultra uppercase">
               module::dataroom
             </span>
             <span className="flex-1 h-px bg-gradient-to-r from-accent/20 to-transparent" />
@@ -123,7 +123,7 @@ export default function Dataroom() {
           <p className="text-sm text-foreground/50 leading-relaxed max-w-[600px] mb-2">
             Documentation for Splice Labs, a protocol and systems design foundry building agent-native AI and DeFi infrastructure. Our flagship product, HELIOS, provides secure multi-agent orchestration for DeFi with zero-trust architecture.
           </p>
-          <p className="font-mono text-[10px] text-muted-foreground tracking-splice-wide uppercase">
+          <p className="font-mono text-label text-muted-foreground tracking-splice-wide uppercase">
             Last Updated: March 4, 2026
           </p>
         </div>
@@ -134,7 +134,7 @@ export default function Dataroom() {
         <section key={section.number} className="border-t border-surface-border">
           <div className="container-content py-12 md:py-16">
             <div className="flex items-center gap-3 mb-8">
-              <span className="font-mono text-[11px] text-accent tracking-splice-ultra">{section.number}</span>
+              <span className="font-mono text-meta text-accent tracking-splice-ultra">{section.number}</span>
               <h2 className="font-display text-xl md:text-2xl font-semibold tracking-splice-tight text-foreground">
                 {section.title}
               </h2>
@@ -183,7 +183,7 @@ export default function Dataroom() {
                         <div key={sub.name}>
                           <div className="flex items-center gap-2 mb-1">
                             <span className="text-sm font-medium text-foreground/70">{sub.name}</span>
-                            <span className="font-mono text-[8px] text-muted-foreground/50 tracking-splice-wide uppercase">{sub.status}</span>
+                            <span className="font-mono text-micro text-muted-foreground/50 tracking-splice-wide uppercase">{sub.status}</span>
                           </div>
                           <p className="text-xs text-foreground/40">{sub.description}</p>
                           {sub.bullets && (
@@ -215,11 +215,11 @@ export default function Dataroom() {
           <div className="grid md:grid-cols-3 gap-6">
             {PRIORITIES.map((p) => (
               <div key={p.level} className="border border-surface-border p-5 md:p-6 card-lift">
-                <h3 className="font-mono text-[10px] text-accent tracking-splice-ultra uppercase mb-4">{p.level}</h3>
+                <h3 className="font-mono text-label text-accent tracking-splice-ultra uppercase mb-4">{p.level}</h3>
                 <ol className="space-y-2">
                   {p.items.map((item, i) => (
                     <li key={i} className="text-sm text-foreground/50 flex items-start gap-2">
-                      <span className="font-mono text-[10px] text-foreground/30 mt-0.5">{i + 1}.</span>
+                      <span className="font-mono text-label text-foreground/30 mt-0.5">{i + 1}.</span>
                       {item}
                     </li>
                   ))}
@@ -233,7 +233,7 @@ export default function Dataroom() {
       {/* Status Key */}
       <section className="border-t border-surface-border">
         <div className="container-content py-12 md:py-16">
-          <h3 className="font-mono text-[10px] text-muted-foreground tracking-splice-ultra uppercase mb-4">Document Status Key</h3>
+          <h3 className="font-mono text-label text-muted-foreground tracking-splice-ultra uppercase mb-4">Document Status Key</h3>
           <div className="flex flex-wrap gap-4">
             {Object.keys(STATUS_COLORS).map((s) => (
               <div key={s} className="flex items-center gap-2">

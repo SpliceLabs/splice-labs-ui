@@ -46,13 +46,13 @@ export function PostCard({
         )}
       </CoverTile>
 
-      <div className="mt-4 flex items-center gap-2 font-mono text-[12px] uppercase leading-none tracking-[0.06em] text-blog-text-muted">
+      <div className="mt-4 flex items-center gap-2 font-mono text-xs uppercase leading-none tracking-splice-label text-blog-text-muted">
         <span>{date}</span>
         <span aria-hidden>·</span>
         <span>{category}</span>
       </div>
 
-      <h3 className="mt-2 font-display text-xl font-semibold leading-tight tracking-[-0.02em]">
+      <h3 className="mt-2 font-display text-xl font-semibold leading-tight tracking-splice-snug">
         <span className="relative inline">
           {title}
           <span

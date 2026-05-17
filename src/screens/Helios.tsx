@@ -66,7 +66,7 @@ export default function Helios() {
           {/* Junction node */}
           <div className="flex items-center gap-4 mb-10">
             <div className="w-3 h-3 border border-accent bg-accent/10 -ml-[calc(2rem+6px)] md:-ml-[calc(3rem+6px)]" />
-            <span className="font-mono text-[9px] text-accent/60 tracking-splice-ultra uppercase">
+            <span className="font-mono text-eyebrow text-accent/60 tracking-splice-ultra uppercase">
               module::platform
             </span>
             <span className="flex-1 h-px bg-gradient-to-r from-accent/20 to-transparent" />
@@ -112,7 +112,7 @@ export default function Helios() {
       {/* ── SECURITY PRIMITIVES ── */}
       <section className="border-t border-surface-border">
         <div className="container-content py-20 md:py-28">
-          <div className="font-mono text-[10px] text-muted-foreground tracking-splice-ultra uppercase mb-3">
+          <div className="font-mono text-label text-muted-foreground tracking-splice-ultra uppercase mb-3">
             Core Capabilities
           </div>
           <h2 className="font-display text-2xl md:text-3xl font-semibold tracking-splice-tight text-foreground mb-4">
@@ -126,7 +126,7 @@ export default function Helios() {
             {PRIMITIVES.map((p) => (
               <div key={p.number} className="bg-background p-6 md:p-8">
                 <div className="flex items-center gap-3 mb-4">
-                  <span className="font-mono text-[10px] text-accent tracking-splice-ultra">{p.number}</span>
+                  <span className="font-mono text-label text-accent tracking-splice-ultra">{p.number}</span>
                   <span className="h-px flex-1 bg-surface-border" />
                 </div>
                 <h3 className="font-display text-base md:text-lg font-semibold tracking-splice-tight text-foreground mb-3">
@@ -144,7 +144,7 @@ export default function Helios() {
       {/* ── LAYERED DEFENSE STACK ── */}
       <section className="border-t border-surface-border">
         <div className="container-content py-20 md:py-28">
-          <div className="font-mono text-[10px] text-muted-foreground tracking-splice-ultra uppercase mb-3">
+          <div className="font-mono text-label text-muted-foreground tracking-splice-ultra uppercase mb-3">
             Defense Model
           </div>
           <h2 className="font-display text-2xl md:text-3xl font-semibold tracking-splice-tight text-foreground mb-4">
@@ -161,7 +161,7 @@ export default function Helios() {
                 className="flex items-start gap-4 md:gap-6 bg-surface p-5 md:p-6 border-l-2 border-accent/30 hover:border-accent transition-colors"
                 style={{ marginLeft: `${i * 12}px` }}
               >
-                <span className="font-mono text-[11px] text-accent tracking-splice-wide shrink-0 mt-0.5">
+                <span className="font-mono text-meta text-accent tracking-splice-wide shrink-0 mt-0.5">
                   {l.layer}
                 </span>
                 <div>
@@ -184,7 +184,7 @@ export default function Helios() {
       {/* ── USE CASES ── */}
       <section id="use-cases" className="border-t border-surface-border">
         <div className="container-content py-20 md:py-28">
-          <div className="font-mono text-[10px] text-muted-foreground tracking-splice-ultra uppercase mb-3">
+          <div className="font-mono text-label text-muted-foreground tracking-splice-ultra uppercase mb-3">
             Applications
           </div>
           <h2 className="font-display text-2xl md:text-3xl font-semibold tracking-splice-tight text-foreground mb-12">

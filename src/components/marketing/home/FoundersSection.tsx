@@ -1,4 +1,5 @@
 import { SwarmSlot } from "./swarm/SwarmSlot";
+import { SectionHeading } from "../ui/SectionHeading";
 import { ModuleLabel } from "../ui/ModuleLabel";
 
 const FOUNDERS = [
@@ -31,9 +32,9 @@ export function FoundersSection() {
          <div className="w-full max-w-[600px]">
           <ModuleLabel variant="eyebrow" spine="right" name="team" className="mb-10" />
 
-          <h2 className="font-display text-2xl md:text-3xl font-semibold tracking-splice-tight text-foreground mb-12">
+          <SectionHeading className="mb-12">
             Built by Operators
-          </h2>
+          </SectionHeading>
 
           {/* Staggered founder cards */}
           <div className="space-y-6">
@@ -54,7 +55,7 @@ export function FoundersSection() {
                     </span>
                   </div>
                   <h3 className="font-display text-base font-semibold text-foreground">{f.name}</h3>
-                  <span className="font-mono text-[10px] text-accent tracking-splice-wide uppercase">{f.role}</span>
+                  <span className="font-mono text-label text-accent tracking-splice-wide uppercase">{f.role}</span>
                 </div>
                 <div className="p-6 md:p-8 flex items-center">
                   <p className="text-sm text-foreground/70 leading-relaxed">{f.bio}</p>

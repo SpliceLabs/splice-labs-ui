@@ -3,7 +3,7 @@ import type { ReactNode } from "react";
 import { CoverTile } from "./CoverTile";
 import { IconPlate } from "./IconPlate";
 import { LabelChip } from "./LabelChip";
-import { ModuleLabel } from "./ModuleLabel";
+import { BlogEyebrow } from "./BlogEyebrow";
 import type { Surface, TileTone } from "./types";
 
 export interface EbookCardProps {
@@ -49,7 +49,7 @@ export function EbookCard({
         </LabelChip>
       </CoverTile>
       <div className="flex flex-col gap-3 p-5">
-        <h3 className="font-display text-lg font-semibold leading-snug tracking-[-0.02em]">
+        <h3 className="font-display text-lg font-semibold leading-snug tracking-splice-snug">
           {title}
         </h3>
         {blurb && (
@@ -57,9 +57,9 @@ export function EbookCard({
             {blurb}
           </p>
         )}
-        <ModuleLabel caret className="mt-1">
+        <BlogEyebrow caret className="mt-1">
           {ctaLabel}
-        </ModuleLabel>
+        </BlogEyebrow>
       </div>
     </a>
   );

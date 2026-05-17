@@ -97,7 +97,7 @@ export function TerminalWordmark({ accent = false, scale = "header", animated = 
 
   if (scale === "product") {
     return (
-      <div className="inline-flex items-baseline font-mono text-[13px]">
+      <div className="inline-flex items-baseline font-mono text-code">
         <span style={{ color: base, opacity: 0.35 }}>›</span>
         <span style={{ color: base }} className="ml-1">splice</span>
         <span style={{ color: cursorColor }}>_</span>
@@ -141,11 +141,11 @@ export function TerminalWordmark({ accent = false, scale = "header", animated = 
         }}
       />
       {animated ? (
-        <span className="text-[10px] self-end ml-1" style={{ color: base, opacity: 0.4, letterSpacing: "0.18em" }}>
+        <span className="text-label self-end ml-1" style={{ color: base, opacity: 0.4, letterSpacing: "0.18em" }}>
           {displayed}
         </span>
       ) : (
-        <span className="text-[10px] self-end ml-1" style={{ color: base, opacity: 0.4, letterSpacing: "0.18em" }}>
+        <span className="text-label self-end ml-1" style={{ color: base, opacity: 0.4, letterSpacing: "0.18em" }}>
           labs
         </span>
       )}

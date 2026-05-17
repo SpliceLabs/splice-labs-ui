@@ -1,5 +1,5 @@
 import { cn } from "@/lib/utils";
-import { ModuleLabel } from "./ModuleLabel";
+import { BlogEyebrow } from "./BlogEyebrow";
 import type { Surface } from "./types";
 
 export interface QuickTakeawaysProps {
@@ -26,17 +26,17 @@ export function QuickTakeaways({
         className,
       )}
     >
-      <ModuleLabel className="mb-4">{title}</ModuleLabel>
+      <BlogEyebrow className="mb-4">{title}</BlogEyebrow>
       <ol className="flex flex-col gap-3">
         {items.map((item, i) => (
           <li key={i} className="flex gap-3">
             <span
               data-md-skip
-              className="font-mono text-[12px] leading-relaxed tracking-[0.06em] text-blog-text-muted"
+              className="font-mono text-xs leading-relaxed tracking-splice-label text-blog-text-muted"
             >
               {String(i + 1).padStart(2, "0")}
             </span>
-            <span className="font-display text-[15px] leading-relaxed">
+            <span className="font-display text-prose leading-relaxed">
               {item}
             </span>
           </li>

@@ -23,7 +23,7 @@ export function Pagination({
   className,
 }: PaginationProps) {
   const cell =
-    "grid h-10 min-w-10 place-items-center px-2 font-mono text-[12px] uppercase tracking-[0.06em] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blog-ring-teal disabled:opacity-30";
+    "grid h-10 min-w-10 place-items-center px-2 font-mono text-xs uppercase tracking-splice-label transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blog-ring-teal disabled:opacity-30";
 
   return (
     <nav

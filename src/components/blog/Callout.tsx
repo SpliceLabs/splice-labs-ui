@@ -23,7 +23,7 @@ export function Callout({
     <div
       {...rest}
       className={cn(
-        "border-l-2 py-1 pl-5 font-display text-[15px] leading-relaxed",
+        "border-l-2 py-1 pl-5 font-display text-prose leading-relaxed",
         tone === "quote" && "italic",
         barClasses[tone],
         className,

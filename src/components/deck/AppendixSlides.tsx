@@ -19,15 +19,15 @@ interface SlideProps {
 function MetricBlock({ label, value }: { label: string; value: string }) {
   return (
     <div className="border border-surface-border p-4">
-      <span className="font-mono text-[18px] font-bold text-foreground block mb-1">{value}</span>
-      <span className="font-mono text-[9px] text-accent/50 tracking-splice-wide uppercase">{label}</span>
+      <span className="font-mono text-lg font-bold text-foreground block mb-1">{value}</span>
+      <span className="font-mono text-eyebrow text-accent/50 tracking-splice-wide uppercase">{label}</span>
     </div>
   );
 }
 
 function Ins({ children }: { children: React.ReactNode }) {
   return (
-    <span className="text-accent/60 bg-accent/5 border border-accent/15 px-1.5 py-0.5 font-mono text-[10px]">
+    <span className="text-accent/60 bg-accent/5 border border-accent/15 px-1.5 py-0.5 font-mono text-label">
       {children}
     </span>
   );
@@ -40,7 +40,7 @@ export function HeliosAppendix(props: SlideProps) {
   return (
     <Slide id="helios" module="appendix::ip · helios" {...props}>
       <div className="flex items-center gap-3 mb-8">
-        <span className="font-mono text-[9px] text-accent/50 tracking-splice-ultra uppercase border border-accent/20 px-2 py-0.5">
+        <span className="font-mono text-eyebrow text-accent/50 tracking-splice-ultra uppercase border border-accent/20 px-2 py-0.5">
           Proprietary IP
         </span>
       </div>
@@ -84,7 +84,7 @@ export function AgaveAppendix(props: SlideProps) {
   return (
     <Slide id="agave" module="appendix::portfolio · agave" {...props}>
       <div className="flex items-center gap-3 mb-8">
-        <span className="font-mono text-[9px] text-accent/50 tracking-splice-ultra uppercase border border-accent/20 px-2 py-0.5">
+        <span className="font-mono text-eyebrow text-accent/50 tracking-splice-ultra uppercase border border-accent/20 px-2 py-0.5">
           Portfolio
         </span>
       </div>
@@ -98,7 +98,7 @@ export function AgaveAppendix(props: SlideProps) {
       {/* Architecture */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-10">
         <div>
-          <span className="font-mono text-[9px] text-accent/50 tracking-splice-ultra uppercase block mb-4">
+          <span className="font-mono text-eyebrow text-accent/50 tracking-splice-ultra uppercase block mb-4">
             System Architecture
           </span>
           <div className="space-y-2">
@@ -118,14 +118,14 @@ export function AgaveAppendix(props: SlideProps) {
         </div>
 
         <div>
-          <span className="font-mono text-[9px] text-accent/50 tracking-splice-ultra uppercase block mb-4">
+          <span className="font-mono text-eyebrow text-accent/50 tracking-splice-ultra uppercase block mb-4">
             Constraints Navigated
           </span>
           <div className="space-y-3">
             {constraints.map((c) => (
               <div key={c.title} className="border-l-2 border-accent/20 pl-4 py-1">
                 <h4 className="text-xs font-semibold text-foreground mb-0.5">{c.title}</h4>
-                <p className="text-[11px] text-muted-foreground/60 leading-relaxed">{c.desc}</p>
+                <p className="text-meta text-muted-foreground/60 leading-relaxed">{c.desc}</p>
               </div>
             ))}
           </div>
@@ -166,7 +166,7 @@ export function SilentMarketsAppendix(props: SlideProps) {
   return (
     <Slide id="silent-markets" module="appendix::portfolio · silent markets" {...props}>
       <div className="flex items-center gap-3 mb-8">
-        <span className="font-mono text-[9px] text-accent/50 tracking-splice-ultra uppercase border border-accent/20 px-2 py-0.5">
+        <span className="font-mono text-eyebrow text-accent/50 tracking-splice-ultra uppercase border border-accent/20 px-2 py-0.5">
           Portfolio
         </span>
       </div>
@@ -182,7 +182,7 @@ export function SilentMarketsAppendix(props: SlideProps) {
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-10">
         <div>
-          <span className="font-mono text-[9px] text-accent/50 tracking-splice-ultra uppercase block mb-4">
+          <span className="font-mono text-eyebrow text-accent/50 tracking-splice-ultra uppercase block mb-4">
             Intelligence Flow
           </span>
           <div className="flex flex-col gap-0">
@@ -194,7 +194,7 @@ export function SilentMarketsAppendix(props: SlideProps) {
               "Feedback Loop Learning",
             ].map((step, i) => (
               <div key={step} className="flex items-center gap-3">
-                <span className="font-mono text-[10px] text-accent/60 w-5 shrink-0">
+                <span className="font-mono text-label text-accent/60 w-5 shrink-0">
                   {String(i + 1).padStart(2, "0")}
                 </span>
                 <div className="border border-surface-border px-4 py-2 flex-1">
@@ -206,14 +206,14 @@ export function SilentMarketsAppendix(props: SlideProps) {
         </div>
 
         <div>
-          <span className="font-mono text-[9px] text-accent/50 tracking-splice-ultra uppercase block mb-4">
+          <span className="font-mono text-eyebrow text-accent/50 tracking-splice-ultra uppercase block mb-4">
             Constraints Navigated
           </span>
           <div className="space-y-3">
             {constraints.map((c) => (
               <div key={c.title} className="border-l-2 border-accent/20 pl-4 py-1">
                 <h4 className="text-xs font-semibold text-foreground mb-0.5">{c.title}</h4>
-                <p className="text-[11px] text-muted-foreground/60 leading-relaxed">{c.desc}</p>
+                <p className="text-meta text-muted-foreground/60 leading-relaxed">{c.desc}</p>
               </div>
             ))}
           </div>
@@ -250,7 +250,7 @@ export function AnonCapitalAppendix(props: SlideProps) {
   return (
     <Slide id="anon-capital" module="appendix::portfolio · anon capital" {...props}>
       <div className="flex items-center gap-3 mb-8">
-        <span className="font-mono text-[9px] text-accent/50 tracking-splice-ultra uppercase border border-accent/20 px-2 py-0.5">
+        <span className="font-mono text-eyebrow text-accent/50 tracking-splice-ultra uppercase border border-accent/20 px-2 py-0.5">
           Portfolio
         </span>
       </div>
@@ -263,7 +263,7 @@ export function AnonCapitalAppendix(props: SlideProps) {
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-10">
         <div>
-          <span className="font-mono text-[9px] text-accent/50 tracking-splice-ultra uppercase block mb-4">
+          <span className="font-mono text-eyebrow text-accent/50 tracking-splice-ultra uppercase block mb-4">
             System Architecture
           </span>
           <div className="space-y-2">
@@ -283,14 +283,14 @@ export function AnonCapitalAppendix(props: SlideProps) {
         </div>
 
         <div>
-          <span className="font-mono text-[9px] text-accent/50 tracking-splice-ultra uppercase block mb-4">
+          <span className="font-mono text-eyebrow text-accent/50 tracking-splice-ultra uppercase block mb-4">
             Constraints Navigated
           </span>
           <div className="space-y-3">
             {constraints.map((c) => (
               <div key={c.title} className="border-l-2 border-accent/20 pl-4 py-1">
                 <h4 className="text-xs font-semibold text-foreground mb-0.5">{c.title}</h4>
-                <p className="text-[11px] text-muted-foreground/60 leading-relaxed">{c.desc}</p>
+                <p className="text-meta text-muted-foreground/60 leading-relaxed">{c.desc}</p>
               </div>
             ))}
           </div>
@@ -327,7 +327,7 @@ export function CrownFuturesAppendix(props: SlideProps) {
   return (
     <Slide id="crown-futures" module="appendix::portfolio · crown futures" {...props}>
       <div className="flex items-center gap-3 mb-8">
-        <span className="font-mono text-[9px] text-accent/50 tracking-splice-ultra uppercase border border-accent/20 px-2 py-0.5">
+        <span className="font-mono text-eyebrow text-accent/50 tracking-splice-ultra uppercase border border-accent/20 px-2 py-0.5">
           Portfolio
         </span>
       </div>
@@ -343,7 +343,7 @@ export function CrownFuturesAppendix(props: SlideProps) {
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-10">
         <div>
-          <span className="font-mono text-[9px] text-accent/50 tracking-splice-ultra uppercase block mb-4">
+          <span className="font-mono text-eyebrow text-accent/50 tracking-splice-ultra uppercase block mb-4">
             System Architecture
           </span>
           <div className="space-y-2">
@@ -363,14 +363,14 @@ export function CrownFuturesAppendix(props: SlideProps) {
         </div>
 
         <div>
-          <span className="font-mono text-[9px] text-accent/50 tracking-splice-ultra uppercase block mb-4">
+          <span className="font-mono text-eyebrow text-accent/50 tracking-splice-ultra uppercase block mb-4">
             Constraints Navigated
           </span>
           <div className="space-y-3">
             {constraints.map((c) => (
               <div key={c.title} className="border-l-2 border-accent/20 pl-4 py-1">
                 <h4 className="text-xs font-semibold text-foreground mb-0.5">{c.title}</h4>
-                <p className="text-[11px] text-muted-foreground/60 leading-relaxed">{c.desc}</p>
+                <p className="text-meta text-muted-foreground/60 leading-relaxed">{c.desc}</p>
               </div>
             ))}
           </div>
@@ -414,7 +414,7 @@ export function PoolhouseAppendix(props: SlideProps) {
   return (
     <Slide id="poolhouse" module="appendix::portfolio · poolhouse" {...props}>
       <div className="flex items-center gap-3 mb-8">
-        <span className="font-mono text-[9px] text-accent/50 tracking-splice-ultra uppercase border border-accent/20 px-2 py-0.5">
+        <span className="font-mono text-eyebrow text-accent/50 tracking-splice-ultra uppercase border border-accent/20 px-2 py-0.5">
           Portfolio
         </span>
       </div>
@@ -427,7 +427,7 @@ export function PoolhouseAppendix(props: SlideProps) {
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-10">
         <div>
-          <span className="font-mono text-[9px] text-accent/50 tracking-splice-ultra uppercase block mb-4">
+          <span className="font-mono text-eyebrow text-accent/50 tracking-splice-ultra uppercase block mb-4">
             System Architecture
           </span>
           <Placeholder
@@ -451,14 +451,14 @@ export function PoolhouseAppendix(props: SlideProps) {
         </div>
 
         <div>
-          <span className="font-mono text-[9px] text-accent/50 tracking-splice-ultra uppercase block mb-4">
+          <span className="font-mono text-eyebrow text-accent/50 tracking-splice-ultra uppercase block mb-4">
             Constraints Navigated
           </span>
           <div className="space-y-3">
             {constraints.map((c) => (
               <div key={c.title} className="border-l-2 border-accent/20 pl-4 py-1">
                 <h4 className="text-xs font-semibold text-foreground mb-0.5">{c.title}</h4>
-                <p className="text-[11px] text-muted-foreground/60 leading-relaxed">{c.desc}</p>
+                <p className="text-meta text-muted-foreground/60 leading-relaxed">{c.desc}</p>
               </div>
             ))}
           </div>
@@ -483,7 +483,7 @@ export function OrdoVenturiAppendix(props: SlideProps) {
   return (
     <Slide id="ordo-venturi" module="appendix::partnership · ordo venturi" {...props}>
       <div className="flex items-center gap-3 mb-8">
-        <span className="font-mono text-[9px] text-accent/50 tracking-splice-ultra uppercase border border-accent/20 px-2 py-0.5">
+        <span className="font-mono text-eyebrow text-accent/50 tracking-splice-ultra uppercase border border-accent/20 px-2 py-0.5">
           Partnership
         </span>
       </div>
@@ -498,7 +498,7 @@ export function OrdoVenturiAppendix(props: SlideProps) {
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
         <div className="border border-surface-border p-6">
-          <span className="font-mono text-[9px] text-accent/50 tracking-splice-ultra uppercase block mb-4">
+          <span className="font-mono text-eyebrow text-accent/50 tracking-splice-ultra uppercase block mb-4">
             Partnership Type
           </span>
           <p className="text-sm text-foreground/80">
@@ -506,7 +506,7 @@ export function OrdoVenturiAppendix(props: SlideProps) {
           </p>
         </div>
         <div className="border border-surface-border p-6">
-          <span className="font-mono text-[9px] text-accent/50 tracking-splice-ultra uppercase block mb-4">Scope</span>
+          <span className="font-mono text-eyebrow text-accent/50 tracking-splice-ultra uppercase block mb-4">Scope</span>
           <ul className="space-y-2">
             {["Protocol co-development", "HELIOS agent integration", "Cross-chain infrastructure"].map((item) => (
               <li key={item} className="text-xs text-foreground/80 flex items-start gap-2">
@@ -534,7 +534,7 @@ export function KenomicAppendix(props: SlideProps) {
   return (
     <Slide id="kenomic" module="appendix::partnership · kenomic" {...props}>
       <div className="flex items-center gap-3 mb-8">
-        <span className="font-mono text-[9px] text-accent/50 tracking-splice-ultra uppercase border border-accent/20 px-2 py-0.5">
+        <span className="font-mono text-eyebrow text-accent/50 tracking-splice-ultra uppercase border border-accent/20 px-2 py-0.5">
           Partnership
         </span>
       </div>
@@ -549,7 +549,7 @@ export function KenomicAppendix(props: SlideProps) {
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
         <div className="border border-surface-border p-6">
-          <span className="font-mono text-[9px] text-accent/50 tracking-splice-ultra uppercase block mb-4">
+          <span className="font-mono text-eyebrow text-accent/50 tracking-splice-ultra uppercase block mb-4">
             Partnership Type
           </span>
           <p className="text-sm text-foreground/80">
@@ -557,7 +557,7 @@ export function KenomicAppendix(props: SlideProps) {
           </p>
         </div>
         <div className="border border-surface-border p-6">
-          <span className="font-mono text-[9px] text-accent/50 tracking-splice-ultra uppercase block mb-4">Scope</span>
+          <span className="font-mono text-eyebrow text-accent/50 tracking-splice-ultra uppercase block mb-4">Scope</span>
           <ul className="space-y-2">
             {["Tokenomics modeling", "Economic security analysis", "HELIOS risk integration"].map((item) => (
               <li key={item} className="text-xs text-foreground/80 flex items-start gap-2">

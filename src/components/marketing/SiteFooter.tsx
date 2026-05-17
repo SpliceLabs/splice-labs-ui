@@ -27,7 +27,7 @@ export function SiteFooter() {
               <span className="text-accent font-bold">_</span>
               <TerminalCaret rate="footer" className="ml-0.5" />
             </div>
-            <p className="font-mono text-[10px] text-muted-foreground tracking-splice-wide uppercase">
+            <p className="font-mono text-label text-muted-foreground tracking-splice-wide uppercase">
               Protocol and Systems Design Foundry
             </p>
           </div>
@@ -38,7 +38,7 @@ export function SiteFooter() {
               <a
                 key={link.label}
                 href={link.href}
-                className="group font-mono text-[11px] text-muted-foreground tracking-splice-wide uppercase transition-colors hover:text-foreground focus-visible:outline focus-visible:outline-1 focus-visible:outline-accent focus-visible:outline-offset-2"
+                className="group font-mono text-meta text-muted-foreground tracking-splice-wide uppercase transition-colors hover:text-foreground focus-visible:outline focus-visible:outline-1 focus-visible:outline-accent focus-visible:outline-offset-2"
               >
                 <span className="relative">
                   {link.label}
@@ -53,7 +53,7 @@ export function SiteFooter() {
         </div>
 
         <div className="mt-12 pt-6 border-t border-surface-border">
-          <p className="font-mono text-[10px] text-muted-foreground/50 tracking-splice-wide">
+          <p className="font-mono text-label text-muted-foreground/50 tracking-splice-wide">
             © {new Date().getFullYear()} Splice Labs. All rights reserved.
           </p>
         </div>

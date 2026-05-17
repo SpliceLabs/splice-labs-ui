@@ -101,7 +101,7 @@ export default function BlogArticleDemo() {
         action={
           <a
             href="/contact"
-            className="inline-flex bg-blog-chip-ink px-6 py-3 font-mono text-[13px] uppercase tracking-[0.06em] text-blog-chip-text transition-opacity hover:opacity-90"
+            className="inline-flex bg-blog-chip-ink px-6 py-3 font-mono text-code uppercase tracking-splice-label text-blog-chip-text transition-opacity hover:opacity-90"
           >
             Request access
           </a>

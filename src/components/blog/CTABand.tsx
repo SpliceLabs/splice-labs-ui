@@ -1,5 +1,5 @@
 import { cn } from "@/lib/utils";
-import { ModuleLabel } from "./ModuleLabel";
+import { BlogEyebrow } from "./BlogEyebrow";
 import type { ReactNode } from "react";
 import type { TileTone } from "./types";
 
@@ -32,8 +32,8 @@ export function CTABand({
   return (
     <section className={cn(toneClasses[tone], className)}>
       <div className="mx-auto flex max-w-[1040px] flex-col gap-5 px-8 py-20">
-        {eyebrow && <ModuleLabel className="text-current/70">{eyebrow}</ModuleLabel>}
-        <h2 className="max-w-[720px] font-display text-3xl font-semibold leading-tight tracking-[-0.03em] md:text-4xl">
+        {eyebrow && <BlogEyebrow className="text-current/70">{eyebrow}</BlogEyebrow>}
+        <h2 className="max-w-[720px] font-display text-3xl font-semibold leading-tight tracking-splice-snug md:text-4xl">
           {title}
         </h2>
         {body && (

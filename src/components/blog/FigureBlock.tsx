@@ -29,7 +29,7 @@ export function FigureBlock({
       {caption && (
         <figcaption className="mt-3 font-display text-sm italic text-blog-text-muted">
           {number != null && (
-            <span className="mr-1.5 font-mono not-italic uppercase tracking-[0.06em] text-blog-text-graphite">
+            <span className="mr-1.5 font-mono not-italic uppercase tracking-splice-label text-blog-text-graphite">
               FIG {String(number).padStart(2, "0")} —
             </span>
           )}

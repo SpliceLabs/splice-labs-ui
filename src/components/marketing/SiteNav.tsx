@@ -81,7 +81,7 @@ function Dropdown({ items, open, onClose }: { items: DropdownItem[]; open: boole
           key={item.label}
           href={item.href}
           onClick={onClose}
-          className="block px-4 py-2 font-mono text-[11px] text-muted-foreground tracking-widest uppercase hover:text-foreground hover:bg-surface-raised transition-colors focus-visible:outline focus-visible:outline-1 focus-visible:outline-accent focus-visible:outline-offset-2"
+          className="block px-4 py-2 font-mono text-meta text-muted-foreground tracking-widest uppercase hover:text-foreground hover:bg-surface-raised transition-colors focus-visible:outline focus-visible:outline-1 focus-visible:outline-accent focus-visible:outline-offset-2"
         >
           {item.label}
         </a>
@@ -159,7 +159,7 @@ export function SiteNav() {
                   aria-expanded={openDropdown === item.label}
                   aria-haspopup="menu"
                   aria-controls={`nav-menu-${item.label}`}
-                  className={`font-mono text-[11px] ${itemActive(item) ? "text-accent" : "text-muted-foreground"} tracking-widest uppercase hover:text-foreground transition-colors flex items-center gap-1 focus-visible:outline focus-visible:outline-1 focus-visible:outline-accent focus-visible:outline-offset-2`}
+                  className={`font-mono text-meta ${itemActive(item) ? "text-accent" : "text-muted-foreground"} tracking-widest uppercase hover:text-foreground transition-colors flex items-center gap-1 focus-visible:outline focus-visible:outline-1 focus-visible:outline-accent focus-visible:outline-offset-2`}
                 >
                   {item.label}
                   <svg className={`w-3 h-3 transition-transform ${openDropdown === item.label ? "rotate-180" : ""}`} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
@@ -179,7 +179,7 @@ export function SiteNav() {
                           href={child.href}
                           role="menuitem"
                           onClick={() => setOpenDropdown(null)}
-                          className="block px-4 py-2 font-mono text-[11px] text-muted-foreground tracking-widest uppercase hover:text-foreground hover:bg-surface-raised transition-colors focus-visible:outline focus-visible:outline-1 focus-visible:outline-accent focus-visible:outline-offset-2"
+                          className="block px-4 py-2 font-mono text-meta text-muted-foreground tracking-widest uppercase hover:text-foreground hover:bg-surface-raised transition-colors focus-visible:outline focus-visible:outline-1 focus-visible:outline-accent focus-visible:outline-offset-2"
                         >
                           {child.label}
                         </a>
@@ -192,7 +192,7 @@ export function SiteNav() {
               <Link
                 key={item.label}
                 href={item.href!}
-                className="font-mono text-[11px] text-muted-foreground tracking-widest uppercase hover:text-foreground transition-colors focus-visible:outline focus-visible:outline-1 focus-visible:outline-accent focus-visible:outline-offset-2"
+                className="font-mono text-meta text-muted-foreground tracking-widest uppercase hover:text-foreground transition-colors focus-visible:outline focus-visible:outline-1 focus-visible:outline-accent focus-visible:outline-offset-2"
               >
                 {item.label}
               </Link>
@@ -201,7 +201,7 @@ export function SiteNav() {
                 key={item.label}
                 href={item.href}
                 aria-current={itemActive(item) ? "true" : undefined}
-                className={`font-mono text-[11px] ${itemActive(item) ? "text-accent" : "text-muted-foreground"} tracking-widest uppercase hover:text-foreground transition-colors focus-visible:outline focus-visible:outline-1 focus-visible:outline-accent focus-visible:outline-offset-2`}
+                className={`font-mono text-meta ${itemActive(item) ? "text-accent" : "text-muted-foreground"} tracking-widest uppercase hover:text-foreground transition-colors focus-visible:outline focus-visible:outline-1 focus-visible:outline-accent focus-visible:outline-offset-2`}
               >
                 {item.label}
               </a>

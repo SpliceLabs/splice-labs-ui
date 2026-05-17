@@ -12,9 +12,9 @@ export interface LabelChipProps extends HTMLAttributes<HTMLSpanElement> {
 }
 
 const sizeClasses: Record<NonNullable<LabelChipProps["size"]>, string> = {
-  sm: "text-[11px] px-4 py-[10px]",
-  md: "text-[13px] px-5 py-[14px]",
-  lg: "text-[15px] px-7 py-[18px]",
+  sm: "text-meta px-4 py-[10px]",
+  md: "text-code px-5 py-[14px]",
+  lg: "text-prose px-7 py-[18px]",
 };
 
 /**
@@ -43,7 +43,7 @@ export function LabelChip({
             : undefined,
       }}
       className={cn(
-        "inline-flex items-center font-mono uppercase leading-none tracking-[0.06em]",
+        "inline-flex items-center font-mono uppercase leading-none tracking-splice-label",
         sizeClasses[size],
         tone === "ink"
           ? "bg-blog-chip-ink text-blog-chip-text"

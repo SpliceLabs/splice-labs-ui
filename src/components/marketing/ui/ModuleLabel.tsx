@@ -54,7 +54,7 @@ export function ModuleLabel({
               : "-ml-[calc(2rem+4px)] md:-ml-[calc(3rem+4px)]",
           )}
         />
-        <span className="shrink-0 font-mono text-[9px] uppercase tracking-splice-ultra text-accent">
+        <span className="shrink-0 font-mono text-eyebrow uppercase tracking-splice-ultra text-accent">
           {label}
         </span>
         <span aria-hidden className="h-px flex-1 bg-surface-border" />
@@ -70,7 +70,7 @@ export function ModuleLabel({
           className="size-[2px] shrink-0 bg-accent motion-safe:animate-pulse-accent"
         />
       )}
-      <span className="shrink-0 font-mono text-[9px] uppercase tracking-splice-ultra text-accent/60">
+      <span className="shrink-0 font-mono text-eyebrow uppercase tracking-splice-ultra text-accent/60">
         {label}
       </span>
       {rule && (

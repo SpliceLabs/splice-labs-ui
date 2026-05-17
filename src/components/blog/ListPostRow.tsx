@@ -25,13 +25,13 @@ export function ListPostRow({
         className,
       )}
     >
-      <span className="flex shrink-0 gap-3 font-mono text-[12px] uppercase tracking-[0.06em] text-blog-text-muted md:w-56">
+      <span className="flex shrink-0 gap-3 font-mono text-xs uppercase tracking-splice-label text-blog-text-muted md:w-56">
         <span>{date}</span>
         <span aria-hidden>·</span>
         <span>{category}</span>
       </span>
       <span className="flex flex-col gap-1">
-        <span className="font-display text-lg font-semibold leading-snug tracking-[-0.02em]">
+        <span className="font-display text-lg font-semibold leading-snug tracking-splice-snug">
           <span className="relative inline">
             {title}
             <span

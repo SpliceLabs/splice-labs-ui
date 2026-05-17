@@ -1,4 +1,5 @@
 import { SwarmSlot } from "./swarm/SwarmSlot";
+import { SectionHeading } from "../ui/SectionHeading";
 import { ModuleLabel } from "../ui/ModuleLabel";
 import { cn } from "@/lib/utils";
 
@@ -23,9 +24,9 @@ export function ValueSection() {
          <div className="w-full max-w-[600px]">
           <ModuleLabel variant="eyebrow" spine="right" name="value" className="mb-10" />
 
-          <h2 className="font-display text-2xl md:text-3xl font-semibold tracking-splice-tight text-foreground mb-12">
+          <SectionHeading className="mb-12">
             Why Splice Labs
-          </h2>
+          </SectionHeading>
 
           {/* Asymmetric staggered grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
@@ -39,14 +40,14 @@ export function ValueSection() {
               >
                 <span
                   aria-hidden
-                  className="absolute right-0 top-2 font-mono text-[9px] tracking-splice-wide text-muted-foreground/40 transition-colors duration-200 group-hover:text-accent"
+                  className="absolute right-0 top-2 font-mono text-eyebrow tracking-splice-wide text-muted-foreground/40 transition-colors duration-200 group-hover:text-accent"
                 >
                   {String(i + 1).padStart(2, "0")}
                 </span>
                 <h3 className="font-display text-base font-semibold text-foreground mb-2">
                   {v.title}
                 </h3>
-                <p className="text-sm text-foreground/60 leading-relaxed transition-colors duration-200 group-hover:text-foreground/85">
+                <p className="text-sm text-foreground/60 leading-relaxed transition-colors duration-200 group-hover:text-foreground/80">
                   {v.body}
                 </p>
               </div>
@@ -55,7 +56,7 @@ export function ValueSection() {
 
           <div className="flex items-center gap-3 mt-10">
             <span className="w-12 h-px bg-accent/15" />
-            <span className="text-[13px] text-foreground/60 italic">
+            <span className="text-code text-foreground/60 italic">
               If it needs to be real, not theoretical, we can help.
             </span>
           </div>

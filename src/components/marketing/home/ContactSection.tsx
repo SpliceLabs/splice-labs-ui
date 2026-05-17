@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { SwarmSlot } from "./swarm/SwarmSlot";
+import { SectionHeading } from "../ui/SectionHeading";
 import { TerminalButton } from "../ui/TerminalButton";
 import { ModuleLabel } from "../ui/ModuleLabel";
 
@@ -64,9 +65,9 @@ export function ContactSection() {
 
           <div className="grid grid-cols-1 gap-10">
             <div>
-              <h2 className="font-display text-2xl md:text-3xl font-semibold tracking-splice-tight text-foreground mb-3">
+              <SectionHeading className="mb-3">
                 Link Up With Us
-              </h2>
+              </SectionHeading>
               <p className="text-sm text-foreground/70 leading-relaxed mb-8">
                 If you need a prototype that has to work, send context. We'll tell you quickly if it fits.
               </p>
@@ -76,7 +77,7 @@ export function ContactSection() {
                 {["Define → Prototype → Ship", "Scope → Build → Audit", "Align → Execute → Deliver"].map((flow, i) => (
                   <div key={i} className="flex items-center gap-2">
                     <span className="w-1.5 h-1.5 bg-accent/20" />
-                    <span className="font-mono text-[9px] text-muted-foreground/60 tracking-splice-wide">
+                    <span className="font-mono text-eyebrow text-muted-foreground/60 tracking-splice-wide">
                       {flow}
                     </span>
                   </div>
@@ -89,7 +90,7 @@ export function ContactSection() {
                 role="status"
                 className="border border-accent/30 bg-accent/5 px-5 py-6"
               >
-                <p className="font-mono text-[10px] text-accent tracking-splice-ultra uppercase mb-2">
+                <p className="font-mono text-label text-accent tracking-splice-ultra uppercase mb-2">
                   Message received
                 </p>
                 <p className="text-sm text-foreground/70 leading-relaxed">
@@ -102,7 +103,7 @@ export function ContactSection() {
                 <div>
                   <label
                     htmlFor="contact-name"
-                    className="font-mono text-[9px] text-muted-foreground/60 tracking-splice-ultra uppercase block mb-1.5"
+                    className="font-mono text-eyebrow text-muted-foreground/60 tracking-splice-ultra uppercase block mb-1.5"
                   >
                     Name
                   </label>
@@ -120,7 +121,7 @@ export function ContactSection() {
                   {errors.name && (
                     <p
                       id="contact-name-error"
-                      className="mt-1.5 font-mono text-[9px] text-destructive tracking-splice-wide uppercase"
+                      className="mt-1.5 font-mono text-eyebrow text-destructive tracking-splice-wide uppercase"
                     >
                       {errors.name}
                     </p>
@@ -129,7 +130,7 @@ export function ContactSection() {
                 <div>
                   <label
                     htmlFor="contact-email"
-                    className="font-mono text-[9px] text-muted-foreground/60 tracking-splice-ultra uppercase block mb-1.5"
+                    className="font-mono text-eyebrow text-muted-foreground/60 tracking-splice-ultra uppercase block mb-1.5"
                   >
                     Email
                   </label>
@@ -147,7 +148,7 @@ export function ContactSection() {
                   {errors.email && (
                     <p
                       id="contact-email-error"
-                      className="mt-1.5 font-mono text-[9px] text-destructive tracking-splice-wide uppercase"
+                      className="mt-1.5 font-mono text-eyebrow text-destructive tracking-splice-wide uppercase"
                     >
                       {errors.email}
                     </p>
@@ -156,7 +157,7 @@ export function ContactSection() {
                 <div>
                   <label
                     htmlFor="contact-message"
-                    className="font-mono text-[9px] text-muted-foreground/60 tracking-splice-ultra uppercase block mb-1.5"
+                    className="font-mono text-eyebrow text-muted-foreground/60 tracking-splice-ultra uppercase block mb-1.5"
                   >
                     What you're building
                   </label>
@@ -174,7 +175,7 @@ export function ContactSection() {
                   {errors.message && (
                     <p
                       id="contact-message-error"
-                      className="mt-1.5 font-mono text-[9px] text-destructive tracking-splice-wide uppercase"
+                      className="mt-1.5 font-mono text-eyebrow text-destructive tracking-splice-wide uppercase"
                     >
                       {errors.message}
                     </p>
@@ -190,12 +191,12 @@ export function ContactSection() {
                 </TerminalButton>
                 <p
                   aria-live="polite"
-                  className="min-h-[0.75rem] font-mono text-[9px] text-destructive tracking-splice-wide uppercase"
+                  className="min-h-[0.75rem] font-mono text-eyebrow text-destructive tracking-splice-wide uppercase"
                 >
                   {status === "error" &&
                     "Something went wrong — please try again."}
                 </p>
-                <p className="font-mono text-[9px] text-muted-foreground/60 tracking-splice-wide">
+                <p className="font-mono text-eyebrow text-muted-foreground/60 tracking-splice-wide">
                   No spam. If it's not a fit, we'll say so.
                 </p>
               </form>

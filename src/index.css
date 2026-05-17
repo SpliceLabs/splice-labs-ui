@@ -21,7 +21,8 @@
     --popover: 210 12% 9%;
     --popover-foreground: 210 20% 92%;
 
-    /* Electric teal — primary accent */
+    /* Electric teal — the single brand accent. `--accent` and `--ring`
+       alias this so there is one source of truth for the teal. */
     --primary: 174 100% 42%;
     --primary-foreground: 210 14% 6%;
 
@@ -31,8 +32,8 @@
     --muted: 210 10% 14%;
     --muted-foreground: 210 15% 84%;
 
-    --accent: 174 100% 42%;
-    --accent-foreground: 210 14% 6%;
+    --accent: var(--primary);
+    --accent-foreground: var(--primary-foreground);
 
     /* Extended palette — warm accents */
     --amber: 42 100% 50%;
@@ -47,7 +48,7 @@
 
     --border: 210 10% 18%;
     --input: 210 10% 14%;
-    --ring: 174 100% 42%;
+    --ring: var(--primary);
 
     --radius: 0;
 
@@ -62,12 +63,12 @@
     /* Sidebar (unused but required) */
     --sidebar-background: 210 14% 6%;
     --sidebar-foreground: 210 20% 92%;
-    --sidebar-primary: 174 100% 42%;
-    --sidebar-primary-foreground: 210 14% 6%;
+    --sidebar-primary: var(--primary);
+    --sidebar-primary-foreground: var(--primary-foreground);
     --sidebar-accent: 210 10% 14%;
     --sidebar-accent-foreground: 210 20% 92%;
     --sidebar-border: 210 10% 18%;
-    --sidebar-ring: 174 100% 42%;
+    --sidebar-ring: var(--primary);
 
     /* ──────────────────────────────────────────────────────────
        Blog design system (Pass 2)

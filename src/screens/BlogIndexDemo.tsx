@@ -6,7 +6,7 @@ import {
   FilterRail,
   HairlineDivider,
   ListPostRow,
-  ModuleLabel,
+  BlogEyebrow,
   Pagination,
   PostCard,
   SearchInput,
@@ -47,10 +47,10 @@ export default function BlogIndexDemo() {
     <main className="min-h-screen bg-blog-graphite text-blog-text-paper">
       <div className="mx-auto max-w-[1200px] px-8 py-16">
         <div className="flex flex-col gap-3">
-          <ModuleLabel dot caret>
+          <BlogEyebrow dot caret>
             SPLICE_LABS :: FOUNDRY LOG
-          </ModuleLabel>
-          <h1 className="font-display text-4xl font-semibold tracking-[-0.03em]">
+          </BlogEyebrow>
+          <h1 className="font-display text-4xl font-semibold tracking-splice-snug">
             The Foundry Log
           </h1>
           <p className="max-w-[520px] font-display text-blog-text-muted">
@@ -85,7 +85,7 @@ export default function BlogIndexDemo() {
             </div>
 
             {visible.length === 0 ? (
-              <p className="py-16 text-center font-mono text-sm uppercase tracking-[0.06em] text-blog-text-muted">
+              <p className="py-16 text-center font-mono text-sm uppercase tracking-splice-label text-blog-text-muted">
                 No posts match.
               </p>
             ) : view === "grid" ? (

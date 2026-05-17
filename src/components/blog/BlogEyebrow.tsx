@@ -1,7 +1,7 @@
 import { cn } from "@/lib/utils";
 import type { HTMLAttributes } from "react";
 
-export interface ModuleLabelProps extends HTMLAttributes<HTMLSpanElement> {
+export interface BlogEyebrowProps extends HTMLAttributes<HTMLSpanElement> {
   /** Leading pulsing teal square. */
   dot?: boolean;
   /** Trailing blinking terminal caret. */
@@ -12,18 +12,18 @@ export interface ModuleLabelProps extends HTMLAttributes<HTMLSpanElement> {
  * The mono-caps eyebrow used throughout the blog (`READ MORE`,
  * `GET TLDR FROM:`, `02 / FILTER RAIL`).
  */
-export function ModuleLabel({
+export function BlogEyebrow({
   dot = false,
   caret = false,
   className,
   children,
   ...rest
-}: ModuleLabelProps) {
+}: BlogEyebrowProps) {
   return (
     <span
       {...rest}
       className={cn(
-        "inline-flex items-center gap-2 font-mono text-[11px] uppercase leading-none tracking-[0.18em] text-blog-text-muted",
+        "inline-flex items-center gap-2 font-mono text-meta uppercase leading-none tracking-splice-wide text-blog-text-muted",
         className,
       )}
     >

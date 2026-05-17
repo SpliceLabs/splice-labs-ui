@@ -7,7 +7,7 @@ import { FigureBlock } from "./FigureBlock";
 import { HairlineDivider } from "./HairlineDivider";
 import { IconPlate } from "./IconPlate";
 import { LabelChip } from "./LabelChip";
-import { ModuleLabel } from "./ModuleLabel";
+import { BlogEyebrow } from "./BlogEyebrow";
 import { QuickTakeaways } from "./QuickTakeaways";
 
 /**
@@ -25,40 +25,40 @@ export const blogMdxComponents: MDXComponents = {
   h1: (props: ComponentProps<"h1">) => (
     <h1
       {...props}
-      className="mt-12 font-display text-4xl font-semibold leading-[1.1] tracking-[-0.03em] md:text-5xl"
+      className="mt-12 font-display text-4xl font-semibold leading-[1.1] tracking-splice-snug md:text-5xl"
     />
   ),
   h2: (props: ComponentProps<"h2">) => (
     <h2
       {...props}
-      className="mb-3 mt-14 scroll-mt-24 font-display text-2xl font-semibold tracking-[-0.02em]"
+      className="mb-3 mt-14 scroll-mt-24 font-display text-2xl font-semibold tracking-splice-snug"
     />
   ),
   h3: (props: ComponentProps<"h3">) => (
     <h3
       {...props}
-      className="mb-2 mt-8 scroll-mt-24 font-display text-xl font-semibold tracking-[-0.02em]"
+      className="mb-2 mt-8 scroll-mt-24 font-display text-xl font-semibold tracking-splice-snug"
     />
   ),
   h4: (props: ComponentProps<"h4">) => (
     <h4
       {...props}
-      className="mb-2 mt-6 font-display text-lg font-semibold tracking-[-0.01em]"
+      className="mb-2 mt-6 font-display text-lg font-semibold tracking-splice-snug"
     />
   ),
   p: (props: ComponentProps<"p">) => (
-    <p {...props} className="mt-4 font-display text-[18px] leading-[1.75]" />
+    <p {...props} className="mt-4 font-display text-lg leading-[1.75]" />
   ),
   ul: (props: ComponentProps<"ul">) => (
     <ul
       {...props}
-      className="mt-4 flex list-none flex-col gap-2 pl-6 font-display text-[18px] leading-[1.6] [&>li]:before:absolute [&>li]:before:-ml-6 [&>li]:before:content-['—'] [&>li]:relative"
+      className="mt-4 flex list-none flex-col gap-2 pl-6 font-display text-lg leading-[1.6] [&>li]:before:absolute [&>li]:before:-ml-6 [&>li]:before:content-['—'] [&>li]:relative"
     />
   ),
   ol: (props: ComponentProps<"ol">) => (
     <ol
       {...props}
-      className="mt-4 flex list-decimal flex-col gap-2 pl-6 font-display text-[18px] leading-[1.6]"
+      className="mt-4 flex list-decimal flex-col gap-2 pl-6 font-display text-lg leading-[1.6]"
     />
   ),
   blockquote: ({ children }: ComponentProps<"blockquote">) => (
@@ -76,7 +76,7 @@ export const blogMdxComponents: MDXComponents = {
   code: ({ className, ...props }: ComponentProps<"code">) =>
     className ? (
       // Fenced code block — `pre` provides the surface.
-      <code {...props} className={cn("font-mono text-[13px]", className)} />
+      <code {...props} className={cn("font-mono text-code", className)} />
     ) : (
       <code
         {...props}
@@ -86,7 +86,7 @@ export const blogMdxComponents: MDXComponents = {
   pre: (props: ComponentProps<"pre">) => (
     <pre
       {...props}
-      className="my-6 overflow-x-auto border border-blog-hairline-paper bg-blog-surface-muted p-4 font-mono text-[13px] leading-relaxed"
+      className="my-6 overflow-x-auto border border-blog-hairline-paper bg-blog-surface-muted p-4 font-mono text-code leading-relaxed"
     />
   ),
   img: ({ alt, ...props }: ComponentProps<"img">) => (
@@ -105,7 +105,7 @@ export const blogMdxComponents: MDXComponents = {
   th: (props: ComponentProps<"th">) => (
     <th
       {...props}
-      className="border border-blog-hairline-paper bg-blog-surface-muted px-3 py-2 font-mono text-[11px] uppercase tracking-[0.06em]"
+      className="border border-blog-hairline-paper bg-blog-surface-muted px-3 py-2 font-mono text-meta uppercase tracking-splice-label"
     />
   ),
   td: (props: ComponentProps<"td">) => (
@@ -120,7 +120,7 @@ export const blogMdxComponents: MDXComponents = {
   FigureBlock,
   QuickTakeaways,
   LabelChip,
-  ModuleLabel,
+  BlogEyebrow,
   CoverTile,
   IconPlate,
   HairlineDivider,

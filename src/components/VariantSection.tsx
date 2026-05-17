@@ -36,7 +36,7 @@ export function VariantSection({ direction, directionNumber, variants }: Variant
 
             {/* B&W header */}
             <div>
-              <span className="font-mono text-[10px] text-muted-foreground tracking-splice-wide uppercase block mb-3">Black & White</span>
+              <span className="font-mono text-label text-muted-foreground tracking-splice-wide uppercase block mb-3">Black & White</span>
               <div className="flex items-center min-h-[72px]">
                 {v.bw}
               </div>
@@ -44,7 +44,7 @@ export function VariantSection({ direction, directionNumber, variants }: Variant
 
             {/* Accent header */}
             <div>
-              <span className="font-mono text-[10px] text-muted-foreground tracking-splice-wide uppercase block mb-3">Accent</span>
+              <span className="font-mono text-label text-muted-foreground tracking-splice-wide uppercase block mb-3">Accent</span>
               <div className="flex items-center min-h-[72px]">
                 {v.accent}
               </div>
@@ -53,7 +53,7 @@ export function VariantSection({ direction, directionNumber, variants }: Variant
             {/* Scaling row */}
             <div className="grid grid-cols-2 gap-3">
               <div className="bg-surface p-4">
-                <span className="font-mono text-[9px] text-muted-foreground tracking-splice-wide uppercase block mb-2">Favicon 16×16</span>
+                <span className="font-mono text-eyebrow text-muted-foreground tracking-splice-wide uppercase block mb-2">Favicon 16×16</span>
                 <div className="flex items-center gap-3">
                   <div className="w-4 h-4 flex items-center justify-center">{v.favicon}</div>
                   <div className="w-6 h-6 bg-surface-raised flex items-center justify-center">
@@ -62,7 +62,7 @@ export function VariantSection({ direction, directionNumber, variants }: Variant
                 </div>
               </div>
               <div className="bg-surface p-4">
-                <span className="font-mono text-[9px] text-muted-foreground tracking-splice-wide uppercase block mb-2">Product</span>
+                <span className="font-mono text-eyebrow text-muted-foreground tracking-splice-wide uppercase block mb-2">Product</span>
                 <div className="flex items-center">{v.product}</div>
               </div>
             </div>

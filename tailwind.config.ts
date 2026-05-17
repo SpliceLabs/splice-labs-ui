@@ -19,6 +19,16 @@ export default {
         body: ["var(--font-space-grotesk)", "system-ui", "sans-serif"],
         mono: ["var(--font-space-mono)", "Courier New", "monospace"],
       },
+      // Sub-`xs` type scale — replaces the ad-hoc `text-[Npx]` arbitraries.
+      // Size-only (no paired line-height) so existing `leading-*` is preserved.
+      fontSize: {
+        micro: "0.5rem", // 8px — ultra-tracked mono labels
+        eyebrow: "0.5625rem", // 9px — mono eyebrows / captions
+        label: "0.625rem", // 10px — mono labels
+        meta: "0.6875rem", // 11px — nav / meta
+        code: "0.8125rem", // 13px — inline code, chips, inputs
+        prose: "0.9375rem", // 15px — blog display body
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -109,7 +119,9 @@ export default {
         sm: "calc(var(--radius) - 4px)",
       },
       letterSpacing: {
+        "splice-snug": "-0.02em",
         "splice-tight": "-0.04em",
+        "splice-label": "0.06em",
         "splice-wide": "0.18em",
         "splice-ultra": "0.28em",
       },

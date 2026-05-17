@@ -49,7 +49,7 @@ export function SearchInput({
         value={value}
         onChange={(e) => onChange(e.target.value)}
         placeholder={placeholder}
-        className="w-full bg-transparent font-mono text-[13px] outline-none placeholder:text-blog-text-muted [&::-webkit-search-cancel-button]:hidden"
+        className="w-full bg-transparent font-mono text-code outline-none placeholder:text-blog-text-muted [&::-webkit-search-cancel-button]:hidden"
       />
       {value && (
         <button

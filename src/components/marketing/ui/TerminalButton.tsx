@@ -43,7 +43,7 @@ export function TerminalButton({
   const classes = cn(
     "group inline-flex min-h-[2.5rem] items-center justify-center gap-1",
     "font-mono uppercase tracking-splice-wide",
-    size === "sm" ? "px-4 py-2 text-[11px]" : "px-6 py-3 text-xs",
+    size === "sm" ? "px-4 py-2 text-meta" : "px-6 py-3 text-xs",
     "transition-[color,background-color,border-color,box-shadow,transform] duration-150 ease-[cubic-bezier(0.165,0.84,0.44,1)]",
     "focus-visible:outline focus-visible:outline-1 focus-visible:outline-accent focus-visible:outline-offset-2",
     variant === "primary"

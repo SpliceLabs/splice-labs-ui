@@ -1,4 +1,5 @@
 import { SwarmSlot } from "./swarm/SwarmSlot";
+import { SectionHeading } from "../ui/SectionHeading";
 import { ModuleLabel } from "../ui/ModuleLabel";
 
 const COMMITMENTS = [
@@ -21,9 +22,9 @@ export function CommitmentsSection() {
          <div className="w-full max-w-[600px]">
           <ModuleLabel variant="eyebrow" spine="left" name="commitments" className="mb-10" />
 
-          <h2 className="font-display text-2xl md:text-3xl font-semibold tracking-splice-tight text-foreground mb-12">
+          <SectionHeading className="mb-12">
             Our Commitments
-          </h2>
+          </SectionHeading>
 
           {/* Pipeline diagram — each commitment is a node */}
           <div className="relative">
@@ -38,7 +39,7 @@ export function CommitmentsSection() {
                 </div>
 
                 <div className="pb-8">
-                  <span className="font-mono text-[11px] text-accent tracking-splice-wide uppercase block mb-1">
+                  <span className="font-mono text-meta text-accent tracking-splice-wide uppercase block mb-1">
                     {c.label}
                   </span>
                   <p className="text-sm text-foreground/50 leading-relaxed">

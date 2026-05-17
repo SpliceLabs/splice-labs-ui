@@ -1,4 +1,5 @@
 import { SwarmSlot } from "./swarm/SwarmSlot";
+import { SectionHeading } from "../ui/SectionHeading";
 import { ModuleLabel } from "../ui/ModuleLabel";
 import { cn } from "@/lib/utils";
 import { TagChip } from "../ui/TagChip";
@@ -33,9 +34,9 @@ export function ProjectsSection() {
          <div className="w-full max-w-[600px]">
           <ModuleLabel variant="eyebrow" spine="right" name="projects" className="mb-10" />
 
-          <h2 className="font-display text-2xl md:text-3xl font-semibold tracking-splice-tight text-foreground mb-12">
+          <SectionHeading className="mb-12">
             Currently Building
-          </h2>
+          </SectionHeading>
 
           {/* Asymmetric project cards with splice connectors */}
           <div className="space-y-6">
@@ -74,7 +75,7 @@ export function ProjectsSection() {
 
           <div className="flex items-center gap-3 mt-8">
             <span className="w-12 h-px bg-accent/15" />
-            <span className="font-mono text-[9px] text-muted-foreground/60 tracking-splice-wide">
+            <span className="font-mono text-eyebrow text-muted-foreground/60 tracking-splice-wide">
               Additional prototypes are shared privately with partners.
             </span>
           </div>

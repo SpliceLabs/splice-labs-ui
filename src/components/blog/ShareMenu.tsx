@@ -36,7 +36,7 @@ export function ShareMenu({ url, title = "", className }: ShareMenuProps) {
   };
 
   const itemClass =
-    "flex cursor-pointer items-center gap-2 font-mono text-[12px] uppercase tracking-[0.06em]";
+    "flex cursor-pointer items-center gap-2 font-mono text-xs uppercase tracking-splice-label";
 
   return (
     <DropdownMenu>
