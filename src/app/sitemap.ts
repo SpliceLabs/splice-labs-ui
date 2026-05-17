@@ -1,6 +1,5 @@
 import type { MetadataRoute } from "next";
-
-const SITE_URL = "https://splicelabs.ai";
+import { SITE_URL } from "@/lib/site";
 
 /** Public, indexable routes. Internal pages (dataroom, decks, brand,
     logos, the primitives showcase) are excluded. */

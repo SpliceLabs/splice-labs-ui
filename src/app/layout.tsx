@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
 import { Space_Grotesk, Space_Mono } from "next/font/google";
+import { SITE_URL } from "@/lib/site";
 import "../index.css";
 import { Providers } from "./providers";
 
@@ -18,9 +19,6 @@ const spaceMono = Space_Mono({
   variable: "--font-space-mono",
   display: "swap",
 });
-
-// Update to the production origin when the domain is final.
-const SITE_URL = "https://splicelabs.ai";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),

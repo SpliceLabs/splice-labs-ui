@@ -31,8 +31,8 @@ export function CrossVA_Wordmark({ accent = false, scale = "header" }: { accent?
       <div className="flex items-center gap-2.5">
         <CrossVA_Icon accent={accent} size={22} />
         <svg width="130" height="24" viewBox="0 0 130 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <text x="0" y="16" fontFamily="'Space Grotesk', sans-serif" fontSize="15" fontWeight="700" letterSpacing="-0.04em" fill={base}>SPLICE</text>
-          <text x="0" y="24" fontFamily="'Space Mono', monospace" fontSize="7" letterSpacing="0.18em" fill={accentColor}>LABS</text>
+          <text x="0" y="16" className="font-display" fontSize="15" fontWeight="700" letterSpacing="-0.04em" fill={base}>SPLICE</text>
+          <text x="0" y="24" className="font-mono" fontSize="7" letterSpacing="0.18em" fill={accentColor}>LABS</text>
         </svg>
       </div>
     );
@@ -42,10 +42,10 @@ export function CrossVA_Wordmark({ accent = false, scale = "header" }: { accent?
       <CrossVA_Icon accent={accent} size={52} />
       <div className="flex flex-col">
         <svg width="220" height="40" viewBox="0 0 220 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <text x="0" y="32" fontFamily="'Space Grotesk', sans-serif" fontSize="42" fontWeight="700" letterSpacing="-0.04em" fill={base}>SPLICE</text>
+          <text x="0" y="32" className="font-display" fontSize="42" fontWeight="700" letterSpacing="-0.04em" fill={base}>SPLICE</text>
         </svg>
         <svg width="220" height="16" viewBox="0 0 220 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <text x="2" y="12" fontFamily="'Space Mono', monospace" fontSize="10" letterSpacing="0.22em" fill={accentColor}>LABS</text>
+          <text x="2" y="12" className="font-mono" fontSize="10" letterSpacing="0.22em" fill={accentColor}>LABS</text>
         </svg>
       </div>
     </div>
@@ -90,8 +90,8 @@ export function CrossVB_Wordmark({ accent = false, scale = "header" }: { accent?
       <div className="flex items-center gap-2.5">
         <CrossVB_Icon accent={accent} size={22} />
         <svg width="130" height="24" viewBox="0 0 130 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <text x="0" y="16" fontFamily="'Space Grotesk', sans-serif" fontSize="15" fontWeight="700" letterSpacing="-0.04em" fill={base}>SPLICE</text>
-          <text x="0" y="24" fontFamily="'Space Mono', monospace" fontSize="7" letterSpacing="0.18em" fill={accentColor}>LABS</text>
+          <text x="0" y="16" className="font-display" fontSize="15" fontWeight="700" letterSpacing="-0.04em" fill={base}>SPLICE</text>
+          <text x="0" y="24" className="font-mono" fontSize="7" letterSpacing="0.18em" fill={accentColor}>LABS</text>
         </svg>
       </div>
     );
@@ -101,10 +101,10 @@ export function CrossVB_Wordmark({ accent = false, scale = "header" }: { accent?
       <CrossVB_Icon accent={accent} size={52} />
       <div className="flex flex-col">
         <svg width="220" height="40" viewBox="0 0 220 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <text x="0" y="32" fontFamily="'Space Grotesk', sans-serif" fontSize="42" fontWeight="700" letterSpacing="-0.04em" fill={base}>SPLICE</text>
+          <text x="0" y="32" className="font-display" fontSize="42" fontWeight="700" letterSpacing="-0.04em" fill={base}>SPLICE</text>
         </svg>
         <svg width="220" height="16" viewBox="0 0 220 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <text x="2" y="12" fontFamily="'Space Mono', monospace" fontSize="10" letterSpacing="0.22em" fill={accentColor}>LABS</text>
+          <text x="2" y="12" className="font-mono" fontSize="10" letterSpacing="0.22em" fill={accentColor}>LABS</text>
         </svg>
       </div>
     </div>
@@ -151,8 +151,8 @@ export function CrossVC_Wordmark({ accent = false, scale = "header" }: { accent?
       <div className="flex items-center gap-2.5">
         <CrossVC_Icon accent={accent} size={22} />
         <svg width="130" height="24" viewBox="0 0 130 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <text x="0" y="16" fontFamily="'Space Grotesk', sans-serif" fontSize="15" fontWeight="700" letterSpacing="-0.04em" fill={base}>SPLICE</text>
-          <text x="0" y="24" fontFamily="'Space Mono', monospace" fontSize="7" letterSpacing="0.18em" fill={accentColor}>LABS</text>
+          <text x="0" y="16" className="font-display" fontSize="15" fontWeight="700" letterSpacing="-0.04em" fill={base}>SPLICE</text>
+          <text x="0" y="24" className="font-mono" fontSize="7" letterSpacing="0.18em" fill={accentColor}>LABS</text>
         </svg>
       </div>
     );
@@ -162,10 +162,10 @@ export function CrossVC_Wordmark({ accent = false, scale = "header" }: { accent?
       <CrossVC_Icon accent={accent} size={52} />
       <div className="flex flex-col">
         <svg width="220" height="40" viewBox="0 0 220 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <text x="0" y="32" fontFamily="'Space Grotesk', sans-serif" fontSize="42" fontWeight="700" letterSpacing="-0.04em" fill={base}>SPLICE</text>
+          <text x="0" y="32" className="font-display" fontSize="42" fontWeight="700" letterSpacing="-0.04em" fill={base}>SPLICE</text>
         </svg>
         <svg width="220" height="16" viewBox="0 0 220 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <text x="2" y="12" fontFamily="'Space Mono', monospace" fontSize="10" letterSpacing="0.22em" fill={accentColor}>LABS</text>
+          <text x="2" y="12" className="font-mono" fontSize="10" letterSpacing="0.22em" fill={accentColor}>LABS</text>
         </svg>
       </div>
     </div>

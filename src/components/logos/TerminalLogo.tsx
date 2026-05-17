@@ -97,7 +97,7 @@ export function TerminalWordmark({ accent = false, scale = "header", animated = 
 
   if (scale === "product") {
     return (
-      <div className="inline-flex items-baseline font-mono text-[13px]" style={{ fontFamily: "'Space Mono', monospace" }}>
+      <div className="inline-flex items-baseline font-mono text-[13px]">
         <span style={{ color: base, opacity: 0.35 }}>›</span>
         <span style={{ color: base }} className="ml-1">splice</span>
         <span style={{ color: cursorColor }}>_</span>
@@ -125,7 +125,7 @@ export function TerminalWordmark({ accent = false, scale = "header", animated = 
 
   // Header — full monospace wordmark with optional typing animation
   return (
-    <div className="inline-flex items-baseline" style={{ fontFamily: "'Space Mono', monospace" }}>
+    <div className="inline-flex items-baseline font-mono">
       <span className="text-[42px] font-normal" style={{ color: base, opacity: 0.25 }}>›</span>
       <span className="text-[42px] font-normal ml-1" style={{ color: base, letterSpacing: "-0.01em" }}>splice</span>
       <span className="text-[42px] font-bold" style={{ color: cursorColor }}>_</span>

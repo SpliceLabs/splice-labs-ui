@@ -62,10 +62,10 @@ export function InciseWordmark({ accent = false, scale = "header" }: InciseProps
             <rect x="0" y={cutY} width={w} height={28 - cutY} />
           </clipPath>
         </defs>
-        <text x={dx} y={textY} fontFamily="'Space Grotesk', sans-serif" fontSize="16" fontWeight="700" letterSpacing="-0.04em" fill={base} clipPath="url(#incise-top-p)">SPLICE</text>
-        <text x={-dx} y={textY} fontFamily="'Space Grotesk', sans-serif" fontSize="16" fontWeight="700" letterSpacing="-0.04em" fill={base} clipPath="url(#incise-bot-p)">SPLICE</text>
+        <text x={dx} y={textY} className="font-display" fontSize="16" fontWeight="700" letterSpacing="-0.04em" fill={base} clipPath="url(#incise-top-p)">SPLICE</text>
+        <text x={-dx} y={textY} className="font-display" fontSize="16" fontWeight="700" letterSpacing="-0.04em" fill={base} clipPath="url(#incise-bot-p)">SPLICE</text>
         {/* LABS */}
-        <text x="0" y="26" fontFamily="'Space Mono', monospace" fontSize="6" letterSpacing="0.18em" fill={accentColor}>LABS</text>
+        <text x="0" y="26" className="font-mono" fontSize="6" letterSpacing="0.18em" fill={accentColor}>LABS</text>
         {/* The cut line — diagonal at 6° */}
         <line x1="0" y1={cutY + 1.5} x2="110" y2={cutY - 1.5} stroke={cutColor} strokeWidth="0.75" />
       </svg>
@@ -89,13 +89,13 @@ export function InciseWordmark({ accent = false, scale = "header" }: InciseProps
         </clipPath>
       </defs>
       {/* Top half — shifted right */}
-      <text x={dx} y={textY} fontFamily="'Space Grotesk', sans-serif" fontSize="52" fontWeight="700" letterSpacing="-0.045em" fill={base} clipPath="url(#incise-top-h)">SPLICE</text>
+      <text x={dx} y={textY} className="font-display" fontSize="52" fontWeight="700" letterSpacing="-0.045em" fill={base} clipPath="url(#incise-top-h)">SPLICE</text>
       {/* Bottom half — shifted left */}
-      <text x={-dx} y={textY} fontFamily="'Space Grotesk', sans-serif" fontSize="52" fontWeight="700" letterSpacing="-0.045em" fill={base} clipPath="url(#incise-bot-h)">SPLICE</text>
+      <text x={-dx} y={textY} className="font-display" fontSize="52" fontWeight="700" letterSpacing="-0.045em" fill={base} clipPath="url(#incise-bot-h)">SPLICE</text>
       {/* The cut */}
       <line x1="0" y1={cutY + 3.5} x2="340" y2={cutY - 3.5} stroke={cutColor} strokeWidth="1" />
       {/* LABS */}
-      <text x="2" y={h - 4} fontFamily="'Space Mono', monospace" fontSize="10" letterSpacing="0.22em" fill={accentColor}>LABS</text>
+      <text x="2" y={h - 4} className="font-mono" fontSize="10" letterSpacing="0.22em" fill={accentColor}>LABS</text>
     </svg>
   );
 }

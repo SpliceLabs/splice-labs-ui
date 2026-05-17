@@ -22,7 +22,7 @@ export function MeridianWordmark({ accent = false, scale = "header" }: { accent?
   if (scale === "product") {
     return (
       <svg width="120" height="28" viewBox="0 0 120 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <text x="0" y="21" fontFamily="'Space Grotesk', sans-serif" fontSize="20" fontWeight="700" letterSpacing="-0.04em" fill={baseColor}>
+        <text x="0" y="21" className="font-display" fontSize="20" fontWeight="700" letterSpacing="-0.04em" fill={baseColor}>
           SPLICE
         </text>
         {/* Hairline cut through the I */}
@@ -59,7 +59,7 @@ export function MeridianWordmark({ accent = false, scale = "header" }: { accent?
       <line x1="96" y1="36" x2="105" y2="36" stroke={baseColor} strokeWidth="2.5" strokeLinecap="round"/>
       <line x1="96" y1="44" x2="108" y2="44" stroke={baseColor} strokeWidth="2.5" strokeLinecap="round"/>
       {/* LABS — lighter weight, wider tracking */}
-      <text x="120" y="44" fontFamily="'Space Grotesk', sans-serif" fontSize="13" fontWeight="400" letterSpacing="0.18em" fill={accent ? accentColor : "hsl(210,10%,50%)"}>LABS</text>
+      <text x="120" y="44" className="font-display" fontSize="13" fontWeight="400" letterSpacing="0.18em" fill={accent ? accentColor : "hsl(210,10%,50%)"}>LABS</text>
     </svg>
   );
 }

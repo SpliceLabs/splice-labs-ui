@@ -85,8 +85,8 @@ export function CrossWordmark({ accent = false, scale = "header" }: CrossProps) 
         {/* Icon */}
         <CrossIcon accent={accent} size={22} />
         {/* SPLICE */}
-        <text x="30" y="16" dominantBaseline="middle" fontFamily="'Space Grotesk', sans-serif" fontSize="15" fontWeight="700" letterSpacing="-0.04em" fill={base}>SPLICE</text>
-        <text x="30" y="27" dominantBaseline="middle" fontFamily="'Space Mono', monospace" fontSize="7" fontWeight="400" letterSpacing="0.18em" fill={accentColor}>LABS</text>
+        <text x="30" y="16" dominantBaseline="middle" className="font-display" fontSize="15" fontWeight="700" letterSpacing="-0.04em" fill={base}>SPLICE</text>
+        <text x="30" y="27" dominantBaseline="middle" className="font-mono" fontSize="7" fontWeight="400" letterSpacing="0.18em" fill={accentColor}>LABS</text>
       </svg>
     );
   }
@@ -95,8 +95,8 @@ export function CrossWordmark({ accent = false, scale = "header" }: CrossProps) 
   return (
     <svg width="400" height="72" viewBox="0 0 400 72" fill="none" xmlns="http://www.w3.org/2000/svg">
       <CrossIcon accent={accent} size={52} />
-      <text x="66" y="40" dominantBaseline="middle" fontFamily="'Space Grotesk', sans-serif" fontSize="42" fontWeight="700" letterSpacing="-0.04em" fill={base}>SPLICE</text>
-      <text x="67" y="60" dominantBaseline="middle" fontFamily="'Space Mono', monospace" fontSize="10" fontWeight="400" letterSpacing="0.22em" fill={accentColor}>LABS</text>
+      <text x="66" y="40" dominantBaseline="middle" className="font-display" fontSize="42" fontWeight="700" letterSpacing="-0.04em" fill={base}>SPLICE</text>
+      <text x="67" y="60" dominantBaseline="middle" className="font-mono" fontSize="10" fontWeight="400" letterSpacing="0.22em" fill={accentColor}>LABS</text>
     </svg>
   );
 }

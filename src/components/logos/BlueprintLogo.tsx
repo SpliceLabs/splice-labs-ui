@@ -46,8 +46,8 @@ export function BlueprintWordmark({ accent = false, scale = "header" }: Blueprin
       <div className="flex items-center gap-2.5">
         <BlueprintIcon accent={accent} size={22} />
         <svg width="120" height="24" viewBox="0 0 120 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <text x="0" y="18" fontFamily="'Space Grotesk', sans-serif" fontSize="15" fontWeight="600" letterSpacing="0.06em" fill={base}>SPLICE</text>
-          <text x="74" y="18" fontFamily="'Space Grotesk', sans-serif" fontSize="10" fontWeight="400" letterSpacing="0.14em" fill={subColor}>LABS</text>
+          <text x="0" y="18" className="font-display" fontSize="15" fontWeight="600" letterSpacing="0.06em" fill={base}>SPLICE</text>
+          <text x="74" y="18" className="font-display" fontSize="10" fontWeight="400" letterSpacing="0.14em" fill={subColor}>LABS</text>
         </svg>
       </div>
     );
@@ -58,10 +58,10 @@ export function BlueprintWordmark({ accent = false, scale = "header" }: Blueprin
       <BlueprintIcon accent={accent} size={48} />
       <div className="flex flex-col gap-0.5">
         <svg width="210" height="40" viewBox="0 0 210 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <text x="0" y="30" fontFamily="'Space Grotesk', sans-serif" fontSize="30" fontWeight="600" letterSpacing="0.06em" fill={base}>SPLICE</text>
+          <text x="0" y="30" className="font-display" fontSize="30" fontWeight="600" letterSpacing="0.06em" fill={base}>SPLICE</text>
         </svg>
         <svg width="210" height="16" viewBox="0 0 210 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <text x="1" y="12" fontFamily="'Space Grotesk', sans-serif" fontSize="11" fontWeight="400" letterSpacing="0.28em" fill={subColor}>LABS</text>
+          <text x="1" y="12" className="font-display" fontSize="11" fontWeight="400" letterSpacing="0.28em" fill={subColor}>LABS</text>
         </svg>
       </div>
     </div>

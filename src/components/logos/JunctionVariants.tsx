@@ -32,8 +32,8 @@ export function JunctionVA_Wordmark({ accent = false, scale = "header" }: { acce
       <div className="flex items-center gap-2">
         <JunctionVA_Icon accent={accent} size={24} />
         <svg width="110" height="24" viewBox="0 0 110 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <text x="0" y="18" fontFamily="'Space Grotesk', sans-serif" fontSize="16" fontWeight="700" letterSpacing="-0.03em" fill={base}>SPLICE</text>
-          <text x="75" y="18" fontFamily="'Space Grotesk', sans-serif" fontSize="10" fontWeight="400" letterSpacing="0.15em" fill={sub}>LABS</text>
+          <text x="0" y="18" className="font-display" fontSize="16" fontWeight="700" letterSpacing="-0.03em" fill={base}>SPLICE</text>
+          <text x="75" y="18" className="font-display" fontSize="10" fontWeight="400" letterSpacing="0.15em" fill={sub}>LABS</text>
         </svg>
       </div>
     );
@@ -43,8 +43,8 @@ export function JunctionVA_Wordmark({ accent = false, scale = "header" }: { acce
     <div className="flex items-center gap-4">
       <JunctionVA_Icon accent={accent} size={44} />
       <svg width="200" height="48" viewBox="0 0 200 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <text x="0" y="36" fontFamily="'Space Grotesk', sans-serif" fontSize="32" fontWeight="700" letterSpacing="-0.04em" fill={base}>SPLICE</text>
-        <text x="2" y="48" fontFamily="'Space Grotesk', sans-serif" fontSize="11" fontWeight="400" letterSpacing="0.22em" fill={sub}>LABS</text>
+        <text x="0" y="36" className="font-display" fontSize="32" fontWeight="700" letterSpacing="-0.04em" fill={base}>SPLICE</text>
+        <text x="2" y="48" className="font-display" fontSize="11" fontWeight="400" letterSpacing="0.22em" fill={sub}>LABS</text>
       </svg>
     </div>
   );
@@ -90,8 +90,8 @@ export function JunctionVB_Wordmark({ accent = false, scale = "header" }: { acce
       <div className="flex items-center gap-2">
         <JunctionVB_Icon accent={accent} size={24} />
         <svg width="110" height="24" viewBox="0 0 110 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <text x="0" y="18" fontFamily="'Space Grotesk', sans-serif" fontSize="16" fontWeight="700" letterSpacing="-0.03em" fill={base}>SPLICE</text>
-          <text x="75" y="18" fontFamily="'Space Grotesk', sans-serif" fontSize="10" fontWeight="400" letterSpacing="0.15em" fill={sub}>LABS</text>
+          <text x="0" y="18" className="font-display" fontSize="16" fontWeight="700" letterSpacing="-0.03em" fill={base}>SPLICE</text>
+          <text x="75" y="18" className="font-display" fontSize="10" fontWeight="400" letterSpacing="0.15em" fill={sub}>LABS</text>
         </svg>
       </div>
     );
@@ -101,8 +101,8 @@ export function JunctionVB_Wordmark({ accent = false, scale = "header" }: { acce
     <div className="flex items-center gap-4">
       <JunctionVB_Icon accent={accent} size={44} />
       <svg width="200" height="48" viewBox="0 0 200 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <text x="0" y="36" fontFamily="'Space Grotesk', sans-serif" fontSize="32" fontWeight="700" letterSpacing="-0.04em" fill={base}>SPLICE</text>
-        <text x="2" y="48" fontFamily="'Space Grotesk', sans-serif" fontSize="11" fontWeight="400" letterSpacing="0.22em" fill={sub}>LABS</text>
+        <text x="0" y="36" className="font-display" fontSize="32" fontWeight="700" letterSpacing="-0.04em" fill={base}>SPLICE</text>
+        <text x="2" y="48" className="font-display" fontSize="11" fontWeight="400" letterSpacing="0.22em" fill={sub}>LABS</text>
       </svg>
     </div>
   );
@@ -149,8 +149,8 @@ export function JunctionVC_Wordmark({ accent = false, scale = "header" }: { acce
       <div className="flex items-center gap-2">
         <JunctionVC_Icon accent={accent} size={24} />
         <svg width="110" height="24" viewBox="0 0 110 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <text x="0" y="18" fontFamily="'Space Grotesk', sans-serif" fontSize="16" fontWeight="700" letterSpacing="-0.03em" fill={base}>SPLICE</text>
-          <text x="75" y="18" fontFamily="'Space Grotesk', sans-serif" fontSize="10" fontWeight="400" letterSpacing="0.15em" fill={sub}>LABS</text>
+          <text x="0" y="18" className="font-display" fontSize="16" fontWeight="700" letterSpacing="-0.03em" fill={base}>SPLICE</text>
+          <text x="75" y="18" className="font-display" fontSize="10" fontWeight="400" letterSpacing="0.15em" fill={sub}>LABS</text>
         </svg>
       </div>
     );
@@ -160,8 +160,8 @@ export function JunctionVC_Wordmark({ accent = false, scale = "header" }: { acce
     <div className="flex items-center gap-4">
       <JunctionVC_Icon accent={accent} size={44} />
       <svg width="200" height="48" viewBox="0 0 200 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <text x="0" y="36" fontFamily="'Space Grotesk', sans-serif" fontSize="32" fontWeight="700" letterSpacing="-0.04em" fill={base}>SPLICE</text>
-        <text x="2" y="48" fontFamily="'Space Grotesk', sans-serif" fontSize="11" fontWeight="400" letterSpacing="0.22em" fill={sub}>LABS</text>
+        <text x="0" y="36" className="font-display" fontSize="32" fontWeight="700" letterSpacing="-0.04em" fill={base}>SPLICE</text>
+        <text x="2" y="48" className="font-display" fontSize="11" fontWeight="400" letterSpacing="0.22em" fill={sub}>LABS</text>
       </svg>
     </div>
   );
