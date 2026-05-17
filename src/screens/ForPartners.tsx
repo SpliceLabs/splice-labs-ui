@@ -1,6 +1,7 @@
 "use client";
 
 import { SiteNav } from "@/components/marketing/SiteNav";
+import { SiteFooter } from "@/components/marketing/SiteFooter";
 import { TerminalButton } from "@/components/marketing/ui/TerminalButton";
 
 const WHO_SHOULD_PARTNER = [
@@ -119,14 +120,7 @@ export default function ForPartnersScreen() {
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="border-t border-surface-border py-8 px-6 md:px-8">
-        <div className="max-w-[900px] mx-auto">
-          <p className="font-mono text-[9px] text-muted-foreground/60 tracking-splice-wide">
-            Splice Labs, Inc. All rights reserved.
-          </p>
-        </div>
-      </footer>
+      <SiteFooter />
     </main>
   );
 }
