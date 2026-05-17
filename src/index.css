@@ -1,0 +1,195 @@
+/* Fonts are loaded via next/font/google in src/app/layout.tsx —
+   self-hosted, preloaded, no render-blocking @import. */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Splice Labs: Near-black / graphite system */
+    --background: 210 14% 6%;
+    --foreground: 210 12% 92%;
+
+    --surface: 210 12% 9%;
+    --surface-raised: 210 10% 12%;
+    --surface-border: 210 10% 16%;
+
+    --card: 210 12% 9%;
+    --card-foreground: 210 20% 92%;
+
+    --popover: 210 12% 9%;
+    --popover-foreground: 210 20% 92%;
+
+    /* Electric teal — primary accent */
+    --primary: 174 100% 42%;
+    --primary-foreground: 210 14% 6%;
+
+    --secondary: 210 10% 14%;
+    --secondary-foreground: 210 20% 75%;
+
+    --muted: 210 10% 14%;
+    --muted-foreground: 210 15% 84%;
+
+    --accent: 174 100% 42%;
+    --accent-foreground: 210 14% 6%;
+
+    /* Extended palette — warm accents */
+    --amber: 42 100% 50%;
+    --amber-foreground: 42 100% 10%;
+    --gold: 36 80% 56%;
+    --gold-foreground: 36 80% 8%;
+    --rust: 16 72% 48%;
+    --rust-foreground: 16 10% 95%;
+
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 210 20% 92%;
+
+    --border: 210 10% 18%;
+    --input: 210 10% 14%;
+    --ring: 174 100% 42%;
+
+    --radius: 0.125rem;
+
+    /* Typography scale */
+    --font-display: var(--font-space-grotesk), system-ui, sans-serif;
+    --font-body: var(--font-space-grotesk), system-ui, sans-serif;
+    --font-mono: var(--font-space-mono), "Courier New", monospace;
+
+    /* Grid and spacing */
+    --grid-unit: 4px;
+
+    /* Sidebar (unused but required) */
+    --sidebar-background: 210 14% 6%;
+    --sidebar-foreground: 210 20% 92%;
+    --sidebar-primary: 174 100% 42%;
+    --sidebar-primary-foreground: 210 14% 6%;
+    --sidebar-accent: 210 10% 14%;
+    --sidebar-accent-foreground: 210 20% 92%;
+    --sidebar-border: 210 10% 18%;
+    --sidebar-ring: 174 100% 42%;
+
+    /* ──────────────────────────────────────────────────────────
+       Blog design system (Pass 2)
+       Namespaced --blog-* tokens. Extends — never contradicts —
+       the core palette above. Source: splicelabs blog primitives
+       guide v2.0 §1. Both surfaces (graphite / paper) are native.
+       ────────────────────────────────────────────────────────── */
+
+    /* Surfaces */
+    --blog-bg-graphite: 200 14% 5%; /* dark surface (index hero) */
+    --blog-bg-paper: 40 24% 94%; /* warm off-white (reader) */
+    --blog-surface-muted: 40 22% 89%; /* paper card / callout bg */
+    --blog-surface-elevated: 200 11% 9%; /* graphite card / panel */
+
+    /* Text */
+    --blog-text-paper: 40 24% 94%; /* text on graphite */
+    --blog-text-graphite: 200 14% 8%; /* text on paper */
+    --blog-text-muted: 200 8% 55%; /* eyebrows, captions */
+    --blog-text-subtle: 200 6% 70%; /* tertiary annotations */
+
+    /* Hairlines */
+    --blog-border-hairline: 200 10% 16%; /* dark hairline */
+    --blog-border-paper: 40 18% 78%; /* paper hairline */
+
+    /* Tile palette (cover art) */
+    --blog-tile-teal: 174 100% 38%;
+    --blog-tile-amber: 41 79% 60%;
+    --blog-tile-bone: 42 22% 80%;
+    --blog-tile-graphite: 200 12% 14%;
+
+    /* Chip / ink stamp */
+    --blog-chip-ink: 0 0% 4%;
+    --blog-chip-text: 40 24% 94%;
+
+    /* Interaction / micro */
+    --blog-ring-teal: 167 100% 75%; /* focus ring */
+    --blog-accent-pulse: 174 100% 50%; /* dot pulse */
+    --blog-highlight-amber: 41 90% 70%; /* inline highlight */
+    --blog-link-underline: 174 100% 38%; /* in-prose link */
+
+    /* Semantic aliases (back-compat — new code prefers the above) */
+    --blog-hairline: var(--blog-border-hairline);
+    --blog-graphite: var(--blog-bg-graphite);
+    --blog-paper: var(--blog-bg-paper);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    font-family: var(--font-body);
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-body);
+  }
+
+  code,
+  pre,
+  .mono {
+    font-family: var(--font-mono);
+  }
+}
+
+@layer utilities {
+  .font-display {
+    font-family: var(--font-display);
+  }
+  .font-mono-custom {
+    font-family: var(--font-mono);
+  }
+  .text-accent {
+    color: hsl(var(--accent));
+  }
+  .bg-surface {
+    background-color: hsl(var(--surface));
+  }
+  .bg-surface-raised {
+    background-color: hsl(var(--surface-raised));
+  }
+  .border-surface {
+    border-color: hsl(var(--surface-border));
+  }
+
+  .mask-fade-from-left,
+  .mask-fade-from-right {
+    position: relative;
+    isolation: isolate;
+  }
+  .mask-fade-from-left::before,
+  .mask-fade-from-right::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background-color: hsl(var(--background));
+    pointer-events: none;
+    -webkit-mask-composite: source-in;
+    mask-composite: intersect;
+  }
+  .mask-fade-from-left::before {
+    -webkit-mask-image:
+      linear-gradient(to right, black 25%, transparent 100%),
+      linear-gradient(to bottom, transparent 0%, black 18%, black 82%, transparent 100%);
+    mask-image:
+      linear-gradient(to right, black 25%, transparent 100%),
+      linear-gradient(to bottom, transparent 0%, black 18%, black 82%, transparent 100%);
+  }
+  .mask-fade-from-right::before {
+    -webkit-mask-image:
+      linear-gradient(to left, black 25%, transparent 100%),
+      linear-gradient(to bottom, transparent 0%, black 18%, black 82%, transparent 100%);
+    mask-image:
+      linear-gradient(to left, black 25%, transparent 100%),
+      linear-gradient(to bottom, transparent 0%, black 18%, black 82%, transparent 100%);
+  }
+}
