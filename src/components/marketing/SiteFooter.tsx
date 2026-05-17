@@ -1,3 +1,5 @@
+import { TerminalCaret } from "./ui/TerminalCaret";
+
 const FOOTER_LINKS = [
   { label: "Why Splice Labs", href: "#value" },
   { label: "Prototypes", href: "#projects" },
@@ -22,7 +24,7 @@ export function SiteFooter() {
               <span className="text-foreground/30">›</span>
               <span>splice</span>
               <span className="text-accent font-bold">_</span>
-              <span className="inline-block w-2 h-4 bg-accent ml-0.5 animate-blink-cursor" />
+              <TerminalCaret rate="footer" className="ml-0.5" />
             </div>
             <p className="font-mono text-[10px] text-muted-foreground tracking-splice-wide uppercase">
               Protocol and Systems Design Foundry
@@ -35,9 +37,15 @@ export function SiteFooter() {
               <a
                 key={link.label}
                 href={link.href}
-                className="font-mono text-[11px] text-muted-foreground tracking-splice-wide uppercase hover:text-foreground transition-colors"
+                className="group font-mono text-[11px] text-muted-foreground tracking-splice-wide uppercase transition-colors hover:text-foreground focus-visible:outline focus-visible:outline-1 focus-visible:outline-accent focus-visible:outline-offset-2"
               >
-                {link.label}
+                <span className="relative">
+                  {link.label}
+                  <span
+                    aria-hidden
+                    className="absolute -bottom-0.5 left-0 h-px w-full origin-left scale-x-0 bg-accent motion-safe:transition-transform motion-safe:duration-150 motion-safe:ease-out group-hover:scale-x-100"
+                  />
+                </span>
               </a>
             ))}
           </div>

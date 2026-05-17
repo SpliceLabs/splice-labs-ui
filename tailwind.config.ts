@@ -139,6 +139,11 @@ export default {
           "0%": { transform: "scaleX(0)" },
           "100%": { transform: "scaleX(1)" },
         },
+        // Marketing reveal: staggered entrance.
+        "fade-up": {
+          "0%": { opacity: "0", transform: "translateY(12px)" },
+          "100%": { opacity: "1", transform: "translateY(0)" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
@@ -146,6 +151,7 @@ export default {
         "pulse-accent": "pulse-accent 2s ease-in-out infinite",
         "blink-cursor": "blink-cursor 1s step-end infinite",
         draw: "draw 480ms cubic-bezier(.2,.7,.1,1) both",
+        "fade-up": "fade-up 0.42s cubic-bezier(0.165,0.84,0.44,1) both",
       },
     },
   },

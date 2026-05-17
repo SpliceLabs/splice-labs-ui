@@ -1,4 +1,6 @@
 import { SwarmSlot } from "./swarm/SwarmSlot";
+import { cn } from "@/lib/utils";
+import { TagChip } from "../ui/TagChip";
 
 const PROJECTS = [
   {
@@ -45,13 +47,20 @@ export function ProjectsSection() {
             {PROJECTS.map((p, i) => (
               <div
                 key={p.name}
-                className={`grid grid-cols-1 lg:grid-cols-[1fr_1fr] gap-4 border border-surface-border bg-surface hover:border-accent/20 transition-colors ${
-                  i % 2 === 1 ? "lg:ml-8" : ""
-                }`}
+                className={cn(
+                  "group/card grid grid-cols-1 lg:grid-cols-[1fr_1fr] gap-4 border border-surface-border bg-surface transition-colors duration-200 hover:border-accent/40",
+                  i % 2 === 1 && "lg:ml-8",
+                )}
               >
                 <div className="p-6 md:p-8">
                   <h3 className="font-display text-lg font-semibold text-foreground mb-2">
-                    {p.name}
+                    <span className="relative inline-block">
+                      {p.name}
+                      <span
+                        aria-hidden
+                        className="absolute -bottom-0.5 left-0 h-px w-full origin-left scale-x-0 bg-accent motion-safe:transition-transform motion-safe:duration-200 motion-safe:ease-out group-hover/card:scale-x-100"
+                      />
+                    </span>
                   </h3>
                   <p className="text-sm text-foreground/70 leading-relaxed">
                     {p.description}
@@ -60,12 +69,7 @@ export function ProjectsSection() {
                 <div className="p-6 md:p-8 border-t lg:border-t-0 lg:border-l border-surface-border flex items-center">
                   <div className="flex flex-wrap gap-2">
                     {p.tags.map((tag) => (
-                      <span
-                        key={tag}
-                        className="font-mono text-[9px] tracking-splice-wide uppercase text-accent border border-accent/20 px-2.5 py-1"
-                      >
-                        {tag}
-                      </span>
+                      <TagChip key={tag}>{tag}</TagChip>
                     ))}
                   </div>
                 </div>

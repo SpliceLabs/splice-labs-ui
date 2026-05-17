@@ -1,4 +1,6 @@
 import { useState, useRef, useEffect } from "react";
+import { TerminalCaret } from "./ui/TerminalCaret";
+import { TerminalButton } from "./ui/TerminalButton";
 
 interface DropdownItem {
   label: string;
@@ -52,7 +54,7 @@ function Dropdown({ items, open, onClose }: { items: DropdownItem[]; open: boole
           key={item.label}
           href={item.href}
           onClick={onClose}
-          className="block px-4 py-2 font-mono text-[11px] text-muted-foreground tracking-widest uppercase hover:text-foreground hover:bg-surface-raised transition-colors"
+          className="block px-4 py-2 font-mono text-[11px] text-muted-foreground tracking-widest uppercase hover:text-foreground hover:bg-surface-raised transition-colors focus-visible:outline focus-visible:outline-1 focus-visible:outline-accent focus-visible:outline-offset-2"
         >
           {item.label}
         </a>
@@ -73,7 +75,7 @@ export function SiteNav() {
           <span className="text-foreground/30">›</span>
           <span>splice</span>
           <span className="text-accent font-bold">_</span>
-          <span className="inline-block w-2 h-4 bg-accent ml-0.5 animate-blink-cursor" />
+          <TerminalCaret className="ml-0.5" />
         </a>
 
         {/* Desktop nav */}
@@ -87,7 +89,7 @@ export function SiteNav() {
                 onMouseLeave={() => setOpenDropdown(null)}
               >
                 <button
-                  className="font-mono text-[11px] text-muted-foreground tracking-widest uppercase hover:text-foreground transition-colors flex items-center gap-1"
+                  className="font-mono text-[11px] text-muted-foreground tracking-widest uppercase hover:text-foreground transition-colors flex items-center gap-1 focus-visible:outline focus-visible:outline-1 focus-visible:outline-accent focus-visible:outline-offset-2"
                 >
                   {item.label}
                   <svg className={`w-3 h-3 transition-transform ${openDropdown === item.label ? "rotate-180" : ""}`} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
@@ -102,7 +104,7 @@ export function SiteNav() {
                           key={child.label}
                           href={child.href}
                           onClick={() => setOpenDropdown(null)}
-                          className="block px-4 py-2 font-mono text-[11px] text-muted-foreground tracking-widest uppercase hover:text-foreground hover:bg-surface-raised transition-colors"
+                          className="block px-4 py-2 font-mono text-[11px] text-muted-foreground tracking-widest uppercase hover:text-foreground hover:bg-surface-raised transition-colors focus-visible:outline focus-visible:outline-1 focus-visible:outline-accent focus-visible:outline-offset-2"
                         >
                           {child.label}
                         </a>
@@ -115,18 +117,19 @@ export function SiteNav() {
               <a
                 key={item.label}
                 href={item.href}
-                className="font-mono text-[11px] text-muted-foreground tracking-widest uppercase hover:text-foreground transition-colors"
+                className="font-mono text-[11px] text-muted-foreground tracking-widest uppercase hover:text-foreground transition-colors focus-visible:outline focus-visible:outline-1 focus-visible:outline-accent focus-visible:outline-offset-2"
               >
                 {item.label}
               </a>
             )
           )}
-          <a
+          <TerminalButton
             href="#contact"
-            className="font-mono text-[11px] tracking-widest uppercase bg-accent text-accent-foreground px-4 py-2 hover:bg-accent/90 transition-colors"
+            size="sm"
+            data-event="cta_request_demo"
           >
             Request a private demo
-          </a>
+          </TerminalButton>
         </div>
 
         {/* Mobile hamburger */}
@@ -182,13 +185,15 @@ export function SiteNav() {
               </a>
             )
           )}
-          <a
+          <TerminalButton
             href="#contact"
+            size="sm"
             onClick={() => setMobileOpen(false)}
-            className="block font-mono text-xs tracking-widest uppercase bg-accent text-accent-foreground px-4 py-2 text-center mt-4"
+            data-event="cta_request_demo_mobile"
+            className="mt-4 w-full"
           >
             Request a private demo
-          </a>
+          </TerminalButton>
         </div>
       )}
     </nav>

@@ -1,4 +1,6 @@
 import { SwarmSlot } from "./swarm/SwarmSlot";
+import { ModuleLabel } from "../ui/ModuleLabel";
+import { TerminalButton } from "../ui/TerminalButton";
 
 // Hero copy. The swarm canvas is mounted at VersionE root (single fixed
 // canvas spanning all sections); HeroSection no longer wraps in SwarmHero.
@@ -17,22 +19,40 @@ export function HeroSection() {
 
       <div className="pl-8 md:pl-12">
         {/* Junction node */}
-        <div className="flex items-center gap-4 mb-10">
+        <div className="flex items-center gap-4 mb-10 motion-safe:animate-fade-up">
           <div className="w-3 h-3 border border-accent bg-accent/10 -ml-[calc(2rem+6px)] md:-ml-[calc(3rem+6px)]" />
-          <span className="font-mono text-[9px] text-accent tracking-splice-ultra uppercase">
-            splice_labs::init
-          </span>
-          <span className="flex-1 h-px bg-gradient-to-r from-accent/20 to-transparent" />
+          <ModuleLabel
+            prefix="splice_labs"
+            name="init"
+            dot={false}
+            className="flex-1"
+          />
         </div>
 
-        <h1 className="font-display text-4xl md:text-6xl lg:text-[4.5rem] font-bold tracking-splice-tight text-foreground leading-[1.02] mb-2 max-w-[900px]">
+        <h1
+          className="font-display text-4xl md:text-6xl lg:text-[4.5rem] font-bold tracking-splice-tight text-foreground leading-[1.02] mb-2 max-w-[900px] motion-safe:animate-fade-up"
+          style={{ animationDelay: "80ms" }}
+        >
           Protocol and<br />Systems Design.
         </h1>
-        <h1 className="font-display text-4xl md:text-6xl lg:text-[4.5rem] font-bold tracking-splice-tight text-accent leading-[1.02] mb-8 max-w-[900px]">
-          Prototype the Future.
+        <h1
+          className="font-display text-4xl md:text-6xl lg:text-[4.5rem] font-bold tracking-splice-tight text-accent leading-[1.02] mb-8 max-w-[900px] motion-safe:animate-fade-up"
+          style={{ animationDelay: "160ms" }}
+        >
+          <span className="relative inline-block">
+            Prototype the Future.
+            <span
+              aria-hidden
+              style={{ animationDelay: "640ms" }}
+              className="absolute -bottom-1 left-0 h-0.5 w-full origin-left bg-accent motion-safe:scale-x-0 motion-safe:animate-draw"
+            />
+          </span>
         </h1>
 
-        <div className="flex items-start gap-6 md:gap-10 mb-10">
+        <div
+          className="flex items-start gap-6 md:gap-10 mb-10 motion-safe:animate-fade-up"
+          style={{ animationDelay: "240ms" }}
+        >
           <div className="w-px h-20 bg-accent/30 shrink-0 mt-1" />
           <div>
             <p className="text-accent font-display text-xl md:text-2xl font-semibold tracking-splice-tight mb-3">
@@ -44,23 +64,23 @@ export function HeroSection() {
           </div>
         </div>
 
-        <div className="flex flex-col sm:flex-row gap-3">
-          <a
-            href="#contact"
-            className="inline-flex items-center justify-center font-mono text-xs tracking-splice-wide uppercase bg-accent text-accent-foreground px-6 py-3 hover:bg-accent/90 transition-colors"
-          >
+        <div
+          className="flex flex-col sm:flex-row gap-3 motion-safe:animate-fade-up"
+          style={{ animationDelay: "320ms" }}
+        >
+          <TerminalButton href="#contact" data-event="cta_request_demo">
             Request a private demo
-          </a>
-          <a
-            href="#"
-            className="inline-flex items-center justify-center font-mono text-xs tracking-splice-wide uppercase border border-surface-border text-muted-foreground px-6 py-3 hover:text-foreground hover:border-foreground/20 transition-colors"
-          >
+          </TerminalButton>
+          <TerminalButton variant="ghost" href="#" data-event="cta_get_updates">
             Get updates
-          </a>
+          </TerminalButton>
         </div>
 
         {/* System boundary line */}
-        <div className="flex items-center gap-3 mt-16">
+        <div
+          className="flex items-center gap-3 mt-16 motion-safe:animate-fade-up"
+          style={{ animationDelay: "400ms" }}
+        >
           <span className="w-8 h-px bg-accent/30" />
           <span className="font-mono text-[8px] text-muted-foreground/60 tracking-splice-ultra uppercase">
             Prototypes first · Cross-chain by default · Security built in
