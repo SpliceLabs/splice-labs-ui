@@ -2,11 +2,12 @@ import { SwarmSlot } from "./swarm/SwarmSlot";
 import { cn } from "@/lib/utils";
 
 const VALUES = [
-  { title: "Real Systems, Fast", body: "We ship working prototypes. Not slide decks." },
-  { title: "Agent-Native Architecture", body: "Agents execute. Humans approve. Policies are explicit." },
-  { title: "Cross-Chain Infrastructure", body: "Ethereum + L2s. Solana. Stacks. Designed for interoperability." },
-  { title: "Enterprise-Grade Without Enterprise Overhead", body: "Advanced systems design without Fortune-500 friction." },
-  { title: "Trust nothing. Audit everything.", body: "Security isn't a feature. It's the architecture. Zero trust, by default." },
+  { title: "Vertical Focus", body: "Governed autonomous capital and agentic finance—where AI meets programmable money." },
+  { title: "Founder-First Economics", body: "Clean cap tables. No mandatory platform tax. Founders keep majority ownership and agency." },
+  { title: "Venture Production OS", body: "Shared research, validation frameworks, MVP scaffolding, and GTM infrastructure." },
+  { title: "Governed AI Infrastructure", body: "Evaluated workflows, audit logs, policy gates, and human approval at every critical step." },
+  { title: "Portfolio Commons", body: "Reusable learning across incubations without exposing proprietary data." },
+  { title: "Evidence Before Scale", body: "AI reduces the cost of evidence while preserving founder autonomy. We kill bad ideas fast." },
 ];
 
 export function ValueSection() {
