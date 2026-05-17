@@ -36,7 +36,7 @@ export function ListPostRow({
             {title}
             <span
               aria-hidden
-              className="absolute -bottom-0.5 left-0 h-px w-full origin-left scale-x-0 bg-current transition-transform duration-200 ease-out group-hover:scale-x-100"
+              className="absolute -bottom-0.5 left-0 h-px w-full origin-left scale-x-0 bg-current motion-safe:transition-transform motion-safe:duration-200 motion-safe:ease-out group-hover:scale-x-100"
             />
           </span>
         </span>

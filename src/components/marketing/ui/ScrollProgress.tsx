@@ -24,7 +24,7 @@ export function ScrollProgress() {
   return (
     <div
       aria-hidden
-      className="fixed inset-x-0 top-0 z-[60] h-px origin-left bg-accent transition-opacity duration-200"
+      className="fixed inset-x-0 top-0 z-[60] h-px origin-left bg-accent motion-safe:transition-opacity motion-safe:duration-200"
       style={{
         transform: `scaleX(${progress})`,
         opacity: progress < 0.02 ? 0 : 1,

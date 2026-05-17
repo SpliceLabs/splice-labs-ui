@@ -26,7 +26,7 @@ export function ViewToggle({ value, onChange, className }: ViewToggleProps) {
           aria-label={label}
           aria-pressed={value === view}
           className={cn(
-            "grid size-9 place-items-center transition-colors",
+            "grid size-10 place-items-center transition-colors",
             "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blog-ring-teal",
             value === view
               ? "bg-blog-chip-ink text-blog-chip-text"

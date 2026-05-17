@@ -9,7 +9,7 @@ export function HeroSection() {
   return (
     <section
       id="hero"
-      className="pt-32 pb-20 md:pt-44 md:pb-28 px-6 md:px-8 max-w-[1700px] mx-auto relative min-h-screen"
+      className="pt-32 pb-20 md:pt-44 md:pb-28 container-wide relative min-h-screen"
     >
       {/* Hero swarm slot: centered, full-width — swarm fills viewport. */}
       <SwarmSlot id="hero" className="absolute inset-0" />

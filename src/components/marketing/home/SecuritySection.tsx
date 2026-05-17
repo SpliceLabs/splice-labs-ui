@@ -1,4 +1,5 @@
 import { SwarmSlot } from "./swarm/SwarmSlot";
+import { ModuleLabel } from "../ui/ModuleLabel";
 
 export function SecuritySection() {
   return (
@@ -7,16 +8,10 @@ export function SecuritySection() {
       <SwarmSlot id="security" className="absolute inset-0 md:left-1/3" />
       <div className="absolute left-6 md:left-8 top-0 bottom-0 w-px bg-surface-border" />
 
-      <div className="max-w-[1700px] mx-auto px-6 md:px-8 py-20 md:py-28">
+      <div className="container-wide py-20 md:py-28">
         <div className="md:w-1/2 md:mr-auto flex justify-center md:justify-start mask-fade-from-left">
          <div className="w-full max-w-[600px]">
-          <div className="flex items-center gap-4 mb-10">
-            <div className="w-2 h-2 bg-accent/40 -ml-[calc(2rem+4px)] md:-ml-[calc(3rem+4px)]" />
-            <span className="font-mono text-[9px] text-accent tracking-splice-ultra uppercase">
-              module::security
-            </span>
-            <span className="flex-1 h-px bg-surface-border" />
-          </div>
+          <ModuleLabel variant="eyebrow" spine="left" name="security" className="mb-10" />
 
           <h2 className="font-display text-2xl md:text-3xl font-semibold tracking-splice-tight text-foreground mb-10">
             Security by Design

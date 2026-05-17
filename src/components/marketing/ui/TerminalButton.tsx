@@ -41,16 +41,20 @@ export function TerminalButton({
   children,
 }: TerminalButtonProps) {
   const classes = cn(
-    "group inline-flex items-center justify-center gap-1",
+    "group inline-flex min-h-[2.5rem] items-center justify-center gap-1",
     "font-mono uppercase tracking-splice-wide",
     size === "sm" ? "px-4 py-2 text-[11px]" : "px-6 py-3 text-xs",
-    "transition-[color,background-color,border-color,transform] duration-150 ease-out",
+    "transition-[color,background-color,border-color,box-shadow,transform] duration-150 ease-[cubic-bezier(0.165,0.84,0.44,1)]",
     "focus-visible:outline focus-visible:outline-1 focus-visible:outline-accent focus-visible:outline-offset-2",
-    !disabled && "motion-safe:active:scale-[0.985]",
     variant === "primary"
-      ? "bg-accent text-accent-foreground hover:bg-accent/90"
-      : "border border-surface-border text-muted-foreground hover:border-foreground/30 hover:text-foreground",
-    disabled && "pointer-events-none opacity-40",
+      ? "bg-accent text-accent-foreground"
+      : "border border-surface-border text-muted-foreground",
+    !disabled && "motion-safe:active:scale-[0.985]",
+    !disabled &&
+      (variant === "primary"
+        ? "hover:bg-accent/90 hover:ring-1 hover:ring-inset hover:ring-accent-foreground/15"
+        : "hover:border-foreground/30 hover:text-foreground"),
+    disabled && "cursor-not-allowed opacity-40",
     className,
   );
 
@@ -61,7 +65,7 @@ export function TerminalButton({
       </span>
       <span
         aria-hidden
-        className="-translate-x-1 opacity-0 transition-[opacity,transform] duration-150 group-hover:translate-x-0 group-hover:opacity-100"
+        className="-translate-x-1 opacity-0 motion-safe:transition-[opacity,transform] motion-safe:duration-150 group-hover:translate-x-0 group-hover:opacity-100"
       >
         ›
       </span>

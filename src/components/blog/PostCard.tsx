@@ -31,7 +31,7 @@ export function PostCard({
       href={href}
       className={cn(
         "group block [--tile-texture-opacity:0.08] hover:[--tile-texture-opacity:0.14]",
-        "transition-transform duration-100 active:scale-[0.992]",
+        "motion-safe:transition-transform motion-safe:duration-100 motion-safe:active:scale-[0.992]",
         "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blog-ring-teal",
         surface === "graphite" ? "text-blog-text-paper" : "text-blog-text-graphite",
         className,
@@ -57,7 +57,7 @@ export function PostCard({
           {title}
           <span
             aria-hidden
-            className="absolute -bottom-0.5 left-0 h-px w-full origin-left scale-x-0 bg-current transition-transform duration-200 ease-out group-hover:scale-x-100"
+            className="absolute -bottom-0.5 left-0 h-px w-full origin-left scale-x-0 bg-current motion-safe:transition-transform motion-safe:duration-200 motion-safe:ease-out group-hover:scale-x-100"
           />
         </span>
       </h3>

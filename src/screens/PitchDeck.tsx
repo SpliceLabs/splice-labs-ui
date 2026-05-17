@@ -160,7 +160,7 @@ export default function PitchDeck() {
           lightMode ? { backgroundColor: "hsla(210, 20%, 96%, 0.85)" } : { backgroundColor: "hsla(210, 14%, 6%, 0.8)" }
         }
       >
-        <div className="max-w-[1200px] mx-auto px-6 md:px-8 flex items-center justify-between h-12">
+        <div className="container-content flex items-center justify-between h-12">
           <span className="font-mono text-[10px] text-accent/60 tracking-splice-ultra uppercase">
             Splice Labs · Decks
           </span>
@@ -189,7 +189,7 @@ export default function PitchDeck() {
           lightMode ? { backgroundColor: "hsla(210, 20%, 96%, 0.85)" } : { backgroundColor: "hsla(210, 14%, 6%, 0.8)" }
         }
       >
-        <div className="max-w-[1200px] mx-auto px-6 md:px-8 flex items-center gap-0 overflow-x-auto">
+        <div className="container-content flex items-center gap-0 overflow-x-auto">
           {DECKS.map((d) => {
             if ((d as { href?: string }).href) {
               return (

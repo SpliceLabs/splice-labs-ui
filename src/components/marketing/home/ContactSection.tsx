@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { SwarmSlot } from "./swarm/SwarmSlot";
 import { TerminalButton } from "../ui/TerminalButton";
+import { ModuleLabel } from "../ui/ModuleLabel";
 
 type Status = "idle" | "submitting" | "success" | "error";
 type Field = "name" | "email" | "message";
@@ -9,7 +10,7 @@ type Errors = Partial<Record<Field, string>>;
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 const inputClass =
-  "w-full bg-transparent border border-surface-border px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground/60 focus:outline-none focus:border-accent transition-colors disabled:opacity-50";
+  "w-full bg-transparent border border-surface-border px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground/60 transition-colors focus:outline-none focus:border-accent focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-0 disabled:opacity-50";
 
 export function ContactSection() {
   const [formState, setFormState] = useState({ name: "", email: "", message: "" });
@@ -56,16 +57,10 @@ export function ContactSection() {
       <div className="absolute left-6 md:left-8 bottom-0 w-px h-8 bg-accent/40" />
       <div className="absolute left-[calc(1.5rem-3px)] md:left-[calc(2rem-3px)] bottom-0 w-2 h-2 border border-accent bg-accent/10" />
 
-      <div className="max-w-[1700px] mx-auto px-6 md:px-8 py-20 md:py-28">
+      <div className="container-wide py-20 md:py-28">
         <div className="md:w-1/2 md:mr-auto flex justify-center md:justify-start mask-fade-from-left">
          <div className="w-full max-w-[600px]">
-          <div className="flex items-center gap-4 mb-10">
-            <div className="w-2 h-2 bg-accent/40 -ml-[calc(2rem+4px)] md:-ml-[calc(3rem+4px)]" />
-            <span className="font-mono text-[9px] text-accent tracking-splice-ultra uppercase">
-              module::contact
-            </span>
-            <span className="flex-1 h-px bg-surface-border" />
-          </div>
+          <ModuleLabel variant="eyebrow" spine="left" name="contact" className="mb-10" />
 
           <div className="grid grid-cols-1 gap-10">
             <div>

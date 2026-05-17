@@ -22,7 +22,7 @@ export function TagPill({
       type={type}
       aria-pressed={active}
       className={cn(
-        "inline-flex items-center px-3 py-1.5 font-mono text-[12px] uppercase leading-none tracking-[0.06em]",
+        "inline-flex min-h-[2.5rem] items-center px-3 py-1.5 font-mono text-[12px] uppercase leading-none tracking-[0.06em]",
         "transition-colors duration-150 ease-out",
         "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blog-ring-teal",
         active

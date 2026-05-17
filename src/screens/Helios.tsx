@@ -2,6 +2,7 @@
 
 import { SiteNav } from "@/components/marketing/SiteNav";
 import { SiteFooter } from "@/components/marketing/SiteFooter";
+import { TerminalButton } from "@/components/marketing/ui/TerminalButton";
 
 const PRIMITIVES = [
   {
@@ -57,7 +58,7 @@ export default function Helios() {
       <SiteNav />
 
       {/* ── HERO ── */}
-      <section className="pt-32 pb-20 md:pt-44 md:pb-28 px-6 md:px-8 max-w-[1200px] mx-auto relative">
+      <section className="pt-32 pb-20 md:pt-44 md:pb-28 container-content relative">
         <div className="absolute left-6 md:left-8 top-0 bottom-0 w-px bg-surface-border" />
         <div className="absolute left-6 md:left-8 top-32 md:top-44 w-px h-16 bg-accent/40" />
 
@@ -95,31 +96,22 @@ export default function Helios() {
           </div>
 
           <div className="flex flex-col sm:flex-row gap-3">
-            <a
-              href="#contact"
-              className="inline-flex items-center justify-center font-mono text-xs tracking-splice-wide uppercase bg-accent text-accent-foreground px-6 py-3 hover:bg-accent/90 transition-colors"
-            >
+            <TerminalButton href="#contact" data-event="cta_helios_demo">
               Request HELIOS Demo
-            </a>
-            <a
-              href="#"
-              className="inline-flex items-center justify-center font-mono text-xs tracking-splice-wide uppercase border border-surface-border text-muted-foreground px-6 py-3 hover:text-foreground hover:border-foreground/20 transition-colors"
-            >
+            </TerminalButton>
+            <TerminalButton variant="ghost" href="#" data-event="cta_helios_docs">
               View Technical Documentation
-            </a>
-            <a
-              href="#use-cases"
-              className="inline-flex items-center justify-center font-mono text-xs tracking-splice-wide uppercase border border-surface-border text-muted-foreground px-6 py-3 hover:text-foreground hover:border-foreground/20 transition-colors"
-            >
+            </TerminalButton>
+            <TerminalButton variant="ghost" href="#use-cases">
               Explore Use Cases
-            </a>
+            </TerminalButton>
           </div>
         </div>
       </section>
 
       {/* ── SECURITY PRIMITIVES ── */}
       <section className="border-t border-surface-border">
-        <div className="max-w-[1200px] mx-auto px-6 md:px-8 py-20 md:py-28">
+        <div className="container-content py-20 md:py-28">
           <div className="font-mono text-[10px] text-muted-foreground tracking-splice-ultra uppercase mb-3">
             Core Capabilities
           </div>
@@ -151,7 +143,7 @@ export default function Helios() {
 
       {/* ── LAYERED DEFENSE STACK ── */}
       <section className="border-t border-surface-border">
-        <div className="max-w-[1200px] mx-auto px-6 md:px-8 py-20 md:py-28">
+        <div className="container-content py-20 md:py-28">
           <div className="font-mono text-[10px] text-muted-foreground tracking-splice-ultra uppercase mb-3">
             Defense Model
           </div>
@@ -191,7 +183,7 @@ export default function Helios() {
 
       {/* ── USE CASES ── */}
       <section id="use-cases" className="border-t border-surface-border">
-        <div className="max-w-[1200px] mx-auto px-6 md:px-8 py-20 md:py-28">
+        <div className="container-content py-20 md:py-28">
           <div className="font-mono text-[10px] text-muted-foreground tracking-splice-ultra uppercase mb-3">
             Applications
           </div>
@@ -217,7 +209,7 @@ export default function Helios() {
 
       {/* ── CTA ── */}
       <section id="contact" className="border-t border-surface-border">
-        <div className="max-w-[1200px] mx-auto px-6 md:px-8 py-20 md:py-28 text-center">
+        <div className="container-content py-20 md:py-28 text-center">
           <h2 className="font-display text-2xl md:text-3xl font-semibold tracking-splice-tight text-foreground mb-4">
             Ready to constrain your agents?
           </h2>
@@ -225,18 +217,15 @@ export default function Helios() {
             Talk to our team about deploying HELIOS for your autonomous capital infrastructure.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
-            <a
+            <TerminalButton
               href="mailto:hello@splicelabs.io"
-              className="inline-flex items-center justify-center font-mono text-xs tracking-splice-wide uppercase bg-accent text-accent-foreground px-8 py-3 hover:bg-accent/90 transition-colors"
+              data-event="cta_helios_demo"
             >
               Request HELIOS Demo
-            </a>
-            <a
-              href="#"
-              className="inline-flex items-center justify-center font-mono text-xs tracking-splice-wide uppercase border border-surface-border text-muted-foreground px-8 py-3 hover:text-foreground hover:border-foreground/20 transition-colors"
-            >
+            </TerminalButton>
+            <TerminalButton variant="ghost" href="#">
               View Technical Documentation
-            </a>
+            </TerminalButton>
           </div>
         </div>
       </section>

@@ -150,7 +150,7 @@ export default {
         "accordion-up": "accordion-up 0.2s ease-out",
         "pulse-accent": "pulse-accent 2s ease-in-out infinite",
         "blink-cursor": "blink-cursor 1s step-end infinite",
-        draw: "draw 480ms cubic-bezier(.2,.7,.1,1) both",
+        draw: "draw 320ms cubic-bezier(.2,.7,.1,1) both",
         "fade-up": "fade-up 0.42s cubic-bezier(0.165,0.84,0.44,1) both",
       },
     },

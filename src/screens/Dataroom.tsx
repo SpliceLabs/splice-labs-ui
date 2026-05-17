@@ -2,6 +2,7 @@
 
 import { SiteNav } from "@/components/marketing/SiteNav";
 import { SiteFooter } from "@/components/marketing/SiteFooter";
+import { TerminalButton } from "@/components/marketing/ui/TerminalButton";
 
 interface DataroomItem {
   title: string;
@@ -103,7 +104,7 @@ export default function Dataroom() {
       <SiteNav />
 
       {/* Hero */}
-      <section className="pt-32 pb-16 md:pt-44 md:pb-20 px-6 md:px-8 max-w-[1200px] mx-auto relative">
+      <section className="pt-32 pb-16 md:pt-44 md:pb-20 container-content relative">
         <div className="absolute left-6 md:left-8 top-0 bottom-0 w-px bg-surface-border" />
         <div className="absolute left-6 md:left-8 top-32 md:top-44 w-px h-16 bg-accent/40" />
 
@@ -131,7 +132,7 @@ export default function Dataroom() {
       {/* Sections */}
       {SECTIONS.map((section) => (
         <section key={section.number} className="border-t border-surface-border">
-          <div className="max-w-[1200px] mx-auto px-6 md:px-8 py-12 md:py-16">
+          <div className="container-content py-12 md:py-16">
             <div className="flex items-center gap-3 mb-8">
               <span className="font-mono text-[11px] text-accent tracking-splice-ultra">{section.number}</span>
               <h2 className="font-display text-xl md:text-2xl font-semibold tracking-splice-tight text-foreground">
@@ -207,7 +208,7 @@ export default function Dataroom() {
 
       {/* Next Steps */}
       <section className="border-t border-surface-border">
-        <div className="max-w-[1200px] mx-auto px-6 md:px-8 py-12 md:py-16">
+        <div className="container-content py-12 md:py-16">
           <h2 className="font-display text-xl md:text-2xl font-semibold tracking-splice-tight text-foreground mb-8">
             Next Steps
           </h2>
@@ -231,7 +232,7 @@ export default function Dataroom() {
 
       {/* Status Key */}
       <section className="border-t border-surface-border">
-        <div className="max-w-[1200px] mx-auto px-6 md:px-8 py-12 md:py-16">
+        <div className="container-content py-12 md:py-16">
           <h3 className="font-mono text-[10px] text-muted-foreground tracking-splice-ultra uppercase mb-4">Document Status Key</h3>
           <div className="flex flex-wrap gap-4">
             {Object.keys(STATUS_COLORS).map((s) => (
@@ -253,16 +254,17 @@ export default function Dataroom() {
 
       {/* Contact CTA */}
       <section className="border-t border-surface-border">
-        <div className="max-w-[1200px] mx-auto px-6 md:px-8 py-16 text-center">
+        <div className="container-content py-16 text-center">
           <p className="text-sm text-foreground/50 mb-4">
             For questions about accessing specific documents or requesting additional information:
           </p>
-          <a
+          <TerminalButton
             href="mailto:hello@splicelabs.io"
-            className="inline-flex items-center justify-center font-mono text-xs tracking-splice-wide uppercase bg-accent text-accent-foreground px-6 py-3 hover:bg-accent/90 transition-colors"
+            data-event="cta_dataroom_contact"
+            className="inline-flex"
           >
             Contact Us
-          </a>
+          </TerminalButton>
         </div>
       </section>
 

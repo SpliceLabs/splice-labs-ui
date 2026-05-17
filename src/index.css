@@ -49,7 +49,7 @@
     --input: 210 10% 14%;
     --ring: 174 100% 42%;
 
-    --radius: 0.125rem;
+    --radius: 0;
 
     /* Typography scale */
     --font-display: var(--font-space-grotesk), system-ui, sans-serif;
@@ -153,6 +153,16 @@
 }
 
 @layer utilities {
+  /* Single source of truth for page width — replaces per-page max-w
+     literals. `wide` is the marketing landing width; `content` is for
+     focused/secondary pages. */
+  .container-wide {
+    @apply mx-auto w-full max-w-[1700px] px-6 md:px-8;
+  }
+  .container-content {
+    @apply mx-auto w-full max-w-[1200px] px-6 md:px-8;
+  }
+
   .font-display {
     font-family: var(--font-display);
   }

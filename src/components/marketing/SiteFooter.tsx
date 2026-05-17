@@ -17,7 +17,7 @@ const FOOTER_LINKS = [
 export function SiteFooter() {
   return (
     <footer className="relative z-10 bg-background border-t border-surface-border">
-      <div className="max-w-[1200px] mx-auto px-6 md:px-8 py-12 md:py-16">
+      <div className="container-wide py-12 md:py-16">
         <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-10">
           {/* Logo + tagline */}
           <div>
