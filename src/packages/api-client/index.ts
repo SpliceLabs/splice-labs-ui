@@ -151,3 +151,52 @@ export const api = {
   delete: <T extends z.ZodTypeAny>(path: string, schema?: T, opts?: Omit<ApiFetchOptions<T>, "method" | "schema">) =>
     apiFetch(path, { ...opts, method: "DELETE", schema }),
 };
+
+// ─── Binary endpoints ───────────────────────────────────────────────
+
+/**
+ * POSTs a JSON body to an absolute URL and returns the raw response Blob.
+ * For non-JSON endpoints — audio (TTS), file downloads, etc. Keeps direct
+ * fetch() inside the api-client boundary.
+ */
+export async function apiPostBlob(
+  url: string,
+  body: unknown,
+  timeoutMs = 15_000,
+): Promise<Blob> {
+  const controller = new AbortController();
+  const timeout = setTimeout(() => controller.abort(), timeoutMs);
+
+  try {
+    const response = await fetch(url, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(body),
+      signal: controller.signal,
+    });
+
+    if (!response.ok) {
+      throw new ApiClientError(
+        `HTTP ${response.status}`,
+        response.status,
+        "HTTP_ERROR",
+        null,
+      );
+    }
+
+    return await response.blob();
+  } catch (error) {
+    if (error instanceof ApiClientError) throw error;
+    if ((error as Error).name === "AbortError") {
+      throw new ApiClientError("Request timed out", 0, "TIMEOUT", null);
+    }
+    throw new ApiClientError(
+      (error as Error).message ?? "Network error",
+      0,
+      "NETWORK_ERROR",
+      null,
+    );
+  } finally {
+    clearTimeout(timeout);
+  }
+}

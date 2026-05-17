@@ -37,23 +37,23 @@ export function getPublicConfig(): PublicConfig {
   if (_publicConfig) return _publicConfig;
 
   const raw: Record<string, string | undefined> = {};
-  // Vite exposes env vars via import.meta.env
-  if (typeof import.meta !== "undefined" && import.meta.env) {
-    for (const [key, value] of Object.entries(import.meta.env)) {
-      if (key.startsWith("VITE_PUBLIC_") || key.startsWith("PUBLIC_")) {
-        // Normalize: strip VITE_ prefix if present
-        const normalizedKey = key.replace(/^VITE_/, "");
-        raw[normalizedKey] = value as string;
-      }
+  // Next exposes client-safe env vars via process.env (NEXT_PUBLIC_ prefix).
+  for (const [key, value] of Object.entries(process.env)) {
+    if (key.startsWith("NEXT_PUBLIC_") || key.startsWith("PUBLIC_")) {
+      // Normalize: strip the NEXT_ prefix if present.
+      const normalizedKey = key.replace(/^NEXT_/, "");
+      raw[normalizedKey] = value;
     }
   }
+
+  const isProduction = process.env.NODE_ENV === "production";
 
   // Apply defaults for missing values
   const result = PublicConfigSchema.safeParse({
     PUBLIC_API_BASE_URL: raw.PUBLIC_API_BASE_URL,
-    PUBLIC_APP_ENV: raw.PUBLIC_APP_ENV ?? (import.meta.env?.MODE === "production" ? "production" : "development"),
+    PUBLIC_APP_ENV: raw.PUBLIC_APP_ENV ?? (isProduction ? "production" : "development"),
     PUBLIC_APP_NAME: raw.PUBLIC_APP_NAME,
-    PUBLIC_ENABLE_DEV_TOOLS: raw.PUBLIC_ENABLE_DEV_TOOLS ?? (import.meta.env?.DEV ? "true" : "false"),
+    PUBLIC_ENABLE_DEV_TOOLS: raw.PUBLIC_ENABLE_DEV_TOOLS ?? (isProduction ? "false" : "true"),
   });
 
   if (!result.success) {

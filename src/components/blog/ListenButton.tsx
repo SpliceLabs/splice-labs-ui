@@ -1,12 +1,17 @@
 import { cn } from "@/lib/utils";
+import { apiPostBlob } from "@acme/api-client";
 import { Pause, Play } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 
 export type ListenStatus = "idle" | "loading" | "playing" | "paused";
 
 export interface ListenButtonProps {
-  /** The body text to read aloud. */
-  text: string;
+  /**
+   * The body text to read aloud. Pass a function to resolve it lazily at
+   * click time — needed when the source (e.g. a rendered article) is not
+   * available on first render.
+   */
+  text: string | (() => string);
   /** Optional remote TTS endpoint — POSTed `{ text }`, expects audio/mpeg. */
   endpoint?: string;
   voice?: string;
@@ -49,15 +54,13 @@ export function ListenButton({
   }, []);
 
   async function start() {
+    // Resolve lazily — the text source may not exist until click time.
+    const content = typeof text === "function" ? text() : text;
+
     if (endpoint) {
       set("loading");
       try {
-        const res = await fetch(endpoint, {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ text }),
-        });
-        const blob = await res.blob();
+        const blob = await apiPostBlob(endpoint, { text: content });
         const audio = new Audio(URL.createObjectURL(blob));
         audioRef.current = audio;
         audio.onended = () => set("idle");
@@ -69,7 +72,7 @@ export function ListenButton({
       return;
     }
 
-    const utterance = new SpeechSynthesisUtterance(text);
+    const utterance = new SpeechSynthesisUtterance(content);
     utterance.rate = rate;
     if (voice) {
       const match = window.speechSynthesis

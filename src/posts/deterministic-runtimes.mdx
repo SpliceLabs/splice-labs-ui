@@ -1,0 +1,65 @@
+{/*
+  Sample blog post body, authored in MDX. Markdown maps to the Splice Labs
+  brand system via src/mdx-components.tsx (blogMdxComponents); blog components
+  like <QuickTakeaways> and <Callout> are usable as bare JSX. Heading ids are
+  added by rehype-slug so the TableOfContents can build deep links.
+*/}
+
+<QuickTakeaways
+  items={[
+    "Deterministic replay is the precondition for auditable agent trading.",
+    "Policy compiles into contract code — not model prompts.",
+    "A cross-chain ledger lets one attestation cover many chains.",
+  ]}
+  className="mb-10"
+/>
+
+## The runtime gap
+
+Most agent stacks treat execution as an afterthought. The model decides, an
+SDK fires a transaction, and the trail ends there. For a trading desk that is
+not good enough — you cannot audit what you cannot reconstruct.
+
+<Callout tone="note" className="my-6">
+A runtime is deterministic when the same inputs always produce the same
+execution trace. Without that property, replay is fiction.
+</Callout>
+
+## Policy as code
+
+Compiled policies live in contracts, not prompts. An approval gate is a typed,
+signed object — the agent proposes, the gate decides, and both halves are
+recorded.
+
+### Approval gates
+
+Each gate names the human or contract that owns it. Timeouts are explicit.
+Nothing executes on a maybe.
+
+<FigureBlock number={1} caption="The deterministic execution lifecycle — intent, gate, replay.">
+
+```ts
+const policy = await helios.compile({
+  agent: "opentrade.v2",
+  gates: ["human.approval", "replay.attest"],
+});
+```
+
+</FigureBlock>
+
+## Replay attestation
+
+Every decision an agent makes is reconstructable from its trace. Auditors
+verify the attestation; they do not trust the operator.
+
+> Trust nothing. Audit everything.
+
+## Cross-chain ledger
+
+Stacks-anchored, EVM-fluent. One attestation ledger spans every chain the agent
+touches, so a single proof covers a multi-chain run.
+
+<Callout tone="warn" className="my-6">
+Chain heterogeneity is a feature, not a tax — but only if the ledger is
+unified.
+</Callout>

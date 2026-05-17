@@ -3,9 +3,14 @@
  * 8-slide partnership narrative, independent from other decks.
  */
 import { Slide, Placeholder } from "./SlideComponents";
-import splicePlatformDiagram from "@/assets/diagrams/splice-platform-diagram.png";
-import silentMarketsLogo from "@/assets/logos/silent-markets.png";
-import crownFuturesLogo from "@/assets/logos/crown-futures.png";
+// Next resolves image imports to StaticImageData — take .src for <img>.
+import splicePlatformDiagramImg from "@/assets/diagrams/splice-platform-diagram.png";
+import silentMarketsLogoImg from "@/assets/logos/silent-markets.png";
+import crownFuturesLogoImg from "@/assets/logos/crown-futures.png";
+
+const splicePlatformDiagram = splicePlatformDiagramImg.src;
+const silentMarketsLogo = silentMarketsLogoImg.src;
+const crownFuturesLogo = crownFuturesLogoImg.src;
 
 interface SlideProps {
   slideNumber: number;

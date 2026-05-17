@@ -1,3 +1,5 @@
+"use client";
+
 import { SiteNav } from "@/components/marketing/SiteNav";
 import { SiteFooter } from "@/components/marketing/SiteFooter";
 

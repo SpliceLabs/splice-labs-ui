@@ -76,3 +76,6 @@ export {
   copyToClipboard,
   slugify,
 } from "./utils/markdown";
+
+// MDX → brand component mapping
+export { blogMdxComponents } from "./MDXComponents";

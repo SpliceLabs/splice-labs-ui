@@ -1,3 +1,5 @@
+"use client";
+
 /**
  * Unified Deck Experience — /decks
  * Deck switcher bar + per-deck content
@@ -189,11 +191,11 @@ export default function PitchDeck() {
       >
         <div className="max-w-[1200px] mx-auto px-6 md:px-8 flex items-center gap-0 overflow-x-auto">
           {DECKS.map((d) => {
-            if ((d as any).href) {
+            if ((d as { href?: string }).href) {
               return (
                 <a
                   key={d.id}
-                  href={(d as any).href}
+                  href={(d as { href?: string }).href}
                   className="font-mono text-[10px] tracking-splice-wide uppercase px-4 py-2.5 border-b-2 border-transparent text-muted-foreground hover:text-foreground transition-colors shrink-0"
                 >
                   {d.label}
