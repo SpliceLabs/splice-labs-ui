@@ -7,6 +7,11 @@ import type { PostCardData, Surface } from "./types";
 export interface PostCardProps extends PostCardData {
   surface?: Surface;
   className?: string;
+  /**
+   * Reveal-stagger index for the cover-tile particle swarm, in ms.
+   * When set, the card opts into the ambient swarm (blog index grid only).
+   */
+  swarmDelay?: number;
 }
 
 /**
@@ -25,6 +30,7 @@ export function PostCard({
   chipLabel,
   surface = "graphite",
   className,
+  swarmDelay,
 }: PostCardProps) {
   return (
     <a
@@ -37,7 +43,12 @@ export function PostCard({
         className,
       )}
     >
-      <CoverTile tone={tone} texture={texture}>
+      <CoverTile
+        tone={tone}
+        texture={texture}
+        swarm={swarmDelay !== undefined}
+        swarmDelay={swarmDelay}
+      >
         {icon && <IconPlate icon={icon} overlap />}
         {chipLabel && (
           <LabelChip size="sm" variant="notched" caret>
