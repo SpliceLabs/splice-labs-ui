@@ -20,23 +20,24 @@ interface NavItem {
 }
 
 const NAV_ITEMS: NavItem[] = [
-  { label: "Why Splice Labs", href: "#value" },
-  { label: "Prototypes", href: "#projects" },
+  { label: "Thesis", href: "/thesis" },
+  { label: "Studio Model", href: "/studio-model" },
+  { label: "Incubations", href: "#projects" },
   {
-    label: "Platform",
+    label: "For",
     children: [
-      { label: "HELIOS Platform", href: "#helios" },
-      { label: "Security", href: "#security" },
+      { label: "For Founders", href: "/for-founders" },
+      { label: "For Investors", href: "/for-investors" },
+      { label: "For Partners", href: "/for-partners" },
     ],
   },
   {
     label: "About",
     children: [
-      { label: "Founders", href: "#founders" },
-      { label: "Our Commitments", href: "#commitments" },
+      { label: "Team", href: "#founders" },
+      { label: "HELIOS Stack", href: "#helios" },
     ],
   },
-  { label: "DataRoom", href: "/dataroom" },
 ];
 
 function Dropdown({ items, open, onClose }: { items: DropdownItem[]; open: boolean; onClose: () => void }) {
@@ -164,9 +165,9 @@ export function SiteNav() {
           <TerminalButton
             href="#contact"
             size="sm"
-            data-event="cta_request_demo"
+            data-event="cta_build_with_splice"
           >
-            Request a private demo
+            Build with Splice
           </TerminalButton>
         </div>
 
@@ -236,10 +237,10 @@ export function SiteNav() {
             href="#contact"
             size="sm"
             onClick={() => setMobileOpen(false)}
-            data-event="cta_request_demo_mobile"
+            data-event="cta_build_with_splice_mobile"
             className="mt-4 w-full"
           >
-            Request a private demo
+            Build with Splice
           </TerminalButton>
         </div>
       )}
