@@ -133,7 +133,7 @@ export function C_IdentitySlide({ slideNumber, totalSlides }: SlideProps) {
 
       {/* We are */}
       <div className="mb-10">
-        <span className="font-mono text-xs text-bold text-accent/50 tracking-splice-ultra uppercase block mb-5">
+        <span className="font-mono text-xs font-bold text-accent/50 tracking-splice-ultra uppercase block mb-5">
           We are
         </span>
         <div className="space-y-4">
@@ -147,7 +147,7 @@ export function C_IdentitySlide({ slideNumber, totalSlides }: SlideProps) {
       </div>
 
       {/* Built on three pillars */}
-      <span className="font-mono text-xs text-bold text-accent/50 tracking-splice-ultra uppercase block mb-5">
+      <span className="font-mono text-xs font-bold text-accent/50 tracking-splice-ultra uppercase block mb-5">
         Built on three pillars
       </span>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -164,7 +164,7 @@ export function C_IdentitySlide({ slideNumber, totalSlides }: SlideProps) {
         {["Ethereum", "Solana", "Stacks"].map((chain) => (
           <span
             key={chain}
-            className="font-mono text-xs text-bold  text-accent/60 tracking-splice-wide uppercase border border-accent/20 px-3 py-1"
+            className="font-mono text-xs font-bold text-accent/60 tracking-splice-wide uppercase border border-accent/20 px-3 py-1"
           >
             {chain}
           </span>

@@ -50,7 +50,7 @@
     --input: 210 10% 14%;
     --ring: var(--primary);
 
-    --radius: 0;
+    --radius: 0.125rem;
 
     /* Typography scale */
     --font-display: var(--font-space-grotesk), system-ui, sans-serif;
