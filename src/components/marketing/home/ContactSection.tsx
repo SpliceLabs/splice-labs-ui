@@ -5,7 +5,7 @@ import { cn } from "@/lib/utils";
 
 type Status = "idle" | "submitting" | "success" | "error";
 type AudienceType = "founder" | "investor" | "partner" | "operator";
-type Field = "name" | "email" | "message" | "company" | "role";
+type Field = "name" | "email" | "message" | "company";
 type Errors = Partial<Record<Field, string>>;
 
 const AUDIENCE_OPTIONS: { type: AudienceType; label: string; cta: string; placeholder: string }[] = [
@@ -22,7 +22,7 @@ const inputClass =
 
 export function ContactSection() {
   const [audienceType, setAudienceType] = useState<AudienceType>("founder");
-  const [formState, setFormState] = useState({ name: "", email: "", message: "", company: "", role: "" });
+  const [formState, setFormState] = useState({ name: "", email: "", message: "", company: "" });
   const [status, setStatus] = useState<Status>("idle");
   const [errors, setErrors] = useState<Errors>({});
 
