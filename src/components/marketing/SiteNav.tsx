@@ -39,6 +39,27 @@ const NAV_ITEMS: NavItem[] = [
   { label: "DataRoom", href: "/dataroom" },
 ];
 
+// Home-page section ids the nav scroll-spy observes.
+const SECTION_IDS = [
+  "hero",
+  "value",
+  "commitments",
+  "projects",
+  "helios",
+  "agents",
+  "security",
+  "founders",
+  "contact",
+];
+
+/** The section id(s) a nav item maps to — its own anchor, or its children's. */
+function sectionsForItem(item: NavItem): string[] {
+  if (item.href?.startsWith("#")) return [item.href.slice(1)];
+  return (item.children ?? [])
+    .filter((c) => c.href.startsWith("#"))
+    .map((c) => c.href.slice(1));
+}
+
 function Dropdown({ items, open, onClose }: { items: DropdownItem[]; open: boolean; onClose: () => void }) {
   const ref = useRef<HTMLDivElement>(null);
 
@@ -73,6 +94,8 @@ export function SiteNav() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
 
+  const [activeSection, setActiveSection] = useState<string | null>(null);
+
   // Escape closes any open dropdown — keyboard parity with the hover affordance.
   useEffect(() => {
     if (!openDropdown) return;
@@ -82,6 +105,28 @@ export function SiteNav() {
     document.addEventListener("keydown", onKey);
     return () => document.removeEventListener("keydown", onKey);
   }, [openDropdown]);
+
+  // Scroll-spy: highlight the nav item whose section is in the viewport
+  // band. Only the home page has these sections — a no-op elsewhere.
+  useEffect(() => {
+    const els = SECTION_IDS.map((id) => document.getElementById(id)).filter(
+      (el): el is HTMLElement => el !== null,
+    );
+    if (els.length === 0) return;
+    const observer = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          if (entry.isIntersecting) setActiveSection(entry.target.id);
+        }
+      },
+      { rootMargin: "-45% 0px -45% 0px" },
+    );
+    els.forEach((el) => observer.observe(el));
+    return () => observer.disconnect();
+  }, []);
+
+  const itemActive = (item: NavItem) =>
+    activeSection != null && sectionsForItem(item).includes(activeSection);
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/90 backdrop-blur-sm border-b border-surface-border">
@@ -114,7 +159,7 @@ export function SiteNav() {
                   aria-expanded={openDropdown === item.label}
                   aria-haspopup="menu"
                   aria-controls={`nav-menu-${item.label}`}
-                  className="font-mono text-[11px] text-muted-foreground tracking-widest uppercase hover:text-foreground transition-colors flex items-center gap-1 focus-visible:outline focus-visible:outline-1 focus-visible:outline-accent focus-visible:outline-offset-2"
+                  className={`font-mono text-[11px] ${itemActive(item) ? "text-accent" : "text-muted-foreground"} tracking-widest uppercase hover:text-foreground transition-colors flex items-center gap-1 focus-visible:outline focus-visible:outline-1 focus-visible:outline-accent focus-visible:outline-offset-2`}
                 >
                   {item.label}
                   <svg className={`w-3 h-3 transition-transform ${openDropdown === item.label ? "rotate-180" : ""}`} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
@@ -126,7 +171,7 @@ export function SiteNav() {
                     <div
                       id={`nav-menu-${item.label}`}
                       role="menu"
-                      className="min-w-[180px] bg-popover border border-border backdrop-blur-md py-1"
+                      className="min-w-[180px] bg-popover border border-border backdrop-blur-md py-1 motion-safe:animate-dropdown-in"
                     >
                       {item.children!.map((child) => (
                         <a
@@ -155,7 +200,8 @@ export function SiteNav() {
               <a
                 key={item.label}
                 href={item.href}
-                className="font-mono text-[11px] text-muted-foreground tracking-widest uppercase hover:text-foreground transition-colors focus-visible:outline focus-visible:outline-1 focus-visible:outline-accent focus-visible:outline-offset-2"
+                aria-current={itemActive(item) ? "true" : undefined}
+                className={`font-mono text-[11px] ${itemActive(item) ? "text-accent" : "text-muted-foreground"} tracking-widest uppercase hover:text-foreground transition-colors focus-visible:outline focus-visible:outline-1 focus-visible:outline-accent focus-visible:outline-offset-2`}
               >
                 {item.label}
               </a>

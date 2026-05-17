@@ -34,7 +34,7 @@ export function AgentsSection() {
             {AGENTS.map((a, i) => (
               <div
                 key={a.type}
-                className={`border border-surface-border p-5 hover:border-accent/30 transition-colors ${
+                className={`border border-surface-border p-5 card-lift ${
                   i % 2 === 1 ? "md:translate-y-4" : ""
                 }`}
               >

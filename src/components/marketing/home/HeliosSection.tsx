@@ -53,7 +53,7 @@ export function HeliosSection() {
                 { layer: "Agent Orchestrator", active: false },
                 { layer: "Cross-Chain Runtime", active: false },
               ].map((l, i) => (
-                <div key={i} className="border border-surface-border p-3 flex items-center gap-3 hover:border-accent/20 transition-colors">
+                <div key={i} className="border border-surface-border p-3 flex items-center gap-3 card-lift">
                   <span className={`w-1.5 h-1.5 ${l.active ? "bg-accent" : "bg-surface-border"}`} />
                   <span className="font-mono text-[10px] text-foreground/60 tracking-splice-wide">
                     {l.layer}

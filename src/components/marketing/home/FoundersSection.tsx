@@ -40,7 +40,7 @@ export function FoundersSection() {
             {FOUNDERS.map((f, i) => (
               <div
                 key={f.name}
-                className={`grid grid-cols-1 lg:grid-cols-[180px_1fr] border border-surface-border hover:border-accent/20 transition-colors ${
+                className={`grid grid-cols-1 lg:grid-cols-[180px_1fr] border border-surface-border card-lift ${
                   i % 2 === 1 ? "lg:ml-8" : ""
                 }`}
               >

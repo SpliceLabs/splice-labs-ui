@@ -143,7 +143,7 @@ export default function Dataroom() {
 
             <div className="space-y-6">
               {section.items.map((item) => (
-                <div key={item.title} className="border border-surface-border p-5 md:p-6 hover:border-accent/20 transition-colors">
+                <div key={item.title} className="border border-surface-border p-5 md:p-6 card-lift">
                   <div className="flex flex-wrap items-center gap-3 mb-3">
                     <h3 className="font-display text-base font-semibold tracking-splice-tight text-foreground">
                       {item.title}
@@ -214,7 +214,7 @@ export default function Dataroom() {
           </h2>
           <div className="grid md:grid-cols-3 gap-6">
             {PRIORITIES.map((p) => (
-              <div key={p.level} className="border border-surface-border p-5 md:p-6">
+              <div key={p.level} className="border border-surface-border p-5 md:p-6 card-lift">
                 <h3 className="font-mono text-[10px] text-accent tracking-splice-ultra uppercase mb-4">{p.level}</h3>
                 <ol className="space-y-2">
                   {p.items.map((item, i) => (

@@ -25,7 +25,7 @@ export function SecuritySection() {
               { label: "Logs", detail: "Deterministic, immutable audit logs throughout." },
             ].map((item) => (
               <div key={item.label} className="flex">
-                <div className="flex-1 p-6 md:p-8 border border-surface-border -mt-px first:mt-0">
+                <div className="flex-1 p-6 md:p-8 border border-surface-border -mt-px first:mt-0 transition-colors hover:border-accent/40">
                   <div className="flex items-center gap-2 mb-3">
                     <span className="w-6 h-px bg-accent/40" />
                     <span className="font-mono text-[11px] text-accent tracking-splice-wide uppercase">

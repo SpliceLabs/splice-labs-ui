@@ -163,6 +163,22 @@
     @apply mx-auto w-full max-w-[1200px] px-6 md:px-8;
   }
 
+  /* Brand signature card hover — a teal-40% border and a 2px lift
+     (brand guide §12). Uses the standalone `translate` property so it
+     composes with any Tailwind `transform` offset on the card. The lift
+     is reduced-motion gated. */
+  .card-lift {
+    @apply transition-[translate,border-color] duration-200 ease-out;
+  }
+  .card-lift:hover {
+    @apply border-accent/40;
+  }
+  @media (prefers-reduced-motion: no-preference) {
+    .card-lift:hover {
+      translate: 0 -2px;
+    }
+  }
+
   .font-display {
     font-family: var(--font-display);
   }

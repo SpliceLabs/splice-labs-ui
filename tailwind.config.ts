@@ -144,6 +144,11 @@ export default {
           "0%": { opacity: "0", transform: "translateY(12px)" },
           "100%": { opacity: "1", transform: "translateY(0)" },
         },
+        // Nav dropdown / menu entrance.
+        "dropdown-in": {
+          "0%": { opacity: "0", transform: "translateY(-4px)" },
+          "100%": { opacity: "1", transform: "translateY(0)" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
@@ -152,6 +157,7 @@ export default {
         "blink-cursor": "blink-cursor 1s step-end infinite",
         draw: "draw 320ms cubic-bezier(.2,.7,.1,1) both",
         "fade-up": "fade-up 0.42s cubic-bezier(0.165,0.84,0.44,1) both",
+        "dropdown-in": "dropdown-in 160ms cubic-bezier(0.165,0.84,0.44,1) both",
       },
     },
   },

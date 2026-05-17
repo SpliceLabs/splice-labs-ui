@@ -193,7 +193,7 @@ export default function Helios() {
 
           <div className="grid md:grid-cols-2 gap-6">
             {USE_CASES.map((uc) => (
-              <div key={uc.tag} className="border border-surface-border p-6 md:p-8 hover:border-accent/30 transition-colors">
+              <div key={uc.tag} className="border border-surface-border p-6 md:p-8 card-lift">
                 <div className="flex items-center gap-2 mb-4">
                   <span className="text-accent">→</span>
                   <h3 className="font-display text-base font-semibold tracking-splice-tight text-foreground">
