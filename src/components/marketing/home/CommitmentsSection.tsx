@@ -10,13 +10,13 @@ const COMMITMENTS = [
 
 export function CommitmentsSection() {
   return (
-    <section id="commitments" className="border-t border-surface-border relative">
+    <section id="commitments" className="border-t border-surface-border relative overflow-hidden">
       {/* Swarm slot: right half on md+; full width on mobile. */}
       <SwarmSlot id="commitments" className="absolute inset-0 md:left-1/3" />
-      <div className="absolute left-10 md:left-16 top-0 bottom-0 w-px bg-surface-border" />
+      <div className="absolute left-20 top-0 bottom-0 w-px bg-surface-border" />
 
-      <div className="max-w-[1700px] mx-auto px-10 md:px-16 py-12 md:py-16">
-        <div className="md:w-1/2 md:mr-auto flex justify-center md:justify-start mask-fade-from-left">
+      <div className="max-w-[1700px] mx-auto px-20 py-12 md:py-16">
+        <div className="md:w-1/2 md:mr-auto flex justify-center md:justify-start mask-fade-from-left pl-4 md:pl-0">
          <div className="w-full max-w-[600px]">
           <div className="flex items-center gap-4 mb-6">
             <div className="w-2 h-2 bg-accent/40 md:-ml-[calc(3rem+4px)]" />
