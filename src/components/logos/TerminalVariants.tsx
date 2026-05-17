@@ -18,22 +18,22 @@ export function TerminalVA_Wordmark({ accent = false, scale = "header" }: { acce
   if (scale === "product") {
     return (
       <svg width="180" height="28" viewBox="0 0 180 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <text x="0" y="18" fontFamily="'Space Mono', monospace" fontSize="13" fontWeight="400" fill={base} opacity="0.35">›</text>
-        <text x="10" y="18" fontFamily="'Space Mono', monospace" fontSize="13" fontWeight="400" letterSpacing="-0.01em" fill={base}>splice</text>
-        <text x="74" y="18" fontFamily="'Space Mono', monospace" fontSize="13" fontWeight="400" fill={cur}>_</text>
+        <text x="0" y="18" className="font-mono" fontSize="13" fontWeight="400" fill={base} opacity="0.35">›</text>
+        <text x="10" y="18" className="font-mono" fontSize="13" fontWeight="400" letterSpacing="-0.01em" fill={base}>splice</text>
+        <text x="74" y="18" className="font-mono" fontSize="13" fontWeight="400" fill={cur}>_</text>
         <rect x="82" y="6" width="8" height="13" fill={cur} />
-        <text x="10" y="26" fontFamily="'Space Mono', monospace" fontSize="6" letterSpacing="0.14em" fill={base} opacity="0.4">labs</text>
+        <text x="10" y="26" className="font-mono" fontSize="6" letterSpacing="0.14em" fill={base} opacity="0.4">labs</text>
       </svg>
     );
   }
 
   return (
     <svg width="440" height="72" viewBox="0 0 440 72" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <text x="0" y="52" fontFamily="'Space Mono', monospace" fontSize="42" fontWeight="400" fill={base} opacity="0.25">›</text>
-      <text x="28" y="52" fontFamily="'Space Mono', monospace" fontSize="42" fontWeight="400" letterSpacing="-0.01em" fill={base}>splice</text>
-      <text x="242" y="52" fontFamily="'Space Mono', monospace" fontSize="42" fontWeight="700" fill={cur}>_</text>
+      <text x="0" y="52" className="font-mono" fontSize="42" fontWeight="400" fill={base} opacity="0.25">›</text>
+      <text x="28" y="52" className="font-mono" fontSize="42" fontWeight="400" letterSpacing="-0.01em" fill={base}>splice</text>
+      <text x="242" y="52" className="font-mono" fontSize="42" fontWeight="700" fill={cur}>_</text>
       <rect x="264" y="14" width="26" height="40" fill={cur} />
-      <text x="30" y="66" fontFamily="'Space Mono', monospace" fontSize="10" letterSpacing="0.18em" fill={base} opacity="0.4">labs</text>
+      <text x="30" y="66" className="font-mono" fontSize="10" letterSpacing="0.18em" fill={base} opacity="0.4">labs</text>
     </svg>
   );
 }
@@ -62,18 +62,18 @@ export function TerminalVB_Wordmark({ accent = false, scale = "header" }: { acce
   if (scale === "product") {
     return (
       <svg width="160" height="24" viewBox="0 0 160 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <text x="0" y="17" fontFamily="'Space Mono', monospace" fontSize="14" fontWeight="400" fill={base}>splice</text>
-        <text x="66" y="17" fontFamily="'Space Mono', monospace" fontSize="14" fontWeight="700" fill={pipe}>|</text>
-        <text x="76" y="17" fontFamily="'Space Mono', monospace" fontSize="14" fontWeight="400" fill={base} opacity="0.5">labs</text>
+        <text x="0" y="17" className="font-mono" fontSize="14" fontWeight="400" fill={base}>splice</text>
+        <text x="66" y="17" className="font-mono" fontSize="14" fontWeight="700" fill={pipe}>|</text>
+        <text x="76" y="17" className="font-mono" fontSize="14" fontWeight="400" fill={base} opacity="0.5">labs</text>
       </svg>
     );
   }
 
   return (
     <svg width="460" height="60" viewBox="0 0 460 60" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <text x="0" y="46" fontFamily="'Space Mono', monospace" fontSize="42" fontWeight="400" fill={base}>splice</text>
-      <text x="216" y="46" fontFamily="'Space Mono', monospace" fontSize="42" fontWeight="700" fill={pipe}>|</text>
-      <text x="240" y="46" fontFamily="'Space Mono', monospace" fontSize="42" fontWeight="400" fill={base} opacity="0.45">labs</text>
+      <text x="0" y="46" className="font-mono" fontSize="42" fontWeight="400" fill={base}>splice</text>
+      <text x="216" y="46" className="font-mono" fontSize="42" fontWeight="700" fill={pipe}>|</text>
+      <text x="240" y="46" className="font-mono" fontSize="42" fontWeight="400" fill={base} opacity="0.45">labs</text>
     </svg>
   );
 }
@@ -101,20 +101,20 @@ export function TerminalVC_Wordmark({ accent = false, scale = "header" }: { acce
   if (scale === "product") {
     return (
       <svg width="170" height="24" viewBox="0 0 170 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <text x="0" y="17" fontFamily="'Space Mono', monospace" fontSize="14" fontWeight="400" fill={slash} opacity={dim}>/</text>
-        <text x="10" y="17" fontFamily="'Space Mono', monospace" fontSize="14" fontWeight="400" fill={base}>splice</text>
-        <text x="76" y="17" fontFamily="'Space Mono', monospace" fontSize="14" fontWeight="400" fill={slash}>/</text>
-        <text x="86" y="17" fontFamily="'Space Mono', monospace" fontSize="14" fontWeight="400" fill={base} opacity="0.5">labs</text>
+        <text x="0" y="17" className="font-mono" fontSize="14" fontWeight="400" fill={slash} opacity={dim}>/</text>
+        <text x="10" y="17" className="font-mono" fontSize="14" fontWeight="400" fill={base}>splice</text>
+        <text x="76" y="17" className="font-mono" fontSize="14" fontWeight="400" fill={slash}>/</text>
+        <text x="86" y="17" className="font-mono" fontSize="14" fontWeight="400" fill={base} opacity="0.5">labs</text>
       </svg>
     );
   }
 
   return (
     <svg width="520" height="60" viewBox="0 0 520 60" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <text x="0" y="46" fontFamily="'Space Mono', monospace" fontSize="42" fontWeight="400" fill={slash} opacity={dim}>/</text>
-      <text x="24" y="46" fontFamily="'Space Mono', monospace" fontSize="42" fontWeight="400" fill={base}>splice</text>
-      <text x="240" y="46" fontFamily="'Space Mono', monospace" fontSize="42" fontWeight="400" fill={slash}>/</text>
-      <text x="266" y="46" fontFamily="'Space Mono', monospace" fontSize="42" fontWeight="400" fill={base} opacity="0.45">labs</text>
+      <text x="0" y="46" className="font-mono" fontSize="42" fontWeight="400" fill={slash} opacity={dim}>/</text>
+      <text x="24" y="46" className="font-mono" fontSize="42" fontWeight="400" fill={base}>splice</text>
+      <text x="240" y="46" className="font-mono" fontSize="42" fontWeight="400" fill={slash}>/</text>
+      <text x="266" y="46" className="font-mono" fontSize="42" fontWeight="400" fill={base} opacity="0.45">labs</text>
     </svg>
   );
 }

@@ -147,7 +147,7 @@ function SlackIcon({ size }: { size: number }) {
       <text
         x={padding}
         y={size * 0.62}
-        fontFamily="'Space Mono', monospace"
+        className="font-mono"
         fontSize={inner * 0.5}
         fontWeight="400"
         fill={base}
@@ -157,7 +157,7 @@ function SlackIcon({ size }: { size: number }) {
       <text
         x={padding + inner * 0.18}
         y={size * 0.62}
-        fontFamily="'Space Mono', monospace"
+        className="font-mono"
         fontSize={inner * 0.5}
         fontWeight="400"
         fill={base}
@@ -166,7 +166,7 @@ function SlackIcon({ size }: { size: number }) {
       <text
         x={padding + inner * 0.52}
         y={size * 0.62}
-        fontFamily="'Space Mono', monospace"
+        className="font-mono"
         fontSize={inner * 0.5}
         fontWeight="700"
         fill={acc}

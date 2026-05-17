@@ -79,8 +79,8 @@ export function ConduitWordmark({ accent = false, scale = "header" }: ConduitPro
     return (
       <svg width="170" height="32" viewBox="0 0 170 32" fill="none" xmlns="http://www.w3.org/2000/svg">
         <ConduitIcon accent={accent} size={26} />
-        <text x="34" y="16" dominantBaseline="middle" fontFamily="'Space Grotesk', sans-serif" fontSize="15" fontWeight="700" letterSpacing="-0.04em" fill={base}>SPLICE</text>
-        <text x="34" y="27" dominantBaseline="middle" fontFamily="'Space Mono', monospace" fontSize="7" letterSpacing="0.18em" fill={accentColor}>LABS</text>
+        <text x="34" y="16" dominantBaseline="middle" className="font-display" fontSize="15" fontWeight="700" letterSpacing="-0.04em" fill={base}>SPLICE</text>
+        <text x="34" y="27" dominantBaseline="middle" className="font-mono" fontSize="7" letterSpacing="0.18em" fill={accentColor}>LABS</text>
       </svg>
     );
   }
@@ -89,8 +89,8 @@ export function ConduitWordmark({ accent = false, scale = "header" }: ConduitPro
   return (
     <svg width="400" height="72" viewBox="0 0 400 72" fill="none" xmlns="http://www.w3.org/2000/svg">
       <ConduitIcon accent={accent} size={54} />
-      <text x="68" y="40" dominantBaseline="middle" fontFamily="'Space Grotesk', sans-serif" fontSize="42" fontWeight="700" letterSpacing="-0.04em" fill={base}>SPLICE</text>
-      <text x="68" y="60" dominantBaseline="middle" fontFamily="'Space Mono', monospace" fontSize="10" letterSpacing="0.22em" fill={accentColor}>LABS</text>
+      <text x="68" y="40" dominantBaseline="middle" className="font-display" fontSize="42" fontWeight="700" letterSpacing="-0.04em" fill={base}>SPLICE</text>
+      <text x="68" y="60" dominantBaseline="middle" className="font-mono" fontSize="10" letterSpacing="0.22em" fill={accentColor}>LABS</text>
     </svg>
   );
 }

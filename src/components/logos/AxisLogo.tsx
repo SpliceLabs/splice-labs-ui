@@ -40,7 +40,7 @@ export function AxisWordmark({ accent = false, scale = "header" }: AxisProps) {
         <text
           x="-2"
           y="20"
-          fontFamily="'Space Grotesk', sans-serif"
+          className="font-display"
           fontSize="7"
           fontWeight="400"
           letterSpacing="0.14em"
@@ -49,7 +49,7 @@ export function AxisWordmark({ accent = false, scale = "header" }: AxisProps) {
         >LABS</text>
         <line x1="10" y1="4" x2="10" y2="28" stroke={accentColor} strokeWidth="1" strokeLinecap="square"/>
         {/* SPLICE */}
-        <text x="14" y="24" fontFamily="'Space Grotesk', sans-serif" fontSize="22" fontWeight="700" letterSpacing="-0.05em" fill={base}>SPLICE</text>
+        <text x="14" y="24" className="font-display" fontSize="22" fontWeight="700" letterSpacing="-0.05em" fill={base}>SPLICE</text>
       </svg>
     );
   }
@@ -63,7 +63,7 @@ export function AxisWordmark({ accent = false, scale = "header" }: AxisProps) {
       <text
         x="14"
         y="60"
-        fontFamily="'Space Grotesk', sans-serif"
+        className="font-display"
         fontSize="11"
         fontWeight="400"
         letterSpacing="0.22em"
@@ -73,7 +73,7 @@ export function AxisWordmark({ accent = false, scale = "header" }: AxisProps) {
         transform="scale(-1,1) translate(-28, 0)"
       >LABS</text>
       {/* SPLICE — bold, compressed */}
-      <text x="30" y="60" fontFamily="'Space Grotesk', sans-serif" fontSize="52" fontWeight="700" letterSpacing="-0.05em" fill={base}>SPLICE</text>
+      <text x="30" y="60" className="font-display" fontSize="52" fontWeight="700" letterSpacing="-0.05em" fill={base}>SPLICE</text>
     </svg>
   );
 }

@@ -66,8 +66,8 @@ export function BracketWordmark({ accent = false, scale = "header" }: BracketPro
         <line x1={rx - armLen} y1={top} x2={rx - armLen + 2} y2={top} stroke={accentColor} strokeWidth={sw} strokeLinecap="square" />
         <line x1={rx - armLen} y1={bot} x2={rx - armLen + 2} y2={bot} stroke={accentColor} strokeWidth={sw} strokeLinecap="square" />
         {/* SPLICE wordmark */}
-        <text x="20" y="20" dominantBaseline="middle" fontFamily="'Space Grotesk', sans-serif" fontSize="13" fontWeight="700" letterSpacing="-0.03em" fill={base}>SPLICE</text>
-        <text x="20" y="29" dominantBaseline="middle" fontFamily="'Space Mono', monospace" fontSize="5.5" letterSpacing="0.2em" fill={accentColor} opacity="0.7">LABS</text>
+        <text x="20" y="20" dominantBaseline="middle" className="font-display" fontSize="13" fontWeight="700" letterSpacing="-0.03em" fill={base}>SPLICE</text>
+        <text x="20" y="29" dominantBaseline="middle" className="font-mono" fontSize="5.5" letterSpacing="0.2em" fill={accentColor} opacity="0.7">LABS</text>
       </svg>
     );
   }
@@ -94,9 +94,9 @@ export function BracketWordmark({ accent = false, scale = "header" }: BracketPro
       <line x1={rx - armH} y1={top} x2={rx - armH + 5} y2={top} stroke={accentColor} strokeWidth={swH} strokeLinecap="square" />
       <line x1={rx - armH} y1={bot} x2={rx - armH + 5} y2={bot} stroke={accentColor} strokeWidth={swH} strokeLinecap="square" />
       {/* SPLICE */}
-      <text x="32" y="50" dominantBaseline="middle" fontFamily="'Space Grotesk', sans-serif" fontSize="44" fontWeight="700" letterSpacing="-0.045em" fill={base}>SPLICE</text>
+      <text x="32" y="50" dominantBaseline="middle" className="font-display" fontSize="44" fontWeight="700" letterSpacing="-0.045em" fill={base}>SPLICE</text>
       {/* LABS */}
-      <text x="32" y="69" dominantBaseline="middle" fontFamily="'Space Mono', monospace" fontSize="10" letterSpacing="0.22em" fill={accentColor} opacity="0.7">LABS</text>
+      <text x="32" y="69" dominantBaseline="middle" className="font-mono" fontSize="10" letterSpacing="0.22em" fill={accentColor} opacity="0.7">LABS</text>
     </svg>
   );
 }
