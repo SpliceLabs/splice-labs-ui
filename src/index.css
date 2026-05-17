@@ -131,12 +131,24 @@
   body {
     @apply bg-background text-foreground;
     font-family: var(--font-body);
+    /* Guard against horizontal scroll from absolute negative-margin
+       junction nodes. `clip` (not `hidden`) does not break sticky. */
+    overflow-x: clip;
   }
 
   code,
   pre,
   .mono {
     font-family: var(--font-mono);
+  }
+
+  /* Paper surface: re-scope blog text + link tokens to values that meet
+     WCAG AA on the warm off-white background. The defaults are tuned for
+     the dark graphite surface and fail contrast when reused on paper. */
+  .bg-blog-paper {
+    --blog-text-muted: 200 10% 34%;
+    --blog-text-subtle: 200 8% 42%;
+    --blog-link-underline: 167 100% 30%;
   }
 }
 

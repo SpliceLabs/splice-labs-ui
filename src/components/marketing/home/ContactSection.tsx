@@ -1,8 +1,51 @@
 import { useState } from "react";
 import { SwarmSlot } from "./swarm/SwarmSlot";
+import { TerminalButton } from "../ui/TerminalButton";
+
+type Status = "idle" | "submitting" | "success" | "error";
+type Field = "name" | "email" | "message";
+type Errors = Partial<Record<Field, string>>;
+
+const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+const inputClass =
+  "w-full bg-transparent border border-surface-border px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground/60 focus:outline-none focus:border-accent transition-colors disabled:opacity-50";
 
 export function ContactSection() {
   const [formState, setFormState] = useState({ name: "", email: "", message: "" });
+  const [status, setStatus] = useState<Status>("idle");
+  const [errors, setErrors] = useState<Errors>({});
+
+  const update = (field: Field, value: string) => {
+    setFormState((s) => ({ ...s, [field]: value }));
+    if (errors[field]) setErrors((e) => ({ ...e, [field]: undefined }));
+  };
+
+  const validate = (): Errors => {
+    const next: Errors = {};
+    if (!formState.name.trim()) next.name = "Tell us who you are.";
+    if (!EMAIL_RE.test(formState.email.trim())) next.email = "Enter a valid email address.";
+    if (!formState.message.trim()) next.message = "Add some context on what you're building.";
+    return next;
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    const found = validate();
+    setErrors(found);
+    if (Object.keys(found).length > 0) return;
+
+    setStatus("submitting");
+    try {
+      // TODO: wire to a real contact endpoint (app/api/contact route handler).
+      await new Promise((resolve) => setTimeout(resolve, 700));
+      setStatus("success");
+    } catch {
+      setStatus("error");
+    }
+  };
+
+  const submitting = status === "submitting";
 
   return (
     <section id="contact" className="border-t border-surface-border relative">
@@ -46,53 +89,122 @@ export function ContactSection() {
               </div>
             </div>
 
-            <form onSubmit={(e) => e.preventDefault()} className="space-y-4">
-              <div>
-                <label className="font-mono text-[9px] text-muted-foreground/60 tracking-splice-ultra uppercase block mb-1.5">
-                  Name
-                </label>
-                <input
-                  type="text"
-                  value={formState.name}
-                  onChange={(e) => setFormState({ ...formState, name: e.target.value })}
-                  className="w-full bg-transparent border border-surface-border px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground/60 focus:outline-none focus:border-accent transition-colors"
-                  placeholder="Your name"
-                />
-              </div>
-              <div>
-                <label className="font-mono text-[9px] text-muted-foreground/60 tracking-splice-ultra uppercase block mb-1.5">
-                  Email
-                </label>
-                <input
-                  type="email"
-                  value={formState.email}
-                  onChange={(e) => setFormState({ ...formState, email: e.target.value })}
-                  className="w-full bg-transparent border border-surface-border px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground/60 focus:outline-none focus:border-accent transition-colors"
-                  placeholder="you@company.com"
-                />
-              </div>
-              <div>
-                <label className="font-mono text-[9px] text-muted-foreground/60 tracking-splice-ultra uppercase block mb-1.5">
-                  What you're building
-                </label>
-                <textarea
-                  value={formState.message}
-                  onChange={(e) => setFormState({ ...formState, message: e.target.value })}
-                  rows={4}
-                  className="w-full bg-transparent border border-surface-border px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground/60 focus:outline-none focus:border-accent transition-colors resize-none"
-                  placeholder="Describe your project or challenge"
-                />
-              </div>
-              <button
-                type="submit"
-                className="font-mono text-xs tracking-splice-wide uppercase bg-accent text-accent-foreground px-6 py-3 hover:bg-accent/90 transition-colors"
+            {status === "success" ? (
+              <div
+                role="status"
+                className="border border-accent/30 bg-accent/5 px-5 py-6"
               >
-                Send
-              </button>
-              <p className="font-mono text-[9px] text-muted-foreground/60 tracking-splice-wide">
-                No spam. If it's not a fit, we'll say so.
-              </p>
-            </form>
+                <p className="font-mono text-[10px] text-accent tracking-splice-ultra uppercase mb-2">
+                  Message received
+                </p>
+                <p className="text-sm text-foreground/70 leading-relaxed">
+                  Thanks{formState.name.trim() ? `, ${formState.name.trim()}` : ""}. If it's a fit,
+                  we'll get back to you within a few days.
+                </p>
+              </div>
+            ) : (
+              <form onSubmit={handleSubmit} noValidate className="space-y-4">
+                <div>
+                  <label
+                    htmlFor="contact-name"
+                    className="font-mono text-[9px] text-muted-foreground/60 tracking-splice-ultra uppercase block mb-1.5"
+                  >
+                    Name
+                  </label>
+                  <input
+                    id="contact-name"
+                    type="text"
+                    value={formState.name}
+                    onChange={(e) => update("name", e.target.value)}
+                    disabled={submitting}
+                    aria-invalid={!!errors.name}
+                    aria-describedby={errors.name ? "contact-name-error" : undefined}
+                    className={inputClass}
+                    placeholder="Your name"
+                  />
+                  {errors.name && (
+                    <p
+                      id="contact-name-error"
+                      className="mt-1.5 font-mono text-[9px] text-destructive tracking-splice-wide uppercase"
+                    >
+                      {errors.name}
+                    </p>
+                  )}
+                </div>
+                <div>
+                  <label
+                    htmlFor="contact-email"
+                    className="font-mono text-[9px] text-muted-foreground/60 tracking-splice-ultra uppercase block mb-1.5"
+                  >
+                    Email
+                  </label>
+                  <input
+                    id="contact-email"
+                    type="email"
+                    value={formState.email}
+                    onChange={(e) => update("email", e.target.value)}
+                    disabled={submitting}
+                    aria-invalid={!!errors.email}
+                    aria-describedby={errors.email ? "contact-email-error" : undefined}
+                    className={inputClass}
+                    placeholder="you@company.com"
+                  />
+                  {errors.email && (
+                    <p
+                      id="contact-email-error"
+                      className="mt-1.5 font-mono text-[9px] text-destructive tracking-splice-wide uppercase"
+                    >
+                      {errors.email}
+                    </p>
+                  )}
+                </div>
+                <div>
+                  <label
+                    htmlFor="contact-message"
+                    className="font-mono text-[9px] text-muted-foreground/60 tracking-splice-ultra uppercase block mb-1.5"
+                  >
+                    What you're building
+                  </label>
+                  <textarea
+                    id="contact-message"
+                    value={formState.message}
+                    onChange={(e) => update("message", e.target.value)}
+                    disabled={submitting}
+                    rows={4}
+                    aria-invalid={!!errors.message}
+                    aria-describedby={errors.message ? "contact-message-error" : undefined}
+                    className={`${inputClass} resize-none`}
+                    placeholder="Describe your project or challenge"
+                  />
+                  {errors.message && (
+                    <p
+                      id="contact-message-error"
+                      className="mt-1.5 font-mono text-[9px] text-destructive tracking-splice-wide uppercase"
+                    >
+                      {errors.message}
+                    </p>
+                  )}
+                </div>
+                <TerminalButton
+                  as="button"
+                  type="submit"
+                  disabled={submitting}
+                  data-event="cta_contact_submit"
+                >
+                  {submitting ? "Sending…" : "Send"}
+                </TerminalButton>
+                <p
+                  aria-live="polite"
+                  className="min-h-[0.75rem] font-mono text-[9px] text-destructive tracking-splice-wide uppercase"
+                >
+                  {status === "error" &&
+                    "Something went wrong — please try again."}
+                </p>
+                <p className="font-mono text-[9px] text-muted-foreground/60 tracking-splice-wide">
+                  No spam. If it's not a fit, we'll say so.
+                </p>
+              </form>
+            )}
           </div>
          </div>
         </div>
