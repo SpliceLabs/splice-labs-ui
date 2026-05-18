@@ -28,7 +28,7 @@ export function SecuritySection() {
               { label: "Approvals", detail: "Explicit human approvals for all critical paths." },
               { label: "Logs", detail: "Deterministic, immutable audit logs throughout." },
             ].map((item) => (
-              <div key={item.label} className="group flex">
+              <div key={item.label} className="hover-card group flex">
                 <div className="flex-1 p-6 md:p-8 border border-surface-border -mt-px first:mt-0 bg-surface transition-all duration-300 ease-out hover:border-ember/30 hover:bg-ember/[0.02]">
                   <div className="flex items-center gap-2 mb-3">
                     <span className="w-6 h-px bg-foreground/20 transition-all duration-300 group-hover:w-8 group-hover:bg-ember/50" />

@@ -39,7 +39,7 @@ export function ValueSection() {
               <div
                 key={i}
                 className={cn(
-                  "group relative border-l-2 border-foreground/20 pl-6 py-2 transition-all duration-300 ease-out hover:border-ember/70 hover:bg-ember/[0.02] hover:pl-7",
+                  "hover-card group relative border-l-2 border-foreground/20 pl-6 py-2 transition-all duration-300 ease-out hover:border-ember/70 hover:bg-ember/[0.02] hover:pl-7",
                   i % 2 === 1 && "md:mt-8",
                 )}
               >

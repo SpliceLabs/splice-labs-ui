@@ -32,7 +32,7 @@ export function CommitmentsSection() {
           {/* Pipeline diagram — each commitment is a node */}
           <div className="relative">
             {COMMITMENTS.map((c, i) => (
-              <div key={i} className="group flex items-start gap-5 mb-0">
+              <div key={i} className="hover-card group flex items-start gap-5 mb-0">
                 {/* Vertical connector + node */}
                 <div className="flex flex-col items-center shrink-0 w-5">
                   <div className="w-2 h-2 rounded-full bg-accent shadow-[0_0_8px_2px_hsl(var(--accent)/0.4)]" />

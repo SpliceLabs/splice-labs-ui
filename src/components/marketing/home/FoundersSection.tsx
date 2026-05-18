@@ -44,7 +44,7 @@ export function FoundersSection() {
             {FOUNDERS.map((f, i) => (
               <div
                 key={f.name}
-                className={`group grid grid-cols-1 lg:grid-cols-[180px_1fr] border border-surface-border bg-surface transition-all duration-300 ease-out hover:border-ember/30 hover:shadow-ember-sm hover:-translate-y-0.5 ${
+                className={`hover-card group grid grid-cols-1 lg:grid-cols-[180px_1fr] border border-surface-border bg-surface transition-all duration-300 ease-out hover:border-ember/30 hover:shadow-ember-sm hover:-translate-y-0.5 ${
                   i % 2 === 1 ? "lg:ml-8" : ""
                 }`}
               >

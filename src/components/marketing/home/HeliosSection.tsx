@@ -61,7 +61,7 @@ export function HeliosSection() {
                 { layer: "Approval Gates", active: false },
                 { layer: "GTM & Fundraising", active: false },
               ].map((l, i) => (
-                <div key={i} className="group border border-surface-border bg-surface p-3 flex items-center gap-3 transition-all duration-300 ease-out hover:border-ember/30 hover:bg-ember/[0.02] hover:-translate-x-1">
+                <div key={i} className="hover-card group border border-surface-border bg-surface p-3 flex items-center gap-3 transition-all duration-300 ease-out hover:border-ember/30 hover:bg-ember/[0.02] hover:-translate-x-1">
                   <span className="w-2 h-2 rounded-full bg-accent shadow-[0_0_8px_2px_hsl(var(--accent)/0.4)]" />
                   <span className="font-mono text-xs text-foreground/60 tracking-splice-wide transition-colors duration-300 group-hover:text-foreground/90">
                     {l.layer}

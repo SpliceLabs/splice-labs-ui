@@ -38,7 +38,7 @@ export function AgentsSection() {
             {AGENTS.map((a, i) => (
               <div
                 key={a.type}
-                className={`group border border-surface-border bg-surface p-5 transition-all duration-300 ease-out hover:border-ember/40 hover:shadow-ember-sm hover:-translate-y-0.5 ${
+                className={`hover-card group border border-surface-border bg-surface p-5 transition-all duration-300 ease-out hover:border-ember/40 hover:shadow-ember-sm hover:-translate-y-0.5 ${
                   i % 2 === 1 ? "md:translate-y-4" : ""
                 }`}
               >

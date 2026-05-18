@@ -60,7 +60,7 @@ export function ProjectsSection() {
               <div
                 key={p.name}
                 className={cn(
-                  "group/card grid grid-cols-1 lg:grid-cols-[1fr_1fr] gap-4 border border-surface-border bg-surface transition-all duration-300 ease-out hover:border-ember/40 hover:shadow-ember-md hover:-translate-y-0.5",
+                  "hover-card group/card grid grid-cols-1 lg:grid-cols-[1fr_1fr] gap-4 border border-surface-border bg-surface transition-all duration-300 ease-out hover:border-ember/40 hover:shadow-ember-md hover:-translate-y-0.5",
                   i % 2 === 1 && "lg:ml-8",
                 )}
               >
