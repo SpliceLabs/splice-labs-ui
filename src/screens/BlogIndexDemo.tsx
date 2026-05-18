@@ -90,8 +90,13 @@ export default function BlogIndexDemo() {
               </p>
             ) : view === "grid" ? (
               <div className="grid grid-cols-1 gap-8 sm:grid-cols-2">
-                {visible.map((p) => (
-                  <PostCard key={p.title} surface="graphite" {...p} />
+                {visible.map((p, i) => (
+                  <PostCard
+                    key={p.title}
+                    {...p}
+                    surface="graphite"
+                    swarmDelay={Math.min(i * 50, 300)}
+                  />
                 ))}
               </div>
             ) : (

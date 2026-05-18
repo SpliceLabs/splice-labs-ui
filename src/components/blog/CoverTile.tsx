@@ -1,11 +1,16 @@
 import { cn } from "@/lib/utils";
 import type { HTMLAttributes } from "react";
 import type { TileTone, TileTexture } from "./types";
+import { CardSwarm } from "./CardSwarm";
 
 export interface CoverTileProps extends HTMLAttributes<HTMLDivElement> {
   tone?: TileTone;
   texture?: TileTexture;
   ratio?: "16/10" | "4/3";
+  /** Opt-in ambient particle layer — blog index grid cards only. */
+  swarm?: boolean;
+  /** Reveal stagger for the swarm, in ms. */
+  swarmDelay?: number;
 }
 
 const toneClasses: Record<TileTone, string> = {
@@ -35,6 +40,8 @@ export function CoverTile({
   tone = "teal",
   texture = "none",
   ratio = "16/10",
+  swarm = false,
+  swarmDelay,
   className,
   children,
   ...rest
@@ -49,7 +56,10 @@ export function CoverTile({
         className,
       )}
     >
-      {texture !== "none" && (
+      {/* The swarm IS the texture on grid cards — it replaces the static
+          CSS halftone/engraving so the two particle fields don't compete. */}
+      {swarm && <CardSwarm tone={tone} delay={swarmDelay} />}
+      {texture !== "none" && !swarm && (
         <span
           aria-hidden
           style={{
