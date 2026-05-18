@@ -7,22 +7,22 @@ type ProjectStatus = "concept" | "validation" | "prototype" | "private-beta" | "
 
 const PROJECTS: { name: string; description: string; tags: string[]; status: ProjectStatus }[] = [
   {
-    name: "Silent Markets",
-    description: "Agent-paired trading journal for web3. Cross-chain from day one.",
-    tags: ["Trading", "Agents", "Cross-Chain"],
+    name: "OpenTrade",
+    description: "Institutional-grade crypto portfolio intelligence. AI-powered analysis and execution infrastructure.",
+    tags: ["Trading", "AI", "Institutional"],
     status: "prototype",
   },
   {
-    name: "Anon Capital",
-    description: "DAO infrastructure for structured earnings remittance.",
-    tags: ["DAO", "Infrastructure"],
+    name: "Auric Research",
+    description: "Autonomous research agents for financial markets. Evidence-driven insights at institutional scale.",
+    tags: ["Research", "Agents", "Finance"],
     status: "validation",
   },
   {
-    name: "Crown Futures",
-    description: "Institutional web3 trading infrastructure with governed agent workflows.",
-    tags: ["Institutional", "Governance"],
-    status: "design-partner",
+    name: "Agent Evolve",
+    description: "Governed agent development platform. Policy-enforced AI systems with audit trails.",
+    tags: ["Agents", "Governance", "Infrastructure"],
+    status: "concept",
   },
 ];
 
