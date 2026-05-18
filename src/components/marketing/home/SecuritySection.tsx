@@ -1,18 +1,24 @@
 import { SwarmSlot } from "./swarm/SwarmSlot";
 import { ModuleLabel } from "../ui/ModuleLabel";
+import { getSectionLayout, type SectionAlign } from "./sectionLayout";
 
-export function SecuritySection() {
+interface SecuritySectionProps {
+  align?: SectionAlign;
+}
+
+export function SecuritySection({ align = "right" }: SecuritySectionProps) {
+  const layout = getSectionLayout(align);
+
   return (
     <section id="security" className="border-t border-surface-border relative">
-      {/* Swarm slot: left half on md+; full width on mobile. */}
-      <SwarmSlot id="security" className="absolute inset-0 md:right-1/3" />
-      <div className="absolute right-20 top-0 bottom-0 w-px bg-foreground/10" />
+      <SwarmSlot id="security" className={layout.swarmSlot} />
+      <div className={layout.accentLine} />
 
       <div className="max-w-[1700px] mx-auto px-20 py-12 md:py-16">
-        <div className="md:w-1/2 md:ml-auto flex justify-center md:justify-end mask-fade-from-right px-4 md:px-0">
+        <div className={layout.contentWrapper}>
          <div className="w-full max-w-[600px]">
-          <div className="flex flex-row-reverse items-center gap-4 mb-6">
-            <div className="w-2 h-2 bg-ember/40 md:-mr-[calc(3rem+4px)]" />
+          <div className={layout.headerFlex}>
+            <div className={`w-2 h-2 bg-ember/40 ${layout.junctionMargin}`} />
             <ModuleLabel name="security" sectionId="security" rule={false} dot={false} />
             <span className="flex-1 h-px bg-foreground/10" />
           </div>

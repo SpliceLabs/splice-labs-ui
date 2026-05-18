@@ -3,6 +3,7 @@ import { SwarmSlot } from "./swarm/SwarmSlot";
 import { TerminalButton } from "../ui/TerminalButton";
 import { ModuleLabel } from "../ui/ModuleLabel";
 import { cn } from "@/lib/utils";
+import { getSectionLayout, getAccentLinePosition, getCalcPosition, type SectionAlign } from "./sectionLayout";
 
 type Status = "idle" | "submitting" | "success" | "error";
 type AudienceType = "founder" | "investor" | "partner" | "operator";
@@ -21,7 +22,15 @@ const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const inputClass =
   "w-full bg-transparent border border-surface-border px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground/60 focus:outline-none focus:border-ember-glow transition-colors disabled:opacity-50";
 
-export function ContactSection() {
+interface ContactSectionProps {
+  align?: SectionAlign;
+}
+
+export function ContactSection({ align = "left" }: ContactSectionProps) {
+  const layout = getSectionLayout(align);
+  const linePos = getAccentLinePosition(align);
+  const calcPos = getCalcPosition(align);
+
   const [audienceType, setAudienceType] = useState<AudienceType>("founder");
   const [formState, setFormState] = useState({ name: "", email: "", message: "", company: "" });
   const [status, setStatus] = useState<Status>("idle");
@@ -65,18 +74,17 @@ export function ContactSection() {
 
   return (
     <section id="contact" className="border-t border-surface-border relative">
-      {/* Swarm slot: right half on md+; full width on mobile. */}
-      <SwarmSlot id="contact" className="absolute inset-0 md:left-1/3" />
-      <div className="absolute left-20 top-0 bottom-0 w-px bg-foreground/10" />
+      <SwarmSlot id="contact" className={layout.swarmSlot} />
+      <div className={layout.accentLine} />
       {/* Terminal splice line at bottom */}
-      <div className="absolute left-20 bottom-0 w-px h-8 bg-ember/30" />
-      <div className="absolute left-[calc(5rem-3px)] bottom-0 w-2 h-2 border border-ember/60 bg-ember/10" />
+      <div className={`absolute ${linePos} bottom-0 w-px h-8 bg-ember/30`} />
+      <div className={`absolute ${calcPos} bottom-0 w-2 h-2 border border-ember/60 bg-ember/10`} />
 
       <div className="max-w-[1700px] mx-auto px-20 py-12 md:py-16">
-        <div className="md:w-1/2 md:mr-auto flex justify-center md:justify-start mask-fade-from-left pl-4 md:pl-0">
+        <div className={layout.contentWrapper}>
          <div className="w-full max-w-[600px]">
-          <div className="flex items-center gap-4 mb-6">
-            <div className="w-2 h-2 bg-ember/40 md:-ml-[calc(3rem+4px)]" />
+          <div className={layout.headerFlex}>
+            <div className={`w-2 h-2 bg-ember/40 ${layout.junctionMargin}`} />
             <ModuleLabel name="contact" sectionId="contact" rule={false} dot={false} />
             <span className="flex-1 h-px bg-foreground/10" />
           </div>

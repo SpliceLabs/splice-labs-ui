@@ -1,5 +1,6 @@
 import { SwarmSlot } from "./swarm/SwarmSlot";
 import { ModuleLabel } from "../ui/ModuleLabel";
+import { getSectionLayout, type SectionAlign } from "./sectionLayout";
 
 const AGENTS = [
   { type: "Research", scope: "Read-only" },
@@ -10,18 +11,23 @@ const AGENTS = [
   { type: "Operations", scope: "Approval-gated" },
 ];
 
-export function AgentsSection() {
+interface AgentsSectionProps {
+  align?: SectionAlign;
+}
+
+export function AgentsSection({ align = "left" }: AgentsSectionProps) {
+  const layout = getSectionLayout(align);
+
   return (
     <section id="agents" className="border-t border-surface-border relative">
-      {/* Swarm slot: right half on md+; full width on mobile. */}
-      <SwarmSlot id="agents" className="absolute inset-0 md:left-1/3" />
-      <div className="absolute left-20 top-0 bottom-0 w-px bg-foreground/10" />
+      <SwarmSlot id="agents" className={layout.swarmSlot} />
+      <div className={layout.accentLine} />
 
       <div className="max-w-[1700px] mx-auto px-20 py-12 md:py-16">
-        <div className="md:w-1/2 md:mr-auto flex justify-center md:justify-start mask-fade-from-left pl-4 md:pl-0">
+        <div className={layout.contentWrapper}>
          <div className="w-full max-w-[600px]">
-          <div className="flex items-center gap-4 mb-6">
-            <div className="w-2 h-2 bg-ember/40 md:-ml-[calc(3rem+4px)]" />
+          <div className={layout.headerFlex}>
+            <div className={`w-2 h-2 bg-ember/40 ${layout.junctionMargin}`} />
             <ModuleLabel name="agents" sectionId="agents" rule={false} dot={false} />
             <span className="flex-1 h-px bg-foreground/10" />
           </div>

@@ -1,14 +1,21 @@
 import { SwarmSlot } from "./swarm/SwarmSlot";
 import { ModuleLabel } from "../ui/ModuleLabel";
+import { getSectionLayout, type SectionAlign } from "./sectionLayout";
 
-export function HeliosSection() {
+interface HeliosSectionProps {
+  align?: SectionAlign;
+}
+
+export function HeliosSection({ align = "left" }: HeliosSectionProps) {
+  const layout = getSectionLayout(align);
+  const isLeft = align === "left";
+
   return (
     <section id="helios" className="border-t border-surface-border relative overflow-hidden">
-      {/* Swarm slot: right half on md+; full width on mobile. */}
-      <SwarmSlot id="helios" className="absolute inset-0 md:left-1/3" />
-      <div className="absolute left-20 top-0 bottom-0 w-px bg-foreground/10" />
+      <SwarmSlot id="helios" className={layout.swarmSlot} />
+      <div className={layout.accentLine} />
       {/* Background splice motif */}
-      <div className="absolute right-0 top-1/2 -translate-y-1/2 w-[300px] h-[300px] opacity-[0.03]">
+      <div className={`absolute ${isLeft ? "right-0" : "left-0"} top-1/2 -translate-y-1/2 w-[300px] h-[300px] opacity-[0.03]`}>
         <svg viewBox="0 0 300 300" fill="none" className="w-full h-full">
           <line x1="0" y1="150" x2="300" y2="150" stroke="currentColor" strokeWidth="1" className="text-accent" />
           <line x1="150" y1="0" x2="150" y2="300" stroke="currentColor" strokeWidth="1" className="text-accent" />
@@ -18,10 +25,11 @@ export function HeliosSection() {
       </div>
 
       <div className="max-w-[1700px] mx-auto px-20 py-12 md:py-16 relative">
-        <div className="md:w-1/2 md:mr-auto flex justify-center md:justify-start mask-fade-from-left pl-4 md:pl-0">
+        <div className={layout.contentWrapper}>
          <div className="w-full max-w-[600px]">
-          <div className="flex items-center gap-4 mb-6">
-            <div className="w-3 h-3 border border-ember/60 bg-ember/10 md:-ml-[calc(3rem+6px)]" />
+          <div className={layout.headerFlex}>
+            {/* Special larger junction node for Helios */}
+            <div className={`w-3 h-3 border border-ember/60 bg-ember/10 ${isLeft ? "md:-ml-[calc(3rem+6px)]" : "md:-mr-[calc(3rem+6px)]"}`} />
             <ModuleLabel name="platform" sectionId="helios" rule={false} dot={false} />
             <span className="flex-1 h-px bg-gradient-to-r from-accent/20 to-transparent" />
           </div>
