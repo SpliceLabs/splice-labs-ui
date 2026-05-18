@@ -23,9 +23,9 @@ import type { SectionAlign } from "./sectionLayout";
 const SECTION_ALIGN: Record<string, SectionAlign> = {
   helios: "left",
   commitments: "left",
-  agents: "left",
-  security: "right",
-  contact: "left",
+  agents: "right",
+  security: "left",
+  contact: "right",
 };
 
 export function HomePage() {
