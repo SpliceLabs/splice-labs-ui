@@ -62,6 +62,11 @@ export default {
           DEFAULT: "hsl(var(--rust))",
           foreground: "hsl(var(--rust-foreground))",
         },
+        ember: {
+          DEFAULT: "hsl(var(--ember))",
+          glow: "hsl(var(--ember-glow))",
+          foreground: "hsl(var(--ember-foreground))",
+        },
         popover: {
           DEFAULT: "hsl(var(--popover))",
           foreground: "hsl(var(--popover-foreground))",
@@ -108,6 +113,11 @@ export default {
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
       },
+      boxShadow: {
+        "ember-sm": "0 0 12px -4px hsl(var(--ember) / 0.3)",
+        "ember-md": "0 0 20px -6px hsl(var(--ember) / 0.4)",
+        "ember-lg": "0 0 32px -8px hsl(var(--ember) / 0.5)",
+      },
       letterSpacing: {
         "splice-tight": "-0.04em",
         "splice-wide": "0.18em",
@@ -144,6 +154,11 @@ export default {
           "0%": { opacity: "0", transform: "translateY(12px)" },
           "100%": { opacity: "1", transform: "translateY(0)" },
         },
+        // Ember shimmer for data loading / tactile feedback.
+        "shimmer-ember": {
+          "0%": { backgroundPosition: "-200% 0" },
+          "100%": { backgroundPosition: "200% 0" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
@@ -152,6 +167,7 @@ export default {
         "blink-cursor": "blink-cursor 1s step-end infinite",
         draw: "draw 480ms cubic-bezier(.2,.7,.1,1) both",
         "fade-up": "fade-up 0.42s cubic-bezier(0.165,0.84,0.44,1) both",
+        "shimmer-ember": "shimmer-ember 1.5s ease-in-out infinite",
       },
     },
   },

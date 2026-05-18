@@ -1,21 +1,20 @@
 import { SwarmSlot } from "./swarm/SwarmSlot";
+import { ModuleLabel } from "../ui/ModuleLabel";
 
 export function SecuritySection() {
   return (
     <section id="security" className="border-t border-surface-border relative">
       {/* Swarm slot: right half on md+; full width on mobile. */}
       <SwarmSlot id="security" className="absolute inset-0 md:left-1/3" />
-      <div className="absolute left-20 top-0 bottom-0 w-px bg-surface-border" />
+      <div className="absolute left-20 top-0 bottom-0 w-px bg-foreground/10" />
 
       <div className="max-w-[1700px] mx-auto px-20 py-12 md:py-16">
         <div className="md:w-1/2 md:mr-auto flex justify-center md:justify-start mask-fade-from-left pl-4 md:pl-0">
          <div className="w-full max-w-[600px]">
           <div className="flex items-center gap-4 mb-6">
-            <div className="w-2 h-2 bg-accent/40 md:-ml-[calc(3rem+4px)]" />
-            <span className="font-mono text-[9px] text-accent tracking-splice-ultra uppercase">
-              module::security
-            </span>
-            <span className="flex-1 h-px bg-surface-border" />
+            <div className="w-2 h-2 bg-ember/40 md:-ml-[calc(3rem+4px)]" />
+            <ModuleLabel name="security" sectionId="security" rule={false} dot={false} />
+            <span className="flex-1 h-px bg-foreground/10" />
           </div>
 
           <h2 className="font-display text-2xl md:text-3xl font-semibold tracking-splice-tight text-foreground mb-6">
@@ -29,15 +28,15 @@ export function SecuritySection() {
               { label: "Approvals", detail: "Explicit human approvals for all critical paths." },
               { label: "Logs", detail: "Deterministic, immutable audit logs throughout." },
             ].map((item) => (
-              <div key={item.label} className="flex">
-                <div className="flex-1 p-6 md:p-8 border border-surface-border -mt-px first:mt-0">
+              <div key={item.label} className="group flex">
+                <div className="flex-1 p-6 md:p-8 border border-surface-border -mt-px first:mt-0 bg-surface transition-all duration-300 ease-out hover:border-ember/30 hover:bg-ember/[0.02]">
                   <div className="flex items-center gap-2 mb-3">
-                    <span className="w-6 h-px bg-accent/40" />
-                    <span className="font-mono text-[11px] text-accent tracking-splice-wide uppercase">
+                    <span className="w-6 h-px bg-foreground/20 transition-all duration-300 group-hover:w-8 group-hover:bg-ember/50" />
+                    <span className="font-mono text-[11px] text-ember/80 tracking-splice-wide uppercase transition-colors duration-300 group-hover:text-ember">
                       {item.label}
                     </span>
                   </div>
-                  <p className="text-sm text-foreground/70 leading-relaxed">
+                  <p className="text-sm text-foreground/70 leading-relaxed transition-colors duration-300 group-hover:text-foreground/85">
                     {item.detail}
                   </p>
                 </div>
@@ -46,7 +45,7 @@ export function SecuritySection() {
           </div>
 
           <div className="flex items-center gap-3 mt-8">
-            <span className="w-12 h-px bg-accent/15" />
+            <span className="w-12 h-px bg-foreground/10" />
             <span className="font-mono text-[9px] text-muted-foreground/60 tracking-splice-wide">
               No mystery deployments.
             </span>

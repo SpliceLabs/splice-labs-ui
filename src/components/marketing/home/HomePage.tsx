@@ -30,7 +30,7 @@ export function HomePage() {
             so pointermove falls through to the canvas (drives the cursor-ray
             flock perturbation in SwarmV7). Interactive elements opt back in
             via the [&_*] descendants so links/buttons/inputs stay clickable. */}
-        <div className="relative z-10 pointer-events-none [&_a]:pointer-events-auto [&_button]:pointer-events-auto [&_input]:pointer-events-auto [&_textarea]:pointer-events-auto [&_select]:pointer-events-auto [&_label]:pointer-events-auto">
+        <div className="relative z-10 pointer-events-none [&_section]:pointer-events-auto [&_a]:pointer-events-auto [&_button]:pointer-events-auto [&_input]:pointer-events-auto [&_textarea]:pointer-events-auto [&_select]:pointer-events-auto [&_label]:pointer-events-auto">
           <HeroSection />
           <ValueSection />
           <HeliosSection />

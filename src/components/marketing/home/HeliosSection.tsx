@@ -1,11 +1,12 @@
 import { SwarmSlot } from "./swarm/SwarmSlot";
+import { ModuleLabel } from "../ui/ModuleLabel";
 
 export function HeliosSection() {
   return (
     <section id="helios" className="border-t border-surface-border relative overflow-hidden">
       {/* Swarm slot: right half on md+; full width on mobile. */}
       <SwarmSlot id="helios" className="absolute inset-0 md:left-1/3" />
-      <div className="absolute left-20 top-0 bottom-0 w-px bg-surface-border" />
+      <div className="absolute left-20 top-0 bottom-0 w-px bg-foreground/10" />
       {/* Background splice motif */}
       <div className="absolute right-0 top-1/2 -translate-y-1/2 w-[300px] h-[300px] opacity-[0.03]">
         <svg viewBox="0 0 300 300" fill="none" className="w-full h-full">
@@ -20,10 +21,8 @@ export function HeliosSection() {
         <div className="md:w-1/2 md:mr-auto flex justify-center md:justify-start mask-fade-from-left pl-4 md:pl-0">
          <div className="w-full max-w-[600px]">
           <div className="flex items-center gap-4 mb-6">
-            <div className="w-3 h-3 border border-accent bg-accent/10 md:-ml-[calc(3rem+6px)]" />
-            <span className="font-mono text-[9px] text-accent tracking-splice-ultra uppercase">
-              module::platform
-            </span>
+            <div className="w-3 h-3 border border-ember/60 bg-ember/10 md:-ml-[calc(3rem+6px)]" />
+            <ModuleLabel name="platform" sectionId="helios" rule={false} dot={false} />
             <span className="flex-1 h-px bg-gradient-to-r from-accent/20 to-transparent" />
           </div>
 
@@ -36,11 +35,19 @@ export function HeliosSection() {
                 HELIOS is our formation harness—research, validation, evals, policy, approval gates, provenance, GTM, and fundraising machinery. Every incubation runs on the same governed infrastructure.
               </p>
               <div className="flex flex-col sm:flex-row gap-3">
-                <a href="/helios" className="inline-flex items-center font-mono text-[11px] tracking-splice-wide uppercase text-accent hover:text-accent transition-colors">
-                  Learn more about HELIOS →
+                <a href="/helios" className="group inline-flex items-center font-mono text-[11px] tracking-splice-wide uppercase text-accent transition-all duration-300 hover:text-ember hover:translate-x-1">
+                  <span className="relative">
+                    Learn more about HELIOS
+                    <span className="absolute -bottom-0.5 left-0 h-px w-full origin-left scale-x-0 bg-ember transition-transform duration-200 group-hover:scale-x-100" />
+                  </span>
+                  <span className="ml-1 transition-transform duration-300 group-hover:translate-x-0.5">→</span>
                 </a>
-                <a href="#contact" className="inline-flex items-center font-mono text-[11px] tracking-splice-wide uppercase text-muted-foreground hover:text-foreground transition-colors">
-                  Request a HELIOS demo →
+                <a href="#contact" className="group inline-flex items-center font-mono text-[11px] tracking-splice-wide uppercase text-muted-foreground transition-all duration-300 hover:text-foreground hover:translate-x-1">
+                  <span className="relative">
+                    Request a HELIOS demo
+                    <span className="absolute -bottom-0.5 left-0 h-px w-full origin-left scale-x-0 bg-ember transition-transform duration-200 group-hover:scale-x-100" />
+                  </span>
+                  <span className="ml-1 transition-transform duration-300 group-hover:translate-x-0.5">→</span>
                 </a>
               </div>
             </div>
@@ -54,15 +61,15 @@ export function HeliosSection() {
                 { layer: "Approval Gates", active: false },
                 { layer: "GTM & Fundraising", active: false },
               ].map((l, i) => (
-                <div key={i} className="border border-surface-border p-3 flex items-center gap-3 hover:border-accent/20 transition-colors">
-                  <span className={`w-1.5 h-1.5 ${l.active ? "bg-accent" : "bg-surface-border"}`} />
-                  <span className="font-mono text-[10px] text-foreground/60 tracking-splice-wide">
+                <div key={i} className="group border border-surface-border bg-surface p-3 flex items-center gap-3 transition-all duration-300 ease-out hover:border-ember/30 hover:bg-ember/[0.02] hover:-translate-x-1">
+                  <span className="w-2 h-2 rounded-full bg-accent shadow-[0_0_8px_2px_hsl(var(--accent)/0.4)]" />
+                  <span className="font-mono text-xs text-foreground/60 tracking-splice-wide transition-colors duration-300 group-hover:text-foreground/90">
                     {l.layer}
                   </span>
                 </div>
               ))}
               <div className="flex items-center gap-2 pt-1">
-                <span className="w-px h-4 bg-accent/30" />
+                <span className="w-px h-4 bg-foreground/15" />
                 <span className="font-mono text-[8px] text-muted-foreground/60 tracking-splice-ultra uppercase">
                   Formation Harness: 5 layers
                 </span>

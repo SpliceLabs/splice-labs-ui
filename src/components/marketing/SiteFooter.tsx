@@ -23,7 +23,7 @@ export function SiteFooter() {
           <div>
             <div className="flex items-center gap-1 font-mono text-sm text-foreground mb-3">
               <span className="text-foreground/30">›</span>
-              <span>splice</span>
+              <span>spl<span className="font-bold text-base text-ember">I</span>ce</span>
               <span className="text-accent font-bold">_</span>
               <TerminalCaret rate="footer" className="ml-0.5" />
             </div>
@@ -38,13 +38,13 @@ export function SiteFooter() {
               <a
                 key={link.label}
                 href={link.href}
-                className="group font-mono text-[11px] text-muted-foreground tracking-splice-wide uppercase transition-colors hover:text-foreground focus-visible:outline focus-visible:outline-1 focus-visible:outline-accent focus-visible:outline-offset-2"
+                className="group font-mono text-[11px] text-muted-foreground tracking-splice-wide uppercase transition-[color,font-weight] hover:text-foreground hover:font-bold focus-visible:outline focus-visible:outline-1 focus-visible:outline-accent focus-visible:outline-offset-2"
               >
                 <span className="relative">
                   {link.label}
                   <span
                     aria-hidden
-                    className="absolute -bottom-0.5 left-0 h-px w-full origin-left scale-x-0 bg-accent motion-safe:transition-transform motion-safe:duration-150 motion-safe:ease-out group-hover:scale-x-100"
+                    className="absolute -bottom-0.5 left-0 h-px w-full origin-left scale-x-0 bg-ember motion-safe:transition-transform motion-safe:duration-150 motion-safe:ease-out group-hover:scale-x-100"
                   />
                 </span>
               </a>

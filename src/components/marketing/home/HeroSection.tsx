@@ -15,16 +15,17 @@ export function HeroSection() {
       {/* Hero swarm slot: centered, full-width — swarm fills viewport. */}
       <SwarmSlot id="hero" className="absolute inset-0" />
       {/* Vertical splice line — left gutter */}
-      <div className="absolute left-20 top-0 bottom-0 w-px bg-surface-border" />
-      <div className="absolute left-20 top-32 md:top-40 w-px h-16 bg-accent/40" />
+      <div className="absolute left-20 top-0 bottom-0 w-px bg-foreground/10" />
+      <div className="absolute left-20 top-32 md:top-40 w-px h-16 bg-ember/30" />
 
       <div className="pl-8 md:pl-12">
         {/* Junction node */}
         <div className="flex items-center gap-4 mb-6 motion-safe:animate-fade-up">
-          <div className="w-3 h-3 border border-accent bg-accent/10 md:-ml-[calc(3rem+6px)]" />
+          <div className="w-3 h-3 border border-ember/60 bg-ember/10 md:-ml-[calc(3rem+6px)]" />
           <ModuleLabel
             prefix="splice_labs"
             name="init"
+            sectionId="hero"
             dot={false}
             className="flex-1"
           />
@@ -54,7 +55,7 @@ export function HeroSection() {
           className="flex items-start gap-6 md:gap-10 mb-6 motion-safe:animate-fade-up"
           style={{ animationDelay: "240ms" }}
         >
-          <div className="w-px h-20 bg-accent/30 shrink-0 mt-1" />
+          <div className="w-px h-20 bg-foreground/15 shrink-0 mt-1" />
           <div>
             <p className="text-accent font-display text-xl md:text-2xl font-semibold tracking-splice-tight mb-3">
               Where AI Meets Programmable Capital.
@@ -82,11 +83,11 @@ export function HeroSection() {
           className="flex items-center gap-3 mt-16 motion-safe:animate-fade-up"
           style={{ animationDelay: "400ms" }}
         >
-          <span className="w-8 h-px bg-accent/30" />
+          <span className="w-8 h-px bg-foreground/15" />
           <span className="font-mono text-[8px] text-muted-foreground/60 tracking-splice-ultra uppercase">
             Evidence before scale · Governed by design · Founder-first economics
           </span>
-          <span className="flex-1 h-px bg-surface-border" />
+          <span className="flex-1 h-px bg-foreground/10" />
         </div>
       </div>
     </section>

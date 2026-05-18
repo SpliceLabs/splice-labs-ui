@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 
-/** 1px page-scroll progress bar, pinned above the nav. Hidden near the top. */
+/** 3px page-scroll progress bar in ember, pinned above the nav. Hidden near the top. */
 export function ScrollProgress() {
   const [progress, setProgress] = useState(0);
 
@@ -24,7 +24,7 @@ export function ScrollProgress() {
   return (
     <div
       aria-hidden
-      className="fixed inset-x-0 top-0 z-[60] h-px origin-left bg-accent transition-opacity duration-200"
+      className="fixed inset-x-0 top-0 z-[60] h-[3px] origin-left bg-ember transition-opacity duration-200"
       style={{
         transform: `scaleX(${progress})`,
         opacity: progress < 0.02 ? 0 : 1,

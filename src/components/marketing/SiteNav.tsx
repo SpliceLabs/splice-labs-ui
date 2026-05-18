@@ -61,7 +61,7 @@ function Dropdown({ items, open, onClose }: { items: DropdownItem[]; open: boole
           key={item.label}
           href={item.href}
           onClick={onClose}
-          className="block px-4 py-2 font-mono text-[11px] text-muted-foreground tracking-widest uppercase hover:text-foreground hover:bg-surface-raised transition-colors focus-visible:outline focus-visible:outline-1 focus-visible:outline-accent focus-visible:outline-offset-2"
+          className="block px-4 py-2 font-mono text-[11px] text-muted-foreground tracking-widest uppercase hover:text-foreground hover:bg-ember/10 transition-colors focus-visible:outline focus-visible:outline-1 focus-visible:outline-accent focus-visible:outline-offset-2"
         >
           {item.label}
         </a>
@@ -90,7 +90,7 @@ export function SiteNav() {
         {/* Logo */}
         <Link href="/" className="flex items-center gap-1 font-mono text-sm text-foreground">
           <span className="text-foreground/30">›</span>
-          <span>splice</span>
+          <span>spl<span className="font-bold text-base text-ember">I</span>ce</span>
           <span className="text-accent font-bold">_</span>
           <TerminalCaret className="ml-0.5" />
         </Link>
@@ -115,9 +115,15 @@ export function SiteNav() {
                   aria-expanded={openDropdown === item.label}
                   aria-haspopup="menu"
                   aria-controls={`nav-menu-${item.label}`}
-                  className="font-mono text-[11px] text-muted-foreground tracking-widest uppercase hover:text-foreground transition-colors flex items-center gap-1 focus-visible:outline focus-visible:outline-1 focus-visible:outline-accent focus-visible:outline-offset-2"
+                  className="group font-mono text-[11px] text-muted-foreground tracking-widest uppercase hover:text-foreground hover:font-bold transition-[color,font-weight] flex items-center gap-1 focus-visible:outline focus-visible:outline-1 focus-visible:outline-accent focus-visible:outline-offset-2"
                 >
-                  {item.label}
+                  <span className="relative">
+                    {item.label}
+                    <span
+                      aria-hidden
+                      className="absolute -bottom-0.5 left-0 h-px w-full origin-left scale-x-0 bg-ember motion-safe:transition-transform motion-safe:duration-150 motion-safe:ease-out group-hover:scale-x-100"
+                    />
+                  </span>
                   <svg className={`w-3 h-3 transition-transform ${openDropdown === item.label ? "rotate-180" : ""}`} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
                   </svg>
@@ -135,9 +141,15 @@ export function SiteNav() {
                           href={child.href}
                           role="menuitem"
                           onClick={() => setOpenDropdown(null)}
-                          className="block px-4 py-2 font-mono text-[11px] text-muted-foreground tracking-widest uppercase hover:text-foreground hover:bg-surface-raised transition-colors focus-visible:outline focus-visible:outline-1 focus-visible:outline-accent focus-visible:outline-offset-2"
+                          className="group block px-4 py-2 font-mono text-[11px] text-muted-foreground tracking-widest uppercase hover:text-foreground hover:font-bold hover:bg-ember/10 transition-[color,font-weight] focus-visible:outline focus-visible:outline-1 focus-visible:outline-accent focus-visible:outline-offset-2"
                         >
-                          {child.label}
+                          <span className="relative">
+                            {child.label}
+                            <span
+                              aria-hidden
+                              className="absolute -bottom-0.5 left-0 h-px w-full origin-left scale-x-0 bg-ember motion-safe:transition-transform motion-safe:duration-150 motion-safe:ease-out group-hover:scale-x-100"
+                            />
+                          </span>
                         </a>
                       ))}
                     </div>
@@ -148,17 +160,29 @@ export function SiteNav() {
               <Link
                 key={item.label}
                 href={item.href!}
-                className="font-mono text-[11px] text-muted-foreground tracking-widest uppercase hover:text-foreground transition-colors focus-visible:outline focus-visible:outline-1 focus-visible:outline-accent focus-visible:outline-offset-2"
+                className="group font-mono text-[11px] text-muted-foreground tracking-widest uppercase hover:text-foreground hover:font-bold transition-[color,font-weight] focus-visible:outline focus-visible:outline-1 focus-visible:outline-accent focus-visible:outline-offset-2"
               >
-                {item.label}
+                <span className="relative">
+                  {item.label}
+                  <span
+                    aria-hidden
+                    className="absolute -bottom-0.5 left-0 h-px w-full origin-left scale-x-0 bg-ember motion-safe:transition-transform motion-safe:duration-150 motion-safe:ease-out group-hover:scale-x-100"
+                  />
+                </span>
               </Link>
             ) : (
               <a
                 key={item.label}
                 href={item.href}
-                className="font-mono text-[11px] text-muted-foreground tracking-widest uppercase hover:text-foreground transition-colors focus-visible:outline focus-visible:outline-1 focus-visible:outline-accent focus-visible:outline-offset-2"
+                className="group font-mono text-[11px] text-muted-foreground tracking-widest uppercase hover:text-foreground hover:font-bold transition-[color,font-weight] focus-visible:outline focus-visible:outline-1 focus-visible:outline-accent focus-visible:outline-offset-2"
               >
-                {item.label}
+                <span className="relative">
+                  {item.label}
+                  <span
+                    aria-hidden
+                    className="absolute -bottom-0.5 left-0 h-px w-full origin-left scale-x-0 bg-ember motion-safe:transition-transform motion-safe:duration-150 motion-safe:ease-out group-hover:scale-x-100"
+                  />
+                </span>
               </a>
             )
           )}

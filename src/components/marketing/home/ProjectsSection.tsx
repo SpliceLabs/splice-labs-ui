@@ -1,6 +1,7 @@
 import { SwarmSlot } from "./swarm/SwarmSlot";
 import { cn } from "@/lib/utils";
 import { TagChip } from "../ui/TagChip";
+import { ModuleLabel } from "../ui/ModuleLabel";
 
 type ProjectStatus = "concept" | "validation" | "prototype" | "private-beta" | "design-partner";
 
@@ -38,17 +39,15 @@ export function ProjectsSection() {
     <section id="projects" className="border-t border-surface-border relative">
       {/* Swarm slot: left half on md+; full width on mobile. */}
       <SwarmSlot id="projects" className="absolute inset-0 md:right-1/3" />
-      <div className="absolute right-20 top-0 bottom-0 w-px bg-surface-border" />
+      <div className="absolute right-20 top-0 bottom-0 w-px bg-foreground/10" />
 
       <div className="max-w-[1700px] mx-auto px-20 py-12 md:py-16">
         <div className="md:w-1/2 md:ml-auto flex justify-center md:justify-end mask-fade-from-right px-4 md:px-0">
          <div className="w-full max-w-[600px]">
           <div className="flex flex-row-reverse items-center gap-4 mb-6">
-            <div className="w-2 h-2 bg-accent/40 md:-mr-[calc(3rem+4px)]" />
-            <span className="font-mono text-[9px] text-accent tracking-splice-ultra uppercase">
-              module::projects
-            </span>
-            <span className="flex-1 h-px bg-surface-border" />
+            <div className="w-2 h-2 bg-ember/40 md:-mr-[calc(3rem+4px)]" />
+            <ModuleLabel name="projects" sectionId="projects" rule={false} dot={false} />
+            <span className="flex-1 h-px bg-foreground/10" />
           </div>
 
           <h2 className="font-display text-2xl md:text-3xl font-semibold tracking-splice-tight text-foreground mb-8">
@@ -61,26 +60,26 @@ export function ProjectsSection() {
               <div
                 key={p.name}
                 className={cn(
-                  "group/card grid grid-cols-1 lg:grid-cols-[1fr_1fr] gap-4 border border-surface-border bg-surface transition-colors duration-200 hover:border-accent/40",
+                  "group/card grid grid-cols-1 lg:grid-cols-[1fr_1fr] gap-4 border border-surface-border bg-surface transition-all duration-300 ease-out hover:border-ember/40 hover:shadow-ember-md hover:-translate-y-0.5",
                   i % 2 === 1 && "lg:ml-8",
                 )}
               >
                 <div className="p-6 md:p-8">
                   <div className="flex items-center gap-3 mb-2">
-                    <h3 className="font-display text-lg font-semibold text-foreground">
+                    <h3 className="font-display text-lg font-semibold text-foreground transition-all duration-200 group-hover/card:text-xl">
                       <span className="relative inline-block">
                         {p.name}
                         <span
                           aria-hidden
-                          className="absolute -bottom-0.5 left-0 h-px w-full origin-left scale-x-0 bg-accent motion-safe:transition-transform motion-safe:duration-200 motion-safe:ease-out group-hover/card:scale-x-100"
+                          className="absolute -bottom-0.5 left-0 h-px w-full origin-left scale-x-0 bg-ember motion-safe:transition-transform motion-safe:duration-200 motion-safe:ease-out group-hover/card:scale-x-100"
                         />
                       </span>
                     </h3>
-                    <span className="font-mono text-[9px] text-accent tracking-splice-ultra uppercase px-2 py-0.5 border border-accent/30 bg-accent/5">
+                    <span className="font-mono text-[11px] text-ember tracking-splice-ultra uppercase px-2 py-0.5 border border-ember/30 bg-ember/5 transition-colors duration-200 group-hover/card:bg-ember/10">
                       {STATUS_LABELS[p.status]}
                     </span>
                   </div>
-                  <p className="text-sm text-foreground/70 leading-relaxed">
+                  <p className="text-sm text-foreground/70 leading-relaxed transition-colors duration-200 group-hover/card:text-foreground/90">
                     {p.description}
                   </p>
                 </div>
@@ -96,8 +95,8 @@ export function ProjectsSection() {
           </div>
 
           <div className="flex items-center gap-3 mt-8">
-            <span className="w-12 h-px bg-accent/15" />
-            <span className="font-mono text-[9px] text-muted-foreground/60 tracking-splice-wide">
+            <span className="w-12 h-px bg-foreground/10" />
+            <span className="font-mono text-[11px] text-muted-foreground/60 tracking-splice-wide">
               Additional prototypes are shared privately with partners.
             </span>
           </div>

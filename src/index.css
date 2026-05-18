@@ -42,6 +42,11 @@
     --rust: 16 72% 48%;
     --rust-foreground: 16 10% 95%;
 
+    /* Ember Orange — warm secondary for hover/focus/active (muted) */
+    --ember: 20 85% 48%;
+    --ember-glow: 24 90% 52%;
+    --ember-foreground: 20 10% 6%;
+
     --destructive: 0 72% 51%;
     --destructive-foreground: 210 20% 92%;
 
@@ -155,6 +160,11 @@
 @layer utilities {
   .font-display {
     font-family: var(--font-display);
+  }
+
+  /* Ember glow for card hover states */
+  .hover\:shadow-ember-glow:hover {
+    box-shadow: 0 0 24px -6px hsl(var(--ember) / 0.4);
   }
   .font-mono-custom {
     font-family: var(--font-mono);
