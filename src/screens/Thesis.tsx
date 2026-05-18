@@ -89,14 +89,14 @@ export default function ThesisScreen() {
           </p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {FIRST_WEDGES.map((wedge, i) => (
-              <div key={i} className="border border-surface-border p-6 hover:border-accent/30 transition-colors">
-                <span className="font-mono text-[9px] text-accent tracking-splice-ultra uppercase block mb-2">
+              <div key={i} className="hover-card group border border-surface-border p-6 bg-surface transition-all duration-300 ease-out hover:border-ember/40 hover:shadow-ember-sm hover:-translate-y-0.5">
+                <span className="font-mono text-[9px] text-ember/70 tracking-splice-ultra uppercase block mb-2 transition-colors duration-300 group-hover:text-ember">
                   {String(i + 1).padStart(2, "0")}
                 </span>
-                <h3 className="font-display text-base font-semibold text-foreground mb-2">
+                <h3 className="font-display text-base font-semibold text-foreground mb-2 transition-colors duration-300 group-hover:text-foreground">
                   {wedge.title}
                 </h3>
-                <p className="text-sm text-foreground/60 leading-relaxed">
+                <p className="text-sm text-foreground/60 leading-relaxed transition-colors duration-300 group-hover:text-foreground/80">
                   {wedge.description}
                 </p>
               </div>
@@ -114,11 +114,11 @@ export default function ThesisScreen() {
           </p>
           <div className="space-y-3">
             {WHAT_MUST_BE_TRUE.map((condition, i) => (
-              <div key={i} className="flex items-start gap-4 border-l-2 border-accent/20 pl-4 py-2">
-                <span className="font-mono text-[9px] text-accent tracking-splice-ultra uppercase shrink-0 mt-0.5">
+              <div key={i} className="group flex items-start gap-4 border-l-2 border-accent/20 pl-4 py-2 transition-all duration-300 hover:border-ember/40">
+                <span className="font-mono text-[9px] text-ember/70 tracking-splice-ultra uppercase shrink-0 mt-0.5 transition-colors duration-300 group-hover:text-ember">
                   {String(i + 1).padStart(2, "0")}
                 </span>
-                <p className="text-sm text-foreground/70 leading-relaxed">
+                <p className="text-sm text-foreground/70 leading-relaxed transition-colors duration-300 group-hover:text-foreground/85">
                   {condition}
                 </p>
               </div>
@@ -127,11 +127,11 @@ export default function ThesisScreen() {
         </div>
 
         {/* Bear Case */}
-        <div className="mb-16 border border-surface-border p-6 bg-surface/50">
-          <h2 className="font-display text-xl font-semibold tracking-splice-tight text-foreground mb-4">
+        <div className="hover-card group mb-16 border border-surface-border p-6 bg-surface/50 transition-all duration-300 ease-out hover:border-ember/30 hover:bg-ember/[0.02]">
+          <h2 className="font-display text-xl font-semibold tracking-splice-tight text-foreground mb-4 transition-colors duration-300 group-hover:text-ember">
             Bear Case
           </h2>
-          <p className="text-sm text-foreground/70 leading-relaxed">
+          <p className="text-sm text-foreground/70 leading-relaxed transition-colors duration-300 group-hover:text-foreground/85">
             AI capabilities plateau before reaching reliable autonomous execution. Regulatory frameworks reject
             autonomous financial agents. Institutional adoption remains slower than DeFi native paths. If these
             materialize, we pivot to infrastructure tooling for human-in-the-loop systems.

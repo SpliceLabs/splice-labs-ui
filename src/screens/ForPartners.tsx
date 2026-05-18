@@ -60,11 +60,11 @@ export default function ForPartnersScreen() {
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {WHO_SHOULD_PARTNER.map((item, i) => (
-              <div key={i} className="border border-surface-border p-4 hover:border-accent/30 transition-colors">
-                <span className="font-mono text-[10px] text-accent tracking-splice-ultra uppercase block mb-1">
+              <div key={i} className="hover-card group border border-surface-border p-4 bg-surface transition-all duration-300 ease-out hover:border-ember/40 hover:shadow-ember-sm hover:-translate-y-0.5">
+                <span className="font-mono text-[10px] text-accent tracking-splice-ultra uppercase block mb-1 transition-colors duration-300 group-hover:text-ember">
                   {item.type}
                 </span>
-                <p className="text-sm text-foreground/60 leading-relaxed">{item.description}</p>
+                <p className="text-sm text-foreground/60 leading-relaxed transition-colors duration-300 group-hover:text-foreground/80">{item.description}</p>
               </div>
             ))}
           </div>
@@ -77,11 +77,11 @@ export default function ForPartnersScreen() {
           </h2>
           <div className="space-y-4">
             {PARTNER_USE_CASES.map((item, i) => (
-              <div key={i} className="border border-surface-border p-5 hover:border-accent/30 transition-colors">
-                <span className="font-mono text-[10px] text-accent tracking-splice-ultra uppercase block mb-2">
+              <div key={i} className="hover-card group border border-surface-border p-5 bg-surface transition-all duration-300 ease-out hover:border-ember/40 hover:shadow-ember-sm hover:-translate-y-0.5">
+                <span className="font-mono text-[10px] text-accent tracking-splice-ultra uppercase block mb-2 transition-colors duration-300 group-hover:text-ember">
                   {item.label}
                 </span>
-                <p className="text-sm text-foreground/70 leading-relaxed">{item.description}</p>
+                <p className="text-sm text-foreground/70 leading-relaxed transition-colors duration-300 group-hover:text-foreground/85">{item.description}</p>
               </div>
             ))}
           </div>
@@ -92,12 +92,12 @@ export default function ForPartnersScreen() {
           <h2 className="font-display text-xl md:text-2xl font-semibold tracking-splice-tight text-foreground mb-6">
             Confidentiality, IP & Governance
           </h2>
-          <div className="border border-surface-border p-6 bg-surface/50">
+          <div className="hover-card group border border-surface-border p-6 bg-surface/50 transition-all duration-300 ease-out hover:border-ember/30 hover:bg-ember/[0.02]">
             <div className="space-y-3">
               {CONFIDENTIALITY.map((item, i) => (
                 <div key={i} className="flex items-start gap-3">
-                  <span className="w-1.5 h-1.5 bg-accent/40 shrink-0 mt-2" />
-                  <p className="text-sm text-foreground/70 leading-relaxed">{item}</p>
+                  <span className="w-1.5 h-1.5 bg-accent shadow-[0_0_6px_1px_hsl(var(--accent)/0.3)] shrink-0 mt-2" />
+                  <p className="text-sm text-foreground/70 leading-relaxed transition-colors duration-300 group-hover:text-foreground/85">{item}</p>
                 </div>
               ))}
             </div>

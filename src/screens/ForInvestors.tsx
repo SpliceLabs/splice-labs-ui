@@ -46,9 +46,9 @@ export default function ForInvestorsScreen() {
           </h2>
           <div className="space-y-3">
             {OPCO_RATIONALE.map((item, i) => (
-              <div key={i} className="flex items-start gap-4 border-l-2 border-accent/20 pl-4 py-2">
-                <span className="w-1.5 h-1.5 bg-accent/40 shrink-0 mt-2" />
-                <p className="text-sm text-foreground/70 leading-relaxed">{item}</p>
+              <div key={i} className="group flex items-start gap-4 border-l-2 border-accent/20 pl-4 py-2 transition-all duration-300 hover:border-accent/40">
+                <span className="w-1.5 h-1.5 bg-accent shadow-[0_0_6px_1px_hsl(var(--accent)/0.3)] shrink-0 mt-2" />
+                <p className="text-sm text-foreground/70 leading-relaxed transition-colors duration-300 group-hover:text-foreground/85">{item}</p>
               </div>
             ))}
           </div>
@@ -79,11 +79,11 @@ export default function ForInvestorsScreen() {
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             {VALUATION_LOGIC.map((item, i) => (
-              <div key={i} className="border border-surface-border p-4 hover:border-accent/30 transition-colors">
-                <span className="font-mono text-[10px] text-accent tracking-splice-ultra uppercase block mb-1">
+              <div key={i} className="hover-card group border border-surface-border p-4 bg-surface transition-all duration-300 ease-out hover:border-ember/40 hover:shadow-ember-sm hover:-translate-y-0.5">
+                <span className="font-mono text-[10px] text-accent tracking-splice-ultra uppercase block mb-1 transition-colors duration-300 group-hover:text-ember">
                   {item.label}
                 </span>
-                <p className="text-sm text-foreground/60 leading-relaxed">{item.description}</p>
+                <p className="text-sm text-foreground/60 leading-relaxed transition-colors duration-300 group-hover:text-foreground/80">{item.description}</p>
               </div>
             ))}
           </div>
@@ -94,12 +94,12 @@ export default function ForInvestorsScreen() {
           <h2 className="font-display text-xl md:text-2xl font-semibold tracking-splice-tight text-foreground mb-4">
             LP Sidecar Overview
           </h2>
-          <div className="border border-surface-border p-6 bg-surface/50">
-            <p className="text-sm text-foreground/70 leading-relaxed mb-4">
+          <div className="hover-card group border border-surface-border p-6 bg-surface/50 transition-all duration-300 ease-out hover:border-ember/30 hover:bg-ember/[0.02]">
+            <p className="text-sm text-foreground/70 leading-relaxed mb-4 transition-colors duration-300 group-hover:text-foreground/85">
               We're exploring sidecar structures for aligned capital that wants exposure to the full portfolio
               without direct OpCo participation. Details are available privately for qualified investors.
             </p>
-            <p className="text-sm text-foreground/60 italic">
+            <p className="text-sm text-foreground/60 italic transition-colors duration-300 group-hover:text-foreground/70">
               Request investor materials for full sidecar terms and structure.
             </p>
           </div>
@@ -115,11 +115,11 @@ export default function ForInvestorsScreen() {
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {PROOF_METRICS.map((item, i) => (
-              <div key={i} className="border border-surface-border p-4 hover:border-accent/30 transition-colors">
-                <span className="font-mono text-[10px] text-accent tracking-splice-ultra uppercase block mb-1">
+              <div key={i} className="hover-card group border border-surface-border p-4 bg-surface transition-all duration-300 ease-out hover:border-ember/40 hover:shadow-ember-sm hover:-translate-y-0.5">
+                <span className="font-mono text-[10px] text-accent tracking-splice-ultra uppercase block mb-1 transition-colors duration-300 group-hover:text-ember">
                   {item.metric}
                 </span>
-                <p className="text-sm text-foreground/60 leading-relaxed">{item.description}</p>
+                <p className="text-sm text-foreground/60 leading-relaxed transition-colors duration-300 group-hover:text-foreground/80">{item.description}</p>
               </div>
             ))}
           </div>
