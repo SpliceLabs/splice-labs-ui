@@ -34,7 +34,7 @@ const NAV_ITEMS: NavItem[] = [
   {
     label: "About",
     children: [
-      { label: "Team", href: "#founders" },
+      // { label: "Team", href: "#founders" },
       { label: "HELIOS Stack", href: "#helios" },
     ],
   },

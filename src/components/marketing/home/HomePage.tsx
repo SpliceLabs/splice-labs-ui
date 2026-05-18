@@ -5,7 +5,7 @@ import { ProjectsSection } from "./ProjectsSection";
 import { HeliosSection } from "./HeliosSection";
 import { AgentsSection } from "./AgentsSection";
 import { SecuritySection } from "./SecuritySection";
-import { FoundersSection } from "./FoundersSection";
+// import { FoundersSection } from "./FoundersSection";
 import { ContactSection } from "./ContactSection";
 import { SwarmCanvas } from "./swarm/SwarmCanvas";
 import { SectionRegimeController } from "./swarm/SectionRegimeController";
@@ -36,7 +36,7 @@ export function HomePage() {
           <HeliosSection />
           <ProjectsSection />
           <CommitmentsSection />
-          <FoundersSection />
+          {/* <FoundersSection /> */}
           <AgentsSection />
           <SecuritySection />
           <ContactSection />
