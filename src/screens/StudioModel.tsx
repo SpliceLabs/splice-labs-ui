@@ -75,14 +75,14 @@ export default function StudioModelScreen() {
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {TWO_LEDGER.map((ledger, i) => (
-              <div key={i} className="border border-surface-border p-6 hover:border-accent/30 transition-colors">
-                <span className="font-mono text-[9px] text-accent tracking-splice-ultra uppercase block mb-2">
+              <div key={i} className="hover-card group border border-surface-border p-6 bg-surface transition-all duration-300 ease-out hover:border-ember/40 hover:shadow-ember-sm hover:-translate-y-0.5">
+                <span className="font-mono text-[9px] text-accent tracking-splice-ultra uppercase block mb-2 transition-colors duration-300 group-hover:text-ember">
                   {ledger.label}
                 </span>
-                <h3 className="font-display text-lg font-semibold text-foreground mb-2">
+                <h3 className="font-display text-lg font-semibold text-foreground mb-2 transition-colors duration-300 group-hover:text-foreground">
                   {ledger.title}
                 </h3>
-                <p className="text-sm text-foreground/60 leading-relaxed">
+                <p className="text-sm text-foreground/60 leading-relaxed transition-colors duration-300 group-hover:text-foreground/80">
                   {ledger.description}
                 </p>
               </div>
@@ -97,28 +97,28 @@ export default function StudioModelScreen() {
           </h2>
           <div className="space-y-6">
             {INCUBATION_MODELS.map((model, i) => (
-              <div key={i} className="border border-surface-border p-6 hover:border-accent/30 transition-colors">
+              <div key={i} className="hover-card group border border-surface-border p-6 bg-surface transition-all duration-300 ease-out hover:border-ember/40 hover:shadow-ember-sm hover:-translate-y-0.5">
                 <div className="flex flex-col md:flex-row md:items-start md:justify-between mb-4">
                   <div>
-                    <span className="font-mono text-[9px] text-accent tracking-splice-ultra uppercase block mb-1">
+                    <span className="font-mono text-[9px] text-accent tracking-splice-ultra uppercase block mb-1 transition-colors duration-300 group-hover:text-ember">
                       Model {String(i + 1).padStart(2, "0")}
                     </span>
-                    <h3 className="font-display text-lg font-semibold text-foreground">
+                    <h3 className="font-display text-lg font-semibold text-foreground transition-colors duration-300 group-hover:text-foreground">
                       {model.name}
                     </h3>
                   </div>
-                  <span className="font-mono text-[11px] text-accent tracking-splice-wide mt-2 md:mt-0">
+                  <span className="font-mono text-[11px] text-accent tracking-splice-wide mt-2 md:mt-0 transition-colors duration-300 group-hover:text-ember">
                     {model.equity}
                   </span>
                 </div>
-                <p className="text-sm text-foreground/70 leading-relaxed mb-4">
+                <p className="text-sm text-foreground/70 leading-relaxed mb-4 transition-colors duration-300 group-hover:text-foreground/85">
                   {model.bestFor}
                 </p>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
                   {model.details.map((detail, j) => (
                     <div key={j} className="flex items-center gap-2">
-                      <span className="w-1 h-1 bg-accent/40 shrink-0" />
-                      <span className="text-sm text-foreground/60">{detail}</span>
+                      <span className="w-1 h-1 bg-accent shadow-[0_0_4px_1px_hsl(var(--accent)/0.3)] shrink-0" />
+                      <span className="text-sm text-foreground/60 transition-colors duration-300 group-hover:text-foreground/80">{detail}</span>
                     </div>
                   ))}
                 </div>
@@ -132,23 +132,23 @@ export default function StudioModelScreen() {
           <h2 className="font-display text-xl md:text-2xl font-semibold tracking-splice-tight text-foreground mb-6">
             Which Model Applies?
           </h2>
-          <div className="border border-surface-border p-6 bg-surface/50">
+          <div className="hover-card group border border-surface-border p-6 bg-surface/50 transition-all duration-300 ease-out hover:border-ember/30 hover:bg-ember/[0.02]">
             <div className="space-y-4">
               <div className="flex items-start gap-4">
-                <span className="font-mono text-[9px] text-accent tracking-splice-ultra uppercase shrink-0 mt-1">IF</span>
-                <p className="text-sm text-foreground/70">
+                <span className="font-mono text-[9px] text-ember/80 tracking-splice-ultra uppercase shrink-0 mt-1 transition-colors duration-300 group-hover:text-ember">IF</span>
+                <p className="text-sm text-foreground/70 transition-colors duration-300 group-hover:text-foreground/85">
                   You have a venture idea and domain expertise → <strong className="text-foreground">93/7 Co-Incubation</strong>
                 </p>
               </div>
               <div className="flex items-start gap-4">
-                <span className="font-mono text-[9px] text-accent tracking-splice-ultra uppercase shrink-0 mt-1">IF</span>
-                <p className="text-sm text-foreground/70">
+                <span className="font-mono text-[9px] text-ember/80 tracking-splice-ultra uppercase shrink-0 mt-1 transition-colors duration-300 group-hover:text-ember">IF</span>
+                <p className="text-sm text-foreground/70 transition-colors duration-300 group-hover:text-foreground/85">
                   You're an operator looking for a validated starting point → <strong className="text-foreground">Wholly Owned</strong> (join as recruited CEO)
                 </p>
               </div>
               <div className="flex items-start gap-4">
-                <span className="font-mono text-[9px] text-accent tracking-splice-ultra uppercase shrink-0 mt-1">IF</span>
-                <p className="text-sm text-foreground/70">
+                <span className="font-mono text-[9px] text-ember/80 tracking-splice-ultra uppercase shrink-0 mt-1 transition-colors duration-300 group-hover:text-ember">IF</span>
+                <p className="text-sm text-foreground/70 transition-colors duration-300 group-hover:text-foreground/85">
                   The domain requires extended research before you're ready to commit → <strong className="text-foreground">Delayed-Founder</strong>
                 </p>
               </div>

@@ -42,6 +42,11 @@
     --rust: 16 72% 48%;
     --rust-foreground: 16 10% 95%;
 
+    /* Ember Orange — warm secondary for hover/focus/active (muted) */
+    --ember: 20 85% 48%;
+    --ember-glow: 24 90% 52%;
+    --ember-foreground: 20 10% 6%;
+
     --destructive: 0 72% 51%;
     --destructive-foreground: 210 20% 92%;
 
@@ -156,6 +161,11 @@
   .font-display {
     font-family: var(--font-display);
   }
+
+  /* Ember glow for card hover states */
+  .hover\:shadow-ember-glow:hover {
+    box-shadow: 0 0 24px -6px hsl(var(--ember) / 0.4);
+  }
   .font-mono-custom {
     font-family: var(--font-mono);
   }
@@ -203,5 +213,23 @@
     mask-image:
       linear-gradient(to left, black 25%, transparent 100%),
       linear-gradient(to bottom, transparent 0%, black 18%, black 82%, transparent 100%);
+  }
+
+  /* Junction node pulse animation for active sections */
+  @keyframes junction-pulse {
+    0%, 100% {
+      transform: scale(1);
+      box-shadow: 0 0 0 0 hsl(var(--ember) / 0.4);
+      background-color: hsl(var(--ember) / 0.4);
+    }
+    50% {
+      transform: scale(1.3);
+      box-shadow: 0 0 16px 6px hsl(var(--ember) / 0.7);
+      background-color: hsl(var(--ember) / 0.8);
+    }
+  }
+
+  .junction-pulse {
+    animation: junction-pulse 1.5s ease-in-out infinite;
   }
 }

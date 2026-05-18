@@ -41,15 +41,23 @@ export function TerminalButton({
   children,
 }: TerminalButtonProps) {
   const classes = cn(
-    "group inline-flex items-center justify-center gap-1",
-    "font-mono uppercase tracking-splice-wide",
+    "group relative inline-flex items-center justify-center gap-1",
+    "font-mono font-bold uppercase tracking-splice-wide",
     size === "sm" ? "px-4 py-2 text-[11px]" : "px-6 py-3 text-xs",
-    "transition-[color,background-color,border-color,transform] duration-150 ease-out",
-    "focus-visible:outline focus-visible:outline-1 focus-visible:outline-accent focus-visible:outline-offset-2",
+    "transition-[color,background-color,border-color,transform,box-shadow] duration-150 ease-out",
+    "focus-visible:outline focus-visible:outline-1 focus-visible:outline-ember focus-visible:outline-offset-2",
     !disabled && "motion-safe:active:scale-[0.985]",
     variant === "primary"
-      ? "bg-accent text-accent-foreground hover:bg-accent/90"
-      : "border border-surface-border text-muted-foreground hover:border-foreground/30 hover:text-foreground",
+      ? [
+          "bg-accent text-accent-foreground",
+          "hover:bg-ember hover:text-ember-foreground",
+          "motion-safe:hover:shadow-[0_0_20px_-4px_hsl(20_100%_55%/0.4)]",
+        ]
+      : [
+          "border border-surface-border text-muted-foreground",
+          "hover:border-ember/50 hover:text-ember",
+          "motion-safe:hover:shadow-[0_0_12px_-4px_hsl(20_100%_55%/0.25)]",
+        ],
     disabled && "pointer-events-none opacity-40",
     className,
   );

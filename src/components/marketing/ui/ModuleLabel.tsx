@@ -5,16 +5,17 @@ export interface ModuleLabelProps {
   name: string;
   /** Namespace before `::`. Default "module". */
   prefix?: string;
-  /** Leading 2px pulsing accent dot. */
+  /** Leading dot that pulses. */
   dot?: boolean;
   /** Trailing hairline rule that fills remaining width. */
   rule?: boolean;
+  /** Section ID (kept for future use). */
+  sectionId?: string;
   className?: string;
 }
 
 /**
  * The mono-caps section eyebrow — `module::value`, `splice_labs::init`.
- * Replaces the hand-rolled eyebrow spans across the marketing sections.
  */
 export function ModuleLabel({
   name,
@@ -28,16 +29,16 @@ export function ModuleLabel({
       {dot && (
         <span
           aria-hidden
-          className="size-[2px] shrink-0 bg-accent motion-safe:animate-pulse-accent"
+          className="size-[3px] shrink-0 rounded-full bg-foreground/40"
         />
       )}
-      <span className="shrink-0 font-mono text-[9px] uppercase tracking-splice-ultra text-accent/60">
+      <span className="shrink-0 font-mono text-[11px] uppercase tracking-splice-ultra text-foreground/60">
         {prefix}::{name}
       </span>
       {rule && (
         <span
           aria-hidden
-          className="h-px flex-1 bg-gradient-to-r from-accent/20 to-transparent"
+          className="h-px flex-1 bg-gradient-to-r from-foreground/20 to-transparent"
         />
       )}
     </span>
