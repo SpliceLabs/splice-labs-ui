@@ -19,11 +19,11 @@ const PARTICLE_RGB: Record<TileTone, string> = {
   graphite: "232, 230, 224",
 };
 
-const COUNT = 34;
-const BASE_ALPHA = 0.16;
+const COUNT = 54;
+const BASE_ALPHA = 0.22;
 const REVEAL_MS = 720;
-const REPEL_RADIUS = 66; // px
-const REPEL_STRENGTH = 260;
+const REPEL_RADIUS = 72; // px
+const REPEL_STRENGTH = 340;
 const PUSH_DECAY = 3.2; // per second
 const MAX_DPR = 2;
 
@@ -76,12 +76,12 @@ export function CardSwarm({ tone, delay = 0 }: CardSwarmProps) {
         particles.push({
           x: rand() * w,
           y: rand() * h,
-          speed: 7 + rand() * 8,
+          speed: 18 + rand() * 20,
           angle: rand() * Math.PI * 2,
           // a small initial push so the reveal reads as a settle, not a fade
-          px: (rand() - 0.5) * 44,
-          py: (rand() - 0.5) * 44,
-          r: 0.8 + rand() * 1.4,
+          px: (rand() - 0.5) * 52,
+          py: (rand() - 0.5) * 52,
+          r: 0.9 + rand() * 1.5,
           fade: 0.7 + rand() * 0.5,
         });
       }

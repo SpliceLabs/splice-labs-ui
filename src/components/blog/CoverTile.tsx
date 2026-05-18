@@ -56,9 +56,10 @@ export function CoverTile({
         className,
       )}
     >
-      {/* Particle layer sits below the CSS texture and above the tile fill. */}
+      {/* The swarm IS the texture on grid cards — it replaces the static
+          CSS halftone/engraving so the two particle fields don't compete. */}
       {swarm && <CardSwarm tone={tone} delay={swarmDelay} />}
-      {texture !== "none" && (
+      {texture !== "none" && !swarm && (
         <span
           aria-hidden
           style={{
