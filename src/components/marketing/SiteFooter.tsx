@@ -1,17 +1,36 @@
 import { TerminalCaret } from "./ui/TerminalCaret";
 
-const FOOTER_LINKS = [
-  { label: "Thesis", href: "/thesis" },
-  { label: "Studio Model", href: "/studio-model" },
-  { label: "Incubations", href: "/#projects" },
-  { label: "For Founders", href: "/for-founders" },
-  { label: "For Investors", href: "/for-investors" },
-  { label: "For Partners", href: "/for-partners" },
-  { label: "HELIOS Stack", href: "/#helios" },
-  { label: "Team", href: "/#founders" },
-  { label: "DataRoom", href: "/dataroom" },
-  { label: "Privacy", href: "#" },
-  { label: "Terms", href: "#" },
+const FOOTER_COLUMNS = [
+  {
+    title: "Company",
+    links: [
+      { label: "Thesis", href: "/thesis" },
+      { label: "Studio Model", href: "/studio-model" },
+      { label: "Incubations", href: "/#projects" },
+    ],
+  },
+  {
+    title: "Work With Us",
+    links: [
+      { label: "Founders", href: "/for-founders" },
+      { label: "Investors", href: "/for-investors" },
+      { label: "Partners", href: "/for-partners" },
+    ],
+  },
+  {
+    title: "Platform",
+    links: [
+      { label: "HELIOS", href: "/#helios" },
+      { label: "DataRoom", href: "/dataroom" },
+    ],
+  },
+  {
+    title: "Legal",
+    links: [
+      { label: "Privacy", href: "#" },
+      { label: "Terms", href: "#" },
+    ],
+  },
 ];
 
 export function SiteFooter() {
@@ -32,22 +51,31 @@ export function SiteFooter() {
             </p>
           </div>
 
-          {/* Links */}
-          <div className="flex flex-wrap gap-x-8 gap-y-3">
-            {FOOTER_LINKS.map((link) => (
-              <a
-                key={link.label}
-                href={link.href}
-                className="group font-mono text-[11px] text-muted-foreground tracking-splice-wide uppercase transition-[color,font-weight] hover:text-foreground hover:font-bold focus-visible:outline focus-visible:outline-1 focus-visible:outline-accent focus-visible:outline-offset-2"
-              >
-                <span className="relative">
-                  {link.label}
-                  <span
-                    aria-hidden
-                    className="absolute -bottom-0.5 left-0 h-px w-full origin-left scale-x-0 bg-ember motion-safe:transition-transform motion-safe:duration-150 motion-safe:ease-out group-hover:scale-x-100"
-                  />
+          {/* Link columns */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12">
+            {FOOTER_COLUMNS.map((column) => (
+              <div key={column.title}>
+                <span className="font-mono text-[9px] text-foreground/40 tracking-splice-ultra uppercase block mb-3">
+                  {column.title}
                 </span>
-              </a>
+                <div className="space-y-2">
+                  {column.links.map((link) => (
+                    <a
+                      key={link.label}
+                      href={link.href}
+                      className="group block font-mono text-[11px] text-muted-foreground tracking-splice-wide uppercase transition-[color,font-weight] hover:text-foreground hover:font-bold focus-visible:outline focus-visible:outline-1 focus-visible:outline-accent focus-visible:outline-offset-2"
+                    >
+                      <span className="relative">
+                        {link.label}
+                        <span
+                          aria-hidden
+                          className="absolute -bottom-0.5 left-0 h-px w-full origin-left scale-x-0 bg-ember motion-safe:transition-transform motion-safe:duration-150 motion-safe:ease-out group-hover:scale-x-100"
+                        />
+                      </span>
+                    </a>
+                  ))}
+                </div>
+              </div>
             ))}
           </div>
         </div>
