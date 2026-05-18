@@ -13,15 +13,15 @@ const AGENTS = [
 export function AgentsSection() {
   return (
     <section id="agents" className="border-t border-surface-border relative">
-      {/* Swarm slot: left half on md+; full width on mobile. */}
-      <SwarmSlot id="agents" className="absolute inset-0 md:right-1/3" />
-      <div className="absolute right-20 top-0 bottom-0 w-px bg-foreground/10" />
+      {/* Swarm slot: right half on md+; full width on mobile. */}
+      <SwarmSlot id="agents" className="absolute inset-0 md:left-1/3" />
+      <div className="absolute left-20 top-0 bottom-0 w-px bg-foreground/10" />
 
       <div className="max-w-[1700px] mx-auto px-20 py-12 md:py-16">
-        <div className="md:w-1/2 md:ml-auto flex justify-center md:justify-end mask-fade-from-right px-4 md:px-0">
+        <div className="md:w-1/2 md:mr-auto flex justify-center md:justify-start mask-fade-from-left pl-4 md:pl-0">
          <div className="w-full max-w-[600px]">
-          <div className="flex flex-row-reverse items-center gap-4 mb-6">
-            <div className="w-2 h-2 bg-ember/40 md:-mr-[calc(3rem+4px)]" />
+          <div className="flex items-center gap-4 mb-6">
+            <div className="w-2 h-2 bg-ember/40 md:-ml-[calc(3rem+4px)]" />
             <ModuleLabel name="agents" sectionId="agents" rule={false} dot={false} />
             <span className="flex-1 h-px bg-foreground/10" />
           </div>
