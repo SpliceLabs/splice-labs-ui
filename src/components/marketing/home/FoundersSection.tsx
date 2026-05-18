@@ -4,17 +4,17 @@ const FOUNDERS = [
   {
     name: "Tim Varner",
     role: "CEO",
-    bio: "Two-time founder. Former CEO of Roost (YC S14). Board advisor at Sancus Ventures. Stacks Foundation resident (2022–23).",
+    bio: "Two-time founder (YC S14). Former CEO of Roost. Board advisor at Sancus Ventures. Stacks Foundation resident. Venture formation, GTM, and institutional partnerships.",
   },
   {
     name: "Jake Krogman",
     role: "CTO",
-    bio: "Software architect focused on clean architecture and reliable delivery in web3 systems.",
+    bio: "Systems architect with deep expertise in security, protocol design, and governed infrastructure. Builds the technical backbone for every incubation.",
   },
   {
     name: "Aakanksha Mahajan",
     role: "Engineering Lead",
-    bio: "Engineering & Software lead building production-grade web and web3 applications.",
+    bio: "Full-stack engineering lead shipping production-grade web3 applications. Prior experience in AI systems and product engineering.",
   },
 ];
 
@@ -23,18 +23,18 @@ export function FoundersSection() {
     <section id="founders" className="border-t border-surface-border relative">
       {/* Swarm slot: left half on md+; full width on mobile. */}
       <SwarmSlot id="founders" className="absolute inset-0 md:right-1/3" />
-      <div className="absolute right-6 md:right-8 top-0 bottom-0 w-px bg-surface-border" />
+      <div className="absolute right-20 top-0 bottom-0 w-px bg-surface-border" />
 
-      <div className="max-w-[1700px] mx-auto px-6 md:px-8 py-20 md:py-28">
-        <div className="md:w-1/2 md:ml-auto flex justify-center md:justify-end mask-fade-from-right">
+      <div className="max-w-[1700px] mx-auto px-20 py-12 md:py-16">
+        <div className="md:w-1/2 md:ml-auto flex justify-center md:justify-end mask-fade-from-right px-4 md:px-0">
          <div className="w-full max-w-[600px]">
-          <div className="flex flex-row-reverse items-center gap-4 mb-10">
-            <div className="w-2 h-2 bg-accent/40 -mr-[calc(2rem+4px)] md:-mr-[calc(3rem+4px)]" />
+          <div className="flex flex-row-reverse items-center gap-4 mb-6">
+            <div className="w-2 h-2 bg-accent/40 md:-mr-[calc(3rem+4px)]" />
             <span className="font-mono text-[9px] text-accent tracking-splice-ultra uppercase">module::team</span>
             <span className="flex-1 h-px bg-surface-border" />
           </div>
 
-          <h2 className="font-display text-2xl md:text-3xl font-semibold tracking-splice-tight text-foreground mb-12">
+          <h2 className="font-display text-2xl md:text-3xl font-semibold tracking-splice-tight text-foreground mb-8">
             Built by Operators
           </h2>
 

@@ -1,15 +1,15 @@
 import { TerminalCaret } from "./ui/TerminalCaret";
 
 const FOOTER_LINKS = [
-  { label: "Why Splice Labs", href: "#value" },
-  { label: "Prototypes", href: "#projects" },
-  { label: "Blog", href: "/blog/index-demo" },
-  { label: "HELIOS Platform", href: "/helios" },
-  { label: "Security", href: "#security" },
-  { label: "Founders", href: "#founders" },
-  { label: "Our Commitments", href: "#commitments" },
+  { label: "Thesis", href: "/thesis" },
+  { label: "Studio Model", href: "/studio-model" },
+  { label: "Incubations", href: "/#projects" },
+  { label: "For Founders", href: "/for-founders" },
+  { label: "For Investors", href: "/for-investors" },
+  { label: "For Partners", href: "/for-partners" },
+  { label: "HELIOS Stack", href: "/#helios" },
+  { label: "Team", href: "/#founders" },
   { label: "DataRoom", href: "/dataroom" },
-  { label: "Brand Guide", href: "/brand" },
   { label: "Privacy", href: "#" },
   { label: "Terms", href: "#" },
 ];
@@ -28,7 +28,7 @@ export function SiteFooter() {
               <TerminalCaret rate="footer" className="ml-0.5" />
             </div>
             <p className="font-mono text-[10px] text-muted-foreground tracking-splice-wide uppercase">
-              Protocol and Systems Design Foundry
+              AI-Native Venture Studio
             </p>
           </div>
 

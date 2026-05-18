@@ -2,11 +2,12 @@ import { SwarmSlot } from "./swarm/SwarmSlot";
 import { cn } from "@/lib/utils";
 
 const VALUES = [
-  { title: "Real Systems, Fast", body: "We ship working prototypes. Not slide decks." },
-  { title: "Agent-Native Architecture", body: "Agents execute. Humans approve. Policies are explicit." },
-  { title: "Cross-Chain Infrastructure", body: "Ethereum + L2s. Solana. Stacks. Designed for interoperability." },
-  { title: "Enterprise-Grade Without Enterprise Overhead", body: "Advanced systems design without Fortune-500 friction." },
-  { title: "Trust nothing. Audit everything.", body: "Security isn't a feature. It's the architecture. Zero trust, by default." },
+  { title: "Vertical Focus", body: "Governed autonomous capital and agentic finance—where AI meets programmable money." },
+  { title: "Founder-First Economics", body: "Clean cap tables. No mandatory platform tax. Founders keep majority ownership and agency." },
+  { title: "Venture Production OS", body: "Shared research, validation frameworks, MVP scaffolding, and GTM infrastructure." },
+  { title: "Governed AI Infrastructure", body: "Evaluated workflows, audit logs, policy gates, and human approval at every critical step." },
+  { title: "Portfolio Commons", body: "Reusable learning across incubations without exposing proprietary data." },
+  { title: "Evidence Before Scale", body: "AI reduces the cost of evidence while preserving founder autonomy. We kill bad ideas fast." },
 ];
 
 export function ValueSection() {
@@ -15,21 +16,21 @@ export function ValueSection() {
       {/* Swarm slot: left half on md+; full width on mobile. */}
       <SwarmSlot id="value" className="absolute inset-0 md:right-1/3" />
       {/* Mirrored splice line — right gutter */}
-      <div className="absolute right-6 md:right-8 top-0 bottom-0 w-px bg-surface-border" />
+      <div className="absolute right-20 top-0 bottom-0 w-px bg-surface-border" />
 
-      <div className="max-w-[1700px] mx-auto px-6 md:px-8 py-20 md:py-28">
-        <div className="md:w-1/2 md:ml-auto flex justify-center md:justify-end mask-fade-from-right">
+      <div className="max-w-[1700px] mx-auto px-20 py-12 md:py-16">
+        <div className="md:w-1/2 md:ml-auto flex justify-center md:justify-end mask-fade-from-right px-4 md:px-0">
          <div className="w-full max-w-[600px]">
           {/* Section junction — node on right spine */}
-          <div className="flex flex-row-reverse items-center gap-4 mb-10">
-            <div className="w-2 h-2 bg-accent/40 -mr-[calc(2rem+4px)] md:-mr-[calc(3rem+4px)]" />
+          <div className="flex flex-row-reverse items-center gap-4 mb-6">
+            <div className="w-2 h-2 bg-accent/40 md:-mr-[calc(3rem+4px)]" />
             <span className="font-mono text-[9px] text-accent tracking-splice-ultra uppercase">
               module::value
             </span>
             <span className="flex-1 h-px bg-surface-border" />
           </div>
 
-          <h2 className="font-display text-2xl md:text-3xl font-semibold tracking-splice-tight text-foreground mb-12">
+          <h2 className="font-display text-2xl md:text-3xl font-semibold tracking-splice-tight text-foreground mb-8">
             Why Splice Labs
           </h2>
 

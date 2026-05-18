@@ -24,17 +24,17 @@ export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
     default:
-      "Splice Labs — Protocol and Systems Design Foundry | Agent-Native AI & DeFi Infrastructure",
+      "Splice Labs — AI-Native Venture Studio for Governed Autonomous Capital",
     template: "%s — Splice Labs",
   },
   description:
-    "Splice Labs designs agent-native AI and DeFi protocols for mid-sized enterprises and public sector innovators. Powered by HELIOS — secure multi-agent orchestration for DeFi. Prototype the Future.",
+    "Splice Labs is an AI-native venture studio building infrastructure for governed autonomous capital and agentic finance. We form, fund, and build companies with founder-first economics.",
   authors: [{ name: "Splice Labs" }],
   alternates: { canonical: "/" },
   openGraph: {
-    title: "Splice Labs — Prototype the Future",
+    title: "Splice Labs — AI-Native Venture Studio",
     description:
-      "The only protocol design foundry creating agent-native AI/DeFi solutions at the intersection of AI and decentralized finance. Built on HELIOS secure orchestration infrastructure.",
+      "Building infrastructure for governed autonomous capital. AI agents execute within policy constraints. Humans approve at critical gates. Every action is auditable.",
     type: "website",
     url: SITE_URL,
   },
@@ -50,7 +50,7 @@ const jsonLd = {
       name: "Splice Labs",
       url: SITE_URL,
       description:
-        "Protocol and systems design foundry operating at the intersection of AI and decentralized finance.",
+        "AI-native venture studio building infrastructure for governed autonomous capital and agentic finance.",
     },
     {
       "@type": "WebSite",

@@ -33,12 +33,12 @@ export function HomePage() {
         <div className="relative z-10 pointer-events-none [&_a]:pointer-events-auto [&_button]:pointer-events-auto [&_input]:pointer-events-auto [&_textarea]:pointer-events-auto [&_select]:pointer-events-auto [&_label]:pointer-events-auto">
           <HeroSection />
           <ValueSection />
-          <CommitmentsSection />
-          <ProjectsSection />
           <HeliosSection />
+          <ProjectsSection />
+          <CommitmentsSection />
+          <FoundersSection />
           <AgentsSection />
           <SecuritySection />
-          <FoundersSection />
           <ContactSection />
         </div>
       </SectionRegimeController>

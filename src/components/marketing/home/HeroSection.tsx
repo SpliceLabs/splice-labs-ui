@@ -1,6 +1,7 @@
 import { SwarmSlot } from "./swarm/SwarmSlot";
 import { ModuleLabel } from "../ui/ModuleLabel";
 import { TerminalButton } from "../ui/TerminalButton";
+import { GlossaryTerm } from "../ui/GlossaryTerm";
 
 // Hero copy. The swarm canvas is mounted at VersionE root (single fixed
 // canvas spanning all sections); HeroSection no longer wraps in SwarmHero.
@@ -9,18 +10,18 @@ export function HeroSection() {
   return (
     <section
       id="hero"
-      className="pt-32 pb-20 md:pt-44 md:pb-28 px-6 md:px-8 max-w-[1700px] mx-auto relative min-h-screen"
+      className="pt-32 pb-16 md:pt-40 md:pb-20 px-20 max-w-[1700px] mx-auto relative"
     >
       {/* Hero swarm slot: centered, full-width — swarm fills viewport. */}
       <SwarmSlot id="hero" className="absolute inset-0" />
       {/* Vertical splice line — left gutter */}
-      <div className="absolute left-6 md:left-8 top-0 bottom-0 w-px bg-surface-border" />
-      <div className="absolute left-6 md:left-8 top-32 md:top-44 w-px h-16 bg-accent/40" />
+      <div className="absolute left-20 top-0 bottom-0 w-px bg-surface-border" />
+      <div className="absolute left-20 top-32 md:top-40 w-px h-16 bg-accent/40" />
 
       <div className="pl-8 md:pl-12">
         {/* Junction node */}
-        <div className="flex items-center gap-4 mb-10 motion-safe:animate-fade-up">
-          <div className="w-3 h-3 border border-accent bg-accent/10 -ml-[calc(2rem+6px)] md:-ml-[calc(3rem+6px)]" />
+        <div className="flex items-center gap-4 mb-6 motion-safe:animate-fade-up">
+          <div className="w-3 h-3 border border-accent bg-accent/10 md:-ml-[calc(3rem+6px)]" />
           <ModuleLabel
             prefix="splice_labs"
             name="init"
@@ -33,14 +34,14 @@ export function HeroSection() {
           className="font-display text-4xl md:text-6xl lg:text-[4.5rem] font-bold tracking-splice-tight text-foreground leading-[1.02] mb-2 max-w-[900px] motion-safe:animate-fade-up"
           style={{ animationDelay: "80ms" }}
         >
-          Protocol and<br />Systems Design.
+          An AI-Native<br />Venture Studio.
         </h1>
         <h1
           className="font-display text-4xl md:text-6xl lg:text-[4.5rem] font-bold tracking-splice-tight text-accent leading-[1.02] mb-8 max-w-[900px] motion-safe:animate-fade-up"
           style={{ animationDelay: "160ms" }}
         >
           <span className="relative inline-block">
-            Prototype the Future.
+            Governed Autonomous Capital.
             <span
               aria-hidden
               style={{ animationDelay: "640ms" }}
@@ -50,16 +51,16 @@ export function HeroSection() {
         </h1>
 
         <div
-          className="flex items-start gap-6 md:gap-10 mb-10 motion-safe:animate-fade-up"
+          className="flex items-start gap-6 md:gap-10 mb-6 motion-safe:animate-fade-up"
           style={{ animationDelay: "240ms" }}
         >
           <div className="w-px h-20 bg-accent/30 shrink-0 mt-1" />
           <div>
             <p className="text-accent font-display text-xl md:text-2xl font-semibold tracking-splice-tight mb-3">
-              Agent-Native by Design.
+              Where AI Meets Programmable Capital.
             </p>
             <p className="text-sm text-foreground/50 leading-relaxed max-w-[560px]">
-              Splice Labs is a protocol and systems design foundry operating at the intersection of AI and decentralized finance.
+              We form, fund, and build <GlossaryTerm term="agentic finance">agentic finance</GlossaryTerm> companies—providing research, architecture, and GTM infrastructure through our venture production OS.
             </p>
           </div>
         </div>
@@ -68,11 +69,11 @@ export function HeroSection() {
           className="flex flex-col sm:flex-row gap-3 motion-safe:animate-fade-up"
           style={{ animationDelay: "320ms" }}
         >
-          <TerminalButton href="#contact" data-event="cta_request_demo">
-            Request a private demo
+          <TerminalButton href="#contact" data-event="cta_build_with_splice">
+            Build with Splice
           </TerminalButton>
-          <TerminalButton variant="ghost" href="#" data-event="cta_get_updates">
-            Get updates
+          <TerminalButton variant="ghost" href="/thesis" data-event="cta_read_thesis">
+            Read the Thesis
           </TerminalButton>
         </div>
 
@@ -83,7 +84,7 @@ export function HeroSection() {
         >
           <span className="w-8 h-px bg-accent/30" />
           <span className="font-mono text-[8px] text-muted-foreground/60 tracking-splice-ultra uppercase">
-            Prototypes first · Cross-chain by default · Security built in
+            Evidence before scale · Governed by design · Founder-first economics
           </span>
           <span className="flex-1 h-px bg-surface-border" />
         </div>
