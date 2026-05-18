@@ -1,7 +1,10 @@
+"use client";
+
 import { SwarmSlot } from "./swarm/SwarmSlot";
 import { ModuleLabel } from "../ui/ModuleLabel";
 import { TerminalButton } from "../ui/TerminalButton";
 import { GlossaryTerm } from "../ui/GlossaryTerm";
+import { JunctionNode } from "./JunctionNode";
 
 // Hero copy. The swarm canvas is mounted at VersionE root (single fixed
 // canvas spanning all sections); HeroSection no longer wraps in SwarmHero.
@@ -21,7 +24,7 @@ export function HeroSection() {
       <div className="pl-8 md:pl-12">
         {/* Junction node */}
         <div className="flex items-center gap-4 mb-6 motion-safe:animate-fade-up">
-          <div className="w-3 h-3 border border-ember/60 bg-ember/10 md:-ml-[calc(3rem+6px)]" />
+          <JunctionNode sectionId="hero" align="left" large />
           <ModuleLabel
             prefix="splice_labs"
             name="init"

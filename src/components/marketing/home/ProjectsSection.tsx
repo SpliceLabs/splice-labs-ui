@@ -1,7 +1,10 @@
+"use client";
+
 import { SwarmSlot } from "./swarm/SwarmSlot";
 import { cn } from "@/lib/utils";
 import { TagChip } from "../ui/TagChip";
 import { ModuleLabel } from "../ui/ModuleLabel";
+import { JunctionNode } from "./JunctionNode";
 
 type ProjectStatus = "concept" | "validation" | "prototype" | "private-beta" | "design-partner";
 
@@ -45,7 +48,7 @@ export function ProjectsSection() {
         <div className="md:w-1/2 md:ml-auto flex justify-center md:justify-end mask-fade-from-right px-4 md:px-0">
          <div className="w-full max-w-[600px]">
           <div className="flex flex-row-reverse items-center gap-4 mb-6">
-            <div className="w-2 h-2 bg-ember/40 md:-mr-[calc(3rem+4px)]" />
+            <JunctionNode sectionId="projects" align="right" />
             <ModuleLabel name="projects" sectionId="projects" rule={false} dot={false} />
             <span className="flex-1 h-px bg-foreground/10" />
           </div>

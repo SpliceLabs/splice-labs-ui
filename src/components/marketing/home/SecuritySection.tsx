@@ -1,6 +1,9 @@
+"use client";
+
 import { SwarmSlot } from "./swarm/SwarmSlot";
 import { ModuleLabel } from "../ui/ModuleLabel";
 import { getSectionLayout, type SectionAlign } from "./sectionLayout";
+import { JunctionNode } from "./JunctionNode";
 
 interface SecuritySectionProps {
   align?: SectionAlign;
@@ -18,7 +21,7 @@ export function SecuritySection({ align = "right" }: SecuritySectionProps) {
         <div className={layout.contentWrapper}>
          <div className="w-full max-w-[600px]">
           <div className={layout.headerFlex}>
-            <div className={`w-2 h-2 bg-ember/40 ${layout.junctionMargin}`} />
+            <JunctionNode sectionId="security" align={align} />
             <ModuleLabel name="security" sectionId="security" rule={false} dot={false} />
             <span className="flex-1 h-px bg-foreground/10" />
           </div>

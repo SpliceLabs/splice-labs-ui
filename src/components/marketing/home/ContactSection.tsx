@@ -1,9 +1,12 @@
+"use client";
+
 import { useState } from "react";
 import { SwarmSlot } from "./swarm/SwarmSlot";
 import { TerminalButton } from "../ui/TerminalButton";
 import { ModuleLabel } from "../ui/ModuleLabel";
 import { cn } from "@/lib/utils";
 import { getSectionLayout, getAccentLinePosition, getCalcPosition, type SectionAlign } from "./sectionLayout";
+import { JunctionNode } from "./JunctionNode";
 
 type Status = "idle" | "submitting" | "success" | "error";
 type AudienceType = "founder" | "investor" | "partner" | "operator";
@@ -84,7 +87,7 @@ export function ContactSection({ align = "left" }: ContactSectionProps) {
         <div className={layout.contentWrapper}>
          <div className="w-full max-w-[600px]">
           <div className={layout.headerFlex}>
-            <div className={`w-2 h-2 bg-ember/40 ${layout.junctionMargin}`} />
+            <JunctionNode sectionId="contact" align={align} />
             <ModuleLabel name="contact" sectionId="contact" rule={false} dot={false} />
             <span className="flex-1 h-px bg-foreground/10" />
           </div>

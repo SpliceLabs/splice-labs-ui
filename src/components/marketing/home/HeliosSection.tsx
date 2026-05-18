@@ -1,6 +1,9 @@
+"use client";
+
 import { SwarmSlot } from "./swarm/SwarmSlot";
 import { ModuleLabel } from "../ui/ModuleLabel";
 import { getSectionLayout, type SectionAlign } from "./sectionLayout";
+import { JunctionNode } from "./JunctionNode";
 
 interface HeliosSectionProps {
   align?: SectionAlign;
@@ -28,8 +31,7 @@ export function HeliosSection({ align = "left" }: HeliosSectionProps) {
         <div className={layout.contentWrapper}>
          <div className="w-full max-w-[600px]">
           <div className={layout.headerFlex}>
-            {/* Special larger junction node for Helios */}
-            <div className={`w-3 h-3 border border-ember/60 bg-ember/10 ${isLeft ? "md:-ml-[calc(3rem+6px)]" : "md:-mr-[calc(3rem+6px)]"}`} />
+            <JunctionNode sectionId="helios" align={align} large />
             <ModuleLabel name="platform" sectionId="helios" rule={false} dot={false} />
             <span className="flex-1 h-px bg-gradient-to-r from-accent/20 to-transparent" />
           </div>

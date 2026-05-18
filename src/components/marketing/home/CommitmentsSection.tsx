@@ -1,6 +1,9 @@
+"use client";
+
 import { SwarmSlot } from "./swarm/SwarmSlot";
 import { ModuleLabel } from "../ui/ModuleLabel";
 import { getSectionLayout, type SectionAlign } from "./sectionLayout";
+import { JunctionNode } from "./JunctionNode";
 
 const COMMITMENTS = [
   { label: "Founder Ownership", body: "Majority equity stays with founders. No forced platform tax." },
@@ -26,7 +29,7 @@ export function CommitmentsSection({ align = "left" }: CommitmentsSectionProps) 
         <div className={layout.contentWrapper}>
          <div className="w-full max-w-[600px]">
           <div className={layout.headerFlex}>
-            <div className={`w-2 h-2 bg-ember/40 ${layout.junctionMargin}`} />
+            <JunctionNode sectionId="commitments" align={align} />
             <ModuleLabel name="commitments" sectionId="commitments" rule={false} dot={false} />
             <span className="flex-1 h-px bg-foreground/10" />
           </div>

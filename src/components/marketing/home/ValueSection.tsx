@@ -1,6 +1,9 @@
+"use client";
+
 import { SwarmSlot } from "./swarm/SwarmSlot";
 import { cn } from "@/lib/utils";
 import { ModuleLabel } from "../ui/ModuleLabel";
+import { JunctionNode } from "./JunctionNode";
 
 const VALUES = [
   { title: "Vertical Focus", body: "Governed autonomous capital and agentic finance—where AI meets programmable money." },
@@ -24,7 +27,7 @@ export function ValueSection() {
          <div className="w-full max-w-[600px]">
           {/* Section junction — node on right spine */}
           <div className="flex flex-row-reverse items-center gap-4 mb-6">
-            <div className="w-2 h-2 bg-ember/40 md:-mr-[calc(3rem+4px)]" />
+            <JunctionNode sectionId="value" align="right" />
             <ModuleLabel name="value" sectionId="value" rule={false} dot={false} />
             <span className="flex-1 h-px bg-foreground/10" />
           </div>
