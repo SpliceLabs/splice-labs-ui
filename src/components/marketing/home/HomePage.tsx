@@ -61,7 +61,7 @@ export function HomePage() {
       <SwarmDevPanel refs={swarmRefs} />
 
       {/* Tips ticker — fixed top-right, subtle rotating insights */}
-      <TipsTicker className="fixed top-20 right-6 z-50 max-w-md pointer-events-auto hidden md:flex" />
+      <TipsTicker className="fixed top-20 right-6 z-50 w-[480px] pointer-events-auto hidden lg:flex" />
     </SwarmRefsProvider>
   );
 }

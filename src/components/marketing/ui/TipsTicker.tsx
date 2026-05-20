@@ -46,11 +46,14 @@ export interface TipsTickerProps {
 /**
  * Subtle rotating tips ticker — the silence between the notes.
  * Fetches AI-generated tips from /api/tips, falls back to static tips.
+ * Types out each tip letter by letter.
  */
-export function TipsTicker({ interval = 8000, className }: TipsTickerProps) {
+export function TipsTicker({ interval = 12000, className }: TipsTickerProps) {
   const [tips, setTips] = useState<Tip[]>(FALLBACK_TIPS);
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [isVisible, setIsVisible] = useState(true);
+  const [displayedText, setDisplayedText] = useState("");
+  const [isTyping, setIsTyping] = useState(true);
+  const typeSpeed = 30; // ms per character
 
   // Fetch tips from API on mount
   useEffect(() => {
@@ -69,23 +72,35 @@ export function TipsTicker({ interval = 8000, className }: TipsTickerProps) {
     fetchTips();
   }, []);
 
-  // Rotate through tips
+  const current = tips[currentIndex];
+
+  // Typewriter effect
+  useEffect(() => {
+    setDisplayedText("");
+    setIsTyping(true);
+    let charIndex = 0;
+
+    const typeTimer = setInterval(() => {
+      if (charIndex < current.tip.length) {
+        setDisplayedText(current.tip.slice(0, charIndex + 1));
+        charIndex++;
+      } else {
+        setIsTyping(false);
+        clearInterval(typeTimer);
+      }
+    }, typeSpeed);
+
+    return () => clearInterval(typeTimer);
+  }, [current.tip]);
+
+  // Rotate to next tip after interval
   useEffect(() => {
     const timer = setInterval(() => {
-      // Fade out
-      setIsVisible(false);
-
-      // After fade out, change tip and fade in
-      setTimeout(() => {
-        setCurrentIndex((prev) => (prev + 1) % tips.length);
-        setIsVisible(true);
-      }, 300);
+      setCurrentIndex((prev) => (prev + 1) % tips.length);
     }, interval);
 
     return () => clearInterval(timer);
   }, [interval, tips.length]);
-
-  const current = tips[currentIndex];
 
   return (
     <div
@@ -115,15 +130,12 @@ export function TipsTicker({ interval = 8000, className }: TipsTickerProps) {
         className="h-3 w-px bg-ember/40"
       />
 
-      {/* Tip text with crossfade */}
-      <span
-        className={cn(
-          "font-mono text-[11px] text-foreground/80 leading-relaxed",
-          "transition-opacity duration-300",
-          isVisible ? "opacity-100" : "opacity-0"
+      {/* Tip text with typewriter effect */}
+      <span className="font-mono text-[11px] text-foreground/80 leading-relaxed">
+        {displayedText}
+        {isTyping && (
+          <span className="inline-block w-[2px] h-[12px] bg-ember ml-0.5 animate-pulse" />
         )}
-      >
-        {current.tip}
       </span>
     </div>
   );
