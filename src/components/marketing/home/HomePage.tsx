@@ -12,6 +12,7 @@ import { SectionRegimeController } from "./swarm/SectionRegimeController";
 import { SwarmDevPanel } from "./swarm/SwarmDevPanel";
 import { SwarmRefsProvider, useSwarmRefs } from "./swarm/swarmRefs";
 import { ScrollProgress } from "../ui/ScrollProgress";
+import { TipsTicker } from "../ui/TipsTicker";
 import type { SectionAlign } from "./sectionLayout";
 
 /**
@@ -58,6 +59,9 @@ export function HomePage() {
         </div>
       </SectionRegimeController>
       <SwarmDevPanel refs={swarmRefs} />
+
+      {/* Tips ticker — fixed top-right, subtle rotating insights */}
+      <TipsTicker className="fixed top-20 right-6 z-50 max-w-md pointer-events-auto hidden md:flex" />
     </SwarmRefsProvider>
   );
 }

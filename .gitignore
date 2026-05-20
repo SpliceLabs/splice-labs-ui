@@ -33,3 +33,4 @@ splicelabs-documents-*/
 .vercel
 .env*.local
 dist/
+.gstack/
