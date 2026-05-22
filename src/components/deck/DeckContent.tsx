@@ -265,6 +265,57 @@ export function QAGrid({
   );
 }
 
+/* ── Multi-column matrix (model comparison, cap-table evolution) ── */
+export function Matrix({
+  headers,
+  rows,
+  accentCol,
+}: {
+  headers: string[];
+  rows: string[][];
+  /** 1-based data column to tint (e.g. the recommended model). */
+  accentCol?: number;
+}) {
+  const cols = headers.length;
+  return (
+    <div
+      className="grid border border-surface-border text-[13px]"
+      style={{ gridTemplateColumns: `1.3fr repeat(${cols - 1}, 1fr)` }}
+    >
+      {headers.map((h, i) => (
+        <div
+          key={`h${i}`}
+          className={cn(
+            "border-b border-surface-border bg-surface/40 px-4 py-3 font-mono text-[9px] tracking-splice-wide uppercase",
+            i > 0 && "border-l border-surface-border",
+            accentCol === i ? "text-accent/80" : "text-muted-foreground/55",
+          )}
+        >
+          {h}
+        </div>
+      ))}
+      {rows.map((r, ri) =>
+        r.map((c, ci) => (
+          <div
+            key={`${ri}-${ci}`}
+            className={cn(
+              "px-4 py-2.5 leading-snug",
+              ri < rows.length - 1 && "border-b border-surface-border",
+              ci > 0 && "border-l border-surface-border",
+              ci === 0
+                ? "font-medium text-foreground/85"
+                : "text-foreground/65",
+              accentCol === ci && ci > 0 && "bg-accent/[0.04]",
+            )}
+          >
+            {c}
+          </div>
+        )),
+      )}
+    </div>
+  );
+}
+
 /* ── Labeled box (formation-OS layers, Series A columns) ── */
 export function Box({
   kicker,
