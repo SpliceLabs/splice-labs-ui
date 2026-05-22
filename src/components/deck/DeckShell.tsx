@@ -36,7 +36,7 @@ export function DeckShell({
     >
       {/* Top nav bar */}
       <nav
-        className="fixed top-0 left-0 right-0 z-50 backdrop-blur-sm border-b border-surface-border transition-colors duration-300"
+        className="fixed top-0 left-0 right-0 z-50 backdrop-blur-sm border-b border-surface-border transition-colors duration-300 print:hidden"
         style={
           lightMode
             ? { backgroundColor: "hsla(210, 20%, 96%, 0.85)" }
@@ -70,7 +70,7 @@ export function DeckShell({
       </nav>
 
       {/* Spacer */}
-      <div className="h-12" />
+      <div className="h-12 print:hidden" />
 
       {children}
     </div>
