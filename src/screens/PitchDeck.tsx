@@ -49,6 +49,7 @@ const DECKS = [
   { id: "seed", label: "Seed — Splice Labs", href: "/deck-seed" },
   { id: "partnership", label: "Partnership — Model", href: "/deck-partnership" },
   { id: "studio-model", label: "Studio Model — Incubation", href: "/deck-studio-model" },
+  { id: "compounding", label: "Compounding → Network Effects", href: "/deck-compounding" },
 ];
 
 const TOTAL_SLIDES_B = 17;

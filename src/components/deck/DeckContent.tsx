@@ -316,6 +316,24 @@ export function Matrix({
   );
 }
 
+/* ── Horizontal step flow (the compounding loop) ── */
+export function Flow({ steps }: { steps: string[] }) {
+  return (
+    <div className="flex flex-wrap items-center gap-x-2 gap-y-3">
+      {steps.map((s, i) => (
+        <div key={i} className="flex items-center gap-2">
+          <span className="border border-surface-border bg-surface/30 px-3 py-2 text-[13px] leading-snug text-foreground/80">
+            {s}
+          </span>
+          {i < steps.length - 1 && (
+            <span className="font-mono text-sm text-accent/50">→</span>
+          )}
+        </div>
+      ))}
+    </div>
+  );
+}
+
 /* ── Labeled box (formation-OS layers, Series A columns) ── */
 export function Box({
   kicker,
