@@ -50,6 +50,7 @@ const DECKS = [
   { id: "partnership", label: "Partnership — Model", href: "/deck-partnership" },
   { id: "studio-model", label: "Studio Model — Incubation", href: "/deck-studio-model" },
   { id: "compounding", label: "Compounding → Network Effects", href: "/deck-compounding" },
+  { id: "harness", label: "The Harness Is the Asset", href: "/deck-harness" },
 ];
 
 const TOTAL_SLIDES_B = 17;
