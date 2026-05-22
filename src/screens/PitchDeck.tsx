@@ -46,6 +46,8 @@ const DECKS = [
   { id: "c", label: "C — Partnership" },
   { id: "d", label: "D — Sales Clients" },
   { id: "e", label: "E — Agentic Trading", href: "/deck-e" },
+  { id: "seed", label: "Seed — Splice Labs", href: "/deck-seed" },
+  { id: "partnership", label: "Partnership — Model", href: "/deck-partnership" },
 ];
 
 const TOTAL_SLIDES_B = 17;
