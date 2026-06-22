@@ -9,9 +9,9 @@ import {
 
 const GLOSSARY: Record<string, string> = {
   "governed autonomous capital":
-    "Capital that moves and works autonomously within explicit, human-defined governance bounds. AI executes; humans approve.",
+    "Splice's thesis: capital that moves autonomously within explicit policy bounds, with human approval at critical gates.",
   "agentic finance":
-    "The application of AI agents to financial operations—executing within policy constraints with human approval at critical gates.",
+    "AI agents operating in financial systems—the emerging industry where Splice Labs builds.",
   helios:
     "Splice's venture production OS. Validation frameworks, formation infrastructure, and GTM machinery for building companies.",
   opco:
