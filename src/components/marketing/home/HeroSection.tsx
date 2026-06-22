@@ -40,28 +40,21 @@ export function HeroSection() {
         >
           An AI-Native<br />Venture Studio.
         </h1>
-        <h1
-          className="font-display text-4xl md:text-6xl lg:text-[4.5rem] font-bold tracking-splice-tight text-accent leading-[1.02] mb-8 max-w-[900px] motion-safe:animate-fade-up"
+        <p
+          className="font-display text-3xl md:text-4xl lg:text-5xl font-semibold tracking-splice-tight text-accent leading-[1.1] mt-12 mb-20 max-w-[900px] motion-safe:animate-fade-up"
           style={{ animationDelay: "160ms" }}
         >
-          <span className="relative inline-block">
-            Governed Autonomous Capital.
-            <span
-              aria-hidden
-              style={{ animationDelay: "640ms" }}
-              className="absolute -bottom-1 left-0 h-0.5 w-full origin-left bg-accent motion-safe:scale-x-0 motion-safe:animate-draw"
-            />
-          </span>
-        </h1>
+          BUILDING THE AGENTIC FINANCE STACK.
+        </p>
 
         <div
           className="flex items-start gap-6 md:gap-10 mb-6 motion-safe:animate-fade-up"
           style={{ animationDelay: "240ms" }}
         >
-          <div className="w-px h-20 bg-foreground/15 shrink-0 mt-1" />
+          <div className="w-px h-20 bg-ember shrink-0 mt-1" />
           <div>
-            <p className="text-accent font-display text-xl md:text-2xl font-semibold tracking-splice-tight mb-3">
-              Where AI Meets Programmable Capital.
+            <p className="text-foreground font-display text-xl md:text-2xl font-semibold tracking-splice-tight mb-3">
+              Where agents meet programmable capital.
             </p>
             <p className="text-sm text-foreground/50 leading-relaxed max-w-[560px]">
               We form, fund, and build <GlossaryTerm term="agentic finance">agentic finance</GlossaryTerm> companies—providing research, architecture, and GTM infrastructure through our venture production OS.
