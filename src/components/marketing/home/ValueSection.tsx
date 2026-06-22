@@ -6,7 +6,7 @@ import { ModuleLabel } from "../ui/ModuleLabel";
 import { JunctionNode } from "./JunctionNode";
 
 const VALUES = [
-  { title: "Vertical Focus", body: "Governed autonomous capital and agentic finance—where AI meets programmable money." },
+  { title: "Vertical Focus", body: "Agentic finance infrastructure—where AI meets programmable money." },
   { title: "Founder-First Economics", body: "Clean cap tables. No mandatory platform tax. Founders keep majority ownership and agency." },
   { title: "Venture Production OS", body: "Shared research, validation frameworks, MVP scaffolding, and GTM infrastructure." },
   { title: "Governed AI Infrastructure", body: "Evaluated workflows, audit logs, policy gates, and human approval at every critical step." },
