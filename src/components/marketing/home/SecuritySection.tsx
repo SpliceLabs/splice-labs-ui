@@ -30,12 +30,13 @@ export function SecuritySection({ align = "right" }: SecuritySectionProps) {
             Security by Design
           </h2>
 
-          {/* Three pillars with connecting lines */}
+          {/* Four pillars with connecting lines */}
           <div className="grid grid-cols-1 gap-0">
             {[
-              { label: "Policies", detail: "Clear policies govern every system boundary." },
-              { label: "Approvals", detail: "Explicit human approvals for all critical paths." },
-              { label: "Logs", detail: "Deterministic, immutable audit logs throughout." },
+              { label: "Policies", detail: "Every agent action bounded by explicit policy gates—no implicit permissions." },
+              { label: "Approvals", detail: "Human-in-the-loop for capital movements, credential access, and external calls." },
+              { label: "Logs", detail: "Full replay capability—every decision traceable to its trigger." },
+              { label: "Isolation", detail: "Agents operate in sandboxed environments with scoped credentials." },
             ].map((item) => (
               <div key={item.label} className="hover-card group flex">
                 <div className="flex-1 p-6 md:p-8 border border-surface-border -mt-px first:mt-0 bg-surface transition-all duration-300 ease-out hover:border-ember/30 hover:bg-ember/[0.02]">
