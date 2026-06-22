@@ -41,8 +41,8 @@ export function SiteFooter() {
           {/* Logo + tagline */}
           <div>
             <div className="flex items-center gap-1 font-mono text-sm text-foreground mb-3">
-              <span className="text-foreground/30">›</span>
-              <span>spl<span className="font-bold text-base text-ember">I</span>ce</span>
+              <span className="text-ember font-bold">›</span>
+              <span>splice</span>
               <span className="text-accent font-bold">_</span>
               <TerminalCaret rate="footer" className="ml-0.5" />
             </div>
