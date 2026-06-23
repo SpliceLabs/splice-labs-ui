@@ -127,10 +127,10 @@ export default function ForInvestorsScreen() {
 
         {/* CTAs */}
         <div className="flex flex-col sm:flex-row gap-4">
-          <TerminalButton href="/#contact" data-event="cta_request_materials">
+          <TerminalButton href="/#contact?intent=investor&action=request-materials" data-event="cta_request_materials">
             Request Investor Materials
           </TerminalButton>
-          <TerminalButton variant="ghost" href="/#contact" data-event="cta_schedule_diligence">
+          <TerminalButton variant="ghost" href="/#contact?intent=investor&action=schedule-call" data-event="cta_schedule_diligence">
             Schedule Diligence Call
           </TerminalButton>
         </div>

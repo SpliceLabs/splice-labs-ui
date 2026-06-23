@@ -1,5 +1,6 @@
 import { cn } from "@/lib/utils";
 import type { MouseEventHandler, ReactNode } from "react";
+import Link from "next/link";
 
 export interface TerminalButtonProps {
   variant?: "primary" | "ghost";
@@ -88,6 +89,25 @@ export function TerminalButton({
       >
         {inner}
       </button>
+    );
+  }
+
+  // Use Next.js Link for internal routes
+  const isInternal = href?.startsWith("/");
+
+  if (isInternal && !disabled) {
+    return (
+      <Link
+        href={href}
+        onClick={onClick}
+        target={target}
+        rel={rel}
+        aria-label={ariaLabel}
+        data-event={dataEvent}
+        className={classes}
+      >
+        {inner}
+      </Link>
     );
   }
 

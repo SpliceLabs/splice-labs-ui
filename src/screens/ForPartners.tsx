@@ -106,10 +106,10 @@ export default function ForPartnersScreen() {
 
         {/* CTAs */}
         <div className="flex flex-col sm:flex-row gap-4">
-          <TerminalButton href="/#contact" data-event="cta_partner_with_splice">
+          <TerminalButton href="/#contact?intent=partner&action=partner-inquiry" data-event="cta_partner_with_splice">
             Partner with Splice
           </TerminalButton>
-          <TerminalButton variant="ghost" href="/#contact" data-event="cta_submit_problem">
+          <TerminalButton variant="ghost" href="/#contact?intent=partner&action=submit-problem" data-event="cta_submit_problem">
             Submit a Problem
           </TerminalButton>
         </div>

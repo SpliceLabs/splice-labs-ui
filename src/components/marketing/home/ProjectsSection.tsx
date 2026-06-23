@@ -13,13 +13,13 @@ const PROJECTS: { name: string; description: string; tags: string[]; status: Pro
     name: "OpenTrade",
     description: "Institutional-grade crypto portfolio intelligence. AI-powered analysis and execution infrastructure.",
     tags: ["Trading", "AI", "Institutional"],
-    status: "prototype",
+    status: "validation",
   },
   {
-    name: "Auric Research",
-    description: "Autonomous research agents for financial markets. Evidence-driven insights at institutional scale.",
-    tags: ["Research", "Agents", "Finance"],
-    status: "validation",
+    name: "Agent Circuit",
+    description: "F1 for AI agents. Competitive arenas where trading bots and gaming agents race, battle, and prove their edge.",
+    tags: ["Agents", "Competition", "Gaming"],
+    status: "prototype",
   },
   {
     name: "Agent Evolve",

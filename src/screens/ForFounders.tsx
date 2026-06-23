@@ -133,10 +133,10 @@ export default function ForFoundersScreen() {
 
         {/* CTAs */}
         <div className="flex flex-col sm:flex-row gap-4">
-          <TerminalButton href="/#contact" data-event="cta_apply_founder">
+          <TerminalButton href="/#contact?intent=founder&action=apply-founder" data-event="cta_apply_founder">
             Apply as Founder
           </TerminalButton>
-          <TerminalButton variant="ghost" href="/#contact" data-event="cta_join_bench">
+          <TerminalButton variant="ghost" href="/#contact?intent=operator&action=join-bench" data-event="cta_join_bench">
             Join Founder Bench
           </TerminalButton>
         </div>
