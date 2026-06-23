@@ -48,7 +48,7 @@ export function ValueSection() {
               >
                 <span
                   aria-hidden
-                  className="absolute right-0 top-2 font-mono text-[11px] tracking-splice-wide text-ember/60 transition-all duration-200 group-hover:text-ember group-hover:text-[13px]"
+                  className="absolute right-0 top-2 font-mono text-label tracking-splice-wide text-ember/60 transition-all duration-200 group-hover:text-ember group-hover:text-label-lg"
                 >
                   {String(i + 1).padStart(2, "0")}
                 </span>
@@ -64,7 +64,7 @@ export function ValueSection() {
 
           <div className="flex items-center gap-3 mt-10">
             <span className="w-12 h-px bg-foreground/10" />
-            <span className="text-[13px] text-foreground/60 italic">
+            <span className="text-label-lg text-foreground/60 italic">
               If it needs to be real, not theoretical, we can help.
             </span>
           </div>

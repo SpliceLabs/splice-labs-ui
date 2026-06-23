@@ -80,7 +80,7 @@ export function HeroSection() {
           style={{ animationDelay: "400ms" }}
         >
           <span className="w-8 h-px bg-foreground/15" />
-          <span className="font-mono text-[10px] text-muted-foreground/60 tracking-splice-ultra uppercase">
+          <span className="font-mono text-label-sm text-muted-foreground/60 tracking-splice-ultra uppercase">
             Evidence before scale · Governed by design · Founder-first economics
           </span>
           <span className="flex-1 h-px bg-foreground/10" />

@@ -31,9 +31,9 @@ function Swatch({ hsl, label, token }: { hsl: string; label: string; token: stri
         style={{ backgroundColor: `hsl(${hsl})` }}
       />
       <div className="min-w-0">
-        <span className="font-mono text-[11px] text-foreground/80 block leading-tight">{label}</span>
-        <span className="font-mono text-[9px] text-muted-foreground/50 block leading-tight">{token}</span>
-        <span className="font-mono text-[9px] text-muted-foreground/40 block leading-tight">hsl({hsl})</span>
+        <span className="font-mono text-label text-foreground/80 block leading-tight">{label}</span>
+        <span className="font-mono text-label-xs text-muted-foreground/50 block leading-tight">{token}</span>
+        <span className="font-mono text-label-xs text-muted-foreground/40 block leading-tight">hsl({hsl})</span>
       </div>
     </div>
   );
@@ -43,25 +43,25 @@ export function StyleGuideSlide({ slideNumber, totalSlides }: SlideProps) {
   return (
     <Slide id="style-guide" module="appendix::style guide" slideNumber={slideNumber} totalSlides={totalSlides}>
       <div className="flex items-center gap-3 mb-8">
-        <span className="font-mono text-[9px] text-accent/50 tracking-splice-ultra uppercase border border-accent/20 px-2 py-0.5">
+        <span className="font-mono text-label-xs text-accent/50 tracking-splice-ultra uppercase border border-accent/20 px-2 py-0.5">
           Design Reference
         </span>
       </div>
 
       <div className="h-8 w-64 bg-foreground/8 mb-2 flex items-center">
-        <span className="font-mono text-[10px] text-accent/60 tracking-splice-wide uppercase">
+        <span className="font-mono text-label-sm text-accent/60 tracking-splice-wide uppercase">
           Typography & Color System
         </span>
       </div>
       <div className="h-4 w-[60%] max-w-[480px] bg-foreground/5 mb-10 flex items-center">
-        <span className="font-mono text-[9px] text-muted-foreground/50">
+        <span className="font-mono text-label-xs text-muted-foreground/50">
           Reference sheet for human editors — do not deviate from these tokens.
         </span>
       </div>
 
       {/* Typography */}
       <div className="border border-surface-border p-6 mb-8">
-        <span className="font-mono text-[9px] text-accent/60 tracking-splice-ultra uppercase block mb-5">
+        <span className="font-mono text-label-xs text-accent/60 tracking-splice-ultra uppercase block mb-5">
           Fonts
         </span>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -69,7 +69,7 @@ export function StyleGuideSlide({ slideNumber, totalSlides }: SlideProps) {
             <span className="font-display text-2xl tracking-splice-tight block mb-1">
               Space Grotesk
             </span>
-            <span className="font-mono text-[10px] text-muted-foreground/50 block mb-3">
+            <span className="font-mono text-label-sm text-muted-foreground/50 block mb-3">
               Display & Body · Weights: 400, 500, 600, 700
             </span>
             <div className="space-y-1">
@@ -83,7 +83,7 @@ export function StyleGuideSlide({ slideNumber, totalSlides }: SlideProps) {
             <span className="font-mono text-2xl tracking-splice-tight block mb-1">
               Space Mono
             </span>
-            <span className="font-mono text-[10px] text-muted-foreground/50 block mb-3">
+            <span className="font-mono text-label-sm text-muted-foreground/50 block mb-3">
               Code, Labels & Captions · Weights: 400, 700
             </span>
             <div className="space-y-1">
@@ -91,10 +91,10 @@ export function StyleGuideSlide({ slideNumber, totalSlides }: SlideProps) {
               <span className="font-mono text-sm font-bold block">Bold 700 — The quick brown fox</span>
             </div>
             <div className="mt-3 border-l-2 border-accent/20 pl-4">
-              <span className="font-mono text-[10px] text-muted-foreground/50 block">
+              <span className="font-mono text-label-sm text-muted-foreground/50 block">
                 Letter-spacing tokens:
               </span>
-              <span className="font-mono text-[10px] text-muted-foreground/40 block">
+              <span className="font-mono text-label-sm text-muted-foreground/40 block">
                 splice-tight: -0.04em · splice-wide: 0.18em · splice-ultra: 0.28em
               </span>
             </div>
@@ -106,7 +106,7 @@ export function StyleGuideSlide({ slideNumber, totalSlides }: SlideProps) {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
         {/* Dark mode */}
         <div className="border border-surface-border p-6" style={{ backgroundColor: "hsl(210 14% 6%)", color: "hsl(210 20% 92%)" }}>
-          <span className="font-mono text-[9px] tracking-splice-ultra uppercase block mb-5" style={{ color: "hsl(174 100% 42% / 0.6)" }}>
+          <span className="font-mono text-label-xs tracking-splice-ultra uppercase block mb-5" style={{ color: "hsl(174 100% 42% / 0.6)" }}>
             Dark Mode (Default)
           </span>
           <div className="space-y-3">
@@ -118,7 +118,7 @@ export function StyleGuideSlide({ slideNumber, totalSlides }: SlideProps) {
 
         {/* Light mode */}
         <div className="border p-6" style={{ backgroundColor: "hsl(210 20% 96%)", color: "hsl(210 14% 12%)", borderColor: "hsl(210 10% 82%)" }}>
-          <span className="font-mono text-[9px] tracking-splice-ultra uppercase block mb-5" style={{ color: "hsl(174 100% 30% / 0.6)" }}>
+          <span className="font-mono text-label-xs tracking-splice-ultra uppercase block mb-5" style={{ color: "hsl(174 100% 30% / 0.6)" }}>
             Light Mode
           </span>
           <div className="space-y-3">
@@ -131,10 +131,10 @@ export function StyleGuideSlide({ slideNumber, totalSlides }: SlideProps) {
 
       {/* Geometry note */}
       <div className="border-l-2 border-accent/20 pl-6 py-2">
-        <span className="font-mono text-[10px] text-muted-foreground/50 block">
+        <span className="font-mono text-label-sm text-muted-foreground/50 block">
           Geometry: Zero-radius (sharp corners) · All border-radius: 0.125rem max · No rounded elements
         </span>
-        <span className="font-mono text-[10px] text-muted-foreground/40 block mt-1">
+        <span className="font-mono text-label-sm text-muted-foreground/40 block mt-1">
           Accent usage: Single electric teal only — no secondary accent colors permitted
         </span>
       </div>

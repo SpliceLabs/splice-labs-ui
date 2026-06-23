@@ -12,8 +12,8 @@ export interface LabelChipProps extends HTMLAttributes<HTMLSpanElement> {
 }
 
 const sizeClasses: Record<NonNullable<LabelChipProps["size"]>, string> = {
-  sm: "text-[11px] px-4 py-[10px]",
-  md: "text-[13px] px-5 py-[14px]",
+  sm: "text-label px-4 py-[10px]",
+  md: "text-label-lg px-5 py-[14px]",
   lg: "text-[15px] px-7 py-[18px]",
 };
 

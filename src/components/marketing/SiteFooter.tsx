@@ -40,7 +40,7 @@ export function SiteFooter() {
         <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-10">
           {/* Logo + tagline */}
           <div>
-            <div className="flex items-center gap-1 font-mono text-sm text-foreground mb-3">
+            <div className="flex items-center gap-1 font-mono text-base text-foreground mb-3">
               <span className="text-ember font-bold">›</span>
               <span>splice</span>
               <span className="text-accent font-bold">_</span>
@@ -55,7 +55,7 @@ export function SiteFooter() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12">
             {FOOTER_COLUMNS.map((column) => (
               <div key={column.title}>
-                <span className="font-mono text-[11px] text-foreground/40 tracking-splice-ultra uppercase block mb-3">
+                <span className="font-mono text-label text-foreground/40 tracking-splice-ultra uppercase block mb-3">
                   {column.title}
                 </span>
                 <div className="space-y-2">
@@ -63,7 +63,7 @@ export function SiteFooter() {
                     <a
                       key={link.label}
                       href={link.href}
-                      className="group block font-mono text-[13px] text-muted-foreground tracking-splice-wide uppercase transition-[color,font-weight] hover:text-foreground hover:font-bold focus-visible:outline focus-visible:outline-1 focus-visible:outline-accent focus-visible:outline-offset-2"
+                      className="group block font-mono text-label-lg text-muted-foreground tracking-splice-wide uppercase transition-[color,font-weight] hover:text-foreground hover:font-bold focus-visible:outline focus-visible:outline-1 focus-visible:outline-accent focus-visible:outline-offset-2"
                     >
                       <span className="relative">
                         {link.label}

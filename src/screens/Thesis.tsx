@@ -30,7 +30,7 @@ export default function ThesisScreen() {
     <section className="pt-32 pb-20 md:pt-44 md:pb-28 px-6 md:px-8 max-w-[900px] mx-auto">
         {/* Hero */}
         <div className="mb-16">
-          <span className="font-mono text-[11px] text-accent tracking-splice-ultra uppercase block mb-4">
+          <span className="font-mono text-label text-accent tracking-splice-ultra uppercase block mb-4">
             Our Thesis
           </span>
           <h1 className="font-display text-3xl md:text-5xl font-bold tracking-splice-tight text-foreground leading-[1.1] mb-6">
@@ -90,7 +90,7 @@ export default function ThesisScreen() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {FIRST_WEDGES.map((wedge, i) => (
               <div key={i} className="hover-card group border border-surface-border p-6 bg-surface transition-all duration-300 ease-out hover:border-ember/40 hover:shadow-ember-sm hover:-translate-y-0.5">
-                <span className="font-mono text-[11px] text-ember/70 tracking-splice-ultra uppercase block mb-2 transition-colors duration-300 group-hover:text-ember">
+                <span className="font-mono text-label text-ember/70 tracking-splice-ultra uppercase block mb-2 transition-colors duration-300 group-hover:text-ember">
                   {String(i + 1).padStart(2, "0")}
                 </span>
                 <h3 className="font-display text-base font-semibold text-foreground mb-2 transition-colors duration-300 group-hover:text-foreground">
@@ -115,7 +115,7 @@ export default function ThesisScreen() {
           <div className="space-y-3">
             {WHAT_MUST_BE_TRUE.map((condition, i) => (
               <div key={i} className="group flex items-start gap-4 border-l-2 border-accent/20 pl-4 py-2 transition-all duration-300 hover:border-ember/40">
-                <span className="font-mono text-[11px] text-ember/70 tracking-splice-ultra uppercase shrink-0 mt-0.5 transition-colors duration-300 group-hover:text-ember">
+                <span className="font-mono text-label text-ember/70 tracking-splice-ultra uppercase shrink-0 mt-0.5 transition-colors duration-300 group-hover:text-ember">
                   {String(i + 1).padStart(2, "0")}
                 </span>
                 <p className="text-sm text-foreground/70 leading-relaxed transition-colors duration-300 group-hover:text-foreground/85">

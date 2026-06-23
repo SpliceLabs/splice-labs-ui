@@ -65,7 +65,7 @@ export default function Helios() {
           {/* Junction node */}
           <div className="flex items-center gap-4 mb-10">
             <div className="w-3 h-3 border border-accent bg-accent/10 -ml-[calc(2rem+6px)] md:-ml-[calc(3rem+6px)]" />
-            <span className="font-mono text-[11px] text-accent/60 tracking-splice-ultra uppercase">
+            <span className="font-mono text-label text-accent/60 tracking-splice-ultra uppercase">
               module::platform
             </span>
             <span className="flex-1 h-px bg-gradient-to-r from-accent/20 to-transparent" />
@@ -169,7 +169,7 @@ export default function Helios() {
                 className="flex items-start gap-4 md:gap-6 bg-surface p-5 md:p-6 border-l-2 border-accent/30 hover:border-accent transition-colors"
                 style={{ marginLeft: `${i * 12}px` }}
               >
-                <span className="font-mono text-[13px] text-accent tracking-splice-wide shrink-0 mt-0.5">
+                <span className="font-mono text-label-lg text-accent tracking-splice-wide shrink-0 mt-0.5">
                   {l.layer}
                 </span>
                 <div>
