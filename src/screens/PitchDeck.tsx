@@ -46,6 +46,11 @@ const DECKS = [
   { id: "c", label: "C — Partnership" },
   { id: "d", label: "D — Sales Clients" },
   { id: "e", label: "E — Agentic Trading", href: "/deck-e" },
+  { id: "seed", label: "Seed — Splice Labs", href: "/deck-seed" },
+  { id: "partnership", label: "Partnership — Model", href: "/deck-partnership" },
+  { id: "studio-model", label: "Studio Model — Incubation", href: "/deck-studio-model" },
+  { id: "compounding", label: "Compounding → Network Effects", href: "/deck-compounding" },
+  { id: "harness", label: "The Harness Is the Asset", href: "/deck-harness" },
 ];
 
 const TOTAL_SLIDES_B = 17;
