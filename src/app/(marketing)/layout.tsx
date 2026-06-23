@@ -1,12 +1,12 @@
 "use client";
 
-import { ReactNode, useEffect } from "react";
+import { ReactNode, useEffect, Suspense } from "react";
 import { usePathname, useSearchParams } from "next/navigation";
 import { SiteNav } from "@/components/marketing/SiteNav";
 import { SiteFooter } from "@/components/marketing/SiteFooter";
 import { ScrollProgress } from "@/components/marketing/ui/ScrollProgress";
 
-export default function MarketingLayout({ children }: { children: ReactNode }) {
+function HashScrollHandler() {
   const pathname = usePathname();
   const searchParams = useSearchParams();
 
@@ -27,8 +27,15 @@ export default function MarketingLayout({ children }: { children: ReactNode }) {
     }, 300);
   }, [pathname, searchParams]);
 
+  return null;
+}
+
+export default function MarketingLayout({ children }: { children: ReactNode }) {
   return (
     <div className="min-h-screen bg-background text-foreground">
+      <Suspense fallback={null}>
+        <HashScrollHandler />
+      </Suspense>
       <ScrollProgress />
       <SiteNav />
       {children}
