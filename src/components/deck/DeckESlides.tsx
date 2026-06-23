@@ -57,7 +57,7 @@ export function E_MomentSlide({ slideNumber, totalSlides }: SlideProps) {
             </p>
           </div>
           <div className="border border-surface-border p-6 space-y-4">
-            <span className="font-mono text-[9px] text-accent/60 tracking-splice-ultra uppercase">
+            <span className="font-mono text-label-xs text-accent/60 tracking-splice-ultra uppercase">
               Market Signal
             </span>
             <div className="space-y-3">
@@ -97,7 +97,7 @@ export function E_GapSlide({ slideNumber, totalSlides }: SlideProps) {
         <div className="grid grid-cols-3 gap-4 mt-4">
           {["Sequential research", "Manual backtesting", "Single-agent systems"].map((gap) => (
             <div key={gap} className="border border-surface-border p-4 text-center">
-              <span className="text-rust font-mono text-[10px] tracking-splice-wide uppercase">
+              <span className="text-rust font-mono text-label-sm tracking-splice-wide uppercase">
                 Current State
               </span>
               <p className="text-sm text-muted-foreground mt-2">{gap}</p>
@@ -137,7 +137,7 @@ export function E_AdvantagSlide({ slideNumber, totalSlides }: SlideProps) {
             </ul>
           </div>
           <div className="border border-surface-border p-6 flex flex-col items-center justify-center gap-4">
-            <span className="font-mono text-[9px] text-accent/60 tracking-splice-ultra uppercase">
+            <span className="font-mono text-label-xs text-accent/60 tracking-splice-ultra uppercase">
               Compute Infrastructure
             </span>
             <div className="grid grid-cols-4 gap-2">
@@ -148,7 +148,7 @@ export function E_AdvantagSlide({ slideNumber, totalSlides }: SlideProps) {
                 />
               ))}
             </div>
-            <span className="text-[10px] text-muted-foreground/40 font-mono">GPU cluster · active capacity</span>
+            <span className="text-label-sm text-muted-foreground/40 font-mono">GPU cluster · active capacity</span>
           </div>
         </div>
       </div>
@@ -206,7 +206,7 @@ export function E_OperationSlide({ slideNumber, totalSlides }: SlideProps) {
                 i === 3 ? "bg-accent/5" : ""
               }`}
             >
-              <span className="font-mono text-[10px] text-accent/60 tracking-splice-ultra uppercase">
+              <span className="font-mono text-label-sm text-accent/60 tracking-splice-ultra uppercase">
                 {s.step}
               </span>
               <h3 className="font-display text-lg font-bold text-foreground mt-3">{s.label}</h3>
@@ -231,7 +231,7 @@ export function E_TeamSlide({ slideNumber, totalSlides }: SlideProps) {
           <p className="text-muted-foreground italic leading-relaxed">
             [Who you are, what you've shipped, why this specifically.]
           </p>
-          <span className="font-mono text-[9px] text-accent/40 tracking-splice-ultra uppercase block">
+          <span className="font-mono text-label-xs text-accent/40 tracking-splice-ultra uppercase block">
             3 lines max · resolve before send
           </span>
         </div>
@@ -250,19 +250,19 @@ export function E_AskSlide({ slideNumber, totalSlides }: SlideProps) {
         </h2>
         <div className="grid md:grid-cols-3 gap-6">
           <div className="border border-accent/30 p-6 space-y-2">
-            <span className="font-mono text-[9px] text-accent/60 tracking-splice-ultra uppercase">
+            <span className="font-mono text-label-xs text-accent/60 tracking-splice-ultra uppercase">
               Capital
             </span>
             <p className="font-display text-2xl font-bold text-accent">$[X]</p>
           </div>
           <div className="border border-surface-border p-6 space-y-2">
-            <span className="font-mono text-[9px] text-accent/60 tracking-splice-ultra uppercase">
+            <span className="font-mono text-label-xs text-accent/60 tracking-splice-ultra uppercase">
               Allocation
             </span>
             <p className="text-sm text-muted-foreground">Rigs + research ops + team</p>
           </div>
           <div className="border border-surface-border p-6 space-y-2">
-            <span className="font-mono text-[9px] text-accent/60 tracking-splice-ultra uppercase">
+            <span className="font-mono text-label-xs text-accent/60 tracking-splice-ultra uppercase">
               Timeline
             </span>
             <p className="text-sm text-muted-foreground">[X] months to first validated outputs</p>
@@ -287,7 +287,7 @@ export function E_ReturnsSlide({ slideNumber, totalSlides }: SlideProps) {
           </p>
           <div className="flex items-center gap-3">
             <span className="w-8 h-px bg-rust/40" />
-            <span className="font-mono text-[9px] text-rust/60 tracking-splice-ultra uppercase">
+            <span className="font-mono text-label-xs text-rust/60 tracking-splice-ultra uppercase">
               Terms TBD
             </span>
           </div>

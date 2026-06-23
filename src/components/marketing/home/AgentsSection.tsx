@@ -57,7 +57,7 @@ export function AgentsSection({ align = "left" }: AgentsSectionProps) {
                     {a.type}
                   </span>
                 </div>
-                <span className="font-mono text-[11px] text-ember/70 tracking-splice-wide transition-colors duration-200 group-hover:text-ember">
+                <span className="font-mono text-label text-ember/70 tracking-splice-wide transition-colors duration-200 group-hover:text-ember">
                   {a.scope}
                 </span>
               </div>

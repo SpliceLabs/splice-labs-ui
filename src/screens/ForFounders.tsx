@@ -55,7 +55,7 @@ export default function ForFoundersScreen() {
     <section className="pt-32 pb-20 md:pt-44 md:pb-28 px-6 md:px-8 max-w-[900px] mx-auto">
         {/* Hero */}
         <div className="mb-16">
-          <span className="font-mono text-[11px] text-accent tracking-splice-ultra uppercase block mb-4">
+          <span className="font-mono text-label text-accent tracking-splice-ultra uppercase block mb-4">
             For Founders
           </span>
           <h1 className="font-display text-3xl md:text-5xl font-bold tracking-splice-tight text-foreground leading-[1.1] mb-6">

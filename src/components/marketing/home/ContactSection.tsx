@@ -140,7 +140,7 @@ export function ContactSection({ align = "left" }: ContactSectionProps) {
                   <div>
                     <label
                       htmlFor="contact-name"
-                      className="font-mono text-[11px] text-muted-foreground/60 tracking-splice-ultra uppercase block mb-1.5"
+                      className="font-mono text-label text-muted-foreground/60 tracking-splice-ultra uppercase block mb-1.5"
                     >
                       Name
                     </label>
@@ -158,7 +158,7 @@ export function ContactSection({ align = "left" }: ContactSectionProps) {
                     {errors.name && (
                       <p
                         id="contact-name-error"
-                        className="mt-1.5 font-mono text-[11px] text-destructive tracking-splice-wide uppercase"
+                        className="mt-1.5 font-mono text-label text-destructive tracking-splice-wide uppercase"
                       >
                         {errors.name}
                       </p>
@@ -167,7 +167,7 @@ export function ContactSection({ align = "left" }: ContactSectionProps) {
                   <div>
                     <label
                       htmlFor="contact-email"
-                      className="font-mono text-[11px] text-muted-foreground/60 tracking-splice-ultra uppercase block mb-1.5"
+                      className="font-mono text-label text-muted-foreground/60 tracking-splice-ultra uppercase block mb-1.5"
                     >
                       Email
                     </label>
@@ -185,7 +185,7 @@ export function ContactSection({ align = "left" }: ContactSectionProps) {
                     {errors.email && (
                       <p
                         id="contact-email-error"
-                        className="mt-1.5 font-mono text-[11px] text-destructive tracking-splice-wide uppercase"
+                        className="mt-1.5 font-mono text-label text-destructive tracking-splice-wide uppercase"
                       >
                         {errors.email}
                       </p>
@@ -196,7 +196,7 @@ export function ContactSection({ align = "left" }: ContactSectionProps) {
                   <div>
                     <label
                       htmlFor="contact-company"
-                      className="font-mono text-[11px] text-muted-foreground/60 tracking-splice-ultra uppercase block mb-1.5"
+                      className="font-mono text-label text-muted-foreground/60 tracking-splice-ultra uppercase block mb-1.5"
                     >
                       {audienceType === "investor" ? "Fund / Organization" : "Company"}
                     </label>
@@ -214,7 +214,7 @@ export function ContactSection({ align = "left" }: ContactSectionProps) {
                     {errors.company && (
                       <p
                         id="contact-company-error"
-                        className="mt-1.5 font-mono text-[11px] text-destructive tracking-splice-wide uppercase"
+                        className="mt-1.5 font-mono text-label text-destructive tracking-splice-wide uppercase"
                       >
                         {errors.company}
                       </p>
@@ -224,7 +224,7 @@ export function ContactSection({ align = "left" }: ContactSectionProps) {
                 <div>
                   <label
                     htmlFor="contact-message"
-                    className="font-mono text-[11px] text-muted-foreground/60 tracking-splice-ultra uppercase block mb-1.5"
+                    className="font-mono text-label text-muted-foreground/60 tracking-splice-ultra uppercase block mb-1.5"
                   >
                     {audienceType === "founder" ? "What you're building" : "Context"}
                   </label>
@@ -242,7 +242,7 @@ export function ContactSection({ align = "left" }: ContactSectionProps) {
                   {errors.message && (
                     <p
                       id="contact-message-error"
-                      className="mt-1.5 font-mono text-[11px] text-destructive tracking-splice-wide uppercase"
+                      className="mt-1.5 font-mono text-label text-destructive tracking-splice-wide uppercase"
                     >
                       {errors.message}
                     </p>
@@ -258,12 +258,12 @@ export function ContactSection({ align = "left" }: ContactSectionProps) {
                 </TerminalButton>
                 <p
                   aria-live="polite"
-                  className="min-h-[0.75rem] font-mono text-[11px] text-destructive tracking-splice-wide uppercase"
+                  className="min-h-[0.75rem] font-mono text-label text-destructive tracking-splice-wide uppercase"
                 >
                   {status === "error" &&
                     "Something went wrong — please try again."}
                 </p>
-                <p className="font-mono text-[11px] text-muted-foreground/60 tracking-splice-wide">
+                <p className="font-mono text-label text-muted-foreground/60 tracking-splice-wide">
                   No spam. If it's not a fit, we'll say so.
                 </p>
               </form>

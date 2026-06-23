@@ -54,7 +54,7 @@ export function ArticleHeader({
         <dl className="flex flex-wrap gap-x-10 gap-y-3">
           {meta.map((m) => (
             <div key={m.label} className="flex flex-col gap-1">
-              <dt className="font-mono text-[11px] uppercase tracking-[0.18em] text-blog-text-muted">
+              <dt className="font-mono text-label uppercase tracking-[0.18em] text-blog-text-muted">
                 {m.label}
               </dt>
               <dd className="flex items-center gap-1.5 font-display text-sm">

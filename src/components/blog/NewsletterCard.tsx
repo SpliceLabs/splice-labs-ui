@@ -70,7 +70,7 @@ export function NewsletterCard({
               placeholder="founder@yourdomain.com"
               disabled={status === "submitting"}
               aria-invalid={status === "error"}
-              className="w-full border border-current/20 bg-transparent px-3 py-2 font-mono text-[13px] outline-none placeholder:text-blog-text-muted focus-visible:ring-2 focus-visible:ring-blog-ring-teal disabled:opacity-50"
+              className="w-full border border-current/20 bg-transparent px-3 py-2 font-mono text-label-lg outline-none placeholder:text-blog-text-muted focus-visible:ring-2 focus-visible:ring-blog-ring-teal disabled:opacity-50"
             />
             <button
               type="submit"
@@ -82,7 +82,7 @@ export function NewsletterCard({
           </div>
           <p
             aria-live="polite"
-            className="min-h-[1rem] font-mono text-[11px] tracking-[0.04em]"
+            className="min-h-[1rem] font-mono text-label tracking-[0.04em]"
           >
             {status === "error" && "Something went wrong — please try again."}
           </p>

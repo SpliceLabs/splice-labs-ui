@@ -22,7 +22,7 @@ export function C_TitleSlide({ slideNumber, totalSlides }: SlideProps) {
   return (
     <Slide id="c-title" module="title" accent slideNumber={slideNumber} totalSlides={totalSlides}>
       <div className="flex flex-col gap-10 min-h-[60vh] justify-center">
-        <span className="font-mono text-[9px] text-accent/50 tracking-splice-ultra uppercase border border-accent/20 px-2 py-0.5 self-start">
+        <span className="font-mono text-label-xs text-accent/50 tracking-splice-ultra uppercase border border-accent/20 px-2 py-0.5 self-start">
           Partnership Brief
         </span>
         {/* Logo — Terminal VA */}
@@ -48,7 +48,7 @@ export function C_TitleSlide({ slideNumber, totalSlides }: SlideProps) {
         </div>
         <div className="flex items-center gap-3 mt-auto">
           <span className="w-8 h-px bg-accent/30" />
-          <span className="font-mono text-[11px] text-muted-foreground/30">Confidential · Splice Labs</span>
+          <span className="font-mono text-label text-muted-foreground/30">Confidential · Splice Labs</span>
         </div>
       </div>
     </Slide>
@@ -200,7 +200,7 @@ export function C_CapabilitiesSlide({ slideNumber, totalSlides }: SlideProps) {
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         {pillars.map((p, i) => (
           <div key={i} className="border border-surface-border p-6">
-            <span className="font-mono text-[9px] text-accent/50 tracking-splice-ultra uppercase block mb-4">
+            <span className="font-mono text-label-xs text-accent/50 tracking-splice-ultra uppercase block mb-4">
               {String(i + 1).padStart(2, "0")}
             </span>
             <h3 className="font-display text-sm font-semibold text-foreground mb-3">{p.title}</h3>
@@ -217,7 +217,7 @@ export function C_HeliosSlide({ slideNumber, totalSlides }: SlideProps) {
   return (
     <Slide id="c-helios" module="helios" slideNumber={slideNumber} totalSlides={totalSlides}>
       <div className="flex items-center gap-3 mb-6">
-        <span className="font-mono text-[9px] text-accent/50 tracking-splice-ultra uppercase border border-accent/20 px-2 py-0.5">
+        <span className="font-mono text-label-xs text-accent/50 tracking-splice-ultra uppercase border border-accent/20 px-2 py-0.5">
           Core IP
         </span>
       </div>
@@ -231,12 +231,12 @@ export function C_HeliosSlide({ slideNumber, totalSlides }: SlideProps) {
 
       {/* Architecture */}
       <div className="border border-surface-border p-6">
-        <span className="font-mono text-[9px] text-accent/50 tracking-splice-ultra uppercase block mb-6">
+        <span className="font-mono text-label-xs text-accent/50 tracking-splice-ultra uppercase block mb-6">
           Architecture
         </span>
         <div className="flex flex-col gap-0">
           <div className="border border-accent/30 bg-accent/5 px-5 py-3 flex items-center justify-between">
-            <span className="font-mono text-[10px] text-accent tracking-splice-wide uppercase">L1 — Orchestration</span>
+            <span className="font-mono text-label-sm text-accent tracking-splice-wide uppercase">L1 — Orchestration</span>
             <span className="text-xs text-muted-foreground/60">AgenticOS Core</span>
           </div>
           <div className="flex justify-center">
@@ -244,15 +244,15 @@ export function C_HeliosSlide({ slideNumber, totalSlides }: SlideProps) {
           </div>
           <div className="grid grid-cols-3 gap-px">
             <div className="border border-surface-border px-4 py-3 text-center">
-              <span className="font-mono text-[10px] text-foreground/70 tracking-splice-wide uppercase">
+              <span className="font-mono text-label-sm text-foreground/70 tracking-splice-wide uppercase">
                 Agent Core
               </span>
             </div>
             <div className="border border-accent/20 bg-accent/5 px-4 py-3 text-center">
-              <span className="font-mono text-[10px] text-accent/80 tracking-splice-wide uppercase">Risk Engine</span>
+              <span className="font-mono text-label-sm text-accent/80 tracking-splice-wide uppercase">Risk Engine</span>
             </div>
             <div className="border border-surface-border px-4 py-3 text-center">
-              <span className="font-mono text-[10px] text-foreground/70 tracking-splice-wide uppercase">
+              <span className="font-mono text-label-sm text-foreground/70 tracking-splice-wide uppercase">
                 Compliance
               </span>
             </div>
@@ -261,7 +261,7 @@ export function C_HeliosSlide({ slideNumber, totalSlides }: SlideProps) {
             <div className="w-px h-4 bg-surface-border" />
           </div>
           <div className="border border-surface-border px-5 py-3 flex items-center justify-between">
-            <span className="font-mono text-[10px] text-foreground/70 tracking-splice-wide uppercase">
+            <span className="font-mono text-label-sm text-foreground/70 tracking-splice-wide uppercase">
               L3 — Execution
             </span>
             <span className="text-xs text-muted-foreground/60">Cross-chain settlement & routing</span>
@@ -270,7 +270,7 @@ export function C_HeliosSlide({ slideNumber, totalSlides }: SlideProps) {
             <div className="w-px h-4 bg-surface-border" />
           </div>
           <div className="border border-surface-border/50 px-5 py-3 flex items-center justify-between">
-            <span className="font-mono text-[10px] text-muted-foreground/50 tracking-splice-wide uppercase">
+            <span className="font-mono text-label-sm text-muted-foreground/50 tracking-splice-wide uppercase">
               L4 — Target Chains
             </span>
             <span className="text-xs text-muted-foreground/40">Stacks · EVM · Solana</span>
@@ -290,13 +290,13 @@ export function C_PortfolioSlide({ slideNumber, totalSlides }: SlideProps) {
         <table className="w-full text-sm">
           <thead>
             <tr className="border-b border-surface-border">
-              <th className="text-left font-mono text-[10px] text-accent/60 tracking-splice-wide uppercase py-3 pr-6">
+              <th className="text-left font-mono text-label-sm text-accent/60 tracking-splice-wide uppercase py-3 pr-6">
                 Protocol
               </th>
-              <th className="text-left font-mono text-[10px] text-accent/60 tracking-splice-wide uppercase py-3 pr-6">
+              <th className="text-left font-mono text-label-sm text-accent/60 tracking-splice-wide uppercase py-3 pr-6">
                 Domain
               </th>
-              <th className="text-left font-mono text-[10px] text-accent/60 tracking-splice-wide uppercase py-3">
+              <th className="text-left font-mono text-label-sm text-accent/60 tracking-splice-wide uppercase py-3">
                 {" "}
                 What It Does
               </th>
@@ -384,13 +384,13 @@ export function C_ModelsSlide({ slideNumber, totalSlides }: SlideProps) {
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         {models.map((m, i) => (
           <div key={i} className="border border-surface-border p-6 flex flex-col">
-            <span className="font-mono text-[9px] text-accent/50 tracking-splice-ultra uppercase block mb-3">
+            <span className="font-mono text-label-xs text-accent/50 tracking-splice-ultra uppercase block mb-3">
               Model {String(i + 1).padStart(2, "0")}
             </span>
             <h3 className="font-display text-sm font-semibold text-foreground mb-3">{m.title}</h3>
             <p className="text-xs text-muted-foreground/70 leading-relaxed mb-4 flex-1">{m.desc}</p>
             <div className="border-t border-surface-border pt-3">
-              <span className="font-mono text-[9px] text-accent/40 tracking-splice-wide uppercase">Best fit: </span>
+              <span className="font-mono text-label-xs text-accent/40 tracking-splice-wide uppercase">Best fit: </span>
               <span className="text-xs text-muted-foreground/60">{m.fit}</span>
             </div>
           </div>
@@ -453,7 +453,7 @@ export function C_NextStepsSlide({ slideNumber, totalSlides }: SlideProps) {
             },
           ].map((item) => (
             <div key={item.label} className="border-l-2 border-accent/20 pl-6 py-2">
-              <span className="font-mono text-[10px] text-accent/60 tracking-splice-wide uppercase block mb-2">
+              <span className="font-mono text-label-sm text-accent/60 tracking-splice-wide uppercase block mb-2">
                 {item.label}
               </span>
               <p className="text-sm text-foreground/80">{item.value}</p>
@@ -462,7 +462,7 @@ export function C_NextStepsSlide({ slideNumber, totalSlides }: SlideProps) {
         </div>
         <div className="flex items-center gap-3 mt-auto">
           <span className="w-8 h-px bg-accent/30" />
-          <span className="font-mono text-[11px] text-muted-foreground/30">Confidential · Splice Labs</span>
+          <span className="font-mono text-label text-muted-foreground/30">Confidential · Splice Labs</span>
         </div>
       </div>
     </Slide>
@@ -474,7 +474,7 @@ export function C_HeliosExecAppendix({ slideNumber, totalSlides }: SlideProps) {
   return (
     <Slide id="c-helios-exec" module="appendix::ip · helios" slideNumber={slideNumber} totalSlides={totalSlides}>
       <div className="flex items-center gap-3 mb-6">
-        <span className="font-mono text-[9px] text-accent/50 tracking-splice-ultra uppercase border border-accent/20 px-2 py-0.5">
+        <span className="font-mono text-label-xs text-accent/50 tracking-splice-ultra uppercase border border-accent/20 px-2 py-0.5">
           Proprietary IP
         </span>
       </div>
@@ -485,7 +485,7 @@ export function C_HeliosExecAppendix({ slideNumber, totalSlides }: SlideProps) {
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
         <div className="border border-surface-border p-6">
-          <span className="font-mono text-[9px] text-accent/50 tracking-splice-ultra uppercase block mb-4">
+          <span className="font-mono text-label-xs text-accent/50 tracking-splice-ultra uppercase block mb-4">
             What HELIOS Is
           </span>
           <p className="text-sm text-foreground/90 leading-relaxed">
@@ -494,7 +494,7 @@ export function C_HeliosExecAppendix({ slideNumber, totalSlides }: SlideProps) {
           </p>
         </div>
         <div className="border border-surface-border p-6">
-          <span className="font-mono text-[9px] text-accent/50 tracking-splice-ultra uppercase block mb-4">
+          <span className="font-mono text-label-xs text-accent/50 tracking-splice-ultra uppercase block mb-4">
             What HELIOS Does
           </span>
           <ul className="space-y-2">
@@ -512,7 +512,7 @@ export function C_HeliosExecAppendix({ slideNumber, totalSlides }: SlideProps) {
           </ul>
         </div>
         <div className="border border-surface-border p-6">
-          <span className="font-mono text-[9px] text-accent/50 tracking-splice-ultra uppercase block mb-4">
+          <span className="font-mono text-label-xs text-accent/50 tracking-splice-ultra uppercase block mb-4">
             Why It Matters
           </span>
           <p className="text-sm text-foreground/90 leading-relaxed">
@@ -523,12 +523,12 @@ export function C_HeliosExecAppendix({ slideNumber, totalSlides }: SlideProps) {
       </div>
 
       <div className="border border-surface-border p-6">
-        <span className="font-mono text-[9px] text-accent/50 tracking-splice-ultra uppercase block mb-6">
+        <span className="font-mono text-label-xs text-accent/50 tracking-splice-ultra uppercase block mb-6">
           Architecture
         </span>
         <div className="flex flex-col gap-0">
           <div className="border border-accent/30 bg-accent/5 px-5 py-3 flex items-center justify-between">
-            <span className="font-mono text-[10px] text-accent tracking-splice-wide uppercase">L1 — Orchestration</span>
+            <span className="font-mono text-label-sm text-accent tracking-splice-wide uppercase">L1 — Orchestration</span>
             <span className="text-xs text-muted-foreground/60">AgenticOS Core</span>
           </div>
           <div className="flex justify-center">
@@ -536,15 +536,15 @@ export function C_HeliosExecAppendix({ slideNumber, totalSlides }: SlideProps) {
           </div>
           <div className="grid grid-cols-3 gap-px">
             <div className="border border-surface-border px-4 py-3 text-center">
-              <span className="font-mono text-[10px] text-foreground/70 tracking-splice-wide uppercase">
+              <span className="font-mono text-label-sm text-foreground/70 tracking-splice-wide uppercase">
                 Agent Core
               </span>
             </div>
             <div className="border border-accent/20 bg-accent/5 px-4 py-3 text-center">
-              <span className="font-mono text-[10px] text-accent/80 tracking-splice-wide uppercase">Risk Engine</span>
+              <span className="font-mono text-label-sm text-accent/80 tracking-splice-wide uppercase">Risk Engine</span>
             </div>
             <div className="border border-surface-border px-4 py-3 text-center">
-              <span className="font-mono text-[10px] text-foreground/70 tracking-splice-wide uppercase">
+              <span className="font-mono text-label-sm text-foreground/70 tracking-splice-wide uppercase">
                 Compliance
               </span>
             </div>
@@ -553,7 +553,7 @@ export function C_HeliosExecAppendix({ slideNumber, totalSlides }: SlideProps) {
             <div className="w-px h-4 bg-surface-border" />
           </div>
           <div className="border border-surface-border px-5 py-3 flex items-center justify-between">
-            <span className="font-mono text-[10px] text-foreground/70 tracking-splice-wide uppercase">
+            <span className="font-mono text-label-sm text-foreground/70 tracking-splice-wide uppercase">
               L3 — Execution
             </span>
             <span className="text-xs text-muted-foreground/60">Cross-chain settlement & routing</span>
@@ -562,7 +562,7 @@ export function C_HeliosExecAppendix({ slideNumber, totalSlides }: SlideProps) {
             <div className="w-px h-4 bg-surface-border" />
           </div>
           <div className="border border-surface-border/50 px-5 py-3 flex items-center justify-between">
-            <span className="font-mono text-[10px] text-muted-foreground/50 tracking-splice-wide uppercase">
+            <span className="font-mono text-label-sm text-muted-foreground/50 tracking-splice-wide uppercase">
               L4 — Target Chains
             </span>
             <span className="text-xs text-muted-foreground/40">Stacks · EVM · Solana</span>

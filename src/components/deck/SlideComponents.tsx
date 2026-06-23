@@ -32,7 +32,7 @@ export function Slide({
       {/* Pagination — bottom right */}
       {slideNumber && totalSlides && (
         <div className="absolute bottom-6 right-6 md:right-8 flex items-center gap-2">
-          <span className="font-mono text-[10px] text-muted-foreground/40 tracking-splice-wide">
+          <span className="font-mono text-label-sm text-muted-foreground/40 tracking-splice-wide">
             {String(slideNumber).padStart(2, "0")} / {String(totalSlides).padStart(2, "0")}
           </span>
           <div className="flex gap-1">
@@ -59,7 +59,7 @@ export function Slide({
                   : "w-2 h-2 bg-accent/40 -ml-[calc(2rem+4px)] md:-ml-[calc(3rem+4px)]"
               }`}
             />
-            <span className="font-mono text-[9px] text-accent/60 tracking-splice-ultra uppercase">
+            <span className="font-mono text-label-xs text-accent/60 tracking-splice-ultra uppercase">
               {module}
             </span>
             <span className="flex-1 h-px bg-surface-border" />
@@ -83,7 +83,7 @@ export function Placeholder({
     <div
       className={`border border-dashed border-surface-border flex items-center justify-center ${className}`}
     >
-      <span className="font-mono text-[10px] text-muted-foreground/30 tracking-splice-wide uppercase">
+      <span className="font-mono text-label-sm text-muted-foreground/30 tracking-splice-wide uppercase">
         {label}
       </span>
     </div>

@@ -49,20 +49,20 @@ export default function DeckE() {
         }
       >
         <div className="max-w-[1200px] mx-auto px-6 md:px-8 flex items-center justify-between h-12">
-          <span className="font-mono text-[10px] text-accent/60 tracking-splice-ultra uppercase">
+          <span className="font-mono text-label-sm text-accent/60 tracking-splice-ultra uppercase">
             Splice Labs · Deck E — Agentic Trading Research
           </span>
           <div className="flex items-center gap-4">
             <button
               onClick={() => setLightMode((v) => !v)}
-              className="font-mono text-[9px] tracking-splice-wide uppercase border border-surface-border px-2 py-0.5 hover:text-foreground transition-colors"
+              className="font-mono text-label-xs tracking-splice-wide uppercase border border-surface-border px-2 py-0.5 hover:text-foreground transition-colors"
               style={lightMode ? { color: "hsl(210 14% 12%)" } : { color: "hsl(210 10% 48%)" }}
             >
               {lightMode ? "Dark" : "Light"}
             </button>
             <a
               href="/decks"
-              className="font-mono text-[9px] text-muted-foreground/40 tracking-splice-wide uppercase hover:text-foreground transition-colors"
+              className="font-mono text-label-xs text-muted-foreground/40 tracking-splice-wide uppercase hover:text-foreground transition-colors"
             >
               ← All Decks
             </a>

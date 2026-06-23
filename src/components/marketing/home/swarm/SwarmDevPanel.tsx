@@ -166,7 +166,7 @@ export function SwarmDevPanel({ refs }: { refs: SwarmRefs }) {
       <button
         type="button"
         onClick={() => setOpen(true)}
-        className="fixed bottom-4 left-4 z-50 px-3 py-2 font-mono text-[11px] uppercase tracking-wider border border-white/15 bg-black/70 text-foreground hover:bg-black/90 hover:border-electric-teal transition-colors backdrop-blur-sm"
+        className="fixed bottom-4 left-4 z-50 px-3 py-2 font-mono text-label uppercase tracking-wider border border-white/15 bg-black/70 text-foreground hover:bg-black/90 hover:border-electric-teal transition-colors backdrop-blur-sm"
         aria-label="Open swarm dev panel"
       >
         DEV · SWARM
@@ -177,14 +177,14 @@ export function SwarmDevPanel({ refs }: { refs: SwarmRefs }) {
   return (
     <div className="fixed bottom-4 left-4 z-50 w-[300px] border border-white/15 bg-black/85 backdrop-blur-sm font-mono text-foreground">
       <header className="flex items-center justify-between px-3 py-2 border-b border-white/10">
-        <span className="text-[10px] uppercase tracking-wider opacity-70">
+        <span className="text-label-sm uppercase tracking-wider opacity-70">
           swarm
         </span>
         <div className="flex items-center gap-2">
           <select
             value={section}
             onChange={(e) => setSection(e.target.value as SectionId)}
-            className="bg-transparent border border-white/15 px-1 py-0.5 text-[10px] uppercase tracking-wider focus:outline-none focus:border-electric-teal"
+            className="bg-transparent border border-white/15 px-1 py-0.5 text-label-sm uppercase tracking-wider focus:outline-none focus:border-electric-teal"
             aria-label="Section selector"
           >
             {SECTION_IDS.map((id) => (
@@ -203,7 +203,7 @@ export function SwarmDevPanel({ refs }: { refs: SwarmRefs }) {
           </button>
         </div>
       </header>
-      <div className="flex items-center justify-between px-3 py-2 border-b border-white/10 text-[10px] uppercase tracking-wider">
+      <div className="flex items-center justify-between px-3 py-2 border-b border-white/10 text-label-sm uppercase tracking-wider">
         <label htmlFor="settle-preset" className="opacity-70">
           settle
         </label>
@@ -211,7 +211,7 @@ export function SwarmDevPanel({ refs }: { refs: SwarmRefs }) {
           id="settle-preset"
           value={settle}
           onChange={(e) => setSettle(e.target.value as SettlePresetName)}
-          className="bg-transparent border border-white/15 px-1 py-0.5 text-[10px] uppercase tracking-wider focus:outline-none focus:border-electric-teal"
+          className="bg-transparent border border-white/15 px-1 py-0.5 text-label-sm uppercase tracking-wider focus:outline-none focus:border-electric-teal"
         >
           {SETTLE_PRESET_NAMES.map((name) => (
             <option key={name} value={name} className="bg-black">
@@ -220,7 +220,7 @@ export function SwarmDevPanel({ refs }: { refs: SwarmRefs }) {
           ))}
         </select>
       </div>
-      <div className="flex items-center justify-between gap-2 px-3 py-2 border-b border-white/10 text-[10px] uppercase tracking-wider">
+      <div className="flex items-center justify-between gap-2 px-3 py-2 border-b border-white/10 text-label-sm uppercase tracking-wider">
         <label
           htmlFor="flock-duration"
           className="opacity-70 whitespace-nowrap"
