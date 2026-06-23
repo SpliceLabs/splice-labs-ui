@@ -32,7 +32,7 @@ export function ModuleLabel({
           className="size-[3px] shrink-0 rounded-full bg-foreground/40"
         />
       )}
-      <span className="shrink-0 font-mono text-[11px] uppercase tracking-splice-ultra text-foreground/60">
+      <span className="shrink-0 font-mono text-label uppercase tracking-splice-ultra text-foreground/60">
         {prefix}::{name}
       </span>
       {rule && (

@@ -123,6 +123,15 @@ export default {
         "splice-wide": "0.18em",
         "splice-ultra": "0.28em",
       },
+      fontSize: {
+        // Typography tokens for labels and small text
+        // Increment by ~2px from previous small sizes for better readability
+        "label-2xs": "10px",  // was 8px
+        "label-xs": "11px",   // was 9px
+        "label-sm": "12px",   // was 10px
+        "label": "13px",      // was 11px
+        "label-lg": "14px",   // was 13px
+      },
       keyframes: {
         "accordion-down": {
           from: { height: "0" },

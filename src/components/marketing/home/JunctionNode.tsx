@@ -29,7 +29,7 @@ export function JunctionNode({ sectionId, align, large = false }: JunctionNodePr
 
   return (
     <div
-      className={`${sizeClass} ${marginClass} ${baseClass} ${isActive ? "junction-pulse" : ""}`}
+      className={`${sizeClass} ${marginClass} ${baseClass} shrink-0 self-center ${isActive ? "junction-pulse" : ""}`}
     />
   );
 }

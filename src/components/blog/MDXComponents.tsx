@@ -76,7 +76,7 @@ export const blogMdxComponents: MDXComponents = {
   code: ({ className, ...props }: ComponentProps<"code">) =>
     className ? (
       // Fenced code block — `pre` provides the surface.
-      <code {...props} className={cn("font-mono text-[13px]", className)} />
+      <code {...props} className={cn("font-mono text-label-lg", className)} />
     ) : (
       <code
         {...props}
@@ -86,7 +86,7 @@ export const blogMdxComponents: MDXComponents = {
   pre: (props: ComponentProps<"pre">) => (
     <pre
       {...props}
-      className="my-6 overflow-x-auto border border-blog-hairline-paper bg-blog-surface-muted p-4 font-mono text-[13px] leading-relaxed"
+      className="my-6 overflow-x-auto border border-blog-hairline-paper bg-blog-surface-muted p-4 font-mono text-label-lg leading-relaxed"
     />
   ),
   img: ({ alt, ...props }: ComponentProps<"img">) => (
@@ -105,7 +105,7 @@ export const blogMdxComponents: MDXComponents = {
   th: (props: ComponentProps<"th">) => (
     <th
       {...props}
-      className="border border-blog-hairline-paper bg-blog-surface-muted px-3 py-2 font-mono text-[11px] uppercase tracking-[0.06em]"
+      className="border border-blog-hairline-paper bg-blog-surface-muted px-3 py-2 font-mono text-label uppercase tracking-[0.06em]"
     />
   ),
   td: (props: ComponentProps<"td">) => (

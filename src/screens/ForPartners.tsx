@@ -41,7 +41,7 @@ export default function ForPartnersScreen() {
     <section className="pt-32 pb-20 md:pt-44 md:pb-28 px-6 md:px-8 max-w-[900px] mx-auto">
         {/* Hero */}
         <div className="mb-16">
-          <span className="font-mono text-[9px] text-accent tracking-splice-ultra uppercase block mb-4">
+          <span className="font-mono text-label text-accent tracking-splice-ultra uppercase block mb-4">
             For Partners
           </span>
           <h1 className="font-display text-3xl md:text-5xl font-bold tracking-splice-tight text-foreground leading-[1.1] mb-6">
@@ -61,7 +61,7 @@ export default function ForPartnersScreen() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {WHO_SHOULD_PARTNER.map((item, i) => (
               <div key={i} className="hover-card group border border-surface-border p-4 bg-surface transition-all duration-300 ease-out hover:border-ember/40 hover:shadow-ember-sm hover:-translate-y-0.5">
-                <span className="font-mono text-[10px] text-accent tracking-splice-ultra uppercase block mb-1 transition-colors duration-300 group-hover:text-ember">
+                <span className="font-mono text-xs text-accent tracking-splice-ultra uppercase block mb-1 transition-colors duration-300 group-hover:text-ember">
                   {item.type}
                 </span>
                 <p className="text-sm text-foreground/60 leading-relaxed transition-colors duration-300 group-hover:text-foreground/80">{item.description}</p>
@@ -78,7 +78,7 @@ export default function ForPartnersScreen() {
           <div className="space-y-4">
             {PARTNER_USE_CASES.map((item, i) => (
               <div key={i} className="hover-card group border border-surface-border p-5 bg-surface transition-all duration-300 ease-out hover:border-ember/40 hover:shadow-ember-sm hover:-translate-y-0.5">
-                <span className="font-mono text-[10px] text-accent tracking-splice-ultra uppercase block mb-2 transition-colors duration-300 group-hover:text-ember">
+                <span className="font-mono text-xs text-accent tracking-splice-ultra uppercase block mb-2 transition-colors duration-300 group-hover:text-ember">
                   {item.label}
                 </span>
                 <p className="text-sm text-foreground/70 leading-relaxed transition-colors duration-300 group-hover:text-foreground/85">{item.description}</p>

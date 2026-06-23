@@ -23,7 +23,7 @@ export function ModuleLabel({
     <span
       {...rest}
       className={cn(
-        "inline-flex items-center gap-2 font-mono text-[11px] uppercase leading-none tracking-[0.18em] text-blog-text-muted",
+        "inline-flex items-center gap-2 font-mono text-label uppercase leading-none tracking-[0.18em] text-blog-text-muted",
         className,
       )}
     >

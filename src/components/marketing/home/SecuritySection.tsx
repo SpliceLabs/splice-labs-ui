@@ -42,7 +42,7 @@ export function SecuritySection({ align = "right" }: SecuritySectionProps) {
                 <div className="flex-1 p-6 md:p-8 border border-surface-border -mt-px first:mt-0 bg-surface transition-all duration-300 ease-out hover:border-ember/30 hover:bg-ember/[0.02]">
                   <div className="flex items-center gap-2 mb-3">
                     <span className="w-6 h-px bg-foreground/20 transition-all duration-300 group-hover:w-8 group-hover:bg-ember/50" />
-                    <span className="font-mono text-[11px] text-ember/80 tracking-splice-wide uppercase transition-colors duration-300 group-hover:text-ember">
+                    <span className="font-mono text-label-lg text-ember/80 tracking-splice-wide uppercase transition-colors duration-300 group-hover:text-ember">
                       {item.label}
                     </span>
                   </div>
@@ -56,7 +56,7 @@ export function SecuritySection({ align = "right" }: SecuritySectionProps) {
 
           <div className="flex items-center gap-3 mt-8">
             <span className="w-12 h-px bg-foreground/10" />
-            <span className="font-mono text-[9px] text-muted-foreground/60 tracking-splice-wide">
+            <span className="font-mono text-label text-muted-foreground/60 tracking-splice-wide">
               No mystery deployments.
             </span>
           </div>

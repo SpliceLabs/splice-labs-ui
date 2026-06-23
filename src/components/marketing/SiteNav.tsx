@@ -61,7 +61,7 @@ function Dropdown({ items, open, onClose }: { items: DropdownItem[]; open: boole
           key={item.label}
           href={item.href}
           onClick={onClose}
-          className="block px-4 py-2 font-mono text-[11px] text-muted-foreground tracking-widest uppercase hover:text-foreground hover:bg-ember/10 transition-colors focus-visible:outline focus-visible:outline-1 focus-visible:outline-accent focus-visible:outline-offset-2"
+          className="block px-4 py-2 font-mono text-label text-muted-foreground tracking-widest uppercase hover:text-foreground hover:bg-ember/10 transition-colors focus-visible:outline focus-visible:outline-1 focus-visible:outline-accent focus-visible:outline-offset-2"
         >
           {item.label}
         </a>
@@ -88,7 +88,7 @@ export function SiteNav() {
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/90 backdrop-blur-sm border-b border-surface-border">
       <div className="max-w-[1200px] mx-auto px-6 md:px-8 h-14 flex items-center justify-between">
         {/* Logo */}
-        <Link href="/" className="flex items-center gap-1 font-mono text-sm text-foreground">
+        <Link href="/" className="flex items-center gap-1 font-mono text-base text-foreground">
           <span className="text-ember font-bold">›</span>
           <span>splice</span>
           <span className="text-accent font-bold">_</span>
@@ -115,7 +115,7 @@ export function SiteNav() {
                   aria-expanded={openDropdown === item.label}
                   aria-haspopup="menu"
                   aria-controls={`nav-menu-${item.label}`}
-                  className="group font-mono text-[11px] text-muted-foreground tracking-widest uppercase hover:text-foreground hover:font-bold transition-[color,font-weight] flex items-center gap-1 focus-visible:outline focus-visible:outline-1 focus-visible:outline-accent focus-visible:outline-offset-2"
+                  className="group font-mono text-label text-muted-foreground tracking-widest uppercase hover:text-foreground hover:font-bold transition-[color,font-weight] flex items-center gap-1 focus-visible:outline focus-visible:outline-1 focus-visible:outline-accent focus-visible:outline-offset-2"
                 >
                   <span className="relative">
                     {item.label}
@@ -141,7 +141,7 @@ export function SiteNav() {
                           href={child.href}
                           role="menuitem"
                           onClick={() => setOpenDropdown(null)}
-                          className="group block px-4 py-2 font-mono text-[11px] text-muted-foreground tracking-widest uppercase hover:text-foreground hover:font-bold hover:bg-ember/10 transition-[color,font-weight] focus-visible:outline focus-visible:outline-1 focus-visible:outline-accent focus-visible:outline-offset-2"
+                          className="group block px-4 py-2 font-mono text-label text-muted-foreground tracking-widest uppercase hover:text-foreground hover:font-bold hover:bg-ember/10 transition-[color,font-weight] focus-visible:outline focus-visible:outline-1 focus-visible:outline-accent focus-visible:outline-offset-2"
                         >
                           <span className="relative">
                             {child.label}
@@ -160,7 +160,7 @@ export function SiteNav() {
               <Link
                 key={item.label}
                 href={item.href!}
-                className="group font-mono text-[11px] text-muted-foreground tracking-widest uppercase hover:text-foreground hover:font-bold transition-[color,font-weight] focus-visible:outline focus-visible:outline-1 focus-visible:outline-accent focus-visible:outline-offset-2"
+                className="group font-mono text-label text-muted-foreground tracking-widest uppercase hover:text-foreground hover:font-bold transition-[color,font-weight] focus-visible:outline focus-visible:outline-1 focus-visible:outline-accent focus-visible:outline-offset-2"
               >
                 <span className="relative">
                   {item.label}
@@ -174,7 +174,7 @@ export function SiteNav() {
               <a
                 key={item.label}
                 href={item.href}
-                className="group font-mono text-[11px] text-muted-foreground tracking-widest uppercase hover:text-foreground hover:font-bold transition-[color,font-weight] focus-visible:outline focus-visible:outline-1 focus-visible:outline-accent focus-visible:outline-offset-2"
+                className="group font-mono text-label text-muted-foreground tracking-widest uppercase hover:text-foreground hover:font-bold transition-[color,font-weight] focus-visible:outline focus-visible:outline-1 focus-visible:outline-accent focus-visible:outline-offset-2"
               >
                 <span className="relative">
                   {item.label}

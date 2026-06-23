@@ -78,7 +78,7 @@ export function ProjectsSection() {
                         />
                       </span>
                     </h3>
-                    <span className="font-mono text-[11px] text-ember tracking-splice-ultra uppercase px-2 py-0.5 border border-ember/30 bg-ember/5 transition-colors duration-200 group-hover/card:bg-ember/10">
+                    <span className="font-mono text-label text-ember tracking-splice-ultra uppercase px-2 py-0.5 border border-ember/30 bg-ember/5 transition-colors duration-200 group-hover/card:bg-ember/10">
                       {STATUS_LABELS[p.status]}
                     </span>
                   </div>
@@ -99,7 +99,7 @@ export function ProjectsSection() {
 
           <div className="flex items-center gap-3 mt-8">
             <span className="w-12 h-px bg-foreground/10" />
-            <span className="font-mono text-[11px] text-muted-foreground/60 tracking-splice-wide">
+            <span className="font-mono text-label text-muted-foreground/60 tracking-splice-wide">
               Additional prototypes are shared privately with partners.
             </span>
           </div>
