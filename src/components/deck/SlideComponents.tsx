@@ -19,7 +19,7 @@ export function Slide({
   return (
     <section
       id={id}
-      className="min-h-screen border-b border-surface-border relative flex items-center"
+      className="min-h-screen border-b border-surface-border relative flex items-center print:min-h-0 print:h-[852px] print:break-after-page print:overflow-hidden print:border-b-0"
     >
       {/* Continuous splice line */}
       <div className="absolute left-6 md:left-8 top-0 bottom-0 w-px bg-surface-border" />
@@ -48,7 +48,7 @@ export function Slide({
         </div>
       )}
 
-      <div className="w-full max-w-[1200px] mx-auto px-6 md:px-8 py-20 md:py-28">
+      <div className="w-full max-w-[1200px] mx-auto px-6 md:px-8 py-20 md:py-28 print:py-8">
         <div className="pl-8 md:pl-12">
           {/* Junction node */}
           <div className="flex items-center gap-4 mb-10">

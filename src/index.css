@@ -233,3 +233,23 @@
     animation: junction-pulse 1.5s ease-in-out infinite;
   }
 }
+
+/* Deck PDF export: 16:9 landscape pages, print background colors/fonts.
+   Pagination + nav-hiding are handled by `print:` utilities in the
+   DeckShell / Slide components. */
+@media print {
+  @page {
+    size: 1280px 860px;
+    margin: 0;
+  }
+  html,
+  body {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+    background-color: hsl(var(--background));
+  }
+  /* No forced page break after the final slide — avoids a trailing blank page. */
+  section:last-of-type {
+    break-after: auto !important;
+  }
+}
