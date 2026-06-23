@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { SwarmSlot } from "./swarm/SwarmSlot";
 import { TerminalButton } from "../ui/TerminalButton";
 import { ModuleLabel } from "../ui/ModuleLabel";
@@ -43,6 +43,36 @@ export function ContactSection({ align = "left" }: ContactSectionProps) {
   const [formState, setFormState] = useState({ name: "", email: "", message: "", company: "", linkedin: "" });
   const [status, setStatus] = useState<Status>("idle");
   const [errors, setErrors] = useState<Errors>({});
+  const [actionType, setActionType] = useState<string | null>(null);
+
+  // Parse params from hash (e.g., #contact?intent=investor&action=schedule-call)
+  useEffect(() => {
+    const parseHashParams = () => {
+      const hash = window.location.hash;
+      if (!hash.includes("?")) return;
+
+      const queryString = hash.split("?")[1];
+      const params = new URLSearchParams(queryString);
+      const intent = params.get("intent");
+      const action = params.get("action");
+
+      if (intent && ["founder", "investor", "partner", "operator"].includes(intent)) {
+        setAudienceType(intent as AudienceType);
+      }
+      setActionType(action);
+    };
+
+    // Parse on mount (with small delay for Next.js navigation)
+    parseHashParams();
+    const timeout = setTimeout(parseHashParams, 100);
+
+    // Listen for hash changes
+    window.addEventListener("hashchange", parseHashParams);
+    return () => {
+      window.removeEventListener("hashchange", parseHashParams);
+      clearTimeout(timeout);
+    };
+  }, []);
 
   const currentAudience = AUDIENCE_OPTIONS.find((a) => a.type === audienceType)!;
 
@@ -77,6 +107,18 @@ export function ContactSection({ align = "left" }: ContactSectionProps) {
     return next;
   };
 
+  const ACTION_LABELS: Record<string, string> = {
+    // Investor actions
+    "request-materials": "Requesting investor materials",
+    "schedule-call": "Requesting a diligence call",
+    // Founder actions
+    "apply-founder": "Applying as founder",
+    "join-bench": "Joining operator bench",
+    // Partner actions
+    "partner-inquiry": "Partnership inquiry",
+    "submit-problem": "Submitting a problem to co-solve",
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     const found = validate();
@@ -86,6 +128,7 @@ export function ContactSection({ align = "left" }: ContactSectionProps) {
     setStatus("submitting");
     try {
       // TODO: wire to a real contact endpoint (app/api/contact route handler).
+      // Include in payload: { ...formState, audienceType, actionType }
       await new Promise((resolve) => setTimeout(resolve, 700));
       setStatus("success");
     } catch {
@@ -122,12 +165,15 @@ export function ContactSection({ align = "left" }: ContactSectionProps) {
               </p>
 
               {/* Audience type selector */}
-              <div className="flex flex-wrap gap-2 mb-8">
+              <div className="flex flex-wrap gap-2 mb-4">
                 {AUDIENCE_OPTIONS.map((opt) => (
                   <button
                     key={opt.type}
                     type="button"
-                    onClick={() => setAudienceType(opt.type)}
+                    onClick={() => {
+                      setAudienceType(opt.type);
+                      setActionType(null); // Clear action when manually changing type
+                    }}
                     className={cn(
                       "font-mono text-xs tracking-splice-ultra uppercase px-3 py-1.5 border transition-all duration-300 ease-out",
                       audienceType === opt.type
@@ -139,6 +185,17 @@ export function ContactSection({ align = "left" }: ContactSectionProps) {
                   </button>
                 ))}
               </div>
+
+              {/* Action indicator */}
+              {actionType && ACTION_LABELS[actionType] && (
+                <div className="flex items-center gap-2 mb-8 px-3 py-2 border border-ember/30 bg-ember/5">
+                  <span className="w-1.5 h-1.5 bg-ember rounded-full" />
+                  <span className="font-mono text-xs text-ember tracking-splice-wide">
+                    {ACTION_LABELS[actionType]}
+                  </span>
+                </div>
+              )}
+              {!actionType && <div className="mb-4" />}
             </div>
 
             {status === "success" ? (

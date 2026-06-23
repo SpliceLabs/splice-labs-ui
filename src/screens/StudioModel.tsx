@@ -179,10 +179,10 @@ export default function StudioModelScreen() {
 
         {/* CTAs */}
         <div className="flex flex-col sm:flex-row gap-4">
-          <TerminalButton href="/for-founders" data-event="cta_founders_from_studio">
+          <TerminalButton href="/#contact?intent=founder&action=apply-founder" data-event="cta_founders_from_studio">
             Apply as Founder
           </TerminalButton>
-          <TerminalButton variant="ghost" href="/for-investors" data-event="cta_investors_from_studio">
+          <TerminalButton variant="ghost" href="/#contact?intent=investor&action=request-materials" data-event="cta_investors_from_studio">
             Request Investor Materials
           </TerminalButton>
         </div>
