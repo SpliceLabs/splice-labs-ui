@@ -10,7 +10,7 @@ import { JunctionNode } from "./JunctionNode";
 
 type Status = "idle" | "submitting" | "success" | "error";
 type AudienceType = "founder" | "investor" | "partner" | "operator";
-type Field = "name" | "email" | "message" | "company";
+type Field = "name" | "email" | "message" | "company" | "linkedin";
 type Errors = Partial<Record<Field, string>>;
 
 const AUDIENCE_OPTIONS: { type: AudienceType; label: string; cta: string; placeholder: string }[] = [
@@ -21,6 +21,11 @@ const AUDIENCE_OPTIONS: { type: AudienceType; label: string; cta: string; placeh
 ];
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+const LINKEDIN_RE = /^(https?:\/\/)?(www\.)?linkedin\.com\/in\/[\w-]+\/?$/i;
+
+const MAX_NAME_LENGTH = 100;
+const MAX_MESSAGE_LENGTH = 1000;
+const MAX_COMPANY_LENGTH = 100;
 
 const inputClass =
   "w-full bg-transparent border border-surface-border px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground/60 focus:outline-none focus:border-ember-glow transition-colors disabled:opacity-50";
@@ -35,7 +40,7 @@ export function ContactSection({ align = "left" }: ContactSectionProps) {
   const calcPos = getCalcPosition(align);
 
   const [audienceType, setAudienceType] = useState<AudienceType>("founder");
-  const [formState, setFormState] = useState({ name: "", email: "", message: "", company: "" });
+  const [formState, setFormState] = useState({ name: "", email: "", message: "", company: "", linkedin: "" });
   const [status, setStatus] = useState<Status>("idle");
   const [errors, setErrors] = useState<Errors>({});
 
@@ -48,11 +53,26 @@ export function ContactSection({ align = "left" }: ContactSectionProps) {
 
   const validate = (): Errors => {
     const next: Errors = {};
-    if (!formState.name.trim()) next.name = "Tell us who you are.";
+    if (!formState.name.trim()) {
+      next.name = "Tell us who you are.";
+    } else if (formState.name.trim().length > MAX_NAME_LENGTH) {
+      next.name = `Name must be under ${MAX_NAME_LENGTH} characters.`;
+    }
     if (!EMAIL_RE.test(formState.email.trim())) next.email = "Enter a valid email address.";
-    if (!formState.message.trim()) next.message = "Add some context.";
+    if (!formState.message.trim()) {
+      next.message = "Add some context.";
+    } else if (formState.message.trim().length > MAX_MESSAGE_LENGTH) {
+      next.message = `Message must be under ${MAX_MESSAGE_LENGTH} characters.`;
+    }
     if ((audienceType === "investor" || audienceType === "partner") && !formState.company.trim()) {
       next.company = "Tell us your organization.";
+    } else if (formState.company.trim().length > MAX_COMPANY_LENGTH) {
+      next.company = `Company must be under ${MAX_COMPANY_LENGTH} characters.`;
+    }
+    if (!formState.linkedin.trim()) {
+      next.linkedin = "Share your LinkedIn profile.";
+    } else if (!LINKEDIN_RE.test(formState.linkedin.trim())) {
+      next.linkedin = "Enter a valid LinkedIn profile URL.";
     }
     return next;
   };
@@ -142,7 +162,7 @@ export function ContactSection({ align = "left" }: ContactSectionProps) {
                       htmlFor="contact-name"
                       className="font-mono text-label text-muted-foreground/60 tracking-splice-ultra uppercase block mb-1.5"
                     >
-                      Name
+                      Name <span className="text-ember">*</span>
                     </label>
                     <input
                       id="contact-name"
@@ -150,6 +170,7 @@ export function ContactSection({ align = "left" }: ContactSectionProps) {
                       value={formState.name}
                       onChange={(e) => update("name", e.target.value)}
                       disabled={submitting}
+                      maxLength={MAX_NAME_LENGTH}
                       aria-invalid={!!errors.name}
                       aria-describedby={errors.name ? "contact-name-error" : undefined}
                       className={inputClass}
@@ -169,7 +190,7 @@ export function ContactSection({ align = "left" }: ContactSectionProps) {
                       htmlFor="contact-email"
                       className="font-mono text-label text-muted-foreground/60 tracking-splice-ultra uppercase block mb-1.5"
                     >
-                      Email
+                      Email <span className="text-ember">*</span>
                     </label>
                     <input
                       id="contact-email"
@@ -198,7 +219,7 @@ export function ContactSection({ align = "left" }: ContactSectionProps) {
                       htmlFor="contact-company"
                       className="font-mono text-label text-muted-foreground/60 tracking-splice-ultra uppercase block mb-1.5"
                     >
-                      {audienceType === "investor" ? "Fund / Organization" : "Company"}
+                      {audienceType === "investor" ? "Fund / Organization" : "Company"} <span className="text-ember">*</span>
                     </label>
                     <input
                       id="contact-company"
@@ -206,6 +227,7 @@ export function ContactSection({ align = "left" }: ContactSectionProps) {
                       value={formState.company}
                       onChange={(e) => update("company", e.target.value)}
                       disabled={submitting}
+                      maxLength={MAX_COMPANY_LENGTH}
                       aria-invalid={!!errors.company}
                       aria-describedby={errors.company ? "contact-company-error" : undefined}
                       className={inputClass}
@@ -223,10 +245,37 @@ export function ContactSection({ align = "left" }: ContactSectionProps) {
                 )}
                 <div>
                   <label
+                    htmlFor="contact-linkedin"
+                    className="font-mono text-label text-muted-foreground/60 tracking-splice-ultra uppercase block mb-1.5"
+                  >
+                    LinkedIn Profile <span className="text-ember">*</span>
+                  </label>
+                  <input
+                    id="contact-linkedin"
+                    type="url"
+                    value={formState.linkedin}
+                    onChange={(e) => update("linkedin", e.target.value)}
+                    disabled={submitting}
+                    aria-invalid={!!errors.linkedin}
+                    aria-describedby={errors.linkedin ? "contact-linkedin-error" : undefined}
+                    className={inputClass}
+                    placeholder="linkedin.com/in/yourprofile"
+                  />
+                  {errors.linkedin && (
+                    <p
+                      id="contact-linkedin-error"
+                      className="mt-1.5 font-mono text-label text-destructive tracking-splice-wide uppercase"
+                    >
+                      {errors.linkedin}
+                    </p>
+                  )}
+                </div>
+                <div>
+                  <label
                     htmlFor="contact-message"
                     className="font-mono text-label text-muted-foreground/60 tracking-splice-ultra uppercase block mb-1.5"
                   >
-                    {audienceType === "founder" ? "What you're building" : "Context"}
+                    {audienceType === "founder" ? "What you're building" : "Context"} <span className="text-ember">*</span>
                   </label>
                   <textarea
                     id="contact-message"
@@ -234,6 +283,7 @@ export function ContactSection({ align = "left" }: ContactSectionProps) {
                     onChange={(e) => update("message", e.target.value)}
                     disabled={submitting}
                     rows={4}
+                    maxLength={MAX_MESSAGE_LENGTH}
                     aria-invalid={!!errors.message}
                     aria-describedby={errors.message ? "contact-message-error" : undefined}
                     className={`${inputClass} resize-none`}

@@ -27,6 +27,9 @@ export function JunctionNode({ sectionId, align, large = false }: JunctionNodePr
     ? "border border-ember/60 bg-ember/10"
     : "bg-ember/40";
 
+  // Different vertical alignment for large vs small nodes
+  const alignClass = large ? "translate-y-0.5" : "translate-y-[3px]";
+
   return (
     <div
       className={`${sizeClass} ${marginClass} ${baseClass} shrink-0 self-center ${isActive ? "junction-pulse" : ""}`}
