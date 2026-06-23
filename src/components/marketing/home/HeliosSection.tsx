@@ -45,14 +45,14 @@ export function HeliosSection({ align = "left" }: HeliosSectionProps) {
                 HELIOS is our formation harness—research, validation, evals, policy, approval gates, provenance, GTM, and fundraising machinery. Every incubation runs on the same governed infrastructure.
               </p>
               <div className="flex flex-col sm:flex-row gap-3">
-                <a href="/helios" className="group inline-flex items-center font-mono text-[11px] tracking-splice-wide uppercase text-accent transition-all duration-300 hover:text-ember hover:translate-x-1">
+                <a href="/helios" className="group inline-flex items-center font-mono text-[13px] tracking-splice-wide uppercase text-accent transition-all duration-300 hover:text-ember hover:translate-x-1">
                   <span className="relative">
                     Learn more about HELIOS
                     <span className="absolute -bottom-0.5 left-0 h-px w-full origin-left scale-x-0 bg-ember transition-transform duration-200 group-hover:scale-x-100" />
                   </span>
                   <span className="ml-1 transition-transform duration-300 group-hover:translate-x-0.5">→</span>
                 </a>
-                <a href="#contact" className="group inline-flex items-center font-mono text-[11px] tracking-splice-wide uppercase text-muted-foreground transition-all duration-300 hover:text-foreground hover:translate-x-1">
+                <a href="#contact" className="group inline-flex items-center font-mono text-[13px] tracking-splice-wide uppercase text-muted-foreground transition-all duration-300 hover:text-foreground hover:translate-x-1">
                   <span className="relative">
                     Request a HELIOS demo
                     <span className="absolute -bottom-0.5 left-0 h-px w-full origin-left scale-x-0 bg-ember transition-transform duration-200 group-hover:scale-x-100" />
@@ -80,7 +80,7 @@ export function HeliosSection({ align = "left" }: HeliosSectionProps) {
               ))}
               <div className="flex items-center gap-2 pt-1">
                 <span className="w-px h-4 bg-foreground/15" />
-                <span className="font-mono text-[8px] text-muted-foreground/60 tracking-splice-ultra uppercase">
+                <span className="font-mono text-[10px] text-muted-foreground/60 tracking-splice-ultra uppercase">
                   Formation Harness: 5 layers
                 </span>
               </div>

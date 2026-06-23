@@ -48,7 +48,7 @@ export function ValueSection() {
               >
                 <span
                   aria-hidden
-                  className="absolute right-0 top-2 font-mono text-[9px] tracking-splice-wide text-ember/60 transition-all duration-200 group-hover:text-ember group-hover:text-[11px]"
+                  className="absolute right-0 top-2 font-mono text-[11px] tracking-splice-wide text-ember/60 transition-all duration-200 group-hover:text-ember group-hover:text-[13px]"
                 >
                   {String(i + 1).padStart(2, "0")}
                 </span>

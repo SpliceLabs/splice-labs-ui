@@ -46,7 +46,7 @@ export function SiteFooter() {
               <span className="text-accent font-bold">_</span>
               <TerminalCaret rate="footer" className="ml-0.5" />
             </div>
-            <p className="font-mono text-[10px] text-muted-foreground tracking-splice-wide uppercase">
+            <p className="font-mono text-xs text-muted-foreground tracking-splice-wide uppercase">
               AI-Native Venture Studio
             </p>
           </div>
@@ -55,7 +55,7 @@ export function SiteFooter() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12">
             {FOOTER_COLUMNS.map((column) => (
               <div key={column.title}>
-                <span className="font-mono text-[9px] text-foreground/40 tracking-splice-ultra uppercase block mb-3">
+                <span className="font-mono text-[11px] text-foreground/40 tracking-splice-ultra uppercase block mb-3">
                   {column.title}
                 </span>
                 <div className="space-y-2">
@@ -63,7 +63,7 @@ export function SiteFooter() {
                     <a
                       key={link.label}
                       href={link.href}
-                      className="group block font-mono text-[11px] text-muted-foreground tracking-splice-wide uppercase transition-[color,font-weight] hover:text-foreground hover:font-bold focus-visible:outline focus-visible:outline-1 focus-visible:outline-accent focus-visible:outline-offset-2"
+                      className="group block font-mono text-[13px] text-muted-foreground tracking-splice-wide uppercase transition-[color,font-weight] hover:text-foreground hover:font-bold focus-visible:outline focus-visible:outline-1 focus-visible:outline-accent focus-visible:outline-offset-2"
                     >
                       <span className="relative">
                         {link.label}
@@ -81,7 +81,7 @@ export function SiteFooter() {
         </div>
 
         <div className="mt-12 pt-6 border-t border-surface-border">
-          <p className="font-mono text-[10px] text-muted-foreground/50 tracking-splice-wide">
+          <p className="font-mono text-xs text-muted-foreground/50 tracking-splice-wide">
             © {new Date().getFullYear()} Splice Labs. All rights reserved.
           </p>
         </div>
