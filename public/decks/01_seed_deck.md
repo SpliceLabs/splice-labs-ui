@@ -116,7 +116,7 @@ Software architect with a decade leading web3 solutions.
 10+ years building web applications across diverse stacks. Focused on making financial systems open through decentralized technologies.
 
 **Davin Riley** — CO-FOUNDER
-Wall Street foundation — fund-of-funds, hedge fund indices. Crossed to tech/media. 6+ years running a creator economy agency. Structures raises via SPVs and direct investments.
+Wall Street foundation — fund-of-funds, hedge fund indices. Crossed to tech/media. 6+ years running a creator economy agency. Structured cap raises via SPV and direct investments.
 
 ---
 
