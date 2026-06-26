@@ -55,7 +55,7 @@ export function ValueSection() {
                 <h3 className="font-display text-base font-semibold text-foreground mb-2 transition-all duration-200 group-hover:text-lg">
                   {v.title}
                 </h3>
-                <p className="text-sm text-foreground/60 leading-relaxed transition-colors duration-200 group-hover:text-foreground/85">
+                <p className="text-base text-foreground/60 leading-relaxed transition-colors duration-200 group-hover:text-foreground/85">
                   {v.body}
                 </p>
               </div>

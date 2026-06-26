@@ -54,7 +54,7 @@ export function CommitmentsSection({ align = "left" }: CommitmentsSectionProps) 
                   <span className="font-mono text-xs font-bold text-foreground/70 tracking-splice-wide uppercase block mb-1 transition-colors duration-300 group-hover:text-accent">
                     {c.label}
                   </span>
-                  <p className="text-sm text-foreground/60 leading-relaxed transition-colors duration-300 group-hover:text-foreground/80">
+                  <p className="text-base text-foreground/60 leading-relaxed transition-colors duration-300 group-hover:text-foreground/80">
                     {c.body}
                   </p>
                 </div>

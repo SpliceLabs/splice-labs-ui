@@ -28,7 +28,7 @@ const MAX_MESSAGE_LENGTH = 1000;
 const MAX_COMPANY_LENGTH = 100;
 
 const inputClass =
-  "w-full bg-transparent border border-surface-border px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground/60 focus:outline-none focus:border-ember-glow transition-colors disabled:opacity-50";
+  "w-full bg-transparent border border-surface-border px-4 py-3 text-base text-foreground placeholder:text-muted-foreground/60 focus:outline-none focus:border-ember-glow transition-colors disabled:opacity-50";
 
 interface ContactSectionProps {
   align?: SectionAlign;
@@ -160,7 +160,7 @@ export function ContactSection({ align = "left" }: ContactSectionProps) {
               <h2 className="font-display text-2xl md:text-3xl font-semibold tracking-splice-tight text-foreground mb-3">
                 Build With Us
               </h2>
-              <p className="text-sm text-foreground/70 leading-relaxed mb-6">
+              <p className="text-base text-foreground/70 leading-relaxed mb-6">
                 Select your path. We'll respond within a few days if there's a fit.
               </p>
 
@@ -206,7 +206,7 @@ export function ContactSection({ align = "left" }: ContactSectionProps) {
                 <p className="font-mono text-xs text-accent tracking-splice-ultra uppercase mb-2">
                   Message received
                 </p>
-                <p className="text-sm text-foreground/70 leading-relaxed">
+                <p className="text-base text-foreground/70 leading-relaxed">
                   Thanks{formState.name.trim() ? `, ${formState.name.trim()}` : ""}. If it's a fit,
                   we'll get back to you within a few days.
                 </p>

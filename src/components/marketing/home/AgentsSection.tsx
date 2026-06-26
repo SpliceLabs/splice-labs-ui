@@ -38,7 +38,7 @@ export function AgentsSection({ align = "left" }: AgentsSectionProps) {
           <h2 className="font-display text-2xl md:text-3xl font-semibold tracking-splice-tight text-foreground mb-4">
             Agents With Boundaries
           </h2>
-          <p className="text-sm text-foreground/70 leading-relaxed max-w-[540px] mb-6">
+          <p className="text-base text-foreground/70 leading-relaxed max-w-[540px] mb-6">
             Every agent operates with scoped permissions and logged actions.
           </p>
 
