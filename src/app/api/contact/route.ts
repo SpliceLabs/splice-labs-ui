@@ -114,9 +114,9 @@ export async function POST(req: NextRequest) {
     const actionLabel = actionType ? ACTION_LABELS[actionType] : null;
     const submittedAt = new Date().toISOString();
 
-    const subject = actionLabel
-      ? `[${audienceLabel}] ${actionLabel} — ${escapeHtml(name)}`
-      : `[${audienceLabel}] New inquiry from ${escapeHtml(name)}`;
+    const subject = company
+      ? `Lead (${audienceLabel}): ${name} - ${company}`
+      : `Lead (${audienceLabel}): ${name}`;
 
     const htmlContent = `
 <!DOCTYPE html>
