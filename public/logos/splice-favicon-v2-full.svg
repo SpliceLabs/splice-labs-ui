@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
+  <rect width="16" height="16" fill="#0E1114"/>
+  <text y="12" font-family="monospace" font-size="7" font-weight="700">
+    <tspan fill="#D45A28">></tspan><tspan fill="#CBCED4">SL</tspan><tspan fill="#00D6A4">_</tspan>
+  </text>
+  <rect fill="#00D6A4" x="14" y="5" width="1.5" height="7"/>
+</svg>

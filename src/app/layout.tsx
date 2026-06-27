@@ -30,6 +30,11 @@ export const metadata: Metadata = {
   description:
     "Splice Labs is an AI-native venture studio building infrastructure for governed autonomous capital and agentic finance. We form, fund, and build companies with founder-first economics.",
   authors: [{ name: "Splice Labs" }],
+  icons: {
+    icon: "/logos/splice-favicon.svg",
+    shortcut: "/logos/splice-favicon.svg",
+    apple: "/logos/splice-favicon.svg",
+  },
   alternates: { canonical: "/" },
   openGraph: {
     title: "Splice Labs — AI-Native Venture Studio",

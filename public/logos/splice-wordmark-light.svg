@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 72" width="280" height="72">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&amp;display=swap');
+      .bracket { fill: #D45A28; font-family: 'Space Mono', monospace; font-weight: 700; font-size: 42px; }
+      .text { fill: #1A1D21; font-family: 'Space Mono', monospace; font-weight: 400; font-size: 42px; }
+      .underscore { fill: #00997A; font-family: 'Space Mono', monospace; font-weight: 700; font-size: 42px; }
+      .cursor { fill: #00997A; }
+    </style>
+  </defs>
+  <text y="50">
+    <tspan class="bracket" x="0">></tspan>
+    <tspan class="text" x="34">splice</tspan>
+    <tspan class="underscore" x="190">_</tspan>
+  </text>
+  <rect class="cursor" x="216" y="18" width="24" height="40" rx="2"/>
+</svg>
