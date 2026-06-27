@@ -127,9 +127,18 @@ export function ContactSection({ align = "left" }: ContactSectionProps) {
 
     setStatus("submitting");
     try {
-      // TODO: wire to a real contact endpoint (app/api/contact route handler).
-      // Include in payload: { ...formState, audienceType, actionType }
-      await new Promise((resolve) => setTimeout(resolve, 700));
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ ...formState, audienceType, actionType }),
+      });
+
+      const data = await res.json();
+
+      if (!res.ok || !data.success) {
+        throw new Error(data.error || "Failed to submit");
+      }
+
       setStatus("success");
     } catch {
       setStatus("error");
