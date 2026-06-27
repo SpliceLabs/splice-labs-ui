@@ -41,7 +41,7 @@ export function HeliosSection({ align = "left" }: HeliosSectionProps) {
               <h2 className="font-display text-2xl md:text-3xl font-semibold tracking-splice-tight text-foreground mb-5">
                 HELIOS: Venture Production OS
               </h2>
-              <p className="text-sm text-foreground/50 leading-relaxed max-w-[580px] mb-8">
+              <p className="text-base text-foreground/50 leading-relaxed max-w-[580px] mb-8">
                 HELIOS is our formation harness—research, validation, evals, policy, approval gates, provenance, GTM, and fundraising machinery. Every incubation runs on the same governed infrastructure.
               </p>
               <div className="flex flex-col sm:flex-row gap-3">

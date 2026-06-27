@@ -56,7 +56,7 @@ export function HeroSection() {
             <p className="text-foreground font-display text-xl md:text-2xl font-semibold tracking-splice-tight mb-3">
               Where agents meet programmable capital.
             </p>
-            <p className="text-sm text-foreground/50 leading-relaxed max-w-[560px]">
+            <p className="text-base text-foreground/50 leading-relaxed max-w-[560px]">
               We form, fund, and build <GlossaryTerm term="agentic finance">agentic finance</GlossaryTerm> companies—providing research, architecture, and GTM infrastructure through our venture production OS.
             </p>
           </div>

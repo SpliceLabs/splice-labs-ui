@@ -82,7 +82,7 @@ export function ProjectsSection() {
                       {STATUS_LABELS[p.status]}
                     </span>
                   </div>
-                  <p className="text-sm text-foreground/70 leading-relaxed transition-colors duration-200 group-hover/card:text-foreground/90">
+                  <p className="text-base text-foreground/70 leading-relaxed transition-colors duration-200 group-hover/card:text-foreground/90">
                     {p.description}
                   </p>
                 </div>

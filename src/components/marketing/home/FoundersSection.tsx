@@ -61,7 +61,7 @@ export function FoundersSection() {
                   <span className="font-mono text-label-sm text-ember/80 tracking-splice-wide uppercase transition-colors duration-300 group-hover:text-ember">{f.role}</span>
                 </div>
                 <div className="p-6 md:p-8 flex items-center">
-                  <p className="text-sm text-foreground/70 leading-relaxed">{f.bio}</p>
+                  <p className="text-base text-foreground/70 leading-relaxed">{f.bio}</p>
                 </div>
               </div>
             ))}

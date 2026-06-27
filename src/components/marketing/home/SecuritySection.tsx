@@ -46,7 +46,7 @@ export function SecuritySection({ align = "right" }: SecuritySectionProps) {
                       {item.label}
                     </span>
                   </div>
-                  <p className="text-sm text-foreground/70 leading-relaxed transition-colors duration-300 group-hover:text-foreground/85">
+                  <p className="text-base text-foreground/70 leading-relaxed transition-colors duration-300 group-hover:text-foreground/85">
                     {item.detail}
                   </p>
                 </div>
