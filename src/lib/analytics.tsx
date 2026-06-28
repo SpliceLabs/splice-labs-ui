@@ -20,16 +20,15 @@ export function trackEvent(event: string, properties?: Record<string, unknown>) 
 /** Analytics script component - auto-tracks page views */
 export function AnalyticsScript() {
   const token = process.env.NEXT_PUBLIC_TINYBIRD_TOKEN;
-  const host = process.env.NEXT_PUBLIC_TINYBIRD_HOST;
 
   if (!token) return null;
 
   return (
     <Script
-      defer
       src="https://unpkg.com/@tinybirdco/flock.js"
       data-token={token}
-      data-host={host}
+      data-host="https://api.tinybird.co/"
+      web-vitals="true"
       strategy="afterInteractive"
     />
   );
