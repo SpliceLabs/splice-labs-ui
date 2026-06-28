@@ -27,7 +27,7 @@ export function AnalyticsScript() {
     <Script
       src="https://unpkg.com/@tinybirdco/flock.js"
       data-token={token}
-      data-host="https://api.tinybird.co/"
+      data-host="https://api.europe-west2.gcp.tinybird.co"
       web-vitals="true"
       strategy="afterInteractive"
     />
