@@ -2,20 +2,8 @@
 
 import Script from "next/script";
 
-declare global {
-  interface Window {
-    Tinybird?: {
-      trackEvent: (event: string, properties?: Record<string, unknown>) => void;
-    };
-  }
-}
-
-/** Track a custom event */
-export function trackEvent(event: string, properties?: Record<string, unknown>) {
-  if (typeof window !== "undefined" && window.Tinybird) {
-    window.Tinybird.trackEvent(event, properties);
-  }
-}
+// Re-export trackEvent from the dedicated module (avoids circular deps)
+export { trackEvent } from "./analytics/trackEvent";
 
 /** Analytics script component - auto-tracks page views */
 export function AnalyticsScript() {

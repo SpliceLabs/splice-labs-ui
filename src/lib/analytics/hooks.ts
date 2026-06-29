@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useCallback } from "react";
-import { trackEvent } from "../analytics";
+import { trackEvent } from "./trackEvent";
 import { EVENTS, type SectionId, type FormField } from "./events";
 
 /**
