@@ -1,6 +1,7 @@
 "use client";
 
 import { TerminalButton } from "@/components/marketing/ui/TerminalButton";
+import { useTrackSectionView, useTrackScrollDepth, SECTIONS } from "@/lib/analytics";
 
 const WHO_SHOULD_APPLY = [
   "Technical or domain expertise in agentic finance, stablecoin infrastructure, or governed autonomous systems",
@@ -51,10 +52,18 @@ const FAQ = [
 ];
 
 export default function ForFoundersScreen() {
+  // Analytics tracking
+  useTrackScrollDepth();
+  const heroRef = useTrackSectionView<HTMLDivElement>(SECTIONS.FOR_FOUNDERS_HERO);
+  const whoRef = useTrackSectionView<HTMLDivElement>(SECTIONS.FOR_FOUNDERS_WHO);
+  const contributesRef = useTrackSectionView<HTMLDivElement>(SECTIONS.FOR_FOUNDERS_CONTRIBUTES);
+  const keepsRef = useTrackSectionView<HTMLDivElement>(SECTIONS.FOR_FOUNDERS_KEEPS);
+  const faqRef = useTrackSectionView<HTMLDivElement>(SECTIONS.FOR_FOUNDERS_FAQ);
+
   return (
     <section className="pt-32 pb-20 md:pt-44 md:pb-28 px-6 md:px-8 max-w-[900px] mx-auto">
         {/* Hero */}
-        <div className="mb-16">
+        <div ref={heroRef} className="mb-16">
           <span className="font-mono text-label text-accent tracking-splice-ultra uppercase block mb-4">
             For Founders
           </span>
@@ -68,7 +77,7 @@ export default function ForFoundersScreen() {
         </div>
 
         {/* Who Should Apply */}
-        <div className="mb-16">
+        <div ref={whoRef} className="mb-16">
           <h2 className="font-display text-xl md:text-2xl font-semibold tracking-splice-tight text-foreground mb-6">
             Who Should Apply
           </h2>
@@ -83,7 +92,7 @@ export default function ForFoundersScreen() {
         </div>
 
         {/* What Splice Contributes */}
-        <div className="mb-16">
+        <div ref={contributesRef} className="mb-16">
           <h2 className="font-display text-xl md:text-2xl font-semibold tracking-splice-tight text-foreground mb-6">
             What Splice Contributes
           </h2>
@@ -100,7 +109,7 @@ export default function ForFoundersScreen() {
         </div>
 
         {/* What Founders Keep */}
-        <div className="mb-16">
+        <div ref={keepsRef} className="mb-16">
           <h2 className="font-display text-xl md:text-2xl font-semibold tracking-splice-tight text-foreground mb-6">
             What Founders Keep
           </h2>
@@ -117,7 +126,7 @@ export default function ForFoundersScreen() {
         </div>
 
         {/* FAQ */}
-        <div className="mb-16">
+        <div ref={faqRef} className="mb-16">
           <h2 className="font-display text-xl md:text-2xl font-semibold tracking-splice-tight text-foreground mb-6">
             Frequently Asked Questions
           </h2>

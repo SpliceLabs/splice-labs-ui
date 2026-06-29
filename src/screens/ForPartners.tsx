@@ -1,6 +1,7 @@
 "use client";
 
 import { TerminalButton } from "@/components/marketing/ui/TerminalButton";
+import { useTrackSectionView, useTrackScrollDepth, SECTIONS } from "@/lib/analytics";
 
 const WHO_SHOULD_PARTNER = [
   { type: "Stablecoin/RWA Firms", description: "Treasury management, compliance automation, and agent-powered operations" },
@@ -37,10 +38,17 @@ const CONFIDENTIALITY = [
 ];
 
 export default function ForPartnersScreen() {
+  // Analytics tracking
+  useTrackScrollDepth();
+  const heroRef = useTrackSectionView<HTMLDivElement>(SECTIONS.FOR_PARTNERS_HERO);
+  const whoRef = useTrackSectionView<HTMLDivElement>(SECTIONS.FOR_PARTNERS_WHO);
+  const casesRef = useTrackSectionView<HTMLDivElement>(SECTIONS.FOR_PARTNERS_CASES);
+  const confidentialityRef = useTrackSectionView<HTMLDivElement>(SECTIONS.FOR_PARTNERS_CONFIDENTIALITY);
+
   return (
     <section className="pt-32 pb-20 md:pt-44 md:pb-28 px-6 md:px-8 max-w-[900px] mx-auto">
         {/* Hero */}
-        <div className="mb-16">
+        <div ref={heroRef} className="mb-16">
           <span className="font-mono text-label text-accent tracking-splice-ultra uppercase block mb-4">
             For Partners
           </span>
@@ -54,7 +62,7 @@ export default function ForPartnersScreen() {
         </div>
 
         {/* Who Should Partner */}
-        <div className="mb-16">
+        <div ref={whoRef} className="mb-16">
           <h2 className="font-display text-xl md:text-2xl font-semibold tracking-splice-tight text-foreground mb-6">
             Who Should Partner
           </h2>
@@ -71,7 +79,7 @@ export default function ForPartnersScreen() {
         </div>
 
         {/* Partner Use Cases */}
-        <div className="mb-16">
+        <div ref={casesRef} className="mb-16">
           <h2 className="font-display text-xl md:text-2xl font-semibold tracking-splice-tight text-foreground mb-6">
             Partner Use Cases
           </h2>
@@ -88,7 +96,7 @@ export default function ForPartnersScreen() {
         </div>
 
         {/* Confidentiality */}
-        <div className="mb-16">
+        <div ref={confidentialityRef} className="mb-16">
           <h2 className="font-display text-xl md:text-2xl font-semibold tracking-splice-tight text-foreground mb-6">
             Confidentiality, IP & Governance
           </h2>

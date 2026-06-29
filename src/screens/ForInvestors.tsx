@@ -2,6 +2,7 @@
 
 import { TerminalButton } from "@/components/marketing/ui/TerminalButton";
 import { GlossaryTerm } from "@/components/marketing/ui/GlossaryTerm";
+import { useTrackSectionView, useTrackScrollDepth, SECTIONS } from "@/lib/analytics";
 
 const OPCO_RATIONALE = [
   "Formation equity in each incubation provides direct exposure to individual company performance",
@@ -23,10 +24,18 @@ const PROOF_METRICS = [
 ];
 
 export default function ForInvestorsScreen() {
+  // Analytics tracking
+  useTrackScrollDepth();
+  const heroRef = useTrackSectionView<HTMLDivElement>(SECTIONS.FOR_INVESTORS_HERO);
+  const opcoRef = useTrackSectionView<HTMLDivElement>(SECTIONS.FOR_INVESTORS_OPCO);
+  const valuationRef = useTrackSectionView<HTMLDivElement>(SECTIONS.FOR_INVESTORS_VALUATION);
+  const sidecarRef = useTrackSectionView<HTMLDivElement>(SECTIONS.FOR_INVESTORS_SIDECAR);
+  const metricsRef = useTrackSectionView<HTMLDivElement>(SECTIONS.FOR_INVESTORS_METRICS);
+
   return (
     <section className="pt-32 pb-20 md:pt-44 md:pb-28 px-6 md:px-8 max-w-[900px] mx-auto">
         {/* Hero */}
-        <div className="mb-16">
+        <div ref={heroRef} className="mb-16">
           <span className="font-mono text-label text-accent tracking-splice-ultra uppercase block mb-4">
             For Investors
           </span>
@@ -40,7 +49,7 @@ export default function ForInvestorsScreen() {
         </div>
 
         {/* OpCo-First Rationale */}
-        <div className="mb-16">
+        <div ref={opcoRef} className="mb-16">
           <h2 className="font-display text-xl md:text-2xl font-semibold tracking-splice-tight text-foreground mb-6">
             OpCo-First Seed Rationale
           </h2>
@@ -73,7 +82,7 @@ export default function ForInvestorsScreen() {
         </div>
 
         {/* Valuation Logic */}
-        <div className="mb-16">
+        <div ref={valuationRef} className="mb-16">
           <h2 className="font-display text-xl md:text-2xl font-semibold tracking-splice-tight text-foreground mb-6">
             Valuation Logic
           </h2>
@@ -90,7 +99,7 @@ export default function ForInvestorsScreen() {
         </div>
 
         {/* LP Sidecar Overview */}
-        <div className="mb-16">
+        <div ref={sidecarRef} className="mb-16">
           <h2 className="font-display text-xl md:text-2xl font-semibold tracking-splice-tight text-foreground mb-4">
             LP Sidecar Overview
           </h2>
@@ -106,7 +115,7 @@ export default function ForInvestorsScreen() {
         </div>
 
         {/* Proof Metrics */}
-        <div className="mb-16">
+        <div ref={metricsRef} className="mb-16">
           <h2 className="font-display text-xl md:text-2xl font-semibold tracking-splice-tight text-foreground mb-6">
             Proof Discipline Metrics
           </h2>

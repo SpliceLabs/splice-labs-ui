@@ -4,6 +4,7 @@ import { SwarmSlot } from "./swarm/SwarmSlot";
 import { cn } from "@/lib/utils";
 import { ModuleLabel } from "../ui/ModuleLabel";
 import { JunctionNode } from "./JunctionNode";
+import { useTrackSectionView, SECTIONS } from "@/lib/analytics";
 
 const VALUES = [
   { title: "Vertical Focus", body: "Agentic finance infrastructure—where AI meets programmable money." },
@@ -15,8 +16,10 @@ const VALUES = [
 ];
 
 export function ValueSection() {
+  const sectionRef = useTrackSectionView<HTMLElement>(SECTIONS.VALUE);
+
   return (
-    <section id="value" className="border-t border-surface-border relative">
+    <section ref={sectionRef} id="value" className="border-t border-surface-border relative">
       {/* Swarm slot: left half on md+; full width on mobile. */}
       <SwarmSlot id="value" className="absolute inset-0 md:right-1/3" />
       {/* Mirrored splice line — right gutter */}

@@ -5,13 +5,17 @@ import { ModuleLabel } from "../ui/ModuleLabel";
 import { TerminalButton } from "../ui/TerminalButton";
 import { GlossaryTerm } from "../ui/GlossaryTerm";
 import { JunctionNode } from "./JunctionNode";
+import { useTrackSectionView, SECTIONS } from "@/lib/analytics";
 
 // Hero copy. The swarm canvas is mounted at VersionE root (single fixed
 // canvas spanning all sections); HeroSection no longer wraps in SwarmHero.
 // id="hero" is required for the IntersectionObserver / hero-progress driver.
 export function HeroSection() {
+  const sectionRef = useTrackSectionView<HTMLElement>(SECTIONS.HERO);
+
   return (
     <section
+      ref={sectionRef}
       id="hero"
       className="pt-32 pb-16 md:pt-40 md:pb-20 px-20 max-w-[1700px] mx-auto relative"
     >

@@ -5,6 +5,7 @@ import { cn } from "@/lib/utils";
 import { TagChip } from "../ui/TagChip";
 import { ModuleLabel } from "../ui/ModuleLabel";
 import { JunctionNode } from "./JunctionNode";
+import { useTrackSectionView, SECTIONS } from "@/lib/analytics";
 
 type ProjectStatus = "concept" | "validation" | "prototype" | "private-beta" | "design-partner";
 
@@ -38,8 +39,10 @@ const STATUS_LABELS: Record<ProjectStatus, string> = {
 };
 
 export function ProjectsSection() {
+  const sectionRef = useTrackSectionView<HTMLElement>(SECTIONS.PROJECTS);
+
   return (
-    <section id="projects" className="border-t border-surface-border relative">
+    <section ref={sectionRef} id="projects" className="border-t border-surface-border relative">
       {/* Swarm slot: left half on md+; full width on mobile. */}
       <SwarmSlot id="projects" className="absolute inset-0 md:right-1/3" />
       <div className="absolute right-20 top-0 bottom-0 w-px bg-foreground/10" />
