@@ -33,3 +33,7 @@ export function AnalyticsScript() {
     />
   );
 }
+
+// Re-export everything from analytics subdirectory
+export * from "./analytics/events";
+export * from "./analytics/hooks";

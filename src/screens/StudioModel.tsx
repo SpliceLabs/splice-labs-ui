@@ -1,6 +1,7 @@
 "use client";
 
 import { TerminalButton } from "@/components/marketing/ui/TerminalButton";
+import { useTrackSectionView, useTrackScrollDepth, SECTIONS } from "@/lib/analytics";
 
 const INCUBATION_MODELS = [
   {
@@ -52,10 +53,17 @@ const TWO_LEDGER = [
 ];
 
 export default function StudioModelScreen() {
+  // Analytics tracking
+  useTrackScrollDepth();
+  const heroRef = useTrackSectionView<HTMLDivElement>(SECTIONS.STUDIO_HERO);
+  const twoLedgerRef = useTrackSectionView<HTMLDivElement>(SECTIONS.STUDIO_TWO_LEDGER);
+  const incubationRef = useTrackSectionView<HTMLDivElement>(SECTIONS.STUDIO_INCUBATION);
+  const founderFirstRef = useTrackSectionView<HTMLDivElement>(SECTIONS.STUDIO_FOUNDER_FIRST);
+
   return (
     <section className="pt-32 pb-20 md:pt-44 md:pb-28 px-6 md:px-8 max-w-[900px] mx-auto">
         {/* Hero */}
-        <div className="mb-16">
+        <div ref={heroRef} className="mb-16">
           <span className="font-mono text-label text-accent tracking-splice-ultra uppercase block mb-4">
             Studio Model
           </span>
@@ -69,7 +77,7 @@ export default function StudioModelScreen() {
         </div>
 
         {/* Two-Ledger Architecture */}
-        <div className="mb-16">
+        <div ref={twoLedgerRef} className="mb-16">
           <h2 className="font-display text-xl md:text-2xl font-semibold tracking-splice-tight text-foreground mb-6">
             Two-Ledger Architecture
           </h2>
@@ -91,7 +99,7 @@ export default function StudioModelScreen() {
         </div>
 
         {/* Three Incubation Models */}
-        <div className="mb-16">
+        <div ref={incubationRef} className="mb-16">
           <h2 className="font-display text-xl md:text-2xl font-semibold tracking-splice-tight text-foreground mb-6">
             Three Incubation Models
           </h2>
@@ -157,7 +165,7 @@ export default function StudioModelScreen() {
         </div>
 
         {/* Founder-First Economics */}
-        <div className="mb-16">
+        <div ref={founderFirstRef} className="mb-16">
           <h2 className="font-display text-xl md:text-2xl font-semibold tracking-splice-tight text-foreground mb-4">
             Founder-First Economics
           </h2>

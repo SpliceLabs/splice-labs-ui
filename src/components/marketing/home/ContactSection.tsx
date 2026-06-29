@@ -1,12 +1,23 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { SwarmSlot } from "./swarm/SwarmSlot";
 import { TerminalButton } from "../ui/TerminalButton";
 import { ModuleLabel } from "../ui/ModuleLabel";
 import { cn } from "@/lib/utils";
 import { getSectionLayout, getAccentLinePosition, getCalcPosition, type SectionAlign } from "./sectionLayout";
 import { JunctionNode } from "./JunctionNode";
+import {
+  useTrackSectionView,
+  trackAudienceSelected,
+  trackValidationError,
+  trackFormSubmitSuccess,
+  trackFormSubmitError,
+  trackApiError,
+  SECTIONS,
+  trackEvent,
+  EVENTS,
+} from "@/lib/analytics";
 
 type Status = "idle" | "submitting" | "success" | "error";
 type AudienceType = "founder" | "investor" | "partner" | "operator";
@@ -45,6 +56,11 @@ export function ContactSection({ align = "left" }: ContactSectionProps) {
   const [errors, setErrors] = useState<Errors>({});
   const [actionType, setActionType] = useState<string | null>(null);
 
+  // Analytics tracking
+  const sectionRef = useTrackSectionView<HTMLElement>(SECTIONS.CONTACT);
+  const previousAudienceRef = useRef<AudienceType | null>(null);
+  const trackedFieldsRef = useRef<Set<Field>>(new Set());
+
   // Parse params from hash (e.g., #contact?intent=investor&action=schedule-call)
   useEffect(() => {
     const parseHashParams = () => {
@@ -79,6 +95,24 @@ export function ContactSection({ align = "left" }: ContactSectionProps) {
   const update = (field: Field, value: string) => {
     setFormState((s) => ({ ...s, [field]: value }));
     if (errors[field]) setErrors((e) => ({ ...e, [field]: undefined }));
+  };
+
+  // Track field focus (fires once per field per session)
+  const handleFieldFocus = (field: Field) => {
+    if (!trackedFieldsRef.current.has(field)) {
+      trackedFieldsRef.current.add(field);
+      trackEvent(EVENTS.FORM_FIELD_FOCUSED, { field, form: "contact" });
+    }
+  };
+
+  // Track audience type changes
+  const handleAudienceChange = (newAudience: AudienceType) => {
+    if (previousAudienceRef.current !== null && previousAudienceRef.current !== newAudience) {
+      trackAudienceSelected(newAudience, previousAudienceRef.current);
+    }
+    previousAudienceRef.current = newAudience;
+    setAudienceType(newAudience);
+    setActionType(null);
   };
 
   const validate = (): Errors => {
@@ -123,7 +157,14 @@ export function ContactSection({ align = "left" }: ContactSectionProps) {
     e.preventDefault();
     const found = validate();
     setErrors(found);
-    if (Object.keys(found).length > 0) return;
+
+    // Track validation errors
+    if (Object.keys(found).length > 0) {
+      Object.entries(found).forEach(([field, errorMsg]) => {
+        trackValidationError(field, errorMsg || "validation_failed");
+      });
+      return;
+    }
 
     setStatus("submitting");
     try {
@@ -136,11 +177,14 @@ export function ContactSection({ align = "left" }: ContactSectionProps) {
       const data = await res.json();
 
       if (!res.ok || !data.success) {
+        trackApiError("/api/contact", res.status, data.error || "submission_failed");
         throw new Error(data.error || "Failed to submit");
       }
 
+      trackFormSubmitSuccess(audienceType, actionType || undefined);
       setStatus("success");
-    } catch {
+    } catch (err) {
+      trackFormSubmitError(err instanceof Error ? err.message : "unknown_error");
       setStatus("error");
     }
   };
@@ -148,7 +192,7 @@ export function ContactSection({ align = "left" }: ContactSectionProps) {
   const submitting = status === "submitting";
 
   return (
-    <section id="contact" className="border-t border-surface-border relative">
+    <section ref={sectionRef} id="contact" className="border-t border-surface-border relative">
       <SwarmSlot id="contact" className={layout.swarmSlot} />
       <div className={layout.accentLine} />
       {/* Terminal splice line at bottom */}
@@ -179,10 +223,7 @@ export function ContactSection({ align = "left" }: ContactSectionProps) {
                   <button
                     key={opt.type}
                     type="button"
-                    onClick={() => {
-                      setAudienceType(opt.type);
-                      setActionType(null); // Clear action when manually changing type
-                    }}
+                    onClick={() => handleAudienceChange(opt.type)}
                     className={cn(
                       "font-mono text-xs tracking-splice-ultra uppercase px-3 py-1.5 border transition-all duration-300 ease-out",
                       audienceType === opt.type
@@ -235,6 +276,7 @@ export function ContactSection({ align = "left" }: ContactSectionProps) {
                       type="text"
                       value={formState.name}
                       onChange={(e) => update("name", e.target.value)}
+                      onFocus={() => handleFieldFocus("name")}
                       disabled={submitting}
                       maxLength={MAX_NAME_LENGTH}
                       aria-invalid={!!errors.name}
@@ -263,6 +305,7 @@ export function ContactSection({ align = "left" }: ContactSectionProps) {
                       type="email"
                       value={formState.email}
                       onChange={(e) => update("email", e.target.value)}
+                      onFocus={() => handleFieldFocus("email")}
                       disabled={submitting}
                       aria-invalid={!!errors.email}
                       aria-describedby={errors.email ? "contact-email-error" : undefined}
@@ -292,6 +335,7 @@ export function ContactSection({ align = "left" }: ContactSectionProps) {
                       type="text"
                       value={formState.company}
                       onChange={(e) => update("company", e.target.value)}
+                      onFocus={() => handleFieldFocus("company")}
                       disabled={submitting}
                       maxLength={MAX_COMPANY_LENGTH}
                       aria-invalid={!!errors.company}
@@ -321,6 +365,7 @@ export function ContactSection({ align = "left" }: ContactSectionProps) {
                     type="url"
                     value={formState.linkedin}
                     onChange={(e) => update("linkedin", e.target.value)}
+                    onFocus={() => handleFieldFocus("linkedin")}
                     disabled={submitting}
                     aria-invalid={!!errors.linkedin}
                     aria-describedby={errors.linkedin ? "contact-linkedin-error" : undefined}
@@ -347,6 +392,7 @@ export function ContactSection({ align = "left" }: ContactSectionProps) {
                     id="contact-message"
                     value={formState.message}
                     onChange={(e) => update("message", e.target.value)}
+                    onFocus={() => handleFieldFocus("message")}
                     disabled={submitting}
                     rows={4}
                     maxLength={MAX_MESSAGE_LENGTH}

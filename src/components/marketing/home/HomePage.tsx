@@ -1,3 +1,5 @@
+"use client";
+
 import { HeroSection } from "./HeroSection";
 import { ValueSection } from "./ValueSection";
 import { CommitmentsSection } from "./CommitmentsSection";
@@ -12,6 +14,7 @@ import { SectionRegimeController } from "./swarm/SectionRegimeController";
 import { SwarmDevPanel } from "./swarm/SwarmDevPanel";
 import { SwarmRefsProvider, useSwarmRefs } from "./swarm/swarmRefs";
 import { ScrollProgress } from "../ui/ScrollProgress";
+import { useTrackScrollDepth } from "@/lib/analytics";
 import type { SectionAlign } from "./sectionLayout";
 
 /**
@@ -35,6 +38,9 @@ export function HomePage() {
   // SwarmRefsProvider also exposes the same refs object to deeply-nested
   // <SwarmSlot> components so they can register their DOM anchors.
   const swarmRefs = useSwarmRefs();
+
+  // Track scroll depth milestones (25%, 50%, 75%, 100%)
+  useTrackScrollDepth();
 
   return (
     <SwarmRefsProvider value={swarmRefs}>

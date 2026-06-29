@@ -4,6 +4,7 @@ import { SwarmSlot } from "./swarm/SwarmSlot";
 import { ModuleLabel } from "../ui/ModuleLabel";
 import { getSectionLayout, type SectionAlign } from "./sectionLayout";
 import { JunctionNode } from "./JunctionNode";
+import { useTrackSectionView, SECTIONS } from "@/lib/analytics";
 
 interface SecuritySectionProps {
   align?: SectionAlign;
@@ -11,9 +12,10 @@ interface SecuritySectionProps {
 
 export function SecuritySection({ align = "right" }: SecuritySectionProps) {
   const layout = getSectionLayout(align);
+  const sectionRef = useTrackSectionView<HTMLElement>(SECTIONS.SECURITY);
 
   return (
-    <section id="security" className="border-t border-surface-border relative">
+    <section ref={sectionRef} id="security" className="border-t border-surface-border relative">
       <SwarmSlot id="security" className={layout.swarmSlot} />
       <div className={layout.accentLine} />
 

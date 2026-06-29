@@ -4,6 +4,7 @@ import { SwarmSlot } from "./swarm/SwarmSlot";
 import { ModuleLabel } from "../ui/ModuleLabel";
 import { getSectionLayout, type SectionAlign } from "./sectionLayout";
 import { JunctionNode } from "./JunctionNode";
+import { useTrackSectionView, SECTIONS } from "@/lib/analytics";
 
 const COMMITMENTS = [
   { label: "Founder Ownership", body: "Majority equity stays with founders. No forced platform tax." },
@@ -19,9 +20,10 @@ interface CommitmentsSectionProps {
 
 export function CommitmentsSection({ align = "left" }: CommitmentsSectionProps) {
   const layout = getSectionLayout(align);
+  const sectionRef = useTrackSectionView<HTMLElement>(SECTIONS.COMMITMENTS);
 
   return (
-    <section id="commitments" className="border-t border-surface-border relative overflow-hidden">
+    <section ref={sectionRef} id="commitments" className="border-t border-surface-border relative overflow-hidden">
       <SwarmSlot id="commitments" className={layout.swarmSlot} />
       <div className={layout.accentLine} />
 

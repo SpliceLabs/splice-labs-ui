@@ -2,6 +2,7 @@
 
 import { TerminalButton } from "@/components/marketing/ui/TerminalButton";
 import { GlossaryTerm } from "@/components/marketing/ui/GlossaryTerm";
+import { useTrackSectionView, useTrackScrollDepth, SECTIONS } from "@/lib/analytics";
 
 const FIRST_WEDGES = [
   {
@@ -26,10 +27,18 @@ const WHAT_MUST_BE_TRUE = [
 ];
 
 export default function ThesisScreen() {
+  // Analytics tracking
+  useTrackScrollDepth();
+  const heroRef = useTrackSectionView<HTMLDivElement>(SECTIONS.THESIS_HERO);
+  const whyNowRef = useTrackSectionView<HTMLDivElement>(SECTIONS.THESIS_WHY_NOW);
+  const agenticRef = useTrackSectionView<HTMLDivElement>(SECTIONS.THESIS_AGENTIC);
+  const wedgesRef = useTrackSectionView<HTMLDivElement>(SECTIONS.THESIS_WEDGES);
+  const mustBeTrueRef = useTrackSectionView<HTMLDivElement>(SECTIONS.THESIS_MUST_BE_TRUE);
+
   return (
     <section className="pt-32 pb-20 md:pt-44 md:pb-28 px-6 md:px-8 max-w-[900px] mx-auto">
         {/* Hero */}
-        <div className="mb-16">
+        <div ref={heroRef} className="mb-16">
           <span className="font-mono text-label text-accent tracking-splice-ultra uppercase block mb-4">
             Our Thesis
           </span>
@@ -43,7 +52,7 @@ export default function ThesisScreen() {
         </div>
 
         {/* Why Now */}
-        <div className="mb-16">
+        <div ref={whyNowRef} className="mb-16">
           <h2 className="font-display text-xl md:text-2xl font-semibold tracking-splice-tight text-foreground mb-4">
             Why Now
           </h2>
@@ -61,7 +70,7 @@ export default function ThesisScreen() {
         </div>
 
         {/* Agentic Finance */}
-        <div className="mb-16">
+        <div ref={agenticRef} className="mb-16">
           <h2 className="font-display text-xl md:text-2xl font-semibold tracking-splice-tight text-foreground mb-4">
             <GlossaryTerm term="agentic finance">Agentic Finance</GlossaryTerm>
           </h2>
@@ -79,7 +88,7 @@ export default function ThesisScreen() {
         </div>
 
         {/* First Wedges */}
-        <div className="mb-16">
+        <div ref={wedgesRef} className="mb-16">
           <h2 className="font-display text-xl md:text-2xl font-semibold tracking-splice-tight text-foreground mb-6">
             First Wedges
           </h2>
@@ -105,7 +114,7 @@ export default function ThesisScreen() {
         </div>
 
         {/* What Must Be True */}
-        <div className="mb-16">
+        <div ref={mustBeTrueRef} className="mb-16">
           <h2 className="font-display text-xl md:text-2xl font-semibold tracking-splice-tight text-foreground mb-6">
             What Must Be True
           </h2>

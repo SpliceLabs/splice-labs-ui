@@ -4,6 +4,7 @@ import { SwarmSlot } from "./swarm/SwarmSlot";
 import { ModuleLabel } from "../ui/ModuleLabel";
 import { getSectionLayout, type SectionAlign } from "./sectionLayout";
 import { JunctionNode } from "./JunctionNode";
+import { useTrackSectionView, SECTIONS } from "@/lib/analytics";
 
 const AGENTS = [
   { type: "Research", scope: "Read-only" },
@@ -20,9 +21,10 @@ interface AgentsSectionProps {
 
 export function AgentsSection({ align = "left" }: AgentsSectionProps) {
   const layout = getSectionLayout(align);
+  const sectionRef = useTrackSectionView<HTMLElement>(SECTIONS.AGENTS);
 
   return (
-    <section id="agents" className="border-t border-surface-border relative">
+    <section ref={sectionRef} id="agents" className="border-t border-surface-border relative">
       <SwarmSlot id="agents" className={layout.swarmSlot} />
       <div className={layout.accentLine} />
 

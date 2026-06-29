@@ -1,11 +1,13 @@
 "use client";
 
+import { useRef } from "react";
 import {
   Tooltip,
   TooltipContent,
   TooltipProvider,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
+import { trackGlossaryTermViewed } from "@/lib/analytics";
 
 const GLOSSARY: Record<string, string> = {
   "governed autonomous capital":
@@ -33,14 +35,22 @@ interface GlossaryTermProps {
 
 export function GlossaryTerm({ term, children }: GlossaryTermProps) {
   const definition = GLOSSARY[term.toLowerCase()];
+  const hasTracked = useRef(false);
 
   if (!definition) {
     return <>{children || term}</>;
   }
 
+  const handleOpenChange = (open: boolean) => {
+    if (open && !hasTracked.current) {
+      hasTracked.current = true;
+      trackGlossaryTermViewed(term.toLowerCase());
+    }
+  };
+
   return (
     <TooltipProvider delayDuration={200}>
-      <Tooltip>
+      <Tooltip onOpenChange={handleOpenChange}>
         <TooltipTrigger asChild>
           <span className="underline decoration-accent/30 decoration-dotted underline-offset-2 cursor-help">
             {children || term}

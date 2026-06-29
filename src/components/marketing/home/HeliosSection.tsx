@@ -4,6 +4,7 @@ import { SwarmSlot } from "./swarm/SwarmSlot";
 import { ModuleLabel } from "../ui/ModuleLabel";
 import { getSectionLayout, type SectionAlign } from "./sectionLayout";
 import { JunctionNode } from "./JunctionNode";
+import { useTrackSectionView, SECTIONS } from "@/lib/analytics";
 
 interface HeliosSectionProps {
   align?: SectionAlign;
@@ -12,9 +13,10 @@ interface HeliosSectionProps {
 export function HeliosSection({ align = "left" }: HeliosSectionProps) {
   const layout = getSectionLayout(align);
   const isLeft = align === "left";
+  const sectionRef = useTrackSectionView<HTMLElement>(SECTIONS.HELIOS);
 
   return (
-    <section id="helios" className="border-t border-surface-border relative overflow-hidden">
+    <section ref={sectionRef} id="helios" className="border-t border-surface-border relative overflow-hidden">
       <SwarmSlot id="helios" className={layout.swarmSlot} />
       <div className={layout.accentLine} />
       {/* Background splice motif */}

@@ -1,11 +1,19 @@
+"use client";
+
 import { useState, useRef, useEffect } from "react";
 import Link from "next/link";
 import { TerminalCaret } from "./ui/TerminalCaret";
 import { TerminalButton } from "./ui/TerminalButton";
+import { trackNavMenuOpened, trackNavLinkClicked } from "@/lib/analytics";
 
 /** Check if href is an internal route (not a hash anchor) */
 function isInternalRoute(href: string | undefined): boolean {
   return !!href && href.startsWith("/") && !href.startsWith("/#");
+}
+
+/** Check if href is external */
+function isExternalLink(href: string | undefined): boolean {
+  return !!href && (href.startsWith("http://") || href.startsWith("https://"));
 }
 
 interface DropdownItem {
@@ -107,11 +115,13 @@ export function SiteNav() {
               >
                 <button
                   type="button"
-                  onClick={() =>
-                    setOpenDropdown(
-                      openDropdown === item.label ? null : item.label,
-                    )
-                  }
+                  onClick={() => {
+                    const newState = openDropdown === item.label ? null : item.label;
+                    setOpenDropdown(newState);
+                    if (newState) {
+                      trackNavMenuOpened("dropdown", item.label);
+                    }
+                  }}
                   aria-expanded={openDropdown === item.label}
                   aria-haspopup="menu"
                   aria-controls={`nav-menu-${item.label}`}
@@ -140,7 +150,10 @@ export function SiteNav() {
                           key={child.label}
                           href={child.href}
                           role="menuitem"
-                          onClick={() => setOpenDropdown(null)}
+                          onClick={() => {
+                            trackNavLinkClicked(child.href, isExternalLink(child.href));
+                            setOpenDropdown(null);
+                          }}
                           className="group block px-4 py-2 font-mono text-label text-muted-foreground tracking-widest uppercase hover:text-foreground hover:font-bold hover:bg-ember/10 transition-[color,font-weight] focus-visible:outline focus-visible:outline-1 focus-visible:outline-accent focus-visible:outline-offset-2"
                         >
                           <span className="relative">
@@ -160,6 +173,7 @@ export function SiteNav() {
               <Link
                 key={item.label}
                 href={item.href!}
+                onClick={() => trackNavLinkClicked(item.href!, false)}
                 className="group font-mono text-label text-muted-foreground tracking-widest uppercase hover:text-foreground hover:font-bold transition-[color,font-weight] focus-visible:outline focus-visible:outline-1 focus-visible:outline-accent focus-visible:outline-offset-2"
               >
                 <span className="relative">
@@ -174,6 +188,7 @@ export function SiteNav() {
               <a
                 key={item.label}
                 href={item.href}
+                onClick={() => trackNavLinkClicked(item.href!, isExternalLink(item.href))}
                 className="group font-mono text-label text-muted-foreground tracking-widest uppercase hover:text-foreground hover:font-bold transition-[color,font-weight] focus-visible:outline focus-visible:outline-1 focus-visible:outline-accent focus-visible:outline-offset-2"
               >
                 <span className="relative">
@@ -197,7 +212,13 @@ export function SiteNav() {
 
         {/* Mobile hamburger */}
         <button
-          onClick={() => setMobileOpen(!mobileOpen)}
+          onClick={() => {
+            const newState = !mobileOpen;
+            setMobileOpen(newState);
+            if (newState) {
+              trackNavMenuOpened("mobile");
+            }
+          }}
           className="md:hidden flex flex-col gap-1 p-2"
           aria-label="Menu"
         >
@@ -228,7 +249,11 @@ export function SiteNav() {
                       <a
                         key={child.label}
                         href={child.href}
-                        onClick={() => { setMobileOpen(false); setOpenDropdown(null); }}
+                        onClick={() => {
+                          trackNavLinkClicked(child.href, isExternalLink(child.href));
+                          setMobileOpen(false);
+                          setOpenDropdown(null);
+                        }}
                         className="block font-mono text-xs text-muted-foreground tracking-widest uppercase hover:text-foreground py-2"
                       >
                         {child.label}
@@ -241,7 +266,10 @@ export function SiteNav() {
               <Link
                 key={item.label}
                 href={item.href!}
-                onClick={() => setMobileOpen(false)}
+                onClick={() => {
+                  trackNavLinkClicked(item.href!, false);
+                  setMobileOpen(false);
+                }}
                 className="block font-mono text-xs text-muted-foreground tracking-widest uppercase hover:text-foreground py-2"
               >
                 {item.label}
@@ -250,7 +278,10 @@ export function SiteNav() {
               <a
                 key={item.label}
                 href={item.href}
-                onClick={() => setMobileOpen(false)}
+                onClick={() => {
+                  trackNavLinkClicked(item.href!, isExternalLink(item.href));
+                  setMobileOpen(false);
+                }}
                 className="block font-mono text-xs text-muted-foreground tracking-widest uppercase hover:text-foreground py-2"
               >
                 {item.label}
