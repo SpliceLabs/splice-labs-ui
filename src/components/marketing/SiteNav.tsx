@@ -97,8 +97,8 @@ export function SiteNav() {
       <div className="max-w-[1200px] mx-auto px-6 md:px-8 h-14 flex items-center justify-between">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-1 font-mono text-base text-foreground">
-          <span className="text-ember font-bold">›</span>
-          <span>splice</span>
+          <span className="text-amber font-black">›</span>
+          <span>spl<span className="font-normal text-foreground">i</span>ce</span>
           <span className="text-accent font-bold">_</span>
           <TerminalCaret className="ml-0.5" />
         </Link>
