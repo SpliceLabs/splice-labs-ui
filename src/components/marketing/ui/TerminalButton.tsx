@@ -70,7 +70,7 @@ export function TerminalButton({
       </span>
       <span
         aria-hidden
-        className="-translate-x-1 opacity-0 transition-[opacity,transform] duration-150 group-hover:translate-x-0 group-hover:opacity-100"
+        className="-translate-x-1 text-[1.15em] font-black leading-none text-amber opacity-0 transition-[opacity,transform] duration-150 group-hover:translate-x-0 group-hover:opacity-100"
       >
         ›
       </span>
